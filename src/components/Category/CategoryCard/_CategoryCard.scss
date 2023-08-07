@@ -1,0 +1,20 @@
+$CardBg:#eaeae7;
+.category-card{
+    background-color: $CardBg;
+    padding:10px;
+    border:1px solid $btnColor;
+    border-radius:5px ;
+    box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
+    .card-content{
+        text-align: center;
+            img{
+                width:100%;
+                border-radius: 50%;
+            }
+            h4{
+                font-size:20px;
+                margin-top:10px
+            }
+        }
+        
+    }

@@ -1,0 +1,16 @@
+.product-card{
+    box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
+    border:1px solid $btnColor;
+    .card-body{
+        .product-icon{
+            text-align: left;
+            color:red
+        }
+    }
+    .card-footer{
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+};

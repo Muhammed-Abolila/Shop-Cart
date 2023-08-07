@@ -1,0 +1,42 @@
+.navbar{
+    background-color: $MainBgColor !important;
+    
+    .navbar-brand{
+        width: 70px !important;
+        img{
+            width:100%
+        }
+    }
+    .navbar-toggler {
+        background-color: $MainColor;
+        border:2px solid $btnColor;
+        .navbar-icon{
+            color:$btnColor
+        }
+    }
+    .navbar-collapse{
+        .search{
+            border:2px solid transparent;
+        &:focus{
+            box-shadow: none;
+            border:2px solid $btnColor;
+        }
+    }
+        .navbar-nav{
+            .nav-link{
+                color:$MainColor;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                svg{
+                    font-size: 20px;
+                }
+                p{
+                    margin-top: 15px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

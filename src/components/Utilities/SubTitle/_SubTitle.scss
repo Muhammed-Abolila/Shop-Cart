@@ -1,0 +1,11 @@
+.category-head{
+    .category-head-title{
+        font-size:20px;
+    }
+    .category-head-btn{
+        border:1px solid $btnColor;
+        &:hover{
+            border:1px solid $btnColor;
+        }
+    }
+}

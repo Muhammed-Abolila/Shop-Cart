@@ -1,0 +1,10 @@
+@import "./Colors";
+@import "../components/Utilities/NavBarLogin/NavBarLogin";
+@import "../components/Home/Slider/Slider";
+@import "../components/Utilities/SubTitle/SubTitle";
+@import "../components/Category/CategoryCard/CategoryCard"; 
+@import "../components/Products/ProductCard";
+body{
+    direction: rtl;
+    height:9000px
+}
