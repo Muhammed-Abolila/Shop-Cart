@@ -6,12 +6,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightToBracket, faBars, faCartShopping  } from '@fortawesome/free-solid-svg-icons';
 const NavbarLogin = () => {
+
   return (
     <Navbar expand="lg p-0">
       <Container>
 
-        <Navbar.Brand href="#">
-          <img src={logo} alt="" />
+        <Navbar.Brand href="/" >
+            <img src={logo} alt="" />
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -21,19 +22,16 @@ const NavbarLogin = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <input className="search form-control w-75 m-auto" type="search" placeholder="ابحث..."/>
           <Nav className="ms-auto">
-            <Nav.Link href="#">
+            <Nav.Link href="/login">
               <FontAwesomeIcon icon={faArrowRightToBracket} />
               <p>الدخول</p>
             </Nav.Link>
-            <Nav.Link href="#">
+            <Nav.Link href="/cart">
               <FontAwesomeIcon icon={faCartShopping} />
               <p>العربه</p>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-
-
-
       </Container>
     </Navbar>
   )

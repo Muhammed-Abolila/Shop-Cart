@@ -3,8 +3,20 @@
 @import "../components/Home/Slider/Slider";
 @import "../components/Utilities/SubTitle/SubTitle";
 @import "../components/Category/CategoryCard/CategoryCard"; 
-@import "../components/Products/ProductCard";
+@import "../components/Products/ProductCard/ProductCard";
+@import "../components/Brands/BrandsCard/BrandsCard";
+@import "../components/Home/DescountComponent/DescountComp";
+@import "../components/Utilities/Footer/Footer";
+@import "../pages/Auth/Login/Login";
+@import "../pages/Auth/Register/Register";
+@import "../components/Utilities/Pagination/pagination";
+@import "../components/Utilities/Pagination/pagination";
+@import "../components/Products/SlideProductsSearch/SlideProductsSearch";
+@import "../components/Utilities/ProductsSearchNavBar/ProductsSearchNavbar";
+@import "../components/Products/ProductsSearchSubTitle/ProductsSearchSubTitle";
+@import "../components/Products/ItemDetail/ItemDetail";
+@import "../components/Products/Rate&Comments/RateAndComments";
+
 body{
     direction: rtl;
-    height:9000px
 }

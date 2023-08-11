@@ -1,0 +1,59 @@
+.ProductsSearchSubTitle{
+    .row{
+        .dropdown{
+            .dropdown-toggle{
+                width:160px;
+                background-color: $MainColor;
+                color:$ThirdColor;
+                border-color: $ThirdColor ;
+                transition: all .4s;
+                &:hover,&:focus{
+                    background-color: $ThirdColor !important;
+                    color:$MainColor;
+                }
+                p{
+                    padding:5px 0px;
+                    margin: 0;
+                    svg{
+                        margin-left: 5px;
+                    }
+                }
+                &:after{
+                    display: none !important;
+                }
+            }
+            .dropdown-menu{
+                overflow: hidden;
+                width:150px;
+                margin:0;
+                padding:0;
+                .dropdown-item{
+                    padding: 0px !important;
+                    transition: all .4s;
+                    &:hover{
+                        color:$MainColor;
+                        background-color: $ThirdColor;
+                    }
+                    p{
+                        margin: 0 !important;
+                        padding:10px
+                    }
+                    hr{
+                        margin:0;
+                    }
+                }
+            }
+        }
+    }  
+};
+@media screen and (max-width:575px){
+    .ProductsSearchSubTitle{
+        .row{
+            text-align: center !important;
+            .dropdown{
+                text-align: center !important;
+                margin-top: 10px;
+            }
+        } 
+}
+}

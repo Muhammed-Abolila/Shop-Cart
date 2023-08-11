@@ -1,11 +1,19 @@
-.category-head{
-    .category-head-title{
+.subtitle-comp{
+    .subtitle-head{
         font-size:20px;
     }
-    .category-head-btn{
-        border:1px solid $btnColor;
+    a{
+        text-decoration: none;
+        padding:7px 15px;
+        border:1px solid $ThirdColor;
+        border-radius: 5px; 
+        color:$ThirdColor;
+        transition: all .4s;
         &:hover{
+            color:$MainColor;
             border:1px solid $btnColor;
+            background-color: $btnColor;
         }
     }
+    
 }

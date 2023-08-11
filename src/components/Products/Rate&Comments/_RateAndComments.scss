@@ -1,0 +1,35 @@
+.rate-comments{
+    background-color: $MainColor;
+    border-radius: 5px;
+    padding:10px;
+    .rate{
+        margin-bottom:15px;
+    }
+    .comments{
+        margin-right:15px;
+        .add-comment{
+            text-align: left;
+            h6{
+                margin-bottom:15px;
+                text-align: right;
+            }
+            textarea{
+                &:focus{
+                    border:1px solid $ThirdColor;
+                    box-shadow: none;
+                }  
+            }
+            button{
+                margin:15px 0px;
+                background-color: $MainColor;
+                color:$ThirdColor;
+                border:1px solid $ThirdColor;
+                transition: all .4s;
+                &:hover{
+                    background-color: $ThirdColor;
+                    color:$MainColor;
+                }
+             }
+        }
+    }
+}

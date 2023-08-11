@@ -1,0 +1,12 @@
+.descount{
+    background-color: $MainBgColor;
+    color:$MainColor;
+    border-radius: 5px;
+    .img-container{
+        text-align: left;
+        img{
+            width:50%;
+            border-radius: 5px;
+        }
+    }
+}

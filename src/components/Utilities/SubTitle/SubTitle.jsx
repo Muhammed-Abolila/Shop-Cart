@@ -1,11 +1,15 @@
 import React from 'react'
-const SubTitle = ({title,btnName}) => {
+import { Link } from 'react-router-dom'
+const SubTitle = ({title,btnName,pathName}) => {
   return (
-      <div className='category-head d-flex justify-content-between align-items-center mt-5'>
-        <h3 className='category-head-title'>{title}</h3>
-        <button className='btn category-head-btn'>{btnName}</button>
+      <div className='subtitle-comp d-flex justify-content-between align-items-center mt-5'>
+        <h3 className='subtitle-heade'>{title}</h3>
+        {btnName?
+          <Link to={`${pathName}`}>
+            <span>{btnName}</span>
+          </Link>
+        :null}
       </div>
   )
 }
-
 export default SubTitle

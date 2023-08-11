@@ -1,0 +1,45 @@
+.register{
+    @extend .login;
+    .register-content{
+        @extend .login-content;
+        h3{
+            font-size: 23px;
+        }
+        .form{
+            @extend .form;
+            button{
+                @extend button
+            }
+        }
+        .register-footer{
+                @extend .login-footer;
+            a{
+                @extend a;
+                span{
+                    @extend span;
+                    
+                }
+            }
+            
+        }
+    }
+};
+@media screen and (max-width:430px){
+    .login{
+        .login-content{
+            padding: 0;
+            h3{
+                font-size: 17px
+            }
+            .form{
+                button{
+                    width:80%;
+                }
+            }
+            .login-footer{
+                flex-direction: column;
+                
+            }
+        }
+    };
+}

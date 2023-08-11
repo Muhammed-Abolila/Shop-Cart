@@ -1,6 +1,5 @@
 .navbar{
     background-color: $MainBgColor !important;
-    
     .navbar-brand{
         width: 70px !important;
         img{
@@ -9,9 +8,9 @@
     }
     .navbar-toggler {
         background-color: $MainColor;
-        border:2px solid $btnColor;
+        border:2px solid $ThirdColor;
         .navbar-icon{
-            color:$btnColor
+            color:$ThirdColor
         }
     }
     .navbar-collapse{
@@ -19,7 +18,7 @@
             border:2px solid transparent;
         &:focus{
             box-shadow: none;
-            border:2px solid $btnColor;
+            border:2px solid $ThirdColor;
         }
     }
         .navbar-nav{

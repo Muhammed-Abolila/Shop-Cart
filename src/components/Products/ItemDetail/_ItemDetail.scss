@@ -1,0 +1,70 @@
+.item-details{
+    .carousel{
+        border:1px solid $ThirdColor;
+        border-radius: 5px;
+        overflow: hidden;
+        .carousel-indicators{
+            display: none;
+        }
+        .carousel-inner{
+            .carousel-item{
+                .slider-img{
+                    background-color: $MainColor; 
+                    padding: 30px !important;
+                  img{
+                      width:100%;
+                      margin:50px 0px;
+                      border-radius: 5px;
+                  }
+                  }
+            }
+        }
+        .carousel-control-prev {
+            left: -15px;
+            
+        }
+        .carousel-control-next {
+            right: -15px;
+        }
+    }
+    
+    .item-content{
+        margin-right: 10px;
+        div{
+            margin-bottom:25px;
+            h6{
+                margin:0px;
+            }
+            p{
+                margin: 0;
+            }
+            ul{
+                list-style: none;
+                display: flex;
+                padding:0;
+                margin: 0px;
+                margin-top:5px;
+                li{
+                    padding:15px;
+                    border-radius: 50%;
+                    margin-left:7px;
+                }
+            }
+                button{
+                    background-color: $MainColor;
+                    color:$ThirdColor;
+                    border:1px solid $ThirdColor;
+                    transition: all .4s;
+                    padding:10px;
+                    &:hover{
+                        background-color: $ThirdColor;
+                        color:$MainColor;
+                    }
+                }
+        }
+        
+    }
+}
+@media screen and (max-width:991px){
+    
+}

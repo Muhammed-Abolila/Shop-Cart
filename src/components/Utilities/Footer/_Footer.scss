@@ -1,0 +1,31 @@
+footer{
+    background-color: $MainBgColor;
+    color:$MainColor;
+    .container{
+        padding:0px 20px;
+        ul{
+            font-size: 12px;
+            padding:15px;
+            a{
+                text-decoration: none;
+                color:$MainColor;
+                font-size: 16px;
+            }
+        }
+
+    }
+}
+@media screen and (max-width:767px){
+    footer{
+        .container{
+            .row{
+                flex-direction: column;
+                ul{
+                    justify-content: center !important;
+                    padding: 10px;
+                }
+            }
+    
+        }
+    }
+}

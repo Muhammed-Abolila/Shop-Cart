@@ -1,0 +1,38 @@
+.pagination{
+    padding: 20px 0px !important;
+    margin: 0 !important;
+    .page-item{
+        .page-link{
+            &:focus{
+                box-shadow: none
+            }
+        }
+        .prev-link{
+            background-color:$ThirdColor;
+            color:$MainColor;
+            border-radius: 5px !important;
+            border:1px solid $ThirdColor !important;
+            
+        }
+        .next-link{
+            @extend .prev-link;
+        }
+    }
+    .active-link{ 
+        .page-link{
+            background-color:$ThirdColor;
+            color:$MainColor;
+            border-radius: 5px !important;
+            border:1px solid $ThirdColor !important;
+        }
+    }
+};
+@media screen and (max-width:350px){
+    .pagination{
+        .page-item{
+            .page-link{
+                font-size: 13px !important;
+            }
+        }
+    }
+}
