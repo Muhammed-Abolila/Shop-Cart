@@ -1,0 +1,32 @@
+.payment{
+    .payment-methods{
+        background-color: $MainColor;
+        padding:20px;
+        border-radius: 5px;
+        margin-top:20px;
+        div{
+            display: flex;
+            margin-bottom: 10px;
+            p{
+                margin:0;
+                margin-right: 5px;
+            }
+        }
+    }
+    .payment-method-footer{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        button{
+            margin-right: 10px;
+            border:1px solid $ThirdColor;
+            background-color: $MainColor;
+            color:$ThirdColor;
+            transition:all .4s;
+            &:hover{
+                color:$MainColor;
+                background-color: $ThirdColor;
+            }
+        }
+    }
+}

@@ -7,9 +7,9 @@ const BrandsCard = ({img}) => {
     sm={4}
     xl={2}
     >
-    <div className='brand-img my-4'>
-      <img className='w-100' src={img} alt="" />
-    </div>
+      <div className='brand-img my-4'>
+        <img className='w-100' src={img} alt="" />
+      </div>
     </Col>
   )
 }

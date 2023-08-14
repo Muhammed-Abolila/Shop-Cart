@@ -1,19 +1,20 @@
 .subtitle-comp{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .subtitle-head{
         font-size:20px;
     }
     a{
         text-decoration: none;
+        border: 1px solid $ThirdColor;
         padding:7px 15px;
-        border:1px solid $ThirdColor;
-        border-radius: 5px; 
+        border-radius: 5px;
         color:$ThirdColor;
         transition: all .4s;
         &:hover{
-            color:$MainColor;
-            border:1px solid $btnColor;
-            background-color: $btnColor;
+            background-color: $ThirdColor;
+            color:$MainColor
         }
-    }
-    
+    }   
 }

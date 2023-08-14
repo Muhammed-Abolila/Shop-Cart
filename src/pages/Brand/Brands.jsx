@@ -1,11 +1,11 @@
 import React from 'react'
 import { Container, Row } from 'react-bootstrap'
-import brandImg1 from "../../assets/image/product/thumb-01.jpg";
-import brandImg2 from "../../assets/image/product/thumb-02.jpg";
-import brandImg3 from "../../assets/image/product/thumb-03.jpg";
-import brandImg4 from "../../assets/image/product/thumb-04.jpg";
-import brandImg5 from "../../assets/image/product/thumb-01.jpg";
-import brandImg6 from "../../assets/image/product/thumb-02.jpg";
+import brandImg1 from "../../assets/image/c serum.jpg";
+import brandImg2 from "../../assets/image/collagen powder.jpg";
+import brandImg3 from "../../assets/image/arcaya.jpg";
+import brandImg4 from "../../assets/image/derma roller.jpg";
+import brandImg5 from "../../assets/image/face mask.jpg";
+import brandImg6 from "../../assets/image/glutathione.jpg";
 import PaginationComp from '../../components/Utilities/Pagination/Pagination'
 import BrandsCard from '../../components/Brands/BrandsCard/BrandsCard'
 const BrandsPage = () => {

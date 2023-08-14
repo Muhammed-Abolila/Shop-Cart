@@ -1,33 +1,28 @@
-import React from 'react';
 import logo from "../../../assets/image/logo.png"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightToBracket, faBars, faCartShopping  } from '@fortawesome/free-solid-svg-icons';
+import {CgLogIn,CgShoppingCart} from 'react-icons/cg';
+import {FaBars} from 'react-icons/fa';
 const NavbarLogin = () => {
-
   return (
     <Navbar expand="lg p-0">
       <Container>
-
         <Navbar.Brand href="/" >
             <img src={logo} alt="" />
         </Navbar.Brand>
-
         <Navbar.Toggle aria-controls="basic-navbar-nav">
-            <FontAwesomeIcon className='navbar-icon' icon={faBars} />
+            <FaBars className='navbar-icon'/>
         </Navbar.Toggle>
-
         <Navbar.Collapse id="basic-navbar-nav">
           <input className="search form-control w-75 m-auto" type="search" placeholder="ابحث..."/>
           <Nav className="ms-auto">
             <Nav.Link href="/login">
-              <FontAwesomeIcon icon={faArrowRightToBracket} />
+              <CgLogIn />
               <p>الدخول</p>
             </Nav.Link>
             <Nav.Link href="/cart">
-              <FontAwesomeIcon icon={faCartShopping} />
+              <CgShoppingCart />
               <p>العربه</p>
             </Nav.Link>
           </Nav>
@@ -35,6 +30,6 @@ const NavbarLogin = () => {
       </Container>
     </Navbar>
   )
-}
+};
 
 export default NavbarLogin;

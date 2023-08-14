@@ -22,6 +22,18 @@ const Login = () => {
             </div>
           </div>
         </div>
+
+
+
+
+
+
+              <Link to="/admin/allproducts">
+                <span>الدخول بحساب الأدمن</span>
+              </Link><br/>
+              <Link to="/user/allorders">
+                <span>الدخول بحساب المستخدم</span>
+              </Link>
       </Container>
     </section>
   )

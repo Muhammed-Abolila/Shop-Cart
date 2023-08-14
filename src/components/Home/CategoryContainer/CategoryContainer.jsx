@@ -10,8 +10,7 @@ import img5 from "../../../assets/image/product/product-05.jpg"
 import img6 from "../../../assets/image/product/product-06.jpg"
 const CategoryContainer = ({title,btnName,pathName}) => {
   return (
-    
-    <section>
+    <section className='mt-5'> 
         <SubTitle title={title} btnName={btnName} pathName={pathName}/>
         <Row>
           <CategoryCard img={img1} category={"أجهزه كهربائيه"}/>
@@ -22,8 +21,6 @@ const CategoryContainer = ({title,btnName,pathName}) => {
           <CategoryCard img={img6} category={"كتب"}/>
         </Row>
     </section>
-
   )
-}
-
-export default CategoryContainer
+};
+export default CategoryContainer;

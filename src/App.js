@@ -9,6 +9,20 @@ import Cart from "./pages/Cart/Cart";
 import BrandsPage from "./pages/Brand/Brands";
 import ProductsSearchPage from "./pages/Products&SearchPage/ProductsSearchPage";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import PaymentMethodPage from "./pages/PaymentMethod/PaymentMethodPage";
+import AllProducts from "./pages/AdminPages/AllProductsPage";
+import OrdersPage from "./pages/AdminPages/OrdersPage";
+import AddCategoryPage from "./pages/AdminPages/AddCategoryPage";
+import AddBrandPage from "./pages/AdminPages/AddBrandPage";
+import AddSubCategoryPage from "./pages/AdminPages/AddSubCategoryPage";
+import AddProductPage from "./pages/AdminPages/AddProductPage";
+import UserAllOrdersPage from "./pages/User/UserAllOrdersPage";
+import UserFavProductPage from "./pages/User/UserFavProductPage";
+import UserAddressPage from "./pages/User/UserAddressPage";
+import UserProfilePage from "./pages/User/UserProfilePage";
+import UserEdditAddressPage from "./pages/User/UserEdditAddressPage";
+import UserAddAddressPage from "./pages/User/UserAddAddressPage";
+import UserEdditProfilePage from "./pages/User/UserEdditProfilePage";
 function App() {
   return (
     <>
@@ -23,6 +37,20 @@ function App() {
           <Route path="/brands" element={<BrandsPage/>}/>
           <Route path="/products" element={<ProductsSearchPage/>}/>
           <Route path="/details/:id" element={<ProductDetails/>} />
+          <Route path="/paymethods" element={<PaymentMethodPage/>} />
+          <Route path="/admin/allproducts" element={<AllProducts/>} />
+          <Route path="/admin/orders" element={<OrdersPage/>} />
+          <Route path="/admin/addbrand" element={<AddBrandPage/>} />
+          <Route path="/admin/addcategory" element={<AddCategoryPage/>} />
+          <Route path="/admin/addsubcategory" element={<AddSubCategoryPage/>} />
+          <Route path="/admin/addproduct" element={<AddProductPage/>} />
+          <Route path="/user/allorders" element={<UserAllOrdersPage/>} />
+          <Route path="/user/favproduct" element={<UserFavProductPage/>} />
+          <Route path="/user/address" element={<UserAddressPage/>} />
+          <Route path="/user/profile" element={<UserProfilePage/>} />
+          <Route path="/user/eddit-address" element={<UserEdditAddressPage/>} />
+          <Route path="/user/add-address" element={<UserAddAddressPage/>} />
+          <Route path="/user/eddit-profile" element={<UserEdditProfilePage/>} />
         </Routes>
       </BrowserRouter>
         <Footer/>

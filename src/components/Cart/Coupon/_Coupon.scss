@@ -1,0 +1,26 @@
+.Coupon{
+    padding:10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: $MainColor;
+    input{
+        &:focus{
+            border: 1px solid $ThirdColor;
+            box-shadow: none;
+        }
+    }
+    
+    button{
+        width:100%;
+        padding:10px 20px;
+        border:1px solid $ThirdColor;
+        background-color: $MainColor;
+        color:$ThirdColor;
+        margin-top: 10px;
+        transition: all .4s;
+        &:hover{
+            color:$MainColor;
+            background-color: $ThirdColor;
+        }
+    }
+}

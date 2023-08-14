@@ -1,9 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
-import { faGithub, faLinkedinIn, faWhatsapp  } from '@fortawesome/free-solid-svg-icons';
-import { faArrowRightToBracket  } from '@fortawesome/free-solid-svg-icons';
-
+import { BsGithub,BsLinkedin,BsWhatsapp } from 'react-icons/bs';
 const Footer = () => {
   return (
     <footer>
@@ -20,17 +17,17 @@ const Footer = () => {
           <ul className='list-unstyled d-flex justify-content-end align-items-center m-0'>
               <li>
                 <a href="https://github.com/Muhammed-Abolila" target="_blank">
-                  <FontAwesomeIcon icon={faArrowRightToBracket} />
+                  <BsGithub />
                 </a>
               </li>
               <li className='px-4'>
                 <a href="https://linkedin.com/in/mabolila638"  target="_blank">
-                  <FontAwesomeIcon icon={faArrowRightToBracket} />
+                  <BsLinkedin />
                 </a>
               </li>
               <li>
                 <a href="https://wa.me/01014391039"  target="_blank">
-                  <FontAwesomeIcon icon={faArrowRightToBracket} />
+                  <BsWhatsapp/>
                 </a>
               </li>
             </ul>

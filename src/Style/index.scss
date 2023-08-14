@@ -16,7 +16,46 @@
 @import "../components/Products/ProductsSearchSubTitle/ProductsSearchSubTitle";
 @import "../components/Products/ItemDetail/ItemDetail";
 @import "../components/Products/Rate&Comments/RateAndComments";
+@import "../components/Cart/CartItem/CartItem";
+@import "../components/Cart/Coupon/Coupon";
+@import "../components/Utilities/PriceComp/PriceComp";
+@import "../components/PaymentMethod/PaymentMethod";
+@import "../components/AdminComp/SideBarComp/SideBar";
+@import "../components/AdminComp/AllProductsComp/AllProducts";
+@import "../components/AdminComp/AddBrand/AddBrand";
+@import "../components/AdminComp/AddCategory/AddCategory";
+@import "../components/AdminComp/AddSubCategory/AddSubCategory";
+@import "../components/AdminComp/AddProduct/AddProduct";
+@import "../components/UserComp/SideBarComp/UserSideBar";
+@import "../components/UserComp/UserAllOrders/UserAllOrders";
+@import "../components/UserComp/UserAddress/UserAddress";
+@import "../components/UserComp/UserProfileDetails/UserProfileDetails";
+@import "../components/UserComp/UserSingleOrder/UserSingleOrder";
+@import "../components//AdminComp/OrderCard/OrderCard";
 
 body{
     direction: rtl;
+}
+.pageStyle{
+    background-color:$pageColor !important;
+    min-height: 670px !important;
+    padding-bottom: 40px  !important;
+}
+.btn-style{
+    border:1px solid $ThirdColor !important;
+    color:$ThirdColor !important;
+    background-color: $MainColor !important;
+    transition: all .4s !important;
+    width:fit-content !important;
+    margin: auto !important;
+    &:hover{
+        background-color:$ThirdColor !important;
+        color: $MainColor !important;
+    }
+}
+.input-style{
+    &:focus{
+        border: 1px solid $ThirdColor !important;
+        box-shadow: none !important;
+    }
 }

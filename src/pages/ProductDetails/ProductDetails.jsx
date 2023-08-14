@@ -7,7 +7,7 @@ import RateAndComments from '../../components/Products/Rate&Comments/RateAndComm
 
 const ProductDetails = () => {
   return (
-    <section className='product-details pb-5' style={{backgroundColor:"#dddddd5e"}}>
+    <section className='product-details pb-5 pageStyle'>
         <ProductsSearchNavbar/>
         <Container>
             <ItemDetail/>

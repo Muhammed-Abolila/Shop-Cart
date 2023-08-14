@@ -9,10 +9,15 @@
         margin-right:15px;
         .add-comment{
             text-align: left;
-            h6{
-                margin-bottom:15px;
-                text-align: right;
+            .user{
+                display: flex;
+                margin-bottom: 10px;
+                h6{
+                   margin-top: 10px;
+                   margin-left: 10px;
+                }
             }
+            
             textarea{
                 &:focus{
                     border:1px solid $ThirdColor;

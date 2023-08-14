@@ -7,7 +7,7 @@ import img3 from "../../../assets/image/product/product-03.jpg";
 import img4 from "../../../assets/image/product/product-04.jpg";
 const ProductContainer = ({title,btnName,pathName}) => {
   return (
-    <section>
+    <section className='mt-5'> 
       <SubTitle title={title} btnName={btnName} pathName={pathName}/>
       <Row>
         <Col xs={6} lg={3}>
@@ -23,7 +23,7 @@ const ProductContainer = ({title,btnName,pathName}) => {
           <ProductCard img={img4}/>
         </Col>
       </Row>
-  </section>
+  </section> 
   )
 }
 

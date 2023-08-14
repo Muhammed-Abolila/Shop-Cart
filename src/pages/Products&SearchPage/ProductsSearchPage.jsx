@@ -11,7 +11,7 @@ import PaginationComp from '../../components/Utilities/Pagination/Pagination';
 import SlideSearch from '../../components/Products/SlideProductsSearch/SlideProductsSearch';
 const ProductsSearchPage = () => {
   return (
-    <section className='pb-5' style={{backgroundColor:"#dddddd5e"}}>
+    <section className='pageStyle'>
       <ProductsSearchNavbar/>
       <Container>
       <ProductsSearchSubTitle/>

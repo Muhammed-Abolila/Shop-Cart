@@ -1,0 +1,22 @@
+.admin-sidebar{
+    background-color: $MainColor;
+    border-radius: 5px;
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            border-bottom:1px solid $ThirdColor;
+            border-radius: 5px;
+            padding:15px 7px;
+            width:100% !important;
+            color:$ThirdColor;
+            transition: all .4s;
+            cursor: pointer;
+            &:hover,&:focus{
+                color:$MainColor;
+                background-color: $ThirdColor;
+            }
+        
+        }
+    }
+}

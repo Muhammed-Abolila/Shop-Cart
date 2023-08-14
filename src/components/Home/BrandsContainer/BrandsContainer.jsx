@@ -2,15 +2,15 @@ import React from 'react'
 import SubTitle from "../../Utilities/SubTitle/SubTitle"
 import { Row } from 'react-bootstrap'
 import BrandsCard from '../../Brands/BrandsCard/BrandsCard'
-import brandImg1 from "../../../assets/image/product/thumb-01.jpg";
-import brandImg2 from "../../../assets/image/product/thumb-02.jpg";
-import brandImg3 from "../../../assets/image/product/thumb-03.jpg";
-import brandImg4 from "../../../assets/image/product/thumb-04.jpg";
-import brandImg5 from "../../../assets/image/product/thumb-01.jpg";
-import brandImg6 from "../../../assets/image/product/thumb-02.jpg";
+import brandImg1 from "../../../assets/image/c serum.jpg";
+import brandImg2 from "../../../assets/image/collagen powder.jpg";
+import brandImg3 from "../../../assets/image/arcaya.jpg";
+import brandImg4 from "../../../assets/image/derma roller.jpg";
+import brandImg5 from "../../../assets/image/face mask.jpg";
+import brandImg6 from "../../../assets/image/glutathione.jpg";
 const BrandsContainer = ({title,btnName,pathName}) => {
   return (
-    <section>
+    <section className='mt-5'>
       <SubTitle title={title} btnName={btnName} pathName={pathName}/>
       <Row>
         <BrandsCard img={brandImg1}/>
@@ -22,6 +22,5 @@ const BrandsContainer = ({title,btnName,pathName}) => {
       </Row>
     </section>
   )
-}
-
+};
 export default BrandsContainer

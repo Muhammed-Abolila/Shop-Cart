@@ -5,7 +5,7 @@
         padding-bottom:0px;
         .product-icon{
             text-align: left;
-            color:red
+            color:#c1c1c1
         }
     }
     .card-footer{
@@ -13,6 +13,17 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-top:1px solid $ThirdColor
+        border-top:1px solid $ThirdColor;
+        h5{
+            font-size:1.1rem;
+            margin:0;
+        }
     }
 };
+@media screen and (max-width:500px){
+    .card-footer{
+        h5{
+            font-size: .9rem !important;
+        }
+    }
+}

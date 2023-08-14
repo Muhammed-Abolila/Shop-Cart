@@ -1,0 +1,53 @@
+.user-address{
+    background-color: $MainColor;
+    padding:10px 10px;
+    border:1px solid $ThirdColor;
+    border-radius: 5px;
+    margin-bottom:15px;
+    .address-head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h4{
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .btns{
+            button{
+                border:1px solid $ThirdColor;
+                color:$ThirdColor;
+                background-color: $MainColor;
+                margin-left: 10px;
+                transition: all .4s;
+                &:hover{
+                    background-color:$ThirdColor;
+                    color: $MainColor;
+                }
+            }
+        }
+    }
+    .address{
+        display: flex;
+        margin-top: 10px;
+        margin-right:5px;
+        h5{
+            font-size: 16px;
+            font-weight: 400;
+        }
+        p{
+            margin-right:5px;
+        }
+    }
+    .phone{
+        display: flex;
+        margin-top: 10px;
+        margin-right:5px;
+        h5{
+            font-size: 16px;
+            font-weight: 400;
+        }
+        p{
+            margin-right:5px;
+        }
+    }
+}

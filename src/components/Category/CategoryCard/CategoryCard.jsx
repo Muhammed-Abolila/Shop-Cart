@@ -16,6 +16,6 @@ const CategoryCard = ({img,category}) => {
             </div>
           </Col>
   )
-}
+};
 
 export default CategoryCard;
