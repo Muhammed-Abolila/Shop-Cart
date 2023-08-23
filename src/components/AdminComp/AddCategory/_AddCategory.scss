@@ -1,5 +1,22 @@
 .add-category{
-    .name{
+    .inputs{
+        .img{
+            width:150px;
+            height:150px;
+            img{
+                width: 140px !important;
+                height: 125px !important;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input{
+                position:absolute;
+                z-index: -1;
+                opacity:0;
+            }
+        }
+        .name{
+            margin-top:15px;
             button{
                 background-color: $MainColor;
                 color:$ThirdColor;
@@ -12,5 +29,7 @@
                     color:$MainColor;
                 }
             }
+        }
     }
-}
+    
+};

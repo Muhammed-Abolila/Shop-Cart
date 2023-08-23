@@ -20,4 +20,4 @@ const ProductCard = ({img}) => {
       </Card>
   )
 };
-export default ProductCard;
+export default ProductCard; 

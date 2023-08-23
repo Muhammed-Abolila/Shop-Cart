@@ -1,13 +1,19 @@
 .product-card{
     box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
     border:1px solid $ThirdColor !important;
+    height:470px !important;
+    img{
+        height:270px;
+        margin-top:20px;
+        padding:0px 10px
+    }
     .card-body{
         padding-bottom:0px;
         .product-icon{
             text-align: left;
-            color:#c1c1c1
+            color:#c1c1c1;
         }
-    }
+    };
     .card-footer{
         background-color: transparent;
         display: flex;

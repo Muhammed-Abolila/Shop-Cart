@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Row } from 'react-bootstrap'
 import brandImg6 from "../../../assets/image/product/thumb-02.jpg";
 const DescountComp = () => {
   return (

@@ -6,7 +6,7 @@ import DescountComp from '../../components/Home/DescountComponent/DescountComp'
 import { Container } from 'react-bootstrap'
 const HomePage = () => {
   return (
-    <section>
+    <section className="pageStyle">
       <Slider/>
       <Container> 
         <CategoryContainer title={"التصنيفات"} btnName={"المزيد"} pathName={"/allcategories"}/>

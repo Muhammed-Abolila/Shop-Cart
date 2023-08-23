@@ -14,7 +14,7 @@ const AddCategoryPage = () => {
                      </Col>
                      <Col sm={7}>
                         <div className='add-category'>
-                            <SubTitle title="أضف تصنيف جديده"/>
+                            <SubTitle title="أضف تصنيف جديد"/>
                             <AddCategory/>
                         </div>
                      </Col>
@@ -23,4 +23,4 @@ const AddCategoryPage = () => {
         </section> 
 )
 };
-export default AddCategoryPage;
+export default AddCategoryPage; 

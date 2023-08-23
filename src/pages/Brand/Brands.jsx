@@ -8,11 +8,12 @@ import brandImg5 from "../../assets/image/face mask.jpg";
 import brandImg6 from "../../assets/image/glutathione.jpg";
 import PaginationComp from '../../components/Utilities/Pagination/Pagination'
 import BrandsCard from '../../components/Brands/BrandsCard/BrandsCard'
+import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
 const BrandsPage = () => {
   return (
     <section>
       <Container className='my-5'>
-        <h4>أشهر الماركات</h4>
+        <SubTitle title="أشهر الماركات"/>
         <Row className='justify-content-evenly'>
             <BrandsCard img={brandImg1}/>
             <BrandsCard img={brandImg2}/>

@@ -1,10 +1,10 @@
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import SubTitle from '../../Utilities/SubTitle/SubTitle';
 import ProductCard from '../../Products/ProductCard/ProductCard';
-import img1 from "../../../assets/image/product/product-01.jpg";
-import img2 from "../../../assets/image/product/product-02.jpg";
-import img3 from "../../../assets/image/product/product-03.jpg";
-import img4 from "../../../assets/image/product/product-04.jpg";
+import img1 from "../../../assets/image/arcaya.jpg";
+import img2 from "../../../assets/images/clothe.png";
+import img3 from "../../../assets/images/labtop.png";
+import img4 from "../../../assets/images/mobile.png";
 const ProductContainer = ({title,btnName,pathName}) => {
   return (
     <section className='mt-5'> 

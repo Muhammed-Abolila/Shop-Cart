@@ -13,5 +13,4 @@ const BrandsCard = ({img}) => {
     </Col>
   )
 }
-
-export default BrandsCard
+export default BrandsCard;

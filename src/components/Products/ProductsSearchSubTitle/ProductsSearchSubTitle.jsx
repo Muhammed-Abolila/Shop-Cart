@@ -1,8 +1,6 @@
-import { faArrowDownShortWide } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col,Dropdown,Row } from 'react-bootstrap';
-
+import {BiSortDown} from "react-icons/bi";
 const ProductsSearchSubTitle = () => {
   return (
     <div className='ProductsSearchSubTitle mt-4'>
@@ -15,7 +13,7 @@ const ProductsSearchSubTitle = () => {
           <Dropdown className='text-start'>
             <Dropdown.Toggle variant="success" id="dropdown-basic">
               <p>
-                  <FontAwesomeIcon icon={faArrowDownShortWide} />
+                  <BiSortDown/>
                   الترتيب حسب
                 </p>
             </Dropdown.Toggle>
