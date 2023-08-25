@@ -17,7 +17,7 @@ export const getCategoryApi=()=>{
         }  
     }
 };
-// Get Limit Category Data Based On Page Number
+// Get Limited Category Data Based On Page Number
 export const getLimitCategoryApi=(PageNumber)=>{
     return async(dispatch)=>{
         try{

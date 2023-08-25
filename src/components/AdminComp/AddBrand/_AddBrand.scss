@@ -1,16 +1,36 @@
 .add-brand{
-    .name{
-            button{
-                background-color: $MainColor;
-                color:$ThirdColor;
-                border:1px solid $ThirdColor;
-                transition: all .4s;
-                padding:10px;
-                margin-top:10px;
-                &:hover{
-                    background-color: $ThirdColor;
-                    color:$MainColor;
-                }
+    .inputs{
+        .img{
+            width:150px;
+            height:150px;
+            position: relative;
+            img{
+                width:140px;
+                height:125px;
+                border-radius: 5px;
+                cursor: pointer;
             }
+            input{
+                position:absolute;
+                opacity: 0;
+                z-index: -1;         
+             }
+            }
+        .name{
+            margin-top:15px;
+                button{
+                    background-color: $MainColor;
+                    color:$ThirdColor;
+                    border:1px solid $ThirdColor;
+                    transition: all .4s;
+                    padding:10px;
+                    margin-top:10px;
+                    &:hover{
+                        background-color: $ThirdColor;
+                        color:$MainColor;
+                    }
+                }
+        }
     }
+    
 }

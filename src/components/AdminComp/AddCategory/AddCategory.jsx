@@ -7,7 +7,7 @@ let [CategoryImg,onImageChange,onNameChange,CategoryName,handleCategoryData]=Adm
         <div className="img">
           <div>صوره التصنيف</div>
           <div>
-            <label htmlFor="upload-img">
+            <label htmlFor="category-img">
               <img 
                 src={CategoryImg} 
                 className="my-2" 
@@ -15,7 +15,7 @@ let [CategoryImg,onImageChange,onNameChange,CategoryName,handleCategoryData]=Adm
             </label>
             <input
                 type="file" 
-                id="upload-img" 
+                id="category-img" 
                 onChange={onImageChange}
                 />
           </div>

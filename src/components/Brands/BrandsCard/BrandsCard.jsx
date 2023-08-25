@@ -1,16 +1,8 @@
-import React from 'react'
-import { Col } from 'react-bootstrap'
-
-const BrandsCard = ({img}) => {
+const BrandsCard = ({img,alt}) => {
   return (
-    <Col 
-    sm={4}
-    xl={2}
-    >
       <div className='brand-img my-4'>
-        <img className='w-100' src={img} alt="" />
+        <img className='w-100' src={img} alt={alt} />
       </div>
-    </Col>
   )
 }
-export default BrandsCard;
+export default BrandsCard; 

@@ -1,5 +1,4 @@
 import Spinner from 'react-bootstrap/Spinner';
-
 function GrowExample() {
   return (
     <div className="spinner-container">

@@ -16,4 +16,4 @@ const AllCategoriesPageHook = () => {
     return[CategoryData,Pagination,Loading,getPageCount,backgroundColor]
 };
 
-export default AllCategoriesPageHook
+export default AllCategoriesPageHook;

@@ -8,9 +8,9 @@ const CategoryContainer = ({title,btnName,pathName}) => {
   return (
     <section className='mt-5'> 
         <SubTitle title={title} btnName={btnName} pathName={pathName}/>
-        <Row>
+        <Row className="justify-content-between">
           {CategoryData.data?(
-            CategoryData.data.slice(0,6).map((item,index)=>
+            CategoryData.data.slice(0,5).map((item,index)=>
               <CategoryCard key={index} img={item.image} category={item.name} background={backgroundColor[index]}/>
             )
           ):null}

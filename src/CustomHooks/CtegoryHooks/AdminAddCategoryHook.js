@@ -15,7 +15,7 @@ const AdminAddCategoryHook = () => {
         setCategoryImg(URL.createObjectURL(e.target.files[0]));
         setSelectedImage(e.target.files[0]);
       }else{
-        setSelectedImage(imgLogo);
+        setCategoryImg(imgLogo);
       } 
     };
     // When Admin Write Category Name 

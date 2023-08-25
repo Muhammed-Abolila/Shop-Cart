@@ -1,7 +1,6 @@
 import { FETCH_CATEGORY_API, GET_ERROR,CREATE_CATEGORY } from "../Type/Type";
 let InitValue={
     CategoryApi:[],
-    Pages:0,
     loading:true
 };
 export const CategoryReducer=(state=InitValue,action)=>{

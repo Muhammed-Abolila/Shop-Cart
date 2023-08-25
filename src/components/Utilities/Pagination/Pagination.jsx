@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
-const PaginationComp = ({PaginationData,getPageCount}) => {
+const PaginationComp = ({PaginationData,getPageCount}) => { 
     function handlePageClick(e){
       getPageCount(e.selected+1)     
     }
-   const pageCount= 2 //PaginationData.numberOfPages;
+   const pageCount=10//PaginationData.numberOfPages;
   return (
     <>
       <ReactPaginate
