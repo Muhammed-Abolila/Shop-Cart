@@ -3,7 +3,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 import SideBar from '../../components/AdminComp/SideBarComp/SideBar';
 import AddBrand from '../../components/AdminComp/AddBrand/AddBrand';
 import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
-
 const AddBrandPage = () => {
     return(
         <section className="pageStyle pt-3">

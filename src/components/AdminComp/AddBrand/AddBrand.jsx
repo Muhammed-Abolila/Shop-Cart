@@ -1,35 +1,7 @@
-import React, { useState } from 'react';
-import imgLogo from "../../../assets/image/img-logo.png"
-import { useDispatch } from 'react-redux';
-import { postBrandDataWithImage } from '../../../Redux/Actions/BrandActions';
+import { ToastContainer } from 'react-toastify';
+import AdminAddBrandHook from '../../../CustomHooks/BrandsHooks/AdminAddBrandHook';
 const AddBrand = () => {
-
-
-  let [brandImg,setBrandImg]=useState(imgLogo);
-  let [brandName,setBrandName]=useState("");
-  let [selectedImage,setSelectedImage]=useState(null);
-  let dispatch=useDispatch()
-  // When Admin Change Image
-    const onImageChange=(e)=>{
-      if(e.target.files&&e.target.files[0]){
-        setBrandImg(URL.createObjectURL(e.target.files[0]));
-        setSelectedImage(e.target.files[0])
-      }
-    }
-
-    // When Admin Change Name
-  const onNameChange=(e)=>{
-    setBrandName(e.target.value);
-  }
-
-  const handleBrandData=()=>{
-    let formData=new FormData();
-    formData.append("name",brandName);
-    formData.append("image",selectedImage);
-    dispatch(postBrandDataWithImage(formData));
-    setBrandImg(imgLogo);
-    setBrandName("")
-  }
+  let [brandImg,brandName,onImageChange,onNameChange,handleBrandData]=AdminAddBrandHook()
   return (
       <div className="inputs mt-3">
         <div className="img">
@@ -42,7 +14,8 @@ const AddBrand = () => {
         <div className="name text-start">
           <input className="form-control input-style" type="text" placeholder='اسم الماركه' value={brandName} onChange={onNameChange}/>
           <button className='btn' onClick={handleBrandData}>حفظ التعديلات</button>
-        </div> 
+        </div>
+        <ToastContainer /> 
       </div>
   )
 }

@@ -43,7 +43,7 @@ export const postBrandDataWithImage=(formData)=>{
             let response=await axios.post(`${BaseUrl}/api/v1/brands`,formData,config);
             dispatch({
                 type:CREATE_BRAND,
-                payload:response.data,
+                payload:response,
             })
         }catch(e){
             dispatch({

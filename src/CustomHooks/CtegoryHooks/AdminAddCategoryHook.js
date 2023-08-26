@@ -1,10 +1,11 @@
 import {useState } from 'react';
 import imgLogo from "../../assets/image/img-logo.png";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { postCategoryDataWithImage } from '../../Redux/Actions/CategoryAction';
 import Notifications from '../../CustomHooks/Notifications';
 const AdminAddCategoryHook = () => {
-    let notify=Notifications()
+  let res=useSelector((state)=>state.CategoryReducer.CategoryApi);
+    let [notify]=Notifications(res)
     let [CategoryImg,setCategoryImg]=useState(imgLogo);
     let [CategoryName,setCategoryName] = useState("");
     let [selectedImage,setSelectedImage]=useState(null);
