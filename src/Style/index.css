@@ -1021,6 +1021,10 @@ footer .container ul a, footer .container ul .register .register-content .regist
   color: white;
 }
 
+.add-product .inputs .multiselect-container .search-wrapper {
+  border: none !important;
+}
+
 .add-product .inputs button, .add-product .inputs .register .register-content .form button, .register .register-content .form .add-product .inputs button {
   background-color: white;
   color: #0072bc;
@@ -1034,6 +1038,31 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .add-product .inputs button:hover {
   background-color: #0072bc;
   color: white;
+}
+
+.add-product .inputs .colors-container .colors-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.add-product .inputs .colors-container .colors-inputs .color {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0px 0px 0px 10px;
+  background-position: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.add-product .inputs .colors-container .colors-inputs .color-Picker {
+  position: absolute;
+  background-color: #fff;
 }
 
 .user-sidebar {
