@@ -10,7 +10,7 @@ export const CategoryReducer=(state=InitValue,action)=>{
                 ...state,
                 CategoryApi:action.payload,
                 loading:false,
-            };
+            }; 
         case CREATE_CATEGORY:
             return{
                 ...state,

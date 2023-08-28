@@ -33,7 +33,7 @@ export const getLimitBrandsApi=(number)=>{
             })
         }
     }
-};
+}; 
 
 // Post Brand Data
 export const postBrandDataWithImage=(formData)=>{
