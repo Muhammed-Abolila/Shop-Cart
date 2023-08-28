@@ -12,7 +12,7 @@ const ProductDetails = () => {
         <Container>
             <ItemDetail/>
             <RateAndComments/>
-            <ProductContainer title="منتجات قد تعجبك"/>
+            <ProductContainer title="منتجات قد تعجبك"/> 
         </Container>
     </section>
   )

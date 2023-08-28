@@ -14,7 +14,7 @@ const AddSubCategoryPage = () => {
                      </Col>
                      <Col sm={7}>
                          <div className='add-sub-category'>
-                            <SubTitle title="أضف تصنيف فرعي جديده"/>
+                            <SubTitle title="أضف تصنيف فرعي جديد"/>
                             <AddSubCategory/>
                          </div>
                      </Col>

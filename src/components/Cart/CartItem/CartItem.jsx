@@ -1,6 +1,6 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
-import thumb from "../../../assets/image/product/thumb-01.jpg";
+import thumb from "../../../assets/image/item.png";
 import { AiOutlineDelete } from 'react-icons/ai';
 const CartItem = () => {
   return (

@@ -14,8 +14,9 @@ let [BrandData]=BrandsContainerHook()
               <Col 
                 sm={4}
                 xl={2}
+                key={item._id}
                 >
-                  <BrandsCard key={item._id} img={item.image}/>
+                  <BrandsCard  img={item.image}/>
               </Col>
               )
             ):null}

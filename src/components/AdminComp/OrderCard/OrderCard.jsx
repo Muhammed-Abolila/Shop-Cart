@@ -1,5 +1,5 @@
 import React from 'react'
-import thumb from "../../../assets/image/product/thumb-01.jpg";
+import thumb from "../../../assets/image/item.png";
 import { AiOutlineDelete } from 'react-icons/ai';
 import { Col, Row } from 'react-bootstrap'
 const OrderCard = () => {
@@ -15,7 +15,7 @@ const OrderCard = () => {
                         </div>
                     </Col>
                     <Col className='col-9'>
-                        <div className='card-content'>
+                        <div className='card-content'> 
                             <div>
                                 <h6>الالكترونيات</h6>
                                 <p>Lorem  doloribus suscipit sequi accusamus totam? Ea  cumque!</p>

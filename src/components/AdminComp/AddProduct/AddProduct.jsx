@@ -6,7 +6,7 @@ const AddProduct = () => {
     
     <div className="inputs mt-3">
         <div className="img">
-          <label>صوره المنتج</label><br/>
+          <label>صور المنتج</label><br/>
           <img src={imgLogo} className="my-2" alt="" />
         </div>
         <input className="form-control input-style" type="text" placeholder=' اسم  المنتج'/>
@@ -27,7 +27,13 @@ const AddProduct = () => {
           <option value="">التصنيف الرابع</option>
           <option value="">التصنيف الخامس</option>
         </select>
-        <input className="form-control mt-3 input-style" type="text" placeholder='الماركه'/>
+        <select className="form-control mt-3 input-style" name="" id="">
+          <option value="" selected>الماركه</option>
+          <option value="">التصنيف الثاني</option>
+          <option value="">التصنيف الثالث</option>
+          <option value="">التصنيف الرابع</option>
+          <option value="">التصنيف الخامس</option>
+        </select>
         <div className='text-start'>
           <button className='btn'>حفظ التعديلات</button>
         </div>

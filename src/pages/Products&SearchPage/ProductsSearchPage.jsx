@@ -3,10 +3,7 @@ import ProductsSearchNavbar from '../../components/Utilities/ProductsSearchNavBa
 import ProductsSearchSubTitle from '../../components/Products/ProductsSearchSubTitle/ProductsSearchSubTitle';
 import { Col, Container, Row } from 'react-bootstrap';
 import ProductCard from '../../components/Products/ProductCard/ProductCard';
-import img1 from "../../assets/image/product/product-01.jpg";
-import img2 from "../../assets/image/product/product-02.jpg";
-import img3 from "../../assets/image/product/product-03.jpg";
-import img4 from "../../assets/image/product/product-04.jpg";
+import thumb from "../../assets/image/item.png";
 import PaginationComp from '../../components/Utilities/Pagination/Pagination';
 import SlideSearch from '../../components/Products/SlideProductsSearch/SlideProductsSearch';
 const ProductsSearchPage = () => {
@@ -22,19 +19,19 @@ const ProductsSearchPage = () => {
         <Col lg={10}>
           <Row className='justify-content-evenly'>
             <Col xs={10} sm={6} lg={4}>
-              <ProductCard img={img1}/>
+              <ProductCard img={thumb}/>
             </Col>
             <Col  xs={10} sm={6} lg={4}>
-              <ProductCard img={img2}/>
+              <ProductCard img={thumb}/>
             </Col>
             <Col  xs={10} sm={6} lg={4}>
-              <ProductCard img={img3}/>
+              <ProductCard img={thumb}/>
             </Col>
             <Col  xs={10} sm={6} lg={4}>
-              <ProductCard img={img4}/>
+              <ProductCard img={thumb}/>
             </Col>
             <Col  xs={10} sm={6} lg={4}>
-              <ProductCard img={img4}/>
+              <ProductCard img={thumb}/>
             </Col>
           </Row>
         </Col>

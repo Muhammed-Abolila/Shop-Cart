@@ -24,19 +24,22 @@ const AdminAddBrandHook = () => {
   }
 
   const handleBrandData=()=>{
-    if(selectedImage==null){
-      notify("من فضلك ادخل صوره الماركه");
-    }else if(brandName==""){
-      notify("من فضلك أدخل اسم الماركه");
+    if (!navigator.onLine){
+      notify("الرجاء الإتصال بالإنترنت");
     }else{
-      let formData=new FormData();
-      formData.append("name",brandName);
-      formData.append("image",selectedImage);
-      dispatch(postBrandDataWithImage(formData));
-      setBrandImg(imgLogo);
-      setBrandName("")
+      if(selectedImage==null){
+        notify("من فضلك ادخل صوره الماركه");
+      }else if(brandName==""){
+        notify("من فضلك أدخل اسم الماركه");
+      }else{
+        let formData=new FormData();
+        formData.append("name",brandName);
+        formData.append("image",selectedImage);
+        dispatch(postBrandDataWithImage(formData));
+        setBrandImg(imgLogo);
+        setBrandName("")
+      }
     }
-    
   }
   return [brandImg,brandName,onImageChange,onNameChange,handleBrandData]
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import img1 from "../../../assets/image/product/thumb-01.jpg";
+import thumb from "../../../assets/image/item.png";
 import UserSingleOrder from '../UserSingleOrder/UserSingleOrder';
 
 const UserAllOrders = () => {
@@ -9,9 +9,9 @@ const UserAllOrders = () => {
         <h4>الطلب رقم #21562456</h4>
       </div>
       <div className="user-order-body">
-          <UserSingleOrder img={img1}/>
-          <UserSingleOrder img={img1}/>
-          <UserSingleOrder img={img1}/>
+          <UserSingleOrder img={thumb}/>
+          <UserSingleOrder img={thumb}/>
+          <UserSingleOrder img={thumb}/>
       </div>
       <div className="user-order-footer">
           <div className="status">

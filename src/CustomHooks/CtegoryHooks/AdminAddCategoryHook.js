@@ -25,6 +25,9 @@ const AdminAddCategoryHook = () => {
     };
     // When Admin Click Save Button
     const handleCategoryData=()=>{
+      if (!navigator.onLine){
+        notify("الرجاء الإتصال بالإنترنت");
+      }else{
         if(selectedImage==null){
           notify("من فضلك ادخل صوره الصنف");
           return;
@@ -38,7 +41,8 @@ const AdminAddCategoryHook = () => {
         dispatch(postCategoryDataWithImage(formData));
         setCategoryImg(imgLogo);
         setCategoryName("");   
-    }
+        }
+      }   
     return [CategoryImg,onImageChange,onNameChange,CategoryName,handleCategoryData]
 }
 export default AdminAddCategoryHook;

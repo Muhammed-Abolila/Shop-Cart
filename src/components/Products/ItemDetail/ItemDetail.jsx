@@ -1,6 +1,6 @@
 import React from 'react'
 import { Carousel, Col, Row } from 'react-bootstrap'
-import imgSlider from "../../../assets/image/best seller/voox.jpg";
+import thumb from "../../../assets/image/item.png";
 import PriceComp from '../../Utilities/PriceComp/PriceComp';
 const ItemDetail = () => {
   return (
@@ -10,27 +10,27 @@ const ItemDetail = () => {
                 <Carousel>
                     <Carousel.Item>
                         <div className='slider-img'>
-                            <img src={imgSlider} alt="" />
+                            <img src={thumb} alt="" />
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className='slider-img'>
-                            <img src={imgSlider} alt="" />
+                            <img src={thumb} alt="" />
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className='slider-img'>
-                            <img src={imgSlider} alt="" />
+                            <img src={thumb} alt="" />
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className='slider-img'>
-                            <img src={imgSlider} alt="" />
+                            <img src={thumb} alt="" />
                         </div>
                     </Carousel.Item>
                     <Carousel.Item>
                         <div className='slider-img'>
-                            <img src={imgSlider} alt="" />
+                            <img src={thumb} alt="" />
                         </div>
                     </Carousel.Item>
         

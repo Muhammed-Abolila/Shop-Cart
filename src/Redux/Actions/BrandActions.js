@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BaseUrl, FETCH_BRAND_API, GET_ERROR, CREATE_BRAND } from "../Type/Type";
 // Get All Brands Data For Home Page
-export const FetchBrandsApi=()=>{
+export const getBrandsApi=()=>{
     return async(dispatch)=>{
         try{
             let response=await axios.get(`${BaseUrl}/api/v1/brands`);
