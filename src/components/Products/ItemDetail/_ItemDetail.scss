@@ -3,6 +3,8 @@
         border:1px solid $ThirdColor;
         border-radius: 5px;
         overflow: hidden;
+        min-height:400px;
+        max-height: 400px;
         .carousel-indicators{
             display: none;
         }

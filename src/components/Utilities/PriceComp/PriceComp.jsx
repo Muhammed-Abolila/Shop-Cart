@@ -1,8 +1,8 @@
 import React from 'react'
 
-const PriceComp = () => {
+const PriceComp = ({price}) => {
   return (
-    <div className='price-comp'>434343 جنيه</div>
+    <div className='price-comp'>{price} جنيه</div>
   )
 }
 

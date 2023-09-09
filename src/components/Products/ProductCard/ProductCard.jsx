@@ -1,23 +1,28 @@
 import { Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { BsHeart } from "react-icons/bs";
-const ProductCard = ({img}) => {
+import { BsHeart, BsFillStarFill } from "react-icons/bs";
+const ProductCard = ({CardProductData}) => {
   return (
       <Card className='product-card mt-4'>
-        <Link to="/details/:id" style={{textDecoration:"none"}}>
-          <Card.Img variant="top" src={img} />
+        <Link to={`/details/${CardProductData._id}`} style={{textDecoration:"none"}}>
+          <Card.Img variant="top" src={CardProductData.imageCover} />
         </Link>
       <Card.Body>
-          <div className="product-icon">
+          <div className="fav-icon">
               <BsHeart />
           </div>
-          <Card.Text>هذا المنتج من المنتجات الاكثر مبيعا هذا المنتج من المنتجات الاكثر مبيعا</Card.Text>
+          <Card.Text>{CardProductData.title}</Card.Text>
           <div className="card-footer">
-            <h5 className='price'>880جنيه</h5>
-            <h5 className='price'>880جنيه</h5>
+            <div className="rate">
+              <BsFillStarFill/>
+              <p>{CardProductData.ratingsQuantity}</p>
+            </div>
+            <div className='price'>
+              <h5>{CardProductData.price}جنيه</h5>
+            </div>
           </div>
       </Card.Body>
-      </Card>
+      </Card> 
   )
 };
 export default ProductCard; 

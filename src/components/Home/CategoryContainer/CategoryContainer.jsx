@@ -2,9 +2,8 @@ import React from 'react'
 import CategoryCard from '../../Category/CategoryCard/CategoryCard'
 import SubTitle from '../../Utilities/SubTitle/SubTitle'
 import {Row} from 'react-bootstrap';
-import CategoryContainerHook from '../../../CustomHooks/CtegoryHooks/CategoryContainerHook';
-const CategoryContainer = ({title,btnName,pathName}) => {
-  let [CategoryData,backgroundColor]=CategoryContainerHook()
+import GrowExample from '../../Utilities/Spinner/Spinner';
+const CategoryContainer = ({CategoryData,backgroundColor,title,btnName,pathName}) => {
   return (
     <section className='mt-5'> 
         <SubTitle title={title} btnName={btnName} pathName={pathName}/>
@@ -13,9 +12,9 @@ const CategoryContainer = ({title,btnName,pathName}) => {
             CategoryData.data.slice(0,5).map((item,index)=>
               <CategoryCard key={index} img={item.image} category={item.name} background={backgroundColor[index]}/>
             )
-          ):null}
+          ):<GrowExample/>}
         </Row>
     </section>
   )
-};
+}; 
 export default CategoryContainer;

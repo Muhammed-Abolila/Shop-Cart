@@ -24,7 +24,7 @@ const OrdersPage = () => {
                         
                      </Col>
                  </Row>
-                 <PaginationComp/>
+                 {/* <PaginationComp/> */}
              </Container>
         </section>
 )

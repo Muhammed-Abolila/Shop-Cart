@@ -21,7 +21,7 @@
 @import "../components/Utilities/PriceComp/PriceComp";
 @import "../components/PaymentMethod/PaymentMethod";
 @import "../components/AdminComp/SideBarComp/SideBar";
-@import "../components/AdminComp/AllProductsComp/AllProducts";
+@import "../components/AdminComp/AdminProductCard/AdminProductCard";
 @import "../components/AdminComp/AddBrand/AddBrand";
 @import "../components/AdminComp/AddCategory/AddCategory";
 @import "../components/AdminComp/AddSubCategory/AddSubCategory";
@@ -33,6 +33,8 @@
 @import "../components/UserComp/UserSingleOrder/UserSingleOrder";
 @import "../components//AdminComp/OrderCard/OrderCard";
 @import "../components/Utilities/Spinner/Spinner";
+@import "../components/Utilities/DeleteModal/DeleteModal";
+@import "../components/AdminComp/EdditProduct/EdditProduct";
 
 body{
     direction: rtl;

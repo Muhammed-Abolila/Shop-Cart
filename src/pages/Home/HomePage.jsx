@@ -4,18 +4,21 @@ import BrandsContainer from '../../components/Home/BrandsContainer/BrandsContain
 import CategoryContainer from '../../components/Home/CategoryContainer/CategoryContainer'
 import DescountComp from '../../components/Home/DescountComponent/DescountComp'
 import { Container } from 'react-bootstrap'
+import GrowExample from '../../components/Utilities/Spinner/Spinner';
+import HomePageHook from '../../CustomHooks/HomePage/HomePageHook';
 const HomePage = () => {
+  let [CategoryData,HomeProductData,BrandData,backgroundColor]=HomePageHook()
   return (
     <section className="pageStyle">
       <Slider/>
       <Container> 
-        <CategoryContainer title={"التصنيفات"} btnName={"المزيد"} pathName={"/allcategories"}/>
-        <ProductContainer title={"الأكثر مبيعا"} btnName={"المزيد"}  pathName={"/products"}/>
+        {CategoryData?(<CategoryContainer CategoryData={CategoryData} backgroundColor={backgroundColor} title={"التصنيفات"} btnName={"المزيد"} pathName={"/allcategories"}/>):<GrowExample/>}
+        {HomeProductData?(<ProductContainer ProductData={HomeProductData} title={"الأكثر مبيعا"} btnName={"المزيد"}  pathName={"/products"}/>):<GrowExample/>}  
         <DescountComp/>
-        <ProductContainer title={"أحدث الأزياء"} btnName={"المزيد"}  pathName={"/products"}/>
-        <BrandsContainer title={"أشهر الماركات"} btnName={"المزيد"} pathName={"/brands"}/>
+        {HomeProductData?(<ProductContainer ProductData={HomeProductData} title={"أحدث الأزياء"} btnName={"المزيد"}  pathName={"/products"}/>):<GrowExample/>}
+        {BrandData?(<BrandsContainer BrandData={BrandData} title={"أشهر الماركات"} btnName={"المزيد"} pathName={"/brands"}/>):<GrowExample/>}
       </Container>
     </section>
   )
 };
-export default HomePage; 
+export default HomePage;  

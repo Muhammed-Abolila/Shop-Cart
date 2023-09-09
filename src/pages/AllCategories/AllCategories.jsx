@@ -10,7 +10,7 @@ const AllCategories = () => {
   if(Loading==true){
     return(<GrowExample/>)
   }else{
-    return (
+    return ( 
       <section>
         <Container className='my-5'>
           <SubTitle title="كل التصنيفات"/>
@@ -19,7 +19,7 @@ const AllCategories = () => {
               CategoryData.map((item,index)=><CategoryCard  key={index} img={item.image} category={item.name} background={backgroundColor[Math.floor(Math.random()*6)/1]}/>)
             ):null}
           </Row>
-          <PaginationComp PaginationData={Pagination} getPageCount={getPageCount}/>
+          {Pagination?(<PaginationComp PaginationData={Pagination} getPageCount={getPageCount}/>):null}
         </Container>
       </section>
     )

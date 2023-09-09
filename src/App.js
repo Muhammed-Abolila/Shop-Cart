@@ -23,6 +23,7 @@ import UserProfilePage from "./pages/User/UserProfilePage";
 import UserEdditAddressPage from "./pages/User/UserEdditAddressPage";
 import UserAddAddressPage from "./pages/User/UserAddAddressPage";
 import UserEdditProfilePage from "./pages/User/UserEdditProfilePage";
+import EdditProductPage from "./pages/AdminPages/EdditProductPage";
 function App() {
   return (
     <>
@@ -51,6 +52,9 @@ function App() {
           <Route path="/user/eddit-address" element={<UserEdditAddressPage/>} />
           <Route path="/user/add-address" element={<UserAddAddressPage/>} />
           <Route path="/user/eddit-profile" element={<UserEdditProfilePage/>} />
+          {/* <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} /> */}
+          
+          
         </Routes>
       </BrowserRouter>
         <Footer/>

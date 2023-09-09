@@ -51,7 +51,7 @@ const RateAndComments = () => {
             </div>
         </div>
       </div>
-      <PaginationComp/>
+      {/* <PaginationComp/> */}
     </section>
   )
 }

@@ -18,8 +18,8 @@ const BrandsPage = () => {
           <SubTitle title="أشهر الماركات"/>
           <Row className='justify-content-evenly'>
             {AllBrandsData?(
-              AllBrandsData.map((item)=>
-              <Col sm={4} xl={4}>
+              AllBrandsData.map((item,index)=>
+              <Col key={index} sm={4} xl={4}>
               <BrandsCard key={item._id} img={item.image}/>
               </Col>
                 )

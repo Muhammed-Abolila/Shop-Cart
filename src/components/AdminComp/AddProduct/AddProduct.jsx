@@ -2,7 +2,6 @@ import addLogo from "../../../assets/image/add.png"
 import MultiImageInput from 'react-multiple-image-input';
 import Multiselect from 'multiselect-react-dropdown';
 import { CompactPicker } from 'react-color'
-
 import { ToastContainer } from 'react-toastify';
 import AdminAddProductHook from "../../../CustomHooks/ProductsHooks/AdminAddProductHook";
 const AddProduct = () => {

@@ -1,45 +1,41 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProductsSearchNavbar from '../../components/Utilities/ProductsSearchNavBar/ProductsSearchNavbar';
 import ProductsSearchSubTitle from '../../components/Products/ProductsSearchSubTitle/ProductsSearchSubTitle';
 import { Col, Container, Row } from 'react-bootstrap';
 import ProductCard from '../../components/Products/ProductCard/ProductCard';
-import thumb from "../../assets/image/item.png";
 import PaginationComp from '../../components/Utilities/Pagination/Pagination';
 import SlideSearch from '../../components/Products/SlideProductsSearch/SlideProductsSearch';
+import GrowExample from '../../components/Utilities/Spinner/Spinner';
+import ProductsSearchPageHook from '../../CustomHooks/ProductsHooks/ProductsSearchPageHook';
 const ProductsSearchPage = () => {
+  let [items,pagination,getPageCount,getProduct]=ProductsSearchPageHook();
+    
   return (
     <section className='pageStyle'>
       <ProductsSearchNavbar/>
       <Container>
-      <ProductsSearchSubTitle/>
+      <ProductsSearchSubTitle ProductData={items} getProduct={getProduct}/>
       <Row>
         <Col lg={2}>
-          <SlideSearch/>
+          <SlideSearch getProduct={getProduct}/>
         </Col>
         <Col lg={10}>
           <Row className='justify-content-evenly'>
-            <Col xs={10} sm={6} lg={4}>
-              <ProductCard img={thumb}/>
-            </Col>
-            <Col  xs={10} sm={6} lg={4}>
-              <ProductCard img={thumb}/>
-            </Col>
-            <Col  xs={10} sm={6} lg={4}>
-              <ProductCard img={thumb}/>
-            </Col>
-            <Col  xs={10} sm={6} lg={4}>
-              <ProductCard img={thumb}/>
-            </Col>
-            <Col  xs={10} sm={6} lg={4}>
-              <ProductCard img={thumb}/>
-            </Col>
+            {items.data?(
+              items.data.map((product,index)=>{
+                return(
+                    <Col xs={10} sm={6} lg={4} key={index}>
+                      <ProductCard CardProductData={product}/>
+                    </Col>
+                )})
+            ):<GrowExample/>}
           </Row>
         </Col>
       </Row>
-      <PaginationComp/>
+      {pagination>1?(<PaginationComp PaginationData={pagination} getPageCount={getPageCount}/>):null}
       </Container>  
     </section>
   )
-}
+};
 
 export default ProductsSearchPage

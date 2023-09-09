@@ -186,25 +186,27 @@
   -webkit-box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
   border: 1px solid #0072bc !important;
-  height: 470px !important;
+  height: 400px !important;
+  overflow: hidden;
 }
 
 .product-card img {
   height: 270px;
-  margin-top: 20px;
-  padding: 0px 10px;
+  padding: 20px 10px;
 }
 
 .product-card .card-body {
   padding-bottom: 0px;
 }
 
-.product-card .card-body .product-icon {
+.product-card .card-body .fav-icon {
   text-align: left;
   color: #c1c1c1;
 }
 
-.product-card .card-footer {
+.product-card .card-body .card-footer {
+  padding: 0;
+  margin: 0;
   background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -218,9 +220,22 @@
   border-top: 1px solid #0072bc;
 }
 
-.product-card .card-footer h5 {
-  font-size: 1.1rem;
-  margin: 0;
+.product-card .card-body .card-footer .rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  color: #ffca28;
+}
+
+.product-card .card-body .card-footer .rate svg {
+  font-size: 20px;
+}
+
+.product-card .card-body .card-footer .rate p {
+  font-size: 17px;
+  margin-right: 5px;
+  font-weight: 600;
 }
 
 @media screen and (max-width: 500px) {
@@ -554,7 +569,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .ProductsSearchSubTitle .row .dropdown .dropdown-toggle {
-  width: 160px;
+  width: 170px;
   background-color: white;
   color: #0072bc;
   border-color: #0072bc;
@@ -582,7 +597,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .ProductsSearchSubTitle .row .dropdown .dropdown-menu {
   overflow: hidden;
-  width: 150px;
+  width: 170px;
   margin: 0;
   padding: 0;
 }
@@ -621,6 +636,8 @@ footer .container ul a, footer .container ul .register .register-content .regist
   border: 1px solid #0072bc;
   border-radius: 5px;
   overflow: hidden;
+  min-height: 400px;
+  max-height: 400px;
 }
 
 .item-details .carousel .carousel-indicators {
@@ -925,6 +942,69 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .admin-sidebar ul li:hover, .admin-sidebar ul li:focus {
   color: white;
   background-color: #0072bc;
+}
+
+.admin-product-card {
+  -webkit-box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
+  border: 1px solid #0072bc !important;
+  height: 430px !important;
+  overflow: hidden;
+}
+
+.admin-product-card img {
+  height: 270px;
+  padding: 20px 10px;
+}
+
+.admin-product-card .card-body {
+  padding-bottom: 0px;
+}
+
+.admin-product-card .card-body .fav-icon {
+  text-align: left;
+  color: #c1c1c1;
+}
+
+.admin-product-card .card-body .card-footer {
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid #0072bc;
+}
+
+.admin-product-card .card-body .card-footer .rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  color: #ffca28;
+}
+
+.admin-product-card .card-body .card-footer .rate svg {
+  font-size: 20px;
+}
+
+.admin-product-card .card-body .card-footer .rate p {
+  font-size: 17px;
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 500px) {
+  .card-footer h5 {
+    font-size: .9rem !important;
+  }
 }
 
 .add-brand .inputs .img {
@@ -1407,6 +1487,85 @@ footer .container ul a, footer .container ul .register .register-content .regist
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.modal-container {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000c9;
+  z-index: 999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-container .modal-box {
+  background-color: #fff;
+  width: 25%;
+  padding: 15px 10px;
+  border: 1px solid #0072bc;
+  border-radius: 5px;
+}
+
+.modal-container .modal-box p {
+  margin: 17px 6px;
+}
+
+.modal-container .modal-box .btns {
+  text-align: end;
+}
+
+.eddit-product .inputs .multiselect-container .search-wrapper {
+  border: none !important;
+}
+
+.eddit-product .inputs button, .eddit-product .inputs .register .register-content .form button, .register .register-content .form .eddit-product .inputs button {
+  background-color: white;
+  color: #0072bc;
+  border: 1px solid #0072bc;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.eddit-product .inputs button:hover {
+  background-color: #0072bc;
+  color: white;
+}
+
+.eddit-product .inputs .colors-container .colors-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.eddit-product .inputs .colors-container .colors-inputs .color {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0px 0px 0px 10px;
+  background-position: 100% 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.eddit-product .inputs .colors-container .colors-inputs .color-Picker {
+  position: absolute;
+  background-color: #fff;
 }
 
 body {
