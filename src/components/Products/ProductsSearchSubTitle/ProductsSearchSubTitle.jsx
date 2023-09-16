@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col,Dropdown,Row } from 'react-bootstrap';
 import {BiSortDown} from "react-icons/bi";
-import ProductsSearchPageHook from '../../../CustomHooks/ProductsHooks/ProductsSearchPageHook';
 const ProductsSearchSubTitle = ({ProductData,getProduct}) => {
   const sortByType=(param)=>{
     localStorage.setItem("sortType",param);

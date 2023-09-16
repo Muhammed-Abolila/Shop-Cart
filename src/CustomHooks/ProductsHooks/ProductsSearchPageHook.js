@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { GetProductSearch } from "../../Redux/Actions/ProductActions";
 const ProductsSearchPageHook = () => {
-  
   let dispatch=useDispatch()
   // to make async function and call in another componenets
   const getProduct=async()=>{
@@ -33,14 +32,12 @@ const ProductsSearchPageHook = () => {
     if(localStorage.getItem("endingPrice")!=null){
       priceTo=localStorage.getItem("endingPrice")
     }
-    await dispatch(GetProductSearch(`keyword=${searchWordStorage}&
-    sort=${sort}&${queryCategory}&${queryBrand}&${priceFrom}&${priceTo}`));
+    await dispatch(GetProductSearch(`keyword=${searchWordStorage}&sort=${sort}&${queryCategory}&${queryBrand}&${priceFrom}&${priceTo}`));
   }
   useEffect(()=>{
     getProduct()
   },[]);
-  let ProductData=useSelector((state)=>state.ProductReducer.AllProductApi);
-
+  let ProductData=useSelector((state)=>state.ProductReducer.SearchProductApi);
   let items=[], pagination=[];
   try{
     if(ProductData){
@@ -86,8 +83,7 @@ const ProductsSearchPageHook = () => {
     if(localStorage.getItem("endingPrice")!=null){
       priceTo=localStorage.getItem("endingPrice")
     }
-    await dispatch(GetProductSearch(`page=${pageNumber}&keyword=${searchWordStorage}&
-    sort=${sort}&${queryCategory}&${queryBrand}&${priceFrom}&${priceTo}`));
+    await dispatch(GetProductSearch(`page=${pageNumber}&keyword=${searchWordStorage}&sort=${sort}&${queryCategory}&${queryBrand}&${priceFrom}&${priceTo}`));
   };
   // Sort By DropDown Menu
 let sortFromLocalStorage='',sort;

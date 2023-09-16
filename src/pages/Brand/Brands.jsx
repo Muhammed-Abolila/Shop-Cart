@@ -19,14 +19,14 @@ const BrandsPage = () => {
           <Row className='justify-content-evenly'>
             {AllBrandsData?(
               AllBrandsData.map((item,index)=>
-              <Col key={index} sm={4} xl={4}>
+              <Col key={index} sm={4} xl={3}>
               <BrandsCard key={item._id} img={item.image}/>
               </Col>
                 )
               ):null}
           
           </Row>
-          <PaginationComp PaginationData={Pagination} getPageCount={getPageCount}/>
+          {Pagination>1?(<PaginationComp PaginationData={Pagination} getPageCount={getPageCount}/>):null}
         </Container>
       </section>
     )

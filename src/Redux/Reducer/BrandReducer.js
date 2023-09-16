@@ -1,6 +1,7 @@
 import { FETCH_BRAND_API, GET_ERROR, CREATE_BRAND, GET_BRAND_API_WITH_ID } from "../Type/Type";
 let intialValue={
-    BrandApi:[],
+    PostBrandApi:[],
+    GetAllBrandApi:[],
     SingleBrandApi:[],
     Loading:true
 }
@@ -8,13 +9,13 @@ export const BrandReducer=(state=intialValue,action)=>{
     switch(action.type){
         case CREATE_BRAND:
             return{
-                BrandApi:action.payload,
+                PostBrandApi:action.payload,
                 Loading:false
             }
         case FETCH_BRAND_API:
             return{
                 ...state,
-                BrandApi:action.payload,
+                GetAllBrandApi:action.payload,
                 Loading:false
             };
         case GET_BRAND_API_WITH_ID:

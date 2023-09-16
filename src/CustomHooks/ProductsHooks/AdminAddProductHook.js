@@ -8,9 +8,21 @@ import { useState, useEffect } from 'react';
 const AdminAddProductHook = () => {
     let dispatch=useDispatch();
   // Access To Category Data for Loop
-  let CategoryData=useSelector((state)=>state.CategoryReducer.CategoryApi.data);
+  let AllCategory=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
+  let AllCategoryData=[]
+  if(AllCategory){
+    AllCategoryData=AllCategory.data
+  }else{
+    AllCategoryData=[]
+  }
   // Access To Brand Data for Loop
-  let AllBrandsData=useSelector((state)=>state.BrandReducer.BrandApi.data);
+  let AllBrands=useSelector((state)=>state.BrandReducer.GetAllBrandApi);
+  let AllBrandsData=[]
+  if(AllBrands){
+    AllBrandsData=AllBrands.data
+  }else{
+    AllBrandsData=[]
+  }
   useEffect(() => {
     dispatch(getCategoryApi());
     dispatch(getBrandsApi());
@@ -57,15 +69,22 @@ const AdminAddProductHook = () => {
       setMainCategoryId(e.target.value);
     };
     // Access To SubCategory Data Depend On Category Id For Loop
-    let subCategoryDataDependCategoryId=useSelector((state)=>state.subCategoryReducer.subCategoryApi.data)
+    let subCategoryDataDependCategoryId=useSelector((state)=>state.subCategoryReducer.GetSubCategoryWithId);
+    let AllSubCategoryDataDependCategoryId=[];
+    if(subCategoryDataDependCategoryId){
+      AllSubCategoryDataDependCategoryId=subCategoryDataDependCategoryId.data
+    }else{
+      AllSubCategoryDataDependCategoryId=[]
+    }
     // Show Sub Category Depend On Category Id
     const [options,setOptions]=useState([]);
     const [selectedSubCategory,setSelectedSubCategory]=useState([])
       useEffect(()=>{
-        if(subCategoryDataDependCategoryId!==""||subCategoryDataDependCategoryId!==0){
-          setOptions(subCategoryDataDependCategoryId)
+        if(AllSubCategoryDataDependCategoryId!==""||AllSubCategoryDataDependCategoryId!==0){
+          setOptions(AllSubCategoryDataDependCategoryId)
         }
-      },[subCategoryDataDependCategoryId])
+      },[AllSubCategoryDataDependCategoryId]);
+      
       const onSelect=(selectedList)=>{
         setSelectedSubCategory(selectedList)
       }
@@ -102,6 +121,8 @@ const AdminAddProductHook = () => {
   } 
   // Notification
   let notifyStatus=useSelector((state)=>state.ProductReducer.CreateProductApi);
+  console.log(notifyStatus);
+  
   let [notify]=Notifications(notifyStatus)
     // Admin Send Data To Api
     const handleProductData=()=>{
@@ -144,12 +165,12 @@ const AdminAddProductHook = () => {
           setPriceAfterDescount("سعر المنتج");
           setQty("");
           setMainCategoryId("");
-          setSelectedSubCategory([]);
+          setSelectedSubCategory('');
           setBrandId("");
           setSelectedColors([]);
         }
     }
-    return [CategoryData,AllBrandsData,images,productName,onProductNameChange,productDesc,onProductDescChange,
+    return [AllCategoryData,AllBrandsData,images,productName,onProductNameChange,productDesc,onProductDescChange,
             priceBeforeDescount,onPriceBeforeDescountChange,priceAfterDescount,onPriceAfterDescountChange,qty,
             onQtyChange,onSelectMainCategory,options,onSelect,onRemove,onSelectBrands,showPicker,handleChangeComplete,
             removeColor,handleProductData,setImages,selectedColors,setShowPicker]

@@ -1,10 +1,10 @@
-import {useState } from 'react';
+import {useState, useEffect } from 'react';
 import imgLogo from "../../assets/image/img-logo.png";
 import { useDispatch, useSelector } from 'react-redux';
-import { postCategoryDataWithImage } from '../../Redux/Actions/CategoryAction';
+import { postCategoryDataWithImage, getCategoryApi } from '../../Redux/Actions/CategoryAction';
 import Notifications from '../../CustomHooks/Notifications';
 const AdminAddCategoryHook = () => {
-  let res=useSelector((state)=>state.CategoryReducer.CategoryApi);
+  let res=useSelector((state)=>state.CategoryReducer.PostCategoryApi);
     let [notify]=Notifications(res)
     let [CategoryImg,setCategoryImg]=useState(imgLogo);
     let [CategoryName,setCategoryName] = useState("");
@@ -40,7 +40,7 @@ const AdminAddCategoryHook = () => {
         formData.append("image",selectedImage);
         dispatch(postCategoryDataWithImage(formData));
         setCategoryImg(imgLogo);
-        setCategoryName("");   
+        setCategoryName("");
         }
       }   
     return [CategoryImg,onImageChange,onNameChange,CategoryName,handleCategoryData]

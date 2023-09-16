@@ -4,5 +4,5 @@ const BrandsCard = ({img,alt}) => {
         <img className='w-100' src={img} alt={alt} />
       </div>
   )
-}
+};
 export default BrandsCard; 

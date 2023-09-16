@@ -5,11 +5,11 @@ import { CompactPicker } from 'react-color'
 import { ToastContainer } from 'react-toastify';
 import AdminAddProductHook from "../../../CustomHooks/ProductsHooks/AdminAddProductHook";
 const AddProduct = () => {
-const [CategoryData,AllBrandsData,images,productName,onProductNameChange,productDesc,onProductDescChange,
+const [AllCategoryData,AllBrandsData,images,productName,onProductNameChange,productDesc,onProductDescChange,
        priceBeforeDescount,onPriceBeforeDescountChange,priceAfterDescount,onPriceAfterDescountChange,qty,
        onQtyChange,onSelectMainCategory,options,onSelect,onRemove,onSelectBrands,showPicker,handleChangeComplete,
        removeColor,handleProductData,setImages,selectedColors,setShowPicker]=AdminAddProductHook()
-    
+  
   return (
     <div className="inputs mt-3">
         <div className="img">
@@ -33,7 +33,7 @@ const [CategoryData,AllBrandsData,images,productName,onProductNameChange,product
         <input className="form-control mt-3 input-style" type="number" placeholder='الكميه'  value={qty} onChange={onQtyChange}/>
         <select className="form-control mt-3 input-style" onChange={onSelectMainCategory}>
           <option value={0}>التصنيف الرئيسى</option>
-          {CategoryData?(CategoryData.map((item)=><option key={item._id} value={item._id}>{item.name}</option>)):null}
+          {AllCategoryData?(AllCategoryData.map((item)=><option key={item._id} value={item._id}>{item.name}</option>)):null}
         </select>
         <Multiselect
           options={options}
@@ -67,7 +67,7 @@ const [CategoryData,AllBrandsData,images,productName,onProductNameChange,product
           
         </div>
         <div className='text-start'>
-          <button className='btn' onClick={handleProductData}>حفظ التعديلات</button>
+          <button className='btn' onClick={handleProductData}>حفظ</button>
         </div>
         <ToastContainer />
     </div>

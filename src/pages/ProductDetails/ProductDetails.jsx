@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ProductsSearchNavbar from '../../components/Utilities/ProductsSearchNavBar/ProductsSearchNavbar'
 import { Container } from 'react-bootstrap'
 import ProductContainer from '../../components/Home/ProductContainer/ProductContainer'
@@ -7,16 +7,15 @@ import RateAndComments from '../../components/Products/Rate&Comments/RateAndComm
 import { useParams } from 'react-router';
 import ProductDetailsHook from '../../CustomHooks/ProductsHooks/ProductDetailsHook';
 const ProductDetails = () => {
-  let {id}=useParams()
-  let [oneProduct,oneCategory,oneBrand,SameProductData]=ProductDetailsHook(id)
+  let {id}=useParams();
+  let [oneProduct,oneCategory,oneBrand,SameProductData,reloadWhenChooseProduct]=ProductDetailsHook(id);
   return (
     <section className='product-details pb-5 pageStyle'>
         <ProductsSearchNavbar/>
         <Container>
             <ItemDetail oneProduct={oneProduct} oneCategory={oneCategory} oneBrand={oneBrand}/>
             <RateAndComments/>
-            {SameProductData?(<ProductContainer ProductData={SameProductData} title="منتجات قد تعجبك"/>):null}
-            
+            {SameProductData?(<ProductContainer ProductData={SameProductData} reloadWhenChooseProduct={reloadWhenChooseProduct} title="منتجات قد تعجبك"/>):null}
         </Container>
     </section>
   )

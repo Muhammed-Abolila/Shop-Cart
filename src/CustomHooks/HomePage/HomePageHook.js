@@ -10,10 +10,10 @@ const HomePageHook = () => {
         dispatch(getCategoryApi())
         dispatch(GetProductData());
         dispatch(getBrandsApi())
-    },[]);
-    let CategoryData=useSelector((state)=>state.CategoryReducer.CategoryApi);
+    },[]); 
+    let CategoryData=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
     let HomeProductData=useSelector((state)=>state.ProductReducer.AllProductApi.data);
-    let BrandData=useSelector((state)=>state.BrandReducer.BrandApi);
+    let BrandData=useSelector((state)=>state.BrandReducer.GetAllBrandApi);
     return [CategoryData,HomeProductData,BrandData,backgroundColor]
 }
 export default HomePageHook

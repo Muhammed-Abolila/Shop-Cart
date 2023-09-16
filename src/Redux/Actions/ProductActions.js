@@ -1,6 +1,6 @@
 import axios from "axios";
 import { BaseUrl, CREATE_PRODUCT, GET_ERROR,GET_ALL_PRODUCTS,GET_PRODUCT_WITH_ID
-,GET_SAME_PRODUCTS,DELETE_PRODUCT,UPDATE_PRODUCT} from "../Type/Type";
+,GET_SAME_PRODUCTS,DELETE_PRODUCT,UPDATE_PRODUCT,GET_PRODUCT_SEARCH} from "../Type/Type";
 // Post product Data
 export const PostProductApi=(data)=>{
     return async(dispatch)=>{
@@ -40,7 +40,7 @@ export const GetProductData=()=>{
 export const GetLimitProductApi=(pageNumber)=>{
     return async(dispatch)=>{
         try{
-            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=8&page=${pageNumber}`);            
+            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=9&page=${pageNumber}`);            
             dispatch({
                 type:GET_ALL_PRODUCTS,
                 payload:response.data
@@ -103,21 +103,23 @@ export const deleteProduct=(productId)=>{
             })
         }
     }
-};
+};  
 // Update Product
-export const updateProduct=(productId)=>{
+export const updateProduct=(productId,data)=>{
     return async(dispatch)=>{
         try{
-            let response=await axios.get(`${BaseUrl}/api/v1/products/${productId}`);
+            let config={headers:{"Content-Type":"multipart/form-data"}}
+            let response=await axios.put(`${BaseUrl}/api/v1/products/${productId}`,data,config);
+            console.log("response",response);
             dispatch({
                 type:UPDATE_PRODUCT,
-                payload:response.data
-            })
+                payload:response
+            });
         }catch(e){
             dispatch({
                 type:GET_ERROR,
                 payload:"Error"+e
-            })
+            });
         }
     }
 };
@@ -125,9 +127,9 @@ export const updateProduct=(productId)=>{
 export const GetProductSearch=(QueryString)=>{
     return async(dispatch)=>{
         try{
-            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=8&${QueryString}`);
+            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=9&${QueryString}`);
             dispatch({
-                type:GET_ALL_PRODUCTS,
+                type:GET_PRODUCT_SEARCH,
                 payload:response.data,
             });
         }catch(e){

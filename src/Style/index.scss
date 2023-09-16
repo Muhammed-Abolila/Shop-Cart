@@ -38,11 +38,12 @@
 
 body{
     direction: rtl;
+    position:relative !important;
 }
 .pageStyle{
     background-color:$pageColor !important;
     min-height: 670px !important;
-    padding-bottom: 40px  !important;
+    padding-bottom: 70px  !important;
 }
 .btn-style{
     border:1px solid $ThirdColor !important;

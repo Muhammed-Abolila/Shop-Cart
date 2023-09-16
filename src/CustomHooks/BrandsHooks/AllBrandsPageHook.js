@@ -3,9 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getLimitBrandsApi } from '../../Redux/Actions/BrandActions';
 
 const AllBrandsPageHook = () => {
-    let AllBrandsData=useSelector((state)=>state.BrandReducer.BrandApi.data);
+    let Brands=useSelector((state)=>state.BrandReducer.GetAllBrandApi);
     let Loading=useSelector((state)=>state.BrandReducer.Loading);
-    let Pagination=useSelector((state)=>state.BrandReducer.BrandApi.paginationResult);
+    let AllBrandsData,Pagination;
+    if(Brands.data){
+      AllBrandsData=Brands.data;
+      Pagination=Brands.paginationResult.numberOfPages
+    }else{
+      AllBrandsData=[];
+      Pagination={}
+    }
     let dispatch=useDispatch();
     useEffect(()=>{
       dispatch(getLimitBrandsApi(1))

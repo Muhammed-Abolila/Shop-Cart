@@ -21,5 +21,5 @@ const AddBrandPage = () => {
              </Container>
         </section>
 )
-}; 
+};
 export default AddBrandPage;

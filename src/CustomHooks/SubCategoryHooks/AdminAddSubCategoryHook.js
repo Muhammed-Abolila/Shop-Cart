@@ -9,12 +9,17 @@ const AdminAddSubCategoryHook = () => {
     let [name,setName]=useState("");
     let [id,setId]=useState("0");
     let dispatch=useDispatch();
-   //  get data from categoryApi to loop
-   let CategoryData=useSelector((state)=>state.CategoryReducer.CategoryApi);
-    useEffect(() => {
+   useEffect(() => {
      dispatch(getCategoryApi());
-     }, []);
-     
+    },[]);   
+     // get data from categoryApi to loop
+   let Category=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
+   let catData=[]
+   if(Category){
+    catData=Category.data
+   }else{
+    catData=[]
+   };
    // on admin Change Sub Category Name
     const onSubNameChange=(e)=>{
      setName(e.target.value);
@@ -38,9 +43,8 @@ const AdminAddSubCategoryHook = () => {
         setId("0");
       }
      }
-     
    };
-   return [name,CategoryData,onSubNameChange,onMainCategoryChange,handleSubCategoryData];
+   return [name,catData,onSubNameChange,onMainCategoryChange,handleSubCategoryData];
 }
 
 export default AdminAddSubCategoryHook;

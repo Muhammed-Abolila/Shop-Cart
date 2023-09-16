@@ -2,15 +2,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GetProductDataWithId, GetTheSameProducts } from '../../Redux/Actions/ProductActions';
 import { GetCategoryWithId } from '../../Redux/Actions/CategoryAction';
 import { GetBrandDataWithId } from '../../Redux/Actions/BrandActions';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 const ProductDetailsHook = (id) => {
+    let [itemId,setItemId]=useState(id)
+    const reloadWhenChooseProduct=(param)=>{
+      setItemId(param);
+    };
+    
     let dispatch=useDispatch();
     // Get Single Product Data
     useEffect(()=>{
-        dispatch(GetProductDataWithId(id));
-    },[]);
+         dispatch(GetProductDataWithId(itemId));
+    },[itemId]);
     let singleProductData=useSelector((state)=>state.ProductReducer.SingleProductApi);
-    // to be sure data is return with Out Undefined
+    // to be sure data is return without Undefined
     let oneProduct=[];
     if(singleProductData.data){
         oneProduct=singleProductData.data
@@ -49,7 +54,7 @@ const ProductDetailsHook = (id) => {
 
   // To Show Products You May Like Section
     let SameProductData=useSelector((state)=>state.ProductReducer.SameProducts.data);
-    return [oneProduct,oneCategory,oneBrand,SameProductData]
+    return [oneProduct,oneCategory,oneBrand,SameProductData,reloadWhenChooseProduct]
 }
 
 export default ProductDetailsHook

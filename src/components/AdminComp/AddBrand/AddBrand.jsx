@@ -13,11 +13,10 @@ const AddBrand = () => {
         </div>
         <div className="name text-start">
           <input className="form-control input-style" type="text" placeholder='اسم الماركه' value={brandName} onChange={onNameChange}/>
-          <button className='btn' onClick={handleBrandData}>حفظ التعديلات</button>
+          <button className='btn' onClick={handleBrandData}>حفظ</button>
         </div>
         <ToastContainer /> 
       </div>
   )
 }
-
 export default AddBrand

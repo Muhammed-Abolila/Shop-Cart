@@ -4,7 +4,7 @@ import PriceComp from '../../Utilities/PriceComp/PriceComp';
 const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => { 
   return ( 
     <section className='item-details my-3 py-4'>
-                <Row>
+                <Row> 
                     <Col lg={4}>
                     <Carousel>
                         {oneProduct.images?(

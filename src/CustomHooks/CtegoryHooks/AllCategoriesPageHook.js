@@ -2,9 +2,16 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import {getLimitCategoryApi } from '../../Redux/Actions/CategoryAction'
 const AllCategoriesPageHook = () => {
-    let CategoryData=useSelector((state)=>state.CategoryReducer.CategoryApi.data);
-    let Pagination=useSelector((state)=>state.CategoryReducer.CategoryApi.paginationResult);
+    let Category=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
     let Loading=useSelector((state)=>state.CategoryReducer.loading);
+    let CategoryData,PaginationData;
+    if(Category.data){
+      CategoryData=Category.data;
+      PaginationData=Category.paginationResult.numberOfPages
+    }else{
+      CategoryData=[];
+      PaginationData={}
+    } 
     let dispatch=useDispatch();
     useEffect(()=>{
       dispatch(getLimitCategoryApi(1))
@@ -13,7 +20,6 @@ const AllCategoriesPageHook = () => {
       dispatch(getLimitCategoryApi(param));
     }
     let backgroundColor=["#ffd3e8","#f4dba5","#55cfdf","#8d9ddb","#60db78","#f4dba5"];
-    return[CategoryData,Pagination,Loading,getPageCount,backgroundColor]
+    return[CategoryData,PaginationData,Loading,getPageCount,backgroundColor]
 };
-
 export default AllCategoriesPageHook;

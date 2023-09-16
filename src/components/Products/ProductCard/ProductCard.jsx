@@ -1,10 +1,13 @@
 import { Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { BsHeart, BsFillStarFill } from "react-icons/bs";
-const ProductCard = ({CardProductData}) => {
+const ProductCard = ({CardProductData,reloadWhenChooseProduct}) => {
+  function getId(param){
+    reloadWhenChooseProduct(param)
+  }
   return (
       <Card className='product-card mt-4'>
-        <Link to={`/details/${CardProductData._id}`} style={{textDecoration:"none"}}>
+        <Link to={`/details/${CardProductData._id}`} onClick={()=>getId(CardProductData._id)} style={{textDecoration:"none"}}>
           <Card.Img variant="top" src={CardProductData.imageCover} />
         </Link>
       <Card.Body>

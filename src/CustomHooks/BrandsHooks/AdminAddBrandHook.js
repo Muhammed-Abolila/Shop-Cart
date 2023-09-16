@@ -4,7 +4,7 @@ import { useDispatch, useSelector, } from 'react-redux';
 import {postBrandDataWithImage} from "../../Redux/Actions/BrandActions";
 import Notifications from "../Notifications"
 const AdminAddBrandHook = () => {
-  let notifyStatus=useSelector((state)=>state.BrandReducer.BrandApi);
+  let notifyStatus=useSelector((state)=>state.BrandReducer.PostBrandApi);
   let [notify]=Notifications(notifyStatus)
   let [brandImg,setBrandImg]=useState(imgLogo);
   let [brandName,setBrandName]=useState("");

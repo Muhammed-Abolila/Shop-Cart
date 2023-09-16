@@ -2,7 +2,7 @@ import { Col, Row } from 'react-bootstrap';
 import SubTitle from '../../Utilities/SubTitle/SubTitle';
 import ProductCard from '../../Products/ProductCard/ProductCard';
 import GrowExample from '../../Utilities/Spinner/Spinner';
-const ProductContainer = ({ProductData,title,btnName,pathName}) => {
+const ProductContainer = ({ProductData,title,btnName,pathName,reloadWhenChooseProduct}) => {
   return (
     <section className='mt-5'> 
       <SubTitle title={title} btnName={btnName} pathName={pathName}/>
@@ -11,7 +11,7 @@ const ProductContainer = ({ProductData,title,btnName,pathName}) => {
           ProductData.slice(0,4).map((product,index)=>{
             return(
               <Col xs={6} lg={3} key={index}>
-                <ProductCard CardProductData={product}/>
+                <ProductCard CardProductData={product} reloadWhenChooseProduct={reloadWhenChooseProduct}/>
               </Col>
             )
           })
@@ -20,5 +20,4 @@ const ProductContainer = ({ProductData,title,btnName,pathName}) => {
   </section> 
   )
 }; 
-
 export default ProductContainer

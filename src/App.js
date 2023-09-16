@@ -10,7 +10,6 @@ import BrandsPage from "./pages/Brand/Brands";
 import ProductsSearchPage from "./pages/Products&SearchPage/ProductsSearchPage";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import PaymentMethodPage from "./pages/PaymentMethod/PaymentMethodPage";
-import AllProducts from "./pages/AdminPages/AllProductsPage";
 import OrdersPage from "./pages/AdminPages/OrdersPage";
 import AddCategoryPage from "./pages/AdminPages/AddCategoryPage";
 import AddBrandPage from "./pages/AdminPages/AddBrandPage";
@@ -24,6 +23,7 @@ import UserEdditAddressPage from "./pages/User/UserEdditAddressPage";
 import UserAddAddressPage from "./pages/User/UserAddAddressPage";
 import UserEdditProfilePage from "./pages/User/UserEdditProfilePage";
 import EdditProductPage from "./pages/AdminPages/EdditProductPage";
+import AdminManageProductPage from "./pages/AdminPages/AdminManageProductsPage";
 function App() {
   return (
     <>
@@ -39,7 +39,7 @@ function App() {
           <Route path="/products" element={<ProductsSearchPage/>}/>
           <Route path="/details/:id" element={<ProductDetails/>} />
           <Route path="/paymethods" element={<PaymentMethodPage/>} />
-          <Route path="/admin/allproducts" element={<AllProducts/>} />
+          <Route path="/admin/manageproduct" element={<AdminManageProductPage/>} />
           <Route path="/admin/orders" element={<OrdersPage/>} />
           <Route path="/admin/addbrand" element={<AddBrandPage/>} />
           <Route path="/admin/addcategory" element={<AddCategoryPage/>} />
@@ -52,7 +52,7 @@ function App() {
           <Route path="/user/eddit-address" element={<UserEdditAddressPage/>} />
           <Route path="/user/add-address" element={<UserAddAddressPage/>} />
           <Route path="/user/eddit-profile" element={<UserEdditProfilePage/>} />
-          {/* <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} /> */}
+          <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} />
           
           
         </Routes>

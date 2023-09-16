@@ -1,6 +1,10 @@
 .pagination{
+    position: absolute;;
+    bottom: 50px;
+    left: 50%;
+    right: 50%;
     padding: 20px 0px !important;
-    margin: 0 !important;
+    margin:0px !important;
     .page-item{
         .page-link{
             &:focus{

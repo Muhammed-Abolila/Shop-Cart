@@ -28,10 +28,10 @@ let [CategoryImg,onImageChange,onNameChange,CategoryName,handleCategoryData]=Adm
             onChange={onNameChange} 
             value={CategoryName}
             />
-          <button className='btn' onClick={handleCategoryData}> حفظ التعديلات</button>
+          <button className='btn' onClick={handleCategoryData}>حفظ</button>
         </div> 
         <ToastContainer />
       </div>
   )
-};
+}; 
 export default AddCategory

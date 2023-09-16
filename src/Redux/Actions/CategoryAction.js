@@ -17,12 +17,12 @@ export const postCategoryDataWithImage=(formData)=>{
             })
         }
     }
-};
-// Get All Category Data
+};  
+// Get All Category Data 
 export const getCategoryApi=()=>{
     return async(dispatch)=>{
         try{
-            let response=await axios.get(`${BaseUrl}/api/v1/categories`);
+            let response=await axios.get(`${BaseUrl}/api/v1/categories`);            
             dispatch({
                 type:FETCH_CATEGORY_API,
                 payload:response.data,
@@ -38,7 +38,7 @@ export const getCategoryApi=()=>{
 // Get Limited Category Data Based On Page Number
 export const getLimitCategoryApi=(PageNumber)=>{
     return async(dispatch)=>{
-        try{
+        try{ 
             let response=await axios.get(`${BaseUrl}/api/v1/categories?limit=12&page=${PageNumber}`);
             dispatch({
                 type:FETCH_CATEGORY_API,

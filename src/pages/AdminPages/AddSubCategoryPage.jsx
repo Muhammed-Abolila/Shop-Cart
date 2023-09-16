@@ -22,5 +22,5 @@ const AddSubCategoryPage = () => {
              </Container>
         </section>
 )
-};
+};  
 export default AddSubCategoryPage;

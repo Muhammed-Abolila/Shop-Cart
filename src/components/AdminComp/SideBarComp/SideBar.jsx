@@ -8,7 +8,7 @@ const SideBar = () => {
           <Link to="/admin/orders" style={{textDecoration:"none"}}>
               <li>إداره الطلبات</li>
           </Link>
-          <Link to="/admin/allproducts" style={{textDecoration:"none"}}>
+          <Link to="/admin/manageproduct" style={{textDecoration:"none"}}>
               <li>إداره المنتجات</li>
           </Link>
           <Link to="/admin/addbrand" style={{textDecoration:"none"}}>

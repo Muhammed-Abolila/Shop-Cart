@@ -28,7 +28,7 @@ const Login = () => {
 
 
 
-              <Link to="/admin/allproducts">
+              <Link to="/admin/manageproduct">
                 <span>الدخول بحساب الأدمن</span>
               </Link><br/>
               <Link to="/user/allorders">

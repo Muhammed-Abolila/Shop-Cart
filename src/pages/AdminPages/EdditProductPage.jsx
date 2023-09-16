@@ -22,4 +22,4 @@ const EdditProductPage = () => {
         </section>
     )
 };
-export default EdditProductPage
+export default EdditProductPage;

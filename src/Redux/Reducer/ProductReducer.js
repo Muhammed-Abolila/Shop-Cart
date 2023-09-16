@@ -1,5 +1,5 @@
 import { GET_ERROR, CREATE_PRODUCT, GET_ALL_PRODUCTS,GET_PRODUCT_WITH_ID, 
-    GET_SAME_PRODUCTS, DELETE_PRODUCT, UPDATE_PRODUCT } from "../Type/Type";
+    GET_SAME_PRODUCTS, DELETE_PRODUCT, UPDATE_PRODUCT,GET_PRODUCT_SEARCH } from "../Type/Type";
 let intialValue={
     CreateProductApi:[],
     AllProductApi:[],
@@ -7,6 +7,7 @@ let intialValue={
     SameProducts:[],
     DeleteProduct:[],
     UpdateProductApi:[],
+    SearchProductApi:[],
     Loading:true,
 }
 export const ProductReducer=(state=intialValue,action)=>{
@@ -49,6 +50,12 @@ export const ProductReducer=(state=intialValue,action)=>{
             return{
                 ProductApi:action.payload,
                 Loading:true
+            }
+        case GET_PRODUCT_SEARCH:
+            return{
+                ...state,
+                SearchProductApi:action.payload,
+                Loading:false,
             }
             default:
                 return state

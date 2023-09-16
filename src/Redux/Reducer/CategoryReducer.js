@@ -1,23 +1,25 @@
 import { FETCH_CATEGORY_API, GET_ERROR,CREATE_CATEGORY, GET_CATEGORY_DATA_WITH_ID } from "../Type/Type";
 let InitValue={
-    CategoryApi:[],
+    PostCategoryApi:[],
+    GetCategoryApi:[],
     SingleCategoryApi:[],
     loading:true
 };
 export const CategoryReducer=(state=InitValue,action)=>{
     switch(action.type){
-        case FETCH_CATEGORY_API:
-            return {
-                ...state,
-                CategoryApi:action.payload,
-                loading:false,
-            }; 
         case CREATE_CATEGORY:
             return{
                 ...state,
-                CategoryApi:action.payload,
+                PostCategoryApi:action.payload,
                 loading:false,
             }
+        case FETCH_CATEGORY_API:
+            return {
+                ...state,
+                GetCategoryApi:action.payload,
+                loading:false,
+            }; 
+        
         case GET_CATEGORY_DATA_WITH_ID:
             return{
                 SingleCategoryApi:action.payload,
