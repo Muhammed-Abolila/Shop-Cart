@@ -12,47 +12,9 @@ import { getCategoryApi } from "../../../Redux/Actions/CategoryAction";
 import { getBrandsApi } from "../../../Redux/Actions/BrandActions";
 import { getSubCategoryDataWithMaincategoryId } from "../../../Redux/Actions/SubCategoryActions";
 import Notifications from "../../../CustomHooks/Notifications";
+import { array } from "prop-types";
 const EdditProduct = () => {
 let {id}=useParams();
-let dispatch=useDispatch();
-
-useEffect(()=>{
-  const run=async()=>{
-    await dispatch(GetProductDataWithId(id));
-    await dispatch(getCategoryApi());
-    await dispatch(getBrandsApi())
-  }
-  run()
-},[]);
-let singleProduct=useSelector((state)=>state.ProductReducer.SingleProductApi);
-let allcategories=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
-let allbrands=useSelector((state)=>state.BrandReducer.GetAllBrandApi);
-
-let singleProductData,allCategoriesData,allBrandsData;
-try{ 
-  if(singleProduct){
-    singleProductData=singleProduct.data
-  }else{
-    singleProductData=[]
-  };
-  if(allcategories){
-    allCategoriesData=allcategories.data;
-  }else{
-    allCategoriesData=[]
-  };
-  if(allbrands){
-    allBrandsData=allbrands.data;
-  }else{
-    allBrandsData=[]
-  }
-
-}catch(err){
-  console.log(err)
-}
-
-console.log("singleProductData",singleProductData);
-
-
 let [images,setImages]=useState([]);
 let [productName,setProductName]=useState('');
 let [productDesc,setProductDesc]=useState('');
@@ -64,19 +26,32 @@ let [options,setOptions]=useState([]);
 let [selectedSubCategory,setSelectedSubCategory]=useState([])
 let [brandId,setBrandId]=useState('');
 let [selectedColors,setSelectedColors]=useState([]);
+let dispatch=useDispatch();
 useEffect(()=>{
-  if(singleProductData){
-  setImages([singleProductData.images])
-  setProductName(singleProductData.title);
-  setProductDesc(singleProductData.description);
-  setPriceBeforeDescount(singleProductData.price);
-  setQty(singleProductData.quantity);
-  setCatId(singleProductData.category);
-  setBrandId(singleProductData.brand);
-  setSelectedColors(singleProductData.availableColors)
-}
-},[singleProductData])
-
+  const run=async()=>{
+    await dispatch(GetProductDataWithId(id));
+    await dispatch(getCategoryApi());
+    await dispatch(getBrandsApi())
+  }
+  run()
+},[]);
+let singleProduct=useSelector((state)=>state.ProductReducer.SingleProductApi);
+let allCategoriesData=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
+let allBrandsData=useSelector((state)=>state.BrandReducer.GetAllBrandApi);
+useEffect(()=>{
+  try{
+    if(singleProduct){
+      setImages([singleProduct.data.images])
+      setProductName(singleProduct.data.title);
+      setProductDesc(singleProduct.data.description);
+      setPriceBeforeDescount(singleProduct.data.price);
+      setQty(singleProduct.data.quantity);
+      setCatId(singleProduct.data.category);
+      setBrandId(singleProduct.data.brand);
+      setSelectedColors(singleProduct.data.availableColors)
+    }
+  }catch(e){}
+},[singleProduct])
 const onNameChange=(e)=>{
   setProductName(e.target.value);
 };
@@ -95,7 +70,6 @@ const onQtyChange=(e)=>{
 const onSelectMainCategory=(e)=>{
   setCatId(e.target.value)
 }
-
 let subCategoryDataDependCategoryId=useSelector((state)=>state.subCategoryReducer.GetSubCategoryWithId);
 let allSubCategoryData;
 if (subCategoryDataDependCategoryId){
@@ -119,12 +93,9 @@ const onSelect=(selectedList)=>{
 const onRemove=(selectedList)=>{
   setSelectedSubCategory(selectedList);
 }
-
-
 const onBrandChange=(e)=>{
   setBrandId(e.target.value)
 }
-
 let [showPicker,setShowPicker]=useState(false)
 const handleChangeComplete = (color) => {
     setSelectedColors([...selectedColors,color.hex]);
@@ -147,44 +118,45 @@ function dataURLtoFile(dataurl, filename) {
   return new File([u8arr], filename, {type:mime});
 } 
 
-// convert url to file
-async function createFile(imgUrl){
-  let response = await fetch(`${imgUrl}`);
-  let data = await response.blob();
-  let metadata = {
-    type: 'image/jpeg'
-  };
-  let file = new File([data], "test.jpg", metadata);
-  // ... do something with the file or return it
-}
 // Notification
 let notifyStatus=useSelector((state)=>state.ProductReducer.UpdateProductApi);
-console.log("notifyStatus",notifyStatus);
-
-// let [notify]=Notifications(notifyStatus)
-console.log("reload");
+let [notify]=Notifications(notifyStatus)
 
   const handleData=()=>{
-    console.log(images);
-    
     let imgsAfterConvert;
-    if(images.length<=1000){
-      imgsAfterConvert=Array.from(Array(Object.keys(images).length).keys()).map((item,index)=>
-      createFile(images[index]));
+    let text = images[0];
+    let result = text.includes("base64");
+    if(images==""){
+      notify("من فضلك أدخل صوره المنتج")
+    }else if(productName==""){
+      notify("من فضلك أدخل إسم المنتج")
+    }else if(productDesc==""){
+      notify("من قضلك أدخل وصف للمنتج")
+    }else if(priceAfterDescount=="سعر المنتج"){
+      notify("من فضلك أدخل السعر النهائي للمنتج")
+    }else if(qty=="الكميه"){
+      notify("من فضلك أدخل كميه المنتج")
+    }else if(catId==""){
+      notify("من فضلك أدخل التصنيف الرئيسي للمنتج")
+    }else if(selectedSubCategory==""){
+      notify("من فضلك أدخل التصنيف الفرعي للمنتج")
+    }else if(brandId==""){
+      notify("من فضلك أدخل ماركه المنتج")
     }else{
-      imgsAfterConvert=Array.from(Array(Object.keys(images).length).keys()).map((item,index)=>
-        dataURLtoFile(images[index],Math.random()+".png"));
-    }
         let formData=new FormData();
         formData.append("title",productName)
         formData.append("description",productDesc)
         formData.append("quantity",qty)
         formData.append("price",priceBeforeDescount)
-        formData.append("imageCover",imgsAfterConvert[0])
         formData.append("category",catId)
         formData.append("brand",brandId);
+        if(result===true){
+          imgsAfterConvert=Array.from(Array(Object.keys(images).length).keys()).map((item,index)=>
+          dataURLtoFile(images[index],Math.random()+".png"));
+          formData.append("imageCover",imgsAfterConvert[0]);
+          imgsAfterConvert.map((img)=>formData.append("images",img))
+        }else{}
         // the way to send array with form data
-        imgsAfterConvert.map((img)=>formData.append("images",img))
         selectedColors.map((Colors)=>formData.append("availableColors",Colors))
         selectedSubCategory.map((SubCategory)=>formData.append("subcategory",SubCategory._id));
         dispatch(updateProduct(id,formData));
@@ -200,6 +172,7 @@ console.log("reload");
         setSelectedColors([]);
 
   }
+}
 
   return (
     <div className="inputs mt-3">
@@ -217,12 +190,8 @@ console.log("reload");
             }}
           />
         </div>
-
-
         <input className="form-control input-style" type="text" placeholder=' اسم  المنتج' value={productName} onChange={onNameChange}/>
-
         <textarea className="form-control mt-3 input-style" name="" id="" cols="30" rows="3" placeholder='وصف المنتج' value={productDesc} onChange={onDescChange}></textarea>
-        
         <input className="form-control mt-3 input-style" type="number" placeholder='السعر قبل الخصم' value={priceBeforeDescount} onChange={onPriceBeforeDescountChange}/>
         
         <input className="form-control mt-3 input-style" type="number" placeholder=' سعر  المنتج'  value={priceAfterDescount} onChange={onPriceAfterDescountChange}/>
@@ -231,7 +200,7 @@ console.log("reload");
         
         <select className="form-control mt-3 input-style" value={catId} onChange={onSelectMainCategory}>
           <option value={0}>التصنيف الرئيسى</option>
-          {allCategoriesData?(allCategoriesData.map((item)=><option key={item._id} value={item._id}>{item.name}</option>)):null}
+          {allCategoriesData.data?(allCategoriesData.data.map((item)=><option key={item._id} value={item._id}>{item.name}</option>)):null}
         </select>
         <Multiselect
           options={options}
@@ -243,7 +212,7 @@ console.log("reload");
           />
         <select className="form-control mt-3 input-style" value={brandId} onChange={onBrandChange}>
           <option value={0}>الماركه</option>
-          {allBrandsData?(allBrandsData.map((item)=><option key={item._id} value={item._id}>{item.name}</option>)):null}
+          {allBrandsData.data?(allBrandsData.data.map((item)=><option key={item._id} value={item._id}>{item.name}</option>)):null}
         </select>
 
 

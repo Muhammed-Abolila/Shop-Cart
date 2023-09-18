@@ -24,13 +24,17 @@ import UserAddAddressPage from "./pages/User/UserAddAddressPage";
 import UserEdditProfilePage from "./pages/User/UserEdditProfilePage";
 import EdditProductPage from "./pages/AdminPages/EdditProductPage";
 import AdminManageProductPage from "./pages/AdminPages/AdminManageProductsPage";
+import ForgotPasswordPage from "./pages/Auth/ForgotPassword/ForgotPasswordPage";
+import VerifyCodePage from "./pages/Auth/VerifyCode/VerifyCodePage";
+import RePasswordPage from "./pages/Auth/RePassword/RePasswordPage";
 function App() {
   return (
     <>
-      <NavbarLogin/>
       <BrowserRouter>
+      <NavbarLogin/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
+          <Route path="/home" element={<HomePage/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/allcategories" element={<AllCategories/>}/>
@@ -45,6 +49,7 @@ function App() {
           <Route path="/admin/addcategory" element={<AddCategoryPage/>} />
           <Route path="/admin/addsubcategory" element={<AddSubCategoryPage/>} />
           <Route path="/admin/addproduct" element={<AddProductPage/>} />
+          <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} />
           <Route path="/user/allorders" element={<UserAllOrdersPage/>} />
           <Route path="/user/favproduct" element={<UserFavProductPage/>} />
           <Route path="/user/address" element={<UserAddressPage/>} />
@@ -52,8 +57,13 @@ function App() {
           <Route path="/user/eddit-address" element={<UserEdditAddressPage/>} />
           <Route path="/user/add-address" element={<UserAddAddressPage/>} />
           <Route path="/user/eddit-profile" element={<UserEdditProfilePage/>} />
-          <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} />
+          <Route path="/user/forgot-password" element={<ForgotPasswordPage/>} />
+          <Route path="/user/verify" element={<VerifyCodePage/>} />
+          <Route path="/user/re-password" element={<RePasswordPage/>} />
+
           
+
+
           
         </Routes>
       </BrowserRouter>

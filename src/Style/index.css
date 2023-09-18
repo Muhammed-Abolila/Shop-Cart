@@ -29,8 +29,43 @@
   border: 2px solid #0072bc;
 }
 
-.navbar .navbar-collapse .navbar-nav .nav-link {
+.navbar .navbar-collapse .navbar-nav .dropdown {
+  margin-top: 13px;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.navbar .navbar-collapse .navbar-nav .dropdown .nav-link::after {
+  margin: 0;
+  margin-right: 6px !important;
+}
+
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu {
+  padding: 0px !important;
+  background-color: #030303 !important;
+  color: white !important;
+  overflow: hidden;
+}
+
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu a {
+  padding: 15px !important;
+  -webkit-transition: background-color .4s,color .4s;
+  transition: background-color .4s,color .4s;
+}
+
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu a:hover {
+  background-color: white !important;
+  color: #0072bc !important;
+}
+
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu .dropdown-divider {
+  background-color: white !important;
+  margin: 0px !important;
+}
+
+.navbar .navbar-collapse .navbar-nav a {
   color: white;
+  text-decoration: none !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,12 +78,12 @@
   padding: 10px;
 }
 
-.navbar .navbar-collapse .navbar-nav .nav-link svg {
+.navbar .navbar-collapse .navbar-nav a svg {
   font-size: 20px;
 }
 
-.navbar .navbar-collapse .navbar-nav .nav-link p {
-  margin-top: 15px;
+.navbar .navbar-collapse .navbar-nav a p {
+  margin-top: 13px;
   margin-right: 5px;
 }
 
@@ -315,98 +350,6 @@ footer .container ul a, footer .container ul .register .register-content .regist
         -ms-flex-pack: center !important;
             justify-content: center !important;
     padding: 10px;
-  }
-}
-
-.login, .register {
-  height: 80vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.login .login-content, .register .login-content, .register .register-content {
-  width: 60%;
-  text-align: center;
-}
-
-.login .login-content h3, .register .login-content h3, .register .register-content h3 {
-  font-size: 23px;
-}
-
-.login .login-content .form input:focus, .register .login-content .form input:focus, .register .register-content .form input:focus {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  border: 1px solid #0072bc;
-}
-
-.login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
-  background-color: #0072bc;
-  color: white;
-  width: 50%;
-}
-
-.login .login-content .login-footer, .register .login-content .login-footer, .register .register-content .login-footer, .register .register-content .register-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.login .login-content .login-footer a, .register .login-content .login-footer a, .register .register-content .login-footer a, .register .register-content .register-footer a {
-  text-decoration: none !important;
-  margin-right: 5px;
-}
-
-.login .login-content .login-footer a span, .register .login-content .login-footer a span, .register .register-content .login-footer a span, .register .register-content .register-footer a span {
-  color: #0072bc;
-}
-
-@media screen and (max-width: 460px) {
-  .login .login-content, .register .login-content, .register .register-content {
-    padding: 0;
-  }
-  .login .login-content h3, .register .login-content h3, .register .register-content h3 {
-    font-size: 17px;
-  }
-  .login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
-    width: 80%;
-  }
-  .login .login-content .login-footer, .register .login-content .login-footer, .register .register-content .login-footer, .register .register-content .register-footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-.register .register-content h3 {
-  font-size: 23px;
-}
-
-@media screen and (max-width: 430px) {
-  .login .login-content, .register .login-content, .register .register-content {
-    padding: 0;
-  }
-  .login .login-content h3, .register .login-content h3, .register .register-content h3 {
-    font-size: 17px;
-  }
-  .login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
-    width: 80%;
-  }
-  .login .login-content .login-footer, .register .login-content .login-footer, .register .register-content .login-footer, .register .register-content .register-footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
 }
 
@@ -1574,6 +1517,190 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .eddit-product .inputs .colors-container .colors-inputs .color-Picker {
   position: absolute;
   background-color: #fff;
+}
+
+.login, .register {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .login-content, .register .login-content, .register .register-content {
+  width: 60%;
+  text-align: center;
+}
+
+.login .login-content h3, .register .login-content h3, .register .register-content h3 {
+  font-size: 23px;
+}
+
+.login .login-content .form input:focus, .register .login-content .form input:focus, .register .register-content .form input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #0072bc;
+}
+
+.login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
+  background-color: #0072bc;
+  color: white;
+  width: 50%;
+}
+
+.login .login-content .login-footer, .register .login-content .login-footer, .register .register-content .login-footer, .register .register-content .register-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login .login-content .login-footer a, .register .login-content .login-footer a, .register .register-content .login-footer a, .register .register-content .register-footer a {
+  text-decoration: none !important;
+  margin-right: 5px;
+}
+
+.login .login-content .login-footer a span, .register .login-content .login-footer a span, .register .register-content .login-footer a span, .register .register-content .register-footer a span {
+  color: #0072bc;
+}
+
+@media screen and (max-width: 460px) {
+  .login .login-content, .register .login-content, .register .register-content {
+    padding: 0;
+  }
+  .login .login-content h3, .register .login-content h3, .register .register-content h3 {
+    font-size: 17px;
+  }
+  .login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
+    width: 80%;
+  }
+  .login .login-content .login-footer, .register .login-content .login-footer, .register .register-content .login-footer, .register .register-content .register-footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.register .register-content h3 {
+  font-size: 23px;
+}
+
+@media screen and (max-width: 430px) {
+  .login .login-content, .register .login-content, .register .register-content {
+    padding: 0;
+  }
+  .login .login-content h3, .register .login-content h3, .register .register-content h3 {
+    font-size: 17px;
+  }
+  .login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
+    width: 80%;
+  }
+  .login .login-content .login-footer, .register .login-content .login-footer, .register .register-content .login-footer, .register .register-content .register-footer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.forgot-password {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.forgot-password .forgot-password-content {
+  width: 60%;
+  text-align: center;
+}
+
+.forgot-password .forgot-password-content h3 {
+  font-size: 23px;
+}
+
+.forgot-password .forgot-password-content .form input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #0072bc;
+}
+
+.forgot-password .forgot-password-content .form button {
+  background-color: #0072bc;
+  color: white;
+  width: 50%;
+}
+
+@media screen and (max-width: 460px) {
+  .forgot-password .login-content, .forgot-password .register .register-content, .register .forgot-password .register-content {
+    padding: 0;
+  }
+  .forgot-password .login-content h3, .forgot-password .register .register-content h3, .register .forgot-password .register-content h3 {
+    font-size: 17px;
+  }
+  .forgot-password .login-content .form button, .forgot-password .register .register-content .form button, .register .forgot-password .register-content .form button {
+    width: 80%;
+  }
+}
+
+.verify {
+  height: 80vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.verify .verify-content {
+  width: 60%;
+  text-align: center;
+}
+
+.verify .verify-content h3 {
+  font-size: 23px;
+}
+
+.verify .verify-content .form input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #0072bc;
+}
+
+.verify .verify-content .form button {
+  background-color: #0072bc;
+  color: white;
+  width: 50%;
+}
+
+@media screen and (max-width: 460px) {
+  .verify .verify-content {
+    padding: 0;
+  }
+  .verify .verify-content h3 {
+    font-size: 17px;
+  }
+  .verify .verify-content .form button {
+    width: 80%;
+  }
 }
 
 body {

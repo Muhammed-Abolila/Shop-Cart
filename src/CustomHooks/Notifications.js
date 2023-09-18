@@ -7,8 +7,8 @@ const Notifications = (res) => {
           toast.success(msg);
         }else if(res.status!=201||res.status!=200){
           toast.error(msg);
-        }
-      } 
+        }};
+         
       useEffect(()=>{
         if(res.status==201||res.status==200){
           notify(res.statusText);

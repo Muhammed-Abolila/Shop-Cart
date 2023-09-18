@@ -7,8 +7,6 @@
 @import "../components/Brands/BrandsCard/BrandsCard";
 @import "../components/Home/DescountComponent/DescountComp";
 @import "../components/Utilities/Footer/Footer";
-@import "../pages/Auth/Login/Login";
-@import "../pages/Auth/Register/Register";
 @import "../components/Utilities/Pagination/pagination";
 @import "../components/Utilities/Pagination/pagination";
 @import "../components/Products/SlideProductsSearch/SlideProductsSearch";
@@ -35,6 +33,10 @@
 @import "../components/Utilities/Spinner/Spinner";
 @import "../components/Utilities/DeleteModal/DeleteModal";
 @import "../components/AdminComp/EdditProduct/EdditProduct";
+@import "../pages/Auth/Login/Login";
+@import "../pages/Auth/Register/Register";
+@import "../pages/Auth/ForgotPassword/forgot-password";
+@import "../pages/Auth/VerifyCode/verify";
 
 body{
     direction: rtl;

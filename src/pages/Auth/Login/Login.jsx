@@ -1,8 +1,10 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-
+import { ToastContainer } from 'react-toastify';
+import LoginPageHook from '../../../CustomHooks/Auth/LoginPageHook';
 const Login = () => {
+let [loginEmail,loginPassword,onLoginEmailChange,onLoginPasswordChange,onSubmit]=LoginPageHook()
   return (
     <section>
       <Container>
@@ -10,14 +12,29 @@ const Login = () => {
           <div className="login-content py-5 px-4">
             <h3>تسجيل الدخول</h3>
             <div className="form my-4">
-              <input className='form-control' type="text" placeholder='اسم المستخدم'/>
-              <input className='form-control my-3' type="password" placeholder='كلمة المرور' />
-              <button className='btn'>الدخول</button>
+              <input 
+                value={loginEmail}
+                onChange={onLoginEmailChange}
+                className='form-control' 
+                type="email" 
+                placeholder='البريد الإلكتروني'/>
+              <input
+                value={loginPassword}
+                onChange={onLoginPasswordChange} 
+                className='form-control my-3' 
+                type="password" 
+                placeholder='كلمة المرور' />
+              <button className='btn' onClick={onSubmit}>الدخول</button>
             </div>
             <div className='login-footer'>
               <p>ليس لديك حساب؟</p>
               <Link to="/register">
                 <span>إضغط هنا</span>
+              </Link>
+            </div>
+            <div className='login-footer'>
+              <Link to="/user/forgot-password">
+                <span>هل نسيت كلمه السر؟</span>
               </Link>
             </div>
           </div>
@@ -35,6 +52,7 @@ const Login = () => {
                 <span>الدخول بحساب المستخدم</span>
               </Link>
       </Container>
+      <ToastContainer autoClose={2000}/>
     </section>
   )
 }
