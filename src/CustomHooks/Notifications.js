@@ -16,5 +16,4 @@ const Notifications = (res) => {
       },[res])
       return [notify]
 }
-
 export default Notifications

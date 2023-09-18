@@ -27,7 +27,12 @@ import AdminManageProductPage from "./pages/AdminPages/AdminManageProductsPage";
 import ForgotPasswordPage from "./pages/Auth/ForgotPassword/ForgotPasswordPage";
 import VerifyCodePage from "./pages/Auth/VerifyCode/VerifyCodePage";
 import RePasswordPage from "./pages/Auth/RePassword/RePasswordPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 function App() {
+  let tokenRole=''
+  if(localStorage.getItem("user")!=null){
+     tokenRole=JSON.parse(localStorage.getItem("user"));
+  };
   return (
     <>
       <BrowserRouter>
@@ -35,36 +40,39 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>}/>
           <Route path="/home" element={<HomePage/>}/>
-          <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/forgot-password" element={<ForgotPasswordPage/>} />
+          <Route path="/verify" element={<VerifyCodePage/>} />
+          <Route path="/re-password" element={<RePasswordPage/>} />
           <Route path="/allcategories" element={<AllCategories/>}/>
           <Route path="/cart" element={<Cart/>}/>
           <Route path="/brands" element={<BrandsPage/>}/>
           <Route path="/products" element={<ProductsSearchPage/>}/>
           <Route path="/details/:id" element={<ProductDetails/>} />
           <Route path="/paymethods" element={<PaymentMethodPage/>} />
-          <Route path="/admin/manageproduct" element={<AdminManageProductPage/>} />
-          <Route path="/admin/orders" element={<OrdersPage/>} />
-          <Route path="/admin/addbrand" element={<AddBrandPage/>} />
-          <Route path="/admin/addcategory" element={<AddCategoryPage/>} />
-          <Route path="/admin/addsubcategory" element={<AddSubCategoryPage/>} />
-          <Route path="/admin/addproduct" element={<AddProductPage/>} />
-          <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} />
-          <Route path="/user/allorders" element={<UserAllOrdersPage/>} />
-          <Route path="/user/favproduct" element={<UserFavProductPage/>} />
-          <Route path="/user/address" element={<UserAddressPage/>} />
-          <Route path="/user/profile" element={<UserProfilePage/>} />
-          <Route path="/user/eddit-address" element={<UserEdditAddressPage/>} />
-          <Route path="/user/add-address" element={<UserAddAddressPage/>} />
-          <Route path="/user/eddit-profile" element={<UserEdditProfilePage/>} />
-          <Route path="/user/forgot-password" element={<ForgotPasswordPage/>} />
-          <Route path="/user/verify" element={<VerifyCodePage/>} />
-          <Route path="/user/re-password" element={<RePasswordPage/>} />
-
-          
-
-
-          
+          {tokenRole.role==="admin"?(
+            <>
+            <Route path="/admin/manageproduct" element={<AdminManageProductPage/>} />
+            <Route path="/admin/orders" element={<OrdersPage/>} />
+            <Route path="/admin/addbrand" element={<AddBrandPage/>} />
+            <Route path="/admin/addcategory" element={<AddCategoryPage/>} />
+            <Route path="/admin/addsubcategory" element={<AddSubCategoryPage/>} />
+            <Route path="/admin/addproduct" element={<AddProductPage/>} />
+            <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} />
+            </>
+          ):tokenRole.role==="user"?(
+            <>
+            <Route path="/user/allorders" element={<UserAllOrdersPage/>} />
+            <Route path="/user/favproduct" element={<UserFavProductPage/>} />
+            <Route path="/user/address" element={<UserAddressPage/>} />
+            <Route path="/user/profile" element={<UserProfilePage/>} />
+            <Route path="/user/eddit-address" element={<UserEdditAddressPage/>} />
+            <Route path="/user/add-address" element={<UserAddAddressPage/>} />
+            <Route path="/user/eddit-profile" element={<UserEdditProfilePage/>} />
+            </>
+          ):null}
+          <Route path="*" element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>
         <Footer/>

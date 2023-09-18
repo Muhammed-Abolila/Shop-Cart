@@ -20,6 +20,7 @@
 }
 
 .navbar .navbar-collapse .search {
+  width: 65% !important;
   border: 2px solid transparent;
 }
 
@@ -1701,6 +1702,19 @@ footer .container ul a, footer .container ul .register .register-content .regist
   .verify .verify-content .form button {
     width: 80%;
   }
+}
+
+.notfound {
+  height: 100vh;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
 }
 
 body {

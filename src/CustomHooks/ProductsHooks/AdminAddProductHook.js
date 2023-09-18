@@ -10,19 +10,23 @@ const AdminAddProductHook = () => {
   // Access To Category Data for Loop
   let AllCategory=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
   let AllCategoryData=[]
-  if(AllCategory){
-    AllCategoryData=AllCategory.data
-  }else{
-    AllCategoryData=[]
-  }
+  try{
+    if(AllCategory){
+      AllCategoryData=AllCategory.data
+    }else{
+      AllCategoryData=[]
+    }
+  }catch(e){}
   // Access To Brand Data for Loop
   let AllBrands=useSelector((state)=>state.BrandReducer.GetAllBrandApi);
   let AllBrandsData=[]
-  if(AllBrands){
-    AllBrandsData=AllBrands.data
-  }else{
-    AllBrandsData=[]
-  }
+  try{
+    if(AllBrands){
+      AllBrandsData=AllBrands.data
+    }else{
+      AllBrandsData=[]
+    }
+  }catch(e){}
   useEffect(() => {
     dispatch(getCategoryApi());
     dispatch(getBrandsApi());
@@ -71,11 +75,13 @@ const AdminAddProductHook = () => {
     // Access To SubCategory Data Depend On Category Id For Loop
     let subCategoryDataDependCategoryId=useSelector((state)=>state.subCategoryReducer.GetSubCategoryWithId);
     let AllSubCategoryDataDependCategoryId=[];
-    if(subCategoryDataDependCategoryId){
-      AllSubCategoryDataDependCategoryId=subCategoryDataDependCategoryId.data
-    }else{
-      AllSubCategoryDataDependCategoryId=[]
-    }
+    try{
+      if(subCategoryDataDependCategoryId){
+        AllSubCategoryDataDependCategoryId=subCategoryDataDependCategoryId.data
+      }else{
+        AllSubCategoryDataDependCategoryId=[]
+      }
+    }catch(e){}
     // Show Sub Category Depend On Category Id
     const [options,setOptions]=useState([]);
     const [selectedSubCategory,setSelectedSubCategory]=useState([])
@@ -83,7 +89,7 @@ const AdminAddProductHook = () => {
         if(AllSubCategoryDataDependCategoryId!==""||AllSubCategoryDataDependCategoryId!==0){
           setOptions(AllSubCategoryDataDependCategoryId)
         }
-      },[AllSubCategoryDataDependCategoryId]);
+      },[subCategoryDataDependCategoryId]);
       
       const onSelect=(selectedList)=>{
         setSelectedSubCategory(selectedList)
@@ -91,6 +97,7 @@ const AdminAddProductHook = () => {
       const onRemove=(selectedList)=>{
         setSelectedSubCategory(selectedList);
       };
+      
     // Admin Select Brands
     const [brandId,setBrandId]=useState("");
     const onSelectBrands=(e)=>{
@@ -120,10 +127,15 @@ const AdminAddProductHook = () => {
       return new File([u8arr], filename, {type:mime});
   } 
   // Notification
-  let notifyStatus=useSelector((state)=>state.ProductReducer.CreateProductApi);
-  console.log(notifyStatus);
+  let product=useSelector((state)=>state.ProductReducer.CreateProductApi);
   
-  let [notify]=Notifications(notifyStatus)
+  let productData=[]
+  try{
+    if(product){
+      productData=product
+    }
+  }catch(e){}
+  let [notify]=Notifications(productData)
     // Admin Send Data To Api
     const handleProductData=()=>{
         const imgsAfterConvert=Array.from(Array(Object.keys(images).length).keys()).map((item,index)=>

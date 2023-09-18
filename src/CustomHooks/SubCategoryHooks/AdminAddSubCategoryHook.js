@@ -4,7 +4,13 @@ import { postSubCategoryData } from '../../Redux/Actions/SubCategoryActions';
 import { useState, useEffect } from 'react';
 import Notifications from "../Notifications";
 const AdminAddSubCategoryHook = () => {
-    let SubCategoryData=useSelector((state)=>state.subCategoryReducer.subCategoryApi);
+    let SubCategory=useSelector((state)=>state.subCategoryReducer.subCategoryApi);
+    let SubCategoryData=[];
+    try{
+      if(SubCategory){
+        SubCategoryData=SubCategory
+      }
+    }catch(e){}
     let [notify]=Notifications(SubCategoryData);
     let [name,setName]=useState("");
     let [id,setId]=useState("0");
@@ -15,11 +21,13 @@ const AdminAddSubCategoryHook = () => {
      // get data from categoryApi to loop
    let Category=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
    let catData=[]
-   if(Category){
-    catData=Category.data
-   }else{
-    catData=[]
-   };
+   try{
+    if(Category){
+      catData=Category.data
+     }else{
+      catData=[]
+     };
+   }catch(e){}
    // on admin Change Sub Category Name
     const onSubNameChange=(e)=>{
      setName(e.target.value);

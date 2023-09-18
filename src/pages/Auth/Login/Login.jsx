@@ -33,24 +33,12 @@ let [loginEmail,loginPassword,onLoginEmailChange,onLoginPasswordChange,onSubmit]
               </Link>
             </div>
             <div className='login-footer'>
-              <Link to="/user/forgot-password">
+              <Link to="/forgot-password">
                 <span>هل نسيت كلمه السر؟</span>
               </Link>
             </div>
           </div>
         </div>
-
-
-
-
-
-
-              <Link to="/admin/manageproduct">
-                <span>الدخول بحساب الأدمن</span>
-              </Link><br/>
-              <Link to="/user/allorders">
-                <span>الدخول بحساب المستخدم</span>
-              </Link>
       </Container>
       <ToastContainer autoClose={2000}/>
     </section>

@@ -15,6 +15,7 @@
     }
     .navbar-collapse{
         .search{
+            width:65% !important;
             border:2px solid transparent;
         &:focus{
             box-shadow: none;

@@ -10,16 +10,16 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 const NavbarLogin = () => {
   let [searchWordStorage,onChangeSearchword]=NavbarLoginHook();
-  let [userName,setUserName]=useState("");
+  let [user,setUser]=useState("");
   useEffect(()=>{
     if(localStorage.getItem("user")!=null){
-      setUserName(JSON.parse(localStorage.getItem("user")));
+      setUser(JSON.parse(localStorage.getItem("user")));
     }
   },[])
   const logOut=()=>{
     localStorage.removeItem("user");
     localStorage.removeItem("token");
-    setUserName("");
+    setUser("");
   }
   return (
     <Navbar expand="lg p-0">
@@ -34,24 +34,28 @@ const NavbarLogin = () => {
           <input 
             value={searchWordStorage}
             onChange={onChangeSearchword}
-            className="search form-control w-75 m-auto" 
+            className="search form-control m-auto" 
             type="search" 
             placeholder="ابحث..."
             />
           <Nav className="ms-auto">
-            {userName?(
+            {user?(
               <>
-              <NavDropdown title={`مرحبا ${userName.name}`} id="basic-nav-dropdown">
+              <NavDropdown title={`مرحبا ${user.name}`} id="basic-nav-dropdown">
+                {user.role=="admin"?(
+                <Link to="/admin/manageproduct">لوحه التحكم</Link>
+                ):(
                 <Link to="/user/profile">الصفحه الشخصيه</Link>
+                )}
                 <NavDropdown.Divider />
                 <Link to="/login" onClick={logOut}>تسجيل الخروج</Link>
               </NavDropdown>
-
-
-              <Link to="/cart">
-                <CgShoppingCart />
-                <p>العربه</p>
-              </Link>
+              {user.role==="user"?(
+                <Link to="/cart">
+                  <CgShoppingCart />
+                  <p>العربه</p>
+                </Link>
+              ):null}
               </>
             ):(
             <Link to="/login">
@@ -59,15 +63,7 @@ const NavbarLogin = () => {
             <p>الدخول</p>
           </Link>
           )}
-            
-            
           </Nav>
-
-          
-
-
-
-
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -1,43 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Container } from 'react-bootstrap'
-import { Link, useNavigate } from 'react-router-dom';
-import { SendVerifyCodeToRepassword } from '../../../Redux/Actions/Auth/VerifyCodeAction';
-import { useDispatch, useSelector } from 'react-redux';
-import Notifications from '../../../CustomHooks/Notifications';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import VerifyCodePageHook from '../../../CustomHooks/Auth/VerifyCodePageHook';
 const VerifyCodePage = () => {
-    let navigate=useNavigate();
-    let dispatch=useDispatch()
-    let Email=localStorage.getItem("Email");
-    let [resetCode,setResetCode]=useState('');
-    const onVerifyCodeChange=(e)=>{
-      setResetCode(e.target.value)
-    };
-    let response=useSelector((state)=>state.VerifyReducer.VerifyCode);
-    let [notify]=Notifications(response)
-    const onSubmit=()=>{
-      if(resetCode==''){
-        notify("أدخل كود التفعيل");
-      }else{
-        dispatch(SendVerifyCodeToRepassword({
-          "resetCode":resetCode
-        }))
-      }
-      
-    };
-    useEffect(()=>{
-      if(response.data){
-        if(response.data.status=="Success"){
-          notify(response.data.status);
-          setResetCode('')
-          setTimeout(()=>{
-            navigate("/user/re-password")
-          },2000)
-        }else{
-          notify(response.data.message);
-        }
-      }
-    },[response])
+  let [Email,resetCode,onVerifyCodeChange,onSubmit]=VerifyCodePageHook()
   return (
     <section>
       <Container>
@@ -48,7 +15,7 @@ const VerifyCodePage = () => {
                 <h6>تحقق من 
                   {Email?(<p className="mt-2 mb-0">{Email}</p>):(<p className="mt-2 mb-0">البريد الإلكتروني</p>)}
                 </h6>
-                <Link to="/user/forgot-password" className="text-decoration-none">
+                <Link to="/forgot-password" className="text-decoration-none">
                 <p> تغيير البريد الإلكتروني</p>
                 </Link>
             </div>

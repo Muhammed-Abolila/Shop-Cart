@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Notifications from '../Notifications';
-import { Userlogin } from '../../Redux/Actions/Auth/LoginActions';
+import { Userlogin } from '../../Redux/Actions/AuthActions';
 const LoginPageHook = () => {
     // console.log("props",this.props);
     
@@ -17,7 +17,7 @@ const LoginPageHook = () => {
     const onLoginPasswordChange=(e)=>{
         setLoginpassword(e.target.value)
     };
-    let response=useSelector((state)=>state.LoginReducer.userLogin);    
+    let response=useSelector((state)=>state.AuthReducers.userLogin);    
     let [notify]=Notifications(response);
     const onSubmit = async() =>{
         if(loginEmail==''){

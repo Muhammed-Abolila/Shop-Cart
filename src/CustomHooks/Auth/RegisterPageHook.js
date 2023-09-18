@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Notifications from '../Notifications';
-import { PostUserData } from '../../Redux/Actions/Auth/RegisterActions';
+import { PostUserData } from '../../Redux/Actions/AuthActions';
 const RegisterPageHook = () => {
   
     let dispatch=useDispatch();
-    let Navigate=useNavigate()
+    let Navigate=useNavigate();
     let [userName,setUserName]=useState("");
     let [userEmail,setUserEmail]=useState("");
     let [userPhone,setUserPhone]=useState("");
@@ -28,7 +28,7 @@ const RegisterPageHook = () => {
     const onUserConfirmPasswordChange=(e)=>{
       setUserConfirmPassword(e.target.value);
     }
-    let response=useSelector((state)=>state.RegisterReducer.CreateUser);      
+    let response=useSelector((state)=>state.AuthReducers.CreateUser);      
     let [notify]=Notifications(response);
     const onSubmit=async()=>{
       if(userName==""){
