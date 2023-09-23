@@ -5,7 +5,7 @@ import { BaseUrl, CREATE_PRODUCT, GET_ERROR,GET_ALL_PRODUCTS,GET_PRODUCT_WITH_ID
 export const PostProductApi=(data)=>{
     return async(dispatch)=>{
         try{
-            let config={headers:{"Content-Type":"multipart/form-data"},Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{"Content-Type":"multipart/form-data",Authorization:` Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.post(`${BaseUrl}/api/v1/products`,data,config)
             dispatch({
                 type:CREATE_PRODUCT,
@@ -23,7 +23,7 @@ export const PostProductApi=(data)=>{
 export const GetProductData=()=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/products`,config);
             dispatch({
                 type:GET_ALL_PRODUCTS,
@@ -41,7 +41,7 @@ export const GetProductData=()=>{
 export const GetLimitProductApi=(pageNumber)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/products?limit=9&page=${pageNumber}`,config);            
             dispatch({
                 type:GET_ALL_PRODUCTS,
@@ -59,7 +59,7 @@ export const GetLimitProductApi=(pageNumber)=>{
 export const GetProductDataWithId=(id)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/products/${id}`,config);
             dispatch({
                 type:GET_PRODUCT_WITH_ID,
@@ -77,7 +77,7 @@ export const GetProductDataWithId=(id)=>{
 export const GetTheSameProducts=(categoryId)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response= await axios.get(`${BaseUrl}/api/v1/products/?category=${categoryId}`,config);
             dispatch({
                 type:GET_SAME_PRODUCTS,
@@ -95,7 +95,7 @@ export const GetTheSameProducts=(categoryId)=>{
 export const deleteProduct=(productId)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.delete(`${BaseUrl}/api/v1/products/${productId}`,config);
             dispatch({
                 type:DELETE_PRODUCT,
@@ -113,7 +113,7 @@ export const deleteProduct=(productId)=>{
 export const updateProduct=(productId,data)=>{
     return async(dispatch)=>{
         try{
-            let config={headers:{"Content-Type":"multipart/form-data"},Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{"Content-Type":"multipart/form-data",Authorization:` Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.put(`${BaseUrl}/api/v1/products/${productId}`,data,config);
             console.log("response",response);
             dispatch({
@@ -132,7 +132,7 @@ export const updateProduct=(productId,data)=>{
 export const GetProductSearch=(QueryString)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/products?limit=9&${QueryString}`,config);
             dispatch({
                 type:GET_PRODUCT_SEARCH,

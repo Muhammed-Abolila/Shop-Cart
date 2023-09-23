@@ -5,7 +5,7 @@ import { BaseUrl, USER_LOGIN, CREATE_NEW_USER, FORGOT_PASSWORD,
 export const Userlogin=(data)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.post(`${BaseUrl}/api/v1/auth/login`,data,config);            
             dispatch({
                 type:USER_LOGIN,
@@ -23,7 +23,7 @@ export const Userlogin=(data)=>{
 export const PostUserData=(data)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.post(`${BaseUrl}/api/v1/auth/signup`,data,config);            
             dispatch({
                 type:CREATE_NEW_USER,
@@ -41,7 +41,7 @@ export const PostUserData=(data)=>{
 export const SendEmialToGetVerifyCode=(email)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.post(`${BaseUrl}/api/v1/auth/forgotPasswords`,email,config);       
             dispatch({
                 type:FORGOT_PASSWORD,
@@ -59,7 +59,7 @@ export const SendEmialToGetVerifyCode=(email)=>{
 export const SendVerifyCodeToRepassword=(VerifyCode)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.post(`${BaseUrl}/api/v1/auth/verifyResetCode`,VerifyCode,config);                       
             dispatch({
                 type:VERIFY_CODE,
@@ -77,7 +77,7 @@ export const SendVerifyCodeToRepassword=(VerifyCode)=>{
 export const SendDataToRePassword=(data)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.put(`${BaseUrl}/api/v1/auth/resetPassword`,data,config);
             dispatch({
                 type:REPASSWORD,

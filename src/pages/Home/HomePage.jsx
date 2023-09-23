@@ -1,11 +1,11 @@
 import Slider from '../../components/Home/Slider/Slider'
-import ProductContainer from '../../components/Home/ProductContainer/ProductContainer'
 import BrandsContainer from '../../components/Home/BrandsContainer/BrandsContainer'
 import CategoryContainer from '../../components/Home/CategoryContainer/CategoryContainer'
 import DescountComp from '../../components/Home/DescountComponent/DescountComp'
 import { Container } from 'react-bootstrap'
 import GrowExample from '../../components/Utilities/Spinner/Spinner';
 import HomePageHook from '../../CustomHooks/HomePage/HomePageHook';
+import ProductContainer from '../../components/Home/ProductContainer/ProductContainer'
 const HomePage = () => {
   let [CategoryData,HomeProductData,BrandData,backgroundColor]=HomePageHook()
   return (

@@ -9,12 +9,14 @@ import ProductDetailsHook from '../../CustomHooks/ProductsHooks/ProductDetailsHo
 const ProductDetails = () => {
   let {id}=useParams();
   let [oneProduct,oneCategory,oneBrand,SameProductData,reloadWhenChooseProduct]=ProductDetailsHook(id);
+
+  
   return (
     <section className='product-details pb-5 pageStyle'>
         <ProductsSearchNavbar/>
         <Container>
             <ItemDetail oneProduct={oneProduct} oneCategory={oneCategory} oneBrand={oneBrand}/>
-            <RateAndComments/>
+            <RateAndComments oneProductData={oneProduct}/>
             {SameProductData?(<ProductContainer ProductData={SameProductData} reloadWhenChooseProduct={reloadWhenChooseProduct} title="منتجات قد تعجبك"/>):null}
         </Container>
     </section>

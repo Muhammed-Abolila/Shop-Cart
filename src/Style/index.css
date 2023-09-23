@@ -240,6 +240,10 @@
   color: #c1c1c1;
 }
 
+.product-card .card-body .fav-icon svg {
+  font-size: 25px;
+}
+
 .product-card .card-body .card-footer {
   padding: 0;
   margin: 0;
@@ -668,7 +672,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   padding: 10px;
 }
 
-.rate-comments .rate {
+.rate-comments .rate-container {
   margin-bottom: 15px;
 }
 
@@ -1749,5 +1753,41 @@ body {
   border: 1px solid #0072bc !important;
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
+}
+
+.rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10px;
+  color: #ffca28;
+}
+
+.rate svg {
+  font-size: 20px;
+}
+
+.rate p {
+  font-size: 17px;
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.eddit-delete-icons {
+  margin-left: 25px;
+}
+
+.eddit-delete-icons .delete-icon {
+  font-size: 25px;
+  margin-left: 5px;
+  color: red;
+  cursor: pointer;
+}
+
+.eddit-delete-icons .eddit-icon {
+  font-size: 25px;
+  margin-right: 5px;
+  color: #0072bc;
+  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */

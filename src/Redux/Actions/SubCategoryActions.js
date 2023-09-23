@@ -4,7 +4,7 @@ import { BaseUrl, CREATE_SUB_CATEGORY, GET_ERROR ,GET_SUB_CATEGORY_WITH_CATEGORY
 export const postSubCategoryData=(data)=>{
      return async(dispatch)=>{
          try{
-             let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
              let response= await axios.post(`${BaseUrl}/api/v1/subcategories`,data,config);             
              dispatch({
                  type:CREATE_SUB_CATEGORY,
@@ -24,7 +24,7 @@ export const postSubCategoryData=(data)=>{
 export const getSubCategoryDataWithMaincategoryId=(CategoryId)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/categories/${CategoryId}/subcategories`,config);
             dispatch({
                 type:GET_SUB_CATEGORY_WITH_CATEGORY_ID,

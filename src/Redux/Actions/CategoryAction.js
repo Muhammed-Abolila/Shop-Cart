@@ -4,7 +4,8 @@ import axios from "axios";
 export const postCategoryDataWithImage=(formData)=>{
     return async (dispatch)=>{
         try{
-            let config={headers:{"Content-Type":"multipart/form-data"},Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{"Content-Type":"multipart/form-data",
+                        Authorization:` Bearer ${localStorage.getItem("token")}`}}
             let response=await axios.post(`${BaseUrl}/api/v1/categories`,formData,config);
             dispatch({
                 type:CREATE_CATEGORY,
@@ -22,7 +23,7 @@ export const postCategoryDataWithImage=(formData)=>{
 export const getCategoryApi=()=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/categories`,config);            
             dispatch({
                 type:FETCH_CATEGORY_API,
@@ -40,7 +41,7 @@ export const getCategoryApi=()=>{
 export const getLimitCategoryApi=(PageNumber)=>{
     return async(dispatch)=>{
         try{ 
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/categories?limit=12&page=${PageNumber}`,config);
             dispatch({
                 type:FETCH_CATEGORY_API,
@@ -58,7 +59,7 @@ export const getLimitCategoryApi=(PageNumber)=>{
 export const GetCategoryWithId=(CategoryId)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/categories/${CategoryId}`,config);            
             dispatch({
                 type:GET_CATEGORY_DATA_WITH_ID,

@@ -65,4 +65,32 @@ body{
         border: 1px solid $ThirdColor !important;
         box-shadow: none !important;
     }
+};
+.rate{
+    display: flex;
+    margin-top: 10px;
+    color: #ffca28;
+    svg{
+        font-size: 20px;   
+    }
+    p{
+        font-size: 17px;
+        margin-right: 5px;
+        font-weight: 600;
+    }
+};
+.eddit-delete-icons{
+    margin-left: 25px;
+    .delete-icon{
+        font-size: 25px;
+        margin-left: 5px;
+        color:red;
+        cursor: pointer;
+    }
+    .eddit-icon{
+        font-size: 25px;
+        margin-right: 5px;
+        color:$ThirdColor;
+        cursor: pointer;
+    }
 }

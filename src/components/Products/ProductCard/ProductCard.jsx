@@ -1,24 +1,25 @@
 import { Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { BsHeart, BsFillStarFill } from "react-icons/bs";
-const ProductCard = ({CardProductData,reloadWhenChooseProduct}) => {
-  function getId(param){
-    reloadWhenChooseProduct(param)
-  }
+import { BsFillHeartFill, BsFillStarFill } from "react-icons/bs";
+import {RiShoppingCart2Fill} from "react-icons/ri"
+import ProductCardHook from '../../../CustomHooks/ProductsHooks/ProductCardHook';
+const ProductCard = ({CardProductData,favProduct,reloadWhenChooseProduct}) => {
+  let [favStyle,handleWishlist,getId]=ProductCardHook(CardProductData,favProduct,reloadWhenChooseProduct);
   return (
       <Card className='product-card mt-4'>
-        <Link to={`/details/${CardProductData._id}`} onClick={()=>getId(CardProductData._id)} style={{textDecoration:"none"}}>
-          <Card.Img variant="top" src={CardProductData.imageCover} />
+        <Link to={`/details/${CardProductData._id}`} style={{textDecoration:"none"}}>
+          <Card.Img variant="top" src={CardProductData.imageCover} onClick={()=>getId(CardProductData._id)}/>
         </Link>
       <Card.Body>
-          <div className="fav-icon">
-              <BsHeart />
+          <div className="fav-icon d-flex justify-content-between mb-2 mx-2">
+              <BsFillHeartFill style={{color: favStyle}} onClick={handleWishlist}/>
+              <RiShoppingCart2Fill style={{color: "gray"}}/>
           </div>
           <Card.Text>{CardProductData.title}</Card.Text>
           <div className="card-footer">
             <div className="rate">
               <BsFillStarFill/>
-              <p>{CardProductData.ratingsQuantity}</p>
+              <p>{CardProductData.ratingsAverage||0}</p>
             </div>
             <div className='price'>
               <h5>{CardProductData.price}جنيه</h5>
@@ -29,3 +30,5 @@ const ProductCard = ({CardProductData,reloadWhenChooseProduct}) => {
   )
 };
 export default ProductCard; 
+
+

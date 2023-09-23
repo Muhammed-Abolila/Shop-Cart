@@ -1,12 +1,29 @@
-import  { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { GetProductData } from '../../Redux/Actions/ProductActions';
+import { useEffect, useState } from 'react';
+import { GetAllFavProduct } from '../../Redux/Actions/WishListActions';
+import { useSelector, useDispatch } from 'react-redux';
 const ProductContainerHook = () => {
-    let dispatch=useDispatch()
-    useEffect(()=>{
-      dispatch(GetProductData())
-    },[]);
-    let HomeProductData=useSelector((state)=>state.ProductReducer.AllProductApi);
-    return [HomeProductData]
+    // To Save Products with Red Heart
+   let [loading,setLoading]=useState(true);
+   let [favProduct,setFavProduct]=useState([]);
+   let dispatch=useDispatch();
+  useEffect(()=>{
+    const getData= async()=>{
+      setLoading(true);
+      await dispatch(GetAllFavProduct());
+      setLoading(false);
+    }
+    getData();
+  },[]);
+  let ProductsInWishlist=useSelector((state)=>state.WishListReducers.WishListProduct);
+  useEffect(()=>{
+    if(localStorage.getItem("token")!=null){
+      if(loading===false){
+        if(ProductsInWishlist){
+          setFavProduct(ProductsInWishlist.data.map(itemId=>itemId._id)); 
+        }
+      };
+    }
+  },[loading]);
+  return [favProduct]
 }
 export default ProductContainerHook

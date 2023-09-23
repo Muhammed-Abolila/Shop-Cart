@@ -4,7 +4,7 @@ import { BaseUrl, FETCH_BRAND_API, GET_ERROR, CREATE_BRAND,GET_BRAND_API_WITH_ID
 export const postBrandDataWithImage=(formData)=>{
     return async(dispatch)=>{
         try{
-            let config={headers:{"Content-Type":"multipart/form-data"},Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{"Content-Type":"multipart/form-data",Authorization:` Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.post(`${BaseUrl}/api/v1/brands`,formData,config);
             dispatch({
                 type:CREATE_BRAND,
@@ -23,7 +23,7 @@ export const postBrandDataWithImage=(formData)=>{
 export const getBrandsApi=()=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/brands`,config);
             dispatch({
                 type:FETCH_BRAND_API,
@@ -41,7 +41,7 @@ export const getBrandsApi=()=>{
 export const getLimitBrandsApi=(number)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response =await axios.get(`${BaseUrl}/api/v1/brands?limit=12&page=${number}`,config);
             dispatch({
                 type:FETCH_BRAND_API,
@@ -59,7 +59,7 @@ export const getLimitBrandsApi=(number)=>{
 export const GetBrandDataWithId=(BrandId)=>{
     return async(dispatch)=>{
         try{
-            let config={Authorization:` Bearer ${localStorage.getItem("token")}`}
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/brands/${BrandId}`,config);
             dispatch({
                 type:GET_BRAND_API_WITH_ID,
