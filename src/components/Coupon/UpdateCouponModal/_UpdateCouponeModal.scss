@@ -1,0 +1,22 @@
+.update-Coupone-modal{
+    position:fixed;
+    bottom:0;
+    top:0;
+    left:0;
+    right:0;
+    background-color:#000000c9;
+    z-index:999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modal-box{
+        background-color: #fff;
+        width:40%;
+        padding:15px 10px;
+        border:1px solid $ThirdColor;
+        border-radius: 5px;
+        .btns{
+            text-align: end
+        }
+    }
+}

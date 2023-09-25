@@ -28,6 +28,7 @@ import ForgotPasswordPage from "./pages/Auth/ForgotPassword/ForgotPasswordPage";
 import VerifyCodePage from "./pages/Auth/VerifyCode/VerifyCodePage";
 import RePasswordPage from "./pages/Auth/RePassword/RePasswordPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import AddCouponPage from "./pages/AdminPages/AddCouponPage";
 function App() {
   let tokenRole=''
   if(localStorage.getItem("user")!=null){
@@ -53,12 +54,13 @@ function App() {
           <Route path="/paymethods" element={<PaymentMethodPage/>} />
           {tokenRole.role==="admin"?(
             <>
-            <Route path="/admin/manageproduct" element={<AdminManageProductPage/>} />
             <Route path="/admin/orders" element={<OrdersPage/>} />
+            <Route path="/admin/manageproduct" element={<AdminManageProductPage/>} />
             <Route path="/admin/addbrand" element={<AddBrandPage/>} />
             <Route path="/admin/addcategory" element={<AddCategoryPage/>} />
             <Route path="/admin/addsubcategory" element={<AddSubCategoryPage/>} />
             <Route path="/admin/addproduct" element={<AddProductPage/>} />
+            <Route path="/admin/addcoupon" element={<AddCouponPage/>} />
             <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} />
             </>
           ):tokenRole.role==="user"?(

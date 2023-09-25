@@ -4,12 +4,10 @@ import AdminAllProducts from "../../components/AdminComp/AdminProductCard/AdminP
 import PaginationComp from "../../components/Utilities/Pagination/Pagination";
 import SubTitle from "../../components/Utilities/SubTitle/SubTitle";
 import GrowExample from "../../components/Utilities/Spinner/Spinner"
-import DeleteModal from "../../components/Utilities/DeleteModal/DeleteModal";
 import AdminManageProductHook from "../../CustomHooks/ProductsHooks/AdminManageProductsHook";
 const AdminManageProductPage=()=>{
-    let [productData,showModalFunc,PaginationData,
-        getPageCount,showModal,productName,productIdToDelete]=AdminManageProductHook()
-    return( 
+    let [productData,onDeleteProduct,PaginationData,getPageCount]=AdminManageProductHook()
+    return(  
        <section className="pageStyle pt-3">
             <Container>
                 <Row className="mb-3">
@@ -23,7 +21,7 @@ const AdminManageProductPage=()=>{
                                 productData.map((product,index)=>
                                  <AdminAllProducts key={index} 
                                     productData={product}
-                                    showModalFunc={showModalFunc}
+                                    onDeleteProduct={onDeleteProduct}
                                     />)
                             ):<GrowExample/>}
                         </Row>
@@ -31,7 +29,6 @@ const AdminManageProductPage=()=>{
                 </Row>
                 {PaginationData>1?(<PaginationComp PaginationData={PaginationData} getPageCount={getPageCount}/>):null}
             </Container>
-            {showModal===true?(<DeleteModal showModalFunc={showModalFunc} showModal={showModal} productName={productName} productIdToDelete={productIdToDelete}/>):null}
        </section>
     )
 };

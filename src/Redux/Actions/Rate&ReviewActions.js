@@ -63,8 +63,6 @@ export const UpdateReview=(reviewId,data)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.put(`${BaseUrl}/api/v1/reviews/${reviewId}`,data,config);
-            console.log(response);
-            
             dispatch({
                 type:UPDATE_COMMENT,
                 payload:response,

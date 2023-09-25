@@ -1057,6 +1057,25 @@ footer .container ul a, footer .container ul .register .register-content .regist
   color: white;
 }
 
+.add-coupon .inputs {
+  text-align: end;
+}
+
+.add-coupon .inputs button, .add-coupon .inputs .register .register-content .form button, .register .register-content .form .add-coupon .inputs button {
+  background-color: white;
+  color: #0072bc;
+  border: 1px solid #0072bc;
+  -webkit-transition: background-color .4s,color .4s;
+  transition: background-color .4s,color .4s;
+  padding: 10px 30px;
+  margin-top: 10px;
+}
+
+.add-coupon .inputs button:hover {
+  background-color: #0072bc;
+  color: white;
+}
+
 .add-product .inputs .multiselect-container .search-wrapper {
   border: none !important;
 }
@@ -1462,6 +1481,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: start;
 }
 
 .modal-container .modal-box {
@@ -1478,6 +1498,21 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .modal-container .modal-box .btns {
   text-align: end;
+}
+
+.modal-container .modal-box .btns .btn {
+  padding: 10px 15px !important;
+  color: white;
+}
+
+.modal-container .modal-box .btns .back-btn {
+  background-color: #0072bc;
+  border: none;
+}
+
+.modal-container .modal-box .btns .delete-btn {
+  background-color: red;
+  border: none;
 }
 
 .eddit-product .inputs .multiselect-container .search-wrapper {
@@ -1721,6 +1756,72 @@ footer .container ul a, footer .container ul .register .register-content .regist
           align-items: center !important;
 }
 
+.copoun-card {
+  background-color: white;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.copoun-card .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.eddit-delete-icons {
+  margin-left: 25px;
+}
+
+.eddit-delete-icons .delete-icon {
+  font-size: 25px;
+  margin-left: 5px;
+  color: red;
+  cursor: pointer;
+}
+
+.eddit-delete-icons .eddit-icon {
+  font-size: 25px;
+  margin-right: 5px;
+  color: #0072bc;
+  cursor: pointer;
+}
+
+.update-Coupone-modal {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #000000c9;
+  z-index: 999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.update-Coupone-modal .modal-box {
+  background-color: #fff;
+  width: 40%;
+  padding: 15px 10px;
+  border: 1px solid #0072bc;
+  border-radius: 5px;
+}
+
+.update-Coupone-modal .modal-box .btns {
+  text-align: end;
+}
+
 body {
   direction: rtl;
   position: relative !important;
@@ -1771,23 +1872,5 @@ body {
   font-size: 17px;
   margin-right: 5px;
   font-weight: 600;
-}
-
-.eddit-delete-icons {
-  margin-left: 25px;
-}
-
-.eddit-delete-icons .delete-icon {
-  font-size: 25px;
-  margin-left: 5px;
-  color: red;
-  cursor: pointer;
-}
-
-.eddit-delete-icons .eddit-icon {
-  font-size: 25px;
-  margin-right: 5px;
-  color: #0072bc;
-  cursor: pointer;
 }
 /*# sourceMappingURL=index.css.map */

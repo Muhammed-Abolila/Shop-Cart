@@ -2,14 +2,10 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { GetLimitProductApi, deleteProduct} from "../../Redux/Actions/ProductActions";
 const AdminManageProductHook=()=>{
-    let dispatch=useDispatch()
-    let [showModal,setShowModal]=useState(false);
-    let [productIdToDelete,setProductIdToDelete]=useState('');
-    let [productName,setProductName]=useState("")
-    const showModalFunc=(productData)=>{
-        setShowModal(!showModal);
-        setProductIdToDelete(productData._id);
-        setProductName(productData.title)
+    let dispatch=useDispatch();
+    const onDeleteProduct=async(productId)=>{
+        await dispatch(deleteProduct(productId));
+        window.location.reload()
     }
     useEffect(()=>{
         dispatch(GetLimitProductApi())
@@ -28,7 +24,6 @@ const AdminManageProductHook=()=>{
     const getPageCount=(param)=>{
          dispatch(GetLimitProductApi(param))
     };
-    return [productData,showModalFunc,PaginationData,getPageCount,
-        showModal,productName,productIdToDelete]
+    return [productData,onDeleteProduct,PaginationData,getPageCount]
 };
 export default AdminManageProductHook;

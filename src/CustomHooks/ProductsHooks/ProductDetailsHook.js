@@ -50,7 +50,6 @@ const ProductDetailsHook = (id) => {
     let SingleBrandData=useSelector((state)=>state.BrandReducer.SingleBrandApi); 
     // to be sure data is return with Out Undefined
     let oneBrand=[];
-    
     try{
         if(SingleBrandData.data){
             oneBrand=SingleBrandData.data

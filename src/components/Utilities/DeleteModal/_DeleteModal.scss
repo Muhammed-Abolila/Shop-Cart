@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: start;
     .modal-box{
         background-color: #fff;
         width:25%;
@@ -19,7 +20,19 @@
             margin: 17px 6px;
         }
         .btns{
-            text-align: end
+            text-align: end;
+            .btn{
+                padding:10px 15px !important;
+                color:$MainColor;
+            }
+            .back-btn{
+                background-color: $ThirdColor;
+                border:none;
+            }
+            .delete-btn{
+                background-color:red;
+                border:none;
+            }
         }
     }
 }

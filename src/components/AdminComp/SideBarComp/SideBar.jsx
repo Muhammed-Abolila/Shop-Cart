@@ -23,6 +23,9 @@ const SideBar = () => {
           <Link to="/admin/addproduct" style={{textDecoration:"none"}}>
               <li>أضف منتج</li>
           </Link>
+          <Link to="/admin/addcoupon" style={{textDecoration:"none"}}>
+              <li>أضف كوبون خصم</li>
+          </Link>
        </ul>
     </div>
   )

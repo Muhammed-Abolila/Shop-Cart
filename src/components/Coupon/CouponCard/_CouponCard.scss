@@ -1,0 +1,11 @@
+.copoun-card{
+    background-color: $MainColor;
+    padding:10px;
+    padding-bottom:0px;
+    margin-top:20px;
+    border-radius: 4px;
+    .card-body{
+        display: flex;
+        justify-content: space-between
+    }
+}

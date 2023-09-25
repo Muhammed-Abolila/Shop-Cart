@@ -23,6 +23,7 @@
 @import "../components/AdminComp/AddBrand/AddBrand";
 @import "../components/AdminComp/AddCategory/AddCategory";
 @import "../components/AdminComp/AddSubCategory/AddSubCategory";
+@import "../components/Coupon/AddCoupon/AddCoupon";
 @import "../components/AdminComp/AddProduct/AddProduct";
 @import "../components/UserComp/SideBarComp/UserSideBar";
 @import "../components/UserComp/UserAllOrders/UserAllOrders";
@@ -38,6 +39,9 @@
 @import "../pages/Auth/ForgotPassword/forgot-password";
 @import "../pages/Auth/VerifyCode/verify";
 @import "../pages/NotFoundPage/NotFoundPage";
+@import "../components/Coupon/CouponCard/CouponCard";
+@import "../components/Utilities/DeleteBtn/DeleteBtn";
+@import "../components/Coupon/UpdateCouponModal/UpdateCouponeModal";
 
 body{
     direction: rtl;
@@ -79,18 +83,3 @@ body{
         font-weight: 600;
     }
 };
-.eddit-delete-icons{
-    margin-left: 25px;
-    .delete-icon{
-        font-size: 25px;
-        margin-left: 5px;
-        color:red;
-        cursor: pointer;
-    }
-    .eddit-icon{
-        font-size: 25px;
-        margin-right: 5px;
-        color:$ThirdColor;
-        cursor: pointer;
-    }
-}

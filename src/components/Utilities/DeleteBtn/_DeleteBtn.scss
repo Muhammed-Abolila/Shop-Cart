@@ -1,0 +1,15 @@
+.eddit-delete-icons{
+    margin-left: 25px;
+    .delete-icon{
+        font-size: 25px;
+        margin-left: 5px;
+        color:red;
+        cursor: pointer;
+    }
+    .eddit-icon{
+        font-size: 25px;
+        margin-right: 5px;
+        color:$ThirdColor;
+        cursor: pointer;
+    }
+}

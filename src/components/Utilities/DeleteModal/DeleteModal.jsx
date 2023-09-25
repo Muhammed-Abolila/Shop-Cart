@@ -1,26 +1,22 @@
-import { useDispatch } from "react-redux";
-import { deleteProduct } from "../../../Redux/Actions/ProductActions";
-const DeleteModal = ({showModalFunc,showModal,productName,productIdToDelete}) => {
-  let dispatch=useDispatch()
+const DeleteModal = ({data,onDelete,setShowDeleteModal}) => {
   const undoDeletion=()=>{
-    showModalFunc(!showModal)
+    setShowDeleteModal(false)
   }
   const confirmDeletion=()=>{
-    dispatch(deleteProduct(productIdToDelete));
-    showModalFunc(!showModal);
-    window.location.reload()
+    onDelete(data._id);
+    setShowDeleteModal(false)
   }; 
       return (
         <div className="modal-container">
           <div className="modal-box">
             <h6>تأكيد الحذف</h6>
-            <p>هل تريد حذف <span className="text-danger fw-bold fs-5">{productName}</span> بالتأكيد ؟ </p>
+            <p>هل تريد حذف <span className="text-danger fw-bold fs-5">{data.name||data.title}</span> بالتأكيد ؟ </p>
             <div className="btns">
-              <button className="btn btn-primary" onClick={undoDeletion}>التراجع</button>
-              <button className="me-3 btn btn-danger" onClick={confirmDeletion}>حذف</button>
+              <button className="btn back-btn" onClick={undoDeletion}>التراجع</button>
+              <button className="me-3 btn delete-btn" onClick={confirmDeletion}>حذف</button>
             </div>
           </div>
         </div>
       )
-  }
+  };
 export default DeleteModal
