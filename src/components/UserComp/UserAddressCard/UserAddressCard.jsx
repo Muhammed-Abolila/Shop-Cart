@@ -1,0 +1,28 @@
+import { Link } from 'react-router-dom';
+import DeleteBtn from '../../Utilities/DeleteBtn/DeleteBtn';
+import { FaRegEdit } from "react-icons/fa"
+const UserAddressCard = ({AddressesData,onDeleteAddress}) => {
+  return (
+    <div className='user-address'>
+      <div className="address-head">
+          <h4>{AddressesData.alias}</h4>
+          <div className="btns">
+            <Link to={`/user/eddit-address/${AddressesData._id}`} style={{textDecoration:"none"}}>
+              <span className="eddit-icon"><FaRegEdit/></span>
+            </Link>
+            <DeleteBtn data={AddressesData} onDelete={onDeleteAddress}/>
+          </div>
+        </div>
+        <div className="address">
+          <h5>العنوان:- </h5>
+          <p>{AddressesData.details}</p>
+        </div>
+        <div className="phone">
+          <h5>الهاتف:- </h5>
+          <p>{AddressesData.phone}</p>
+        </div>
+    </div>
+  )
+}
+
+export default UserAddressCard;

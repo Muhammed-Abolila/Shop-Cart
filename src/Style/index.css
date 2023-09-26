@@ -1211,7 +1211,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   font-weight: 500;
 }
 
-.user-address .address-head .btns button {
+.user-address .address-head .btns button .eddit-btn {
   border: 1px solid #0072bc;
   color: #0072bc;
   background-color: white;
@@ -1220,7 +1220,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   transition: all .4s;
 }
 
-.user-address .address-head .btns button:hover {
+.user-address .address-head .btns button .eddit-btn:hover {
   background-color: #0072bc;
   color: white;
 }
@@ -1773,22 +1773,11 @@ footer .container ul a, footer .container ul .register .register-content .regist
           justify-content: space-between;
 }
 
-.eddit-delete-icons {
-  margin-left: 25px;
-}
-
-.eddit-delete-icons .delete-icon {
-  font-size: 25px;
-  margin-left: 5px;
-  color: red;
-  cursor: pointer;
-}
-
-.eddit-delete-icons .eddit-icon {
-  font-size: 25px;
-  margin-right: 5px;
-  color: #0072bc;
-  cursor: pointer;
+.delete-icon {
+  font-size: 25px !important;
+  margin-left: 5px !important;
+  color: red !important;
+  cursor: pointer !important;
 }
 
 .update-Coupone-modal {

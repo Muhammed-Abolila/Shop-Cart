@@ -10,7 +10,7 @@ const DeleteModal = ({data,onDelete,setShowDeleteModal}) => {
         <div className="modal-container">
           <div className="modal-box">
             <h6>تأكيد الحذف</h6>
-            <p>هل تريد حذف <span className="text-danger fw-bold fs-5">{data.name||data.title}</span> بالتأكيد ؟ </p>
+            <p>هل تريد حذف <span className="text-danger fw-bold fs-5">{data.name||data.title||`عنوان ${data.alias}`}</span> بالتأكيد ؟ </p>
             <div className="btns">
               <button className="btn back-btn" onClick={undoDeletion}>التراجع</button>
               <button className="me-3 btn delete-btn" onClick={confirmDeletion}>حذف</button>

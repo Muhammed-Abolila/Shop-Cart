@@ -69,7 +69,7 @@ function App() {
             <Route path="/user/favproduct" element={<UserFavProductPage/>} />
             <Route path="/user/address" element={<UserAddressPage/>} />
             <Route path="/user/profile" element={<UserProfilePage/>} />
-            <Route path="/user/eddit-address" element={<UserEdditAddressPage/>} />
+            <Route path="/user/eddit-address/:id" element={<UserEdditAddressPage/>} />
             <Route path="/user/add-address" element={<UserAddAddressPage/>} />
             <Route path="/user/eddit-profile" element={<UserEdditProfilePage/>} />
             </>

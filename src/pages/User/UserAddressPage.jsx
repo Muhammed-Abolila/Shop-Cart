@@ -1,9 +1,9 @@
 import React from 'react'
 import UesrSideBarComp from '../../components/UserComp/SideBarComp/UserSideBarComp'
 import { Col, Container, Row } from 'react-bootstrap'
-import UserAddress from '../../components/UserComp/UserAddress/UserAddress'
 import SubTitle from '../../components/Utilities/SubTitle/SubTitle'
 import { Link } from 'react-router-dom'
+import UserAllAddresses from '../../components/UserComp/UserAllAddresses/UserAllAddresses';
 const UserAddressPage = () => {
   return (
     <section className="pageStyle pt-3">
@@ -15,8 +15,7 @@ const UserAddressPage = () => {
                     <Col sm={10}>
                         <SubTitle title="دفتر العناوين"/>
                         <div className="pt-4">
-                            <UserAddress/>
-                            <UserAddress/>
+                            <UserAllAddresses/>
                         </div>
                     </Col>
                     <Link to="/user/add-address" style={{textDecoration:"none",textAlign:"center"} }>

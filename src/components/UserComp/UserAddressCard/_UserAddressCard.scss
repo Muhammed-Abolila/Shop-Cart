@@ -14,15 +14,18 @@
         }
         .btns{
             button{
-                border:1px solid $ThirdColor;
-                color:$ThirdColor;
-                background-color: $MainColor;
-                margin-left: 10px;
-                transition: all .4s;
-                &:hover{
-                    background-color:$ThirdColor;
-                    color: $MainColor;
+                .eddit-btn{
+                    border:1px solid $ThirdColor;
+                    color:$ThirdColor;
+                    background-color: $MainColor;
+                    margin-left: 10px;
+                    transition: all .4s;
+                    &:hover{
+                        background-color:$ThirdColor;
+                        color: $MainColor;
+                    }
                 }
+                
             }
         }
     }
