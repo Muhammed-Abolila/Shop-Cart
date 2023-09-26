@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { FaRegEdit } from 'react-icons/fa';
 
 const UserProfileDetails = () => {
   return (
@@ -22,7 +23,7 @@ const UserProfileDetails = () => {
         </Col>
         <Col sm={2} className='text-start'>
             <Link to="/user/eddit-profile" style={{textDecoration:"none"}}>
-              <button className='btn'>تعديل</button>
+                <span className="eddit-icon"><FaRegEdit/></span>
             </Link>
         </Col>
       </Row>

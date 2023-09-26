@@ -12,22 +12,6 @@
             font-size: 18px;
             font-weight: 500;
         }
-        .btns{
-            button{
-                .eddit-btn{
-                    border:1px solid $ThirdColor;
-                    color:$ThirdColor;
-                    background-color: $MainColor;
-                    margin-left: 10px;
-                    transition: all .4s;
-                    &:hover{
-                        background-color:$ThirdColor;
-                        color: $MainColor;
-                    }
-                }
-                
-            }
-        }
     }
     .address{
         display: flex;

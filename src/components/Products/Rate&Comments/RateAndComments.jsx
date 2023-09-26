@@ -8,6 +8,7 @@ import {FaRegEdit} from 'react-icons/fa';
 import { useParams } from 'react-router';
 import GrowExample from '../../Utilities/Spinner/Spinner';
 import RateAndCommentHook from '../../../CustomHooks/RateAndCommentHook/RateAndCommentHook';
+import DeleteBtn from '../../Utilities/DeleteBtn/DeleteBtn';
 const RateAndComments = ({oneProductData}) => {
   let {id}=useParams();
 let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
@@ -56,7 +57,6 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
                 <div className="d-flex justify-content-between">
                 <div>
                 <div className="d-flex">
-                  
                   <h6>
                     {review.user.name}
                   </h6>
@@ -68,8 +68,8 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
                 <p>{review.review}</p>
                 </div>
                 {review.user._id===user._id?(
-                  <div className="eddit-delete-icons">
-                    <span onClick={()=>onDeleteComment(review._id)} className="delete-icon"><RiDeleteBin5Line/></span>
+                  <div>
+                    <DeleteBtn data={review} onDelete={onDeleteComment}/>
                     <span onClick={()=>onUpdateComment(review)} className="eddit-icon"><FaRegEdit/></span>
                   </div>
                 ):null} 

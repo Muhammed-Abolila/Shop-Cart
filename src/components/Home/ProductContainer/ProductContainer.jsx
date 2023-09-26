@@ -3,7 +3,7 @@ import SubTitle from '../../Utilities/SubTitle/SubTitle';
 import ProductCard from '../../Products/ProductCard/ProductCard';
 import GrowExample from '../../Utilities/Spinner/Spinner';
 import ProductContainerHook from '../../../CustomHooks/ProductsHooks/ProductContainerHook';
-const ProductContainer = ({ProductData,title,btnName,pathName,reloadWhenChooseProduct}) => {
+const ProductContainer = ({ProductData,title,btnName,pathName,reloadWhenChooseSameProduct}) => {
    let[favProduct]=ProductContainerHook()
   
   return (
@@ -11,10 +11,10 @@ const ProductContainer = ({ProductData,title,btnName,pathName,reloadWhenChoosePr
       <SubTitle title={title} btnName={btnName} pathName={pathName}/>
       <Row>
         {ProductData?(
-          ProductData.slice(0,4).map((product,index)=>{
+          ProductData.map((product,index)=>{
             return(
               <Col xs={6} lg={3} key={index}>
-                <ProductCard CardProductData={product} favProduct={favProduct} reloadWhenChooseProduct={reloadWhenChooseProduct}/>
+                <ProductCard CardProductData={product} favProduct={favProduct} reloadWhenChooseSameProduct={reloadWhenChooseSameProduct}/>
               </Col>
             )
           })

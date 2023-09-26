@@ -1211,20 +1211,6 @@ footer .container ul a, footer .container ul .register .register-content .regist
   font-weight: 500;
 }
 
-.user-address .address-head .btns button .eddit-btn {
-  border: 1px solid #0072bc;
-  color: #0072bc;
-  background-color: white;
-  margin-left: 10px;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-}
-
-.user-address .address-head .btns button .eddit-btn:hover {
-  background-color: #0072bc;
-  color: white;
-}
-
 .user-address .address {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1861,5 +1847,12 @@ body {
   font-size: 17px;
   margin-right: 5px;
   font-weight: 600;
+}
+
+.eddit-icon {
+  font-size: 25px !important;
+  margin-right: 5px !important;
+  color: #0072bc !important;
+  cursor: pointer !important;
 }
 /*# sourceMappingURL=index.css.map */

@@ -1,13 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { AddProductToWishlist, RemoveProductFromWishlist } from '../../Redux/Actions/WishListActions';
 import { useState, useEffect} from 'react';
- 
- const ProductCardHook = (CardProductData,favProduct,reloadWhenChooseProduct) => {
+ const ProductCardHook = (CardProductData,favProduct,reloadWhenChooseSameProduct) => {
     function getId(param){
       try{
-        reloadWhenChooseProduct(param)
+        reloadWhenChooseSameProduct(param)
       }catch(e){}
-        
       };
     let dispatch=useDispatch();
     let user=JSON.parse(localStorage.getItem("user"));
@@ -29,7 +27,6 @@ import { useState, useEffect} from 'react';
         }else{
           window.alert("لا يمكن للادمن")
         }
-        
       }else{
         window.alert("قم بتسجيل الدخول")
       } 

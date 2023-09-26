@@ -6,11 +6,11 @@ const UserAddressCard = ({AddressesData,onDeleteAddress}) => {
     <div className='user-address'>
       <div className="address-head">
           <h4>{AddressesData.alias}</h4>
-          <div className="btns">
+          <div>
+            <DeleteBtn data={AddressesData} onDelete={onDeleteAddress}/>
             <Link to={`/user/eddit-address/${AddressesData._id}`} style={{textDecoration:"none"}}>
               <span className="eddit-icon"><FaRegEdit/></span>
             </Link>
-            <DeleteBtn data={AddressesData} onDelete={onDeleteAddress}/>
           </div>
         </div>
         <div className="address">

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { BsFillHeartFill, BsFillStarFill } from "react-icons/bs";
 import {RiShoppingCart2Fill} from "react-icons/ri"
 import ProductCardHook from '../../../CustomHooks/ProductsHooks/ProductCardHook';
-const ProductCard = ({CardProductData,favProduct,reloadWhenChooseProduct}) => {
-  let [favStyle,handleWishlist,getId]=ProductCardHook(CardProductData,favProduct,reloadWhenChooseProduct);
+const ProductCard = ({CardProductData,favProduct,reloadWhenChooseSameProduct}) => {
+  let [favStyle,handleWishlist,getId]=ProductCardHook(CardProductData,favProduct,reloadWhenChooseSameProduct);
   return (
       <Card className='product-card mt-4'>
         <Link to={`/details/${CardProductData._id}`} style={{textDecoration:"none"}}>

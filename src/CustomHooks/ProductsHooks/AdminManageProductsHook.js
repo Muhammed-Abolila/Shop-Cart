@@ -3,13 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { GetLimitProductApi, deleteProduct} from "../../Redux/Actions/ProductActions";
 const AdminManageProductHook=()=>{
     let dispatch=useDispatch();
-    const onDeleteProduct=async(productId)=>{
-        await dispatch(deleteProduct(productId));
-        window.location.reload()
-    }
+    let [reloadAfterDelete,setReloadAfterDelete]=useState(false)
     useEffect(()=>{
         dispatch(GetLimitProductApi())
-    },[]); 
+    },[reloadAfterDelete]); 
     let product=useSelector((state)=>state.ProductReducer.AllProductApi);
     let productData,PaginationData;
     try{
@@ -24,6 +21,11 @@ const AdminManageProductHook=()=>{
     const getPageCount=(param)=>{
          dispatch(GetLimitProductApi(param))
     };
+    // Delete Product
+    const onDeleteProduct=async(productId)=>{
+        await dispatch(deleteProduct(productId));
+        setReloadAfterDelete(!reloadAfterDelete)
+    }
     return [productData,onDeleteProduct,PaginationData,getPageCount]
 };
 export default AdminManageProductHook;
