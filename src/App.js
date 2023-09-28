@@ -21,7 +21,6 @@ import UserAddressPage from "./pages/User/UserAddressPage";
 import UserProfilePage from "./pages/User/UserProfilePage";
 import UserEdditAddressPage from "./pages/User/UserEdditAddressPage";
 import UserAddAddressPage from "./pages/User/UserAddAddressPage";
-import UserEdditProfilePage from "./pages/User/UserEdditProfilePage";
 import EdditProductPage from "./pages/AdminPages/EdditProductPage";
 import AdminManageProductPage from "./pages/AdminPages/AdminManageProductsPage";
 import ForgotPasswordPage from "./pages/Auth/ForgotPassword/ForgotPasswordPage";
@@ -71,7 +70,6 @@ function App() {
             <Route path="/user/profile" element={<UserProfilePage/>} />
             <Route path="/user/eddit-address/:id" element={<UserEdditAddressPage/>} />
             <Route path="/user/add-address" element={<UserAddAddressPage/>} />
-            <Route path="/user/eddit-profile" element={<UserEdditProfilePage/>} />
             </>
           ):null}
           <Route path="*" element={<NotFoundPage/>} />

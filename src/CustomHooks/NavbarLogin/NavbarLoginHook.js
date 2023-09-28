@@ -12,7 +12,6 @@ const NavbarLoginHook = () => {
     const onChangeSearchword=(e)=>{
       let path=window.location.pathname;
       if(path!="/products"){
-        // window.location.href="/products";
         Navigate("/products")
       }
       localStorage.setItem("searchWord",e.target.value)

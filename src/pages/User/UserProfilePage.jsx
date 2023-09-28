@@ -1,10 +1,9 @@
 import React from 'react'
 import UesrSideBarComp from '../../components/UserComp/SideBarComp/UserSideBarComp'
 import { Col, Container, Row } from 'react-bootstrap';
-import SubTitle from '../../components/Utilities/SubTitle/SubTitle'
-import ChangePassword from '../../components/UserComp/ChangePassword/ChangePassword'
-import UserProfileDetails from '../../components/UserComp/UserProfileDetails/UserProfileDetails'
-
+import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
+import UserProfileDetails from '../../components/UserComp/UserProfileDetails/UserProfileDetails';
+import ChangePassword from '../../components/UserComp/ChangePassword/ChangePassword';
 const UserProfilePage = () => {
   return (
     <section className="pageStyle pt-3">
@@ -14,7 +13,7 @@ const UserProfilePage = () => {
                         <UesrSideBarComp/>
                     </Col>
                     <Col sm={10}>
-                        <SubTitle title="الصفحه الشخصيه"/> 
+                    <SubTitle title="الصفحه الشخصيه"/> 
                         <Row>
                             <UserProfileDetails/>
                         </Row>
