@@ -2,13 +2,16 @@ import logo from "../../../assets/image/logo.png"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import {CgLogIn,CgShoppingCart} from 'react-icons/cg';
+import {CgLogIn} from 'react-icons/cg';
 import {FaBars} from 'react-icons/fa';
 import NavbarLoginHook from "../../../CustomHooks/NavbarLogin/NavbarLoginHook";
 import { NavDropdown } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { RiShoppingCart2Fill } from "react-icons/ri";
+import CartPageHook from "../../../CustomHooks/CartHooks/CartPageHook";
 const NavbarLogin = () => {
+  let [productsCartData,reload,setReload,lengthOfArray,productCartDataToCoupone]=CartPageHook();
   let [searchWordStorage,onChangeSearchword]=NavbarLoginHook();
   let [user,setUser]=useState("");
   useEffect(()=>{
@@ -52,8 +55,10 @@ const NavbarLogin = () => {
               </NavDropdown>
               {user.role==="user"?(
                 <Link to="/cart">
-                  <CgShoppingCart />
-                  <p>العربه</p>
+                  <div className="cart-logo">
+                      <RiShoppingCart2Fill/>
+                      <div className="count">{lengthOfArray}</div>
+                  </div>
                 </Link>
               ):null}
               </>

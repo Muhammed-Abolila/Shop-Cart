@@ -76,16 +76,29 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px;
 }
 
-.navbar .navbar-collapse .navbar-nav a svg {
-  font-size: 20px;
+.navbar .navbar-collapse .navbar-nav a .cart-logo {
+  position: relative;
+  margin-right: 10px;
 }
 
-.navbar .navbar-collapse .navbar-nav a p {
+.navbar .navbar-collapse .navbar-nav a .cart-logo svg {
+  color: #0072bc;
   margin-top: 13px;
-  margin-right: 5px;
+  font-size: 30px;
+}
+
+.navbar .navbar-collapse .navbar-nav a .cart-logo .count {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background-color: red;
+  padding: 5px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .slider {
@@ -762,11 +775,26 @@ footer .container ul a, footer .container ul .register .register-content .regist
   margin-left: 5px;
 }
 
-.cart-item .cart-right .cart-content .quantaty p {
+.cart-item .cart-right .cart-content .quantaty input {
   border: 1px solid #0072bc;
-  padding: 5px 15px;
+  width: 50px;
+  padding-right: 13px;
   border-radius: 5px;
   background-color: white;
+}
+
+.cart-item .cart-right .cart-content .quantaty .btn {
+  border: 1px solid #0072bc;
+  background-color: white;
+  color: #0072bc;
+  margin-right: 10px;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.cart-item .cart-right .cart-content .quantaty .btn:hover {
+  color: white;
+  background-color: #0072bc;
 }
 
 .cart-item .cart-left {
@@ -807,7 +835,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
           box-shadow: none;
 }
 
-.Coupon button, .Coupon .register .register-content .form button, .register .register-content .form .Coupon button {
+.Coupon .btn {
   width: 100%;
   padding: 10px 20px;
   border: 1px solid #0072bc;
@@ -818,9 +846,38 @@ footer .container ul a, footer .container ul .register .register-content .regist
   transition: all .4s;
 }
 
-.Coupon button:hover, .Coupon .register .register-content .form button:hover, .register .register-content .form .Coupon button:hover {
+.Coupon .btn:hover {
   color: white;
   background-color: #0072bc;
+}
+
+.Coupon .btn-delete {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid red;
+  background-color: red;
+  color: white !important;
+  margin-top: 10px;
+}
+
+.Coupon .price {
+  margin: 15px 0px;
+  font-weight: bold;
+}
+
+.Coupon .price span, .Coupon .price .register .register-content .register-footer a span, .register .register-content .register-footer a .Coupon .price span {
+  position: relative;
+}
+
+.Coupon .price span:after, .Coupon .price .register .register-content .register-footer a span:after, .register .register-content .register-footer a .Coupon .price span:after {
+  content: "";
+  position: absolute;
+  width: 122%;
+  height: 3px;
+  background-color: red;
+  top: 10px;
+  right: -6px;
 }
 
 .price-comp {
@@ -1512,6 +1569,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .modal-container .modal-box .btns .btn {
+  width: 40%;
   padding: 10px 15px !important;
   color: white;
 }

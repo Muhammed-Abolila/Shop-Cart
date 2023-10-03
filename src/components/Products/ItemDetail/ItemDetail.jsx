@@ -1,7 +1,32 @@
-import React from 'react'
-import { Carousel, Col, Row } from 'react-bootstrap'
+import React, { useState } from 'react'
+import { Carousel, Col, Row } from 'react-bootstrap';
 import PriceComp from '../../Utilities/PriceComp/PriceComp';
-const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => { 
+import { useDispatch, useSelector } from 'react-redux';
+import { AddToCart } from '../../../Redux/Actions/CartActions';
+import Notifications from '../../../CustomHooks/Notifications';
+import { ToastContainer } from 'react-toastify';
+const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
+    let dispatch=useDispatch();
+    let [selectedColor,setSelectedColor]=useState("");
+    let [indexOfselectedColor,setIndexOfSelectedColor]=useState("");
+    const onColorChange=(color,index)=>{
+        setIndexOfSelectedColor(index)
+        setSelectedColor(color)
+    };
+    let response=useSelector((state)=>state.CartReducer.AddToCart);
+    let [notify]=Notifications(response)
+    // Add Product To Cart
+    const onAddToCart=async()=>{
+        if(oneProduct.availableColors.length>=1 && selectedColor==''){
+            notify("اختر اللون"); 
+        }else{
+            await dispatch(AddToCart({
+                productId: oneProduct._id,
+                color: selectedColor
+            }));
+            window.location.reload()
+        }  
+    }
   return ( 
     <section className='item-details my-3 py-4'>
                 <Row> 
@@ -30,7 +55,7 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
                         <p className="py-2">{oneBrand.name}</p>
                         <ul>
                             {oneProduct.availableColors?(oneProduct.availableColors.map((color,index)=>
-                            <li key={index} style={{backgroundColor:`${color}`}}></li>
+                            <li key={index} style={{backgroundColor:`${color}`,border:indexOfselectedColor===index?"2px solid #000":"2px solid transparent"}} onClick={()=>onColorChange(color,index)}></li>
                                 )):null}
                         </ul>
                     </div>
@@ -42,12 +67,12 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
                         <PriceComp price={oneProduct.price}/>
                     </div>
                     <div>
-                        <button className='btn'>أضف للعربه </button>
-                        <button className='btn'>أضف للمفضله </button>
+                        <button className='btn' onClick={onAddToCart}>أضف للعربه</button>
                     </div>
                 </div>
             </Col>
         </Row>
+        <ToastContainer/>
     </section>
 
   )

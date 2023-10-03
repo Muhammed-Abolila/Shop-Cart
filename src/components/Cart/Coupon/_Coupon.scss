@@ -10,7 +10,7 @@
         }
     }
     
-    button{
+    .btn{
         width:100%;
         padding:10px 20px;
         border:1px solid $ThirdColor;
@@ -22,5 +22,32 @@
             color:$MainColor;
             background-color: $ThirdColor;
         }
+    }
+    .btn-delete{
+        width:100%;
+        padding:10px 20px;
+        border-radius: 5px;
+        border:1px solid red;
+        background-color: red;
+        color:$MainColor !important;
+        margin-top: 10px;
+    }
+    .price{
+        span{
+            
+            position:relative;
+            &:after{
+                content: "";
+                position: absolute;
+                width: 122%;
+                height: 3px;
+                background-color:red;
+                top: 10px;
+                right: -6px;
+            }
+        }
+        
+        margin:15px 0px;
+        font-weight: bold;
     }
 }

@@ -34,11 +34,23 @@
                 padding-top:5px;
                 margin-left:5px;
             }
-            p{
+            input{
                 border:1px solid $ThirdColor;
-                padding:5px 15px;
+                width: 50px;
+                padding-right: 13px;
                 border-radius: 5px;
                 background-color: $MainColor;
+            }
+            .btn{
+                border:1px solid $ThirdColor;
+                background-color: $MainColor;
+                color:$ThirdColor;
+                margin-right: 10px;
+                transition: all .4s;
+                &:hover{
+                    color:$MainColor;
+                    background-color: $ThirdColor;
+                } 
             }
         }
     }
