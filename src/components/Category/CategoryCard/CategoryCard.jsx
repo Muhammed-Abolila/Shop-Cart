@@ -1,6 +1,7 @@
 import React from 'react'
 import {Col } from 'react-bootstrap'
-const CategoryCard = ({img,category,background}) => {
+import { Link } from 'react-router-dom';
+const CategoryCard = ({item}) => {  
   return (
           <Col 
             xs={6}
@@ -9,15 +10,16 @@ const CategoryCard = ({img,category,background}) => {
             lg={2}
             >
               <div className="category-card my-4">
-                  <div className="img-container" style={{backgroundColor:`${background}`}}>
-                    <img src={img} alt=""/>
+                  <div className="img-container">
+                    <Link to={`/products/category/${item._id}`}>
+                      <img src={item.image} alt={item.name}/>
+                    </Link>
                   </div>
                   <div className="card-content">
-                    <h4>{category}</h4>
+                    <h4>{item.name}</h4>
                   </div>
               </div>
             </Col>
-
   )
 };
 

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { BaseUrl, CREATE_PRODUCT, GET_ERROR,GET_ALL_PRODUCTS,GET_PRODUCT_WITH_ID
-,GET_SAME_PRODUCTS,DELETE_PRODUCT,UPDATE_PRODUCT,GET_PRODUCT_SEARCH} from "../Type/Type";
+,GET_SAME_PRODUCTS,DELETE_PRODUCT,UPDATE_PRODUCT,GET_PRODUCT_SEARCH,
+GET_PRODUCTS_BY_CATEGORY,GET_PRODUCTS_BY_BRAND} from "../Type/Type";
 // Post product Data
 export const PostProductApi=(data)=>{
     return async(dispatch)=>{
@@ -55,6 +56,43 @@ export const GetLimitProductApi=(pageNumber)=>{
         }
     }
 };
+// Get Product Data Based On Category
+export const GetProductsByCat=(pageNumber,categoryId)=>{
+    return async(dispatch)=>{
+        try{
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
+            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=1&page=${pageNumber}&category=${categoryId}`,config);            
+            dispatch({
+                type:GET_PRODUCTS_BY_CATEGORY,
+                payload:response.data
+            })
+        }catch(e){
+            dispatch({
+                type:GET_PRODUCTS_BY_CATEGORY,
+                payload:e.response
+            })
+        }
+    }
+};
+// Get Product Data Based On Brand
+export const GetProductsByBrand=(pageNumber,BrandId)=>{
+    return async(dispatch)=>{
+        try{
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
+            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=1&page=${pageNumber}&brand=${BrandId}`,config);            
+            dispatch({
+                type:GET_PRODUCTS_BY_BRAND,
+                payload:response.data
+            })
+        }catch(e){
+            dispatch({
+                type:GET_PRODUCTS_BY_BRAND,
+                payload:e.response
+            })
+        }
+    }
+};
+
 // Get Product Details Based On Id
 export const GetProductDataWithId=(id)=>{
     return async(dispatch)=>{

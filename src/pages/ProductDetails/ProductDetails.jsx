@@ -8,14 +8,14 @@ import { useParams } from 'react-router';
 import ProductDetailsHook from '../../CustomHooks/ProductsHooks/ProductDetailsHook';
 const ProductDetails = () => {
   let {id}=useParams();
-  let [oneProduct,oneCategory,oneBrand,SameProductData,reloadWhenChooseProduct]=ProductDetailsHook(id);
+  let [oneProduct,oneCategory,oneBrand,SameProductData]=ProductDetailsHook(id);
   return (
     <section className='product-details pb-5 pageStyle'>
         <ProductsSearchNavbar/>
         <Container>
             <ItemDetail oneProduct={oneProduct} oneCategory={oneCategory} oneBrand={oneBrand}/>
             <RateAndComments oneProductData={oneProduct}/>
-            {SameProductData?(<ProductContainer ProductData={SameProductData} reloadWhenChooseSameProduct={reloadWhenChooseProduct} title="منتجات قد تعجبك"/>):null}
+            {SameProductData?(<ProductContainer ProductData={SameProductData} title="منتجات قد تعجبك"/>):null}
         </Container>
     </section>
   )

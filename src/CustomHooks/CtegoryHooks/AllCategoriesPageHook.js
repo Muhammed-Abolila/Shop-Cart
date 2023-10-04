@@ -5,13 +5,15 @@ const AllCategoriesPageHook = () => {
     let Category=useSelector((state)=>state.CategoryReducer.GetCategoryApi);
     let Loading=useSelector((state)=>state.CategoryReducer.loading);
     let CategoryData,PaginationData;
-    if(Category.data){
-      CategoryData=Category.data;
-      PaginationData=Category.paginationResult.numberOfPages
-    }else{
-      CategoryData=[];
-      PaginationData={}
-    } 
+    try{
+      if(Category.data){
+        CategoryData=Category.data;
+        PaginationData=Category.paginationResult.numberOfPages
+      }else{
+        CategoryData=[];
+        PaginationData={}
+      } 
+    }catch(e){}
     let dispatch=useDispatch();
     useEffect(()=>{
       dispatch(getLimitCategoryApi(1))

@@ -1,9 +1,12 @@
 import { GET_ERROR, CREATE_PRODUCT, GET_ALL_PRODUCTS,GET_PRODUCT_WITH_ID, 
-    GET_SAME_PRODUCTS, DELETE_PRODUCT, UPDATE_PRODUCT,GET_PRODUCT_SEARCH } from "../Type/Type";
+     GET_SAME_PRODUCTS, DELETE_PRODUCT, UPDATE_PRODUCT,GET_PRODUCT_SEARCH,
+     GET_PRODUCTS_BY_CATEGORY,GET_PRODUCTS_BY_BRAND } from "../Type/Type";
 let intialValue={
     CreateProductApi:[],
     AllProductApi:[],
     SingleProductApi:[],
+    ProductsByCategory:[],
+    ProductsByBrand:[],
     SameProducts:[],
     DeleteProduct:[],
     UpdateProductApi:[],
@@ -27,6 +30,18 @@ export const ProductReducer=(state=intialValue,action)=>{
             return{
                 ...state,
                 SingleProductApi:action.payload,
+                Loading:false
+            }
+        case GET_PRODUCTS_BY_CATEGORY:
+            return{
+                ...state,
+                ProductsByCategory:action.payload,
+                Loading:false
+            }
+        case GET_PRODUCTS_BY_BRAND:
+            return{
+                ...state,
+                ProductsByBrand:action.payload,
                 Loading:false
             }
         case GET_SAME_PRODUCTS:

@@ -22,16 +22,6 @@ const ProductsSearchPage = () => {
         </Col>
         <Col lg={10}>
          {items.data?(<ProductContainer  ProductData={items.data} title={""}/>):<GrowExample/>}
-          {/* <Row className='justify-content-evenly'>
-            {items.data?(
-              items.data.map((product,index)=>{
-                return(
-                    <Col xs={10} sm={6} lg={4} key={index}>
-                      <ProductCard CardProductData={product}/>
-                    </Col>
-                )}) 
-            ):<GrowExample/>}
-          </Row>*/}
         </Col>
       </Row>
       {pagination>1?(<PaginationComp PaginationData={pagination} getPageCount={getPageCount}/>):null}

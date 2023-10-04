@@ -28,11 +28,12 @@ import VerifyCodePage from "./pages/Auth/VerifyCode/VerifyCodePage";
 import RePasswordPage from "./pages/Auth/RePassword/RePasswordPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import AddCouponPage from "./pages/AdminPages/AddCouponPage";
+import ProtectedRouteComp from "./components/Utilities/ProtectedRouteComp/ProtectedRouteComp";
+import ProtectedRoute from "./CustomHooks/Auth/ProtectedRoute";
+import ProductsByCategory from "./pages/ProductsByCategory/ProductsByCategory";
+import ProductsByBrand from "./pages/ProductsByBrand/ProductsByBrand";
 function App() {
-  let tokenRole=''
-  if(localStorage.getItem("user")!=null){
-     tokenRole=JSON.parse(localStorage.getItem("user"));
-  };
+  let [isUser,isAdmin]=ProtectedRoute()
   return (
     <>
       <BrowserRouter>
@@ -46,13 +47,13 @@ function App() {
           <Route path="/verify" element={<VerifyCodePage/>} />
           <Route path="/re-password" element={<RePasswordPage/>} />
           <Route path="/allcategories" element={<AllCategories/>}/>
-          <Route path="/cart" element={<Cart/>}/>
           <Route path="/brands" element={<BrandsPage/>}/>
           <Route path="/products" element={<ProductsSearchPage/>}/>
           <Route path="/details/:id" element={<ProductDetails/>} />
-          <Route path="/paymethods" element={<PaymentMethodPage/>} />
-          {tokenRole.role==="admin"?(
-            <>
+          <Route path="/products/category/:id" element={<ProductsByCategory/>} />
+          <Route path="/products/brand/:id" element={<ProductsByBrand/>} />
+
+          <Route element={<ProtectedRouteComp auth={isAdmin}/>}>
             <Route path="/admin/orders" element={<OrdersPage/>} />
             <Route path="/admin/manageproduct" element={<AdminManageProductPage/>} />
             <Route path="/admin/addbrand" element={<AddBrandPage/>} />
@@ -61,17 +62,17 @@ function App() {
             <Route path="/admin/addproduct" element={<AddProductPage/>} />
             <Route path="/admin/addcoupon" element={<AddCouponPage/>} />
             <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} />
-            </>
-          ):tokenRole.role==="user"?(
-            <>
+          </Route>
+          <Route element={<ProtectedRouteComp auth={isUser}/>}>
+            <Route path="/cart" element={<Cart/>}/>
+            <Route path="/paymethods" element={<PaymentMethodPage/>} />
             <Route path="/user/allorders" element={<UserAllOrdersPage/>} />
             <Route path="/user/favproduct" element={<UserFavProductPage/>} />
             <Route path="/user/address" element={<UserAddressPage/>} />
             <Route path="/user/profile" element={<UserProfilePage/>} />
             <Route path="/user/eddit-address/:id" element={<UserEdditAddressPage/>} />
             <Route path="/user/add-address" element={<UserAddAddressPage/>} />
-            </>
-          ):null}
+          </Route>
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>
       </BrowserRouter>

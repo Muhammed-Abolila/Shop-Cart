@@ -3,12 +3,20 @@ import { Link } from 'react-router-dom'
 import { BsFillHeartFill, BsFillStarFill } from "react-icons/bs";
 import {RiShoppingCart2Fill} from "react-icons/ri"
 import ProductCardHook from '../../../CustomHooks/ProductsHooks/ProductCardHook';
-const ProductCard = ({CardProductData,favProduct,reloadWhenChooseSameProduct}) => {
-  let [favStyle,handleWishlist,getId]=ProductCardHook(CardProductData,favProduct,reloadWhenChooseSameProduct);
+import { BaseUrl } from '../../../Redux/Type/Type';
+const ProductCard = ({CardProductData,favProduct}) => {
+  let [favStyle,handleWishlist]=ProductCardHook(CardProductData,favProduct);
+  console.log();
+  
   return (
       <Card className='product-card mt-4'>
         <Link to={`/details/${CardProductData._id}`} style={{textDecoration:"none"}}>
-          <Card.Img variant="top" src={CardProductData.imageCover} onClick={()=>getId(CardProductData._id)}/>
+          {window.location.pathname==="/user/favproduct"?(
+            <Card.Img variant="top" src={`${BaseUrl}/products/${CardProductData.imageCover}`}/>
+          ):(
+            <Card.Img variant="top" src={CardProductData.imageCover}/>
+          )}
+          
         </Link>
       <Card.Body>
           <div className="fav-icon d-flex justify-content-between mb-2 mx-2">

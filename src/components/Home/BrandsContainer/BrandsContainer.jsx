@@ -8,14 +8,14 @@ const BrandsContainer = ({BrandData,title,btnName,pathName}) => {
     <section className='mt-5'>
       <SubTitle title={title} btnName={btnName} pathName={pathName}/>
       <Row className="justify-content-between">
-          {BrandData.data?(
-            BrandData.data.slice(0,5).map((item)=>
+          {BrandData?(
+            BrandData.map((item,index)=>
               <Col 
                 sm={4}
                 xl={2}
-                key={item._id}
+                key={index}
                 >
-                  <BrandsCard  img={item.image}/>
+                  <BrandsCard item={item}/>
               </Col>
               )
             ):<GrowExample/>}

@@ -5,6 +5,7 @@ import BrandsCard from '../../components/Brands/BrandsCard/BrandsCard';
 import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
 import GrowExample from '../../components/Utilities/Spinner/Spinner';
 import AllBrandsPageHook from '../../CustomHooks/BrandsHooks/AllBrandsPageHook';
+import BrandsContainer from '../../components/Home/BrandsContainer/BrandsContainer';
 const BrandsPage = () => {
   let [AllBrandsData,Loading,Pagination,getPageCount]=AllBrandsPageHook()
   if(Loading===true){
@@ -15,17 +16,7 @@ const BrandsPage = () => {
     return(
       <section className="pageStyle">
         <Container className='py-5'>
-          <SubTitle title="أشهر الماركات"/>
-          <Row className='justify-content-evenly'>
-            {AllBrandsData?(
-              AllBrandsData.map((item,index)=>
-              <Col key={index} sm={4} xl={3}>
-              <BrandsCard key={item._id} img={item.image}/>
-              </Col>
-                )
-              ):null}
-          
-          </Row>
+          {AllBrandsData?(<BrandsContainer BrandData={AllBrandsData} title={"أشهر الماركات"}/>):<GrowExample/>}
           {Pagination>1?(<PaginationComp PaginationData={Pagination} getPageCount={getPageCount}/>):null}
         </Container>
       </section>

@@ -13,7 +13,7 @@ const UserFavProductPage = () => {
                         <UesrSideBarComp/>
                     </Col>
                     <Col sm={10}>
-                    {wishListProductData?(<ProductContainer  ProductData={wishListProductData} title={""}/>):<GrowExample/>}
+                    {wishListProductData?(<ProductContainer  ProductData={wishListProductData} title={"منتجاتك المفضله"}/>):<GrowExample/>}
                     </Col>
                 </Row>
             </Container>

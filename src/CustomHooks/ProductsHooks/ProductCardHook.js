@@ -1,12 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { AddProductToWishlist, RemoveProductFromWishlist } from '../../Redux/Actions/WishListActions';
 import { useState, useEffect} from 'react';
- const ProductCardHook = (CardProductData,favProduct,reloadWhenChooseSameProduct) => {
-    function getId(param){
-      try{
-        reloadWhenChooseSameProduct(param)
-      }catch(e){}
-      };
+ const ProductCardHook = (CardProductData,favProduct) => {
     let dispatch=useDispatch();
     let user=JSON.parse(localStorage.getItem("user"));
     let fav=favProduct.includes(CardProductData._id)
@@ -34,7 +29,7 @@ import { useState, useEffect} from 'react';
     useEffect(()=>{
       setFavItem(fav)
     },[fav]);
-    return [favStyle,handleWishlist,getId]
+    return [favStyle,handleWishlist]
  }
  
  export default ProductCardHook

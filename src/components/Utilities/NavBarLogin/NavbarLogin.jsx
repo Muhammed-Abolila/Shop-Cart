@@ -57,7 +57,7 @@ const NavbarLogin = () => {
                 <Link to="/cart">
                   <div className="cart-logo">
                       <RiShoppingCart2Fill/>
-                      <div className="count">{lengthOfArray}</div>
+                      <div className="count">{lengthOfArray||0}</div>
                   </div>
                 </Link>
               ):null}
