@@ -47,7 +47,7 @@ const CartItem = ({data,reload,setReload}) => {
                                 <h6 className='mb-2'>التصنيف:- <span>{data.product.category.name}</span></h6>
                             </div>
                             <div>
-                                <h6 className='mb-2'>الماركه:- <span>{data.product.brand.name}</span></h6>
+                                <h6 className='mb-2'>الماركه:- <span>{data.product.brand&&data.product.brand.name}</span></h6>
                                 <span className='color' style={{backgroundColor:`${data.color}`}}></span>
                             </div>
                             <div className='quantaty d-flex '>

@@ -1,7 +1,7 @@
 .product-card{
     box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
     border:1px solid $ThirdColor !important;
-    height:400px !important;
+    height:435px !important;
     overflow: hidden;
     img{
         height:270px;
@@ -19,6 +19,7 @@
         .card-footer{
             padding: 0;
             margin: 0;
+            padding-top:8px;
             background-color: transparent;
             display: flex;
             justify-content: space-between;
@@ -36,6 +37,27 @@
                     margin-right: 5px;
                     font-weight: 600;
                 }
+            }
+            .price{
+                p{
+                    margin:0px !important;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                .price-before-discount{
+                    position: relative;
+                    span{
+                        background-color: red;
+                        width: 120%;
+                        height: 2px;
+                        position: absolute;
+                        top: 50%;
+                        right: -7px;
+                        display: block;
+                        transform: skew(210deg, 351deg);
+                    }
+                }
+                
             }
         }
     } 

@@ -63,8 +63,23 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
                         <h6>المواصفات:-</h6>
                         <p className="pt-2">{oneProduct.description}</p>
                     </div>
-                    <div>
-                        <PriceComp price={oneProduct.price}/>
+                    <div className='price'>
+                        {oneProduct.priceAfterDiscount?(
+                            <>
+                            <p className="price-before-discount">السعر قبل الخصم :- 
+                             <span className="price-before-discount-container">
+                                {oneProduct.price}
+                                جنيه
+                                <span></span>
+                             </span> 
+                            
+                            </p>
+                            <p>السعر بعد الخصم :- {oneProduct.priceAfterDiscount} جنيه</p>
+                            </>
+                        ):(
+                            <p>{oneProduct.price} جنيه</p>
+                        )}
+                        
                     </div>
                     <div>
                         <button className='btn' onClick={onAddToCart}>أضف للعربه</button>

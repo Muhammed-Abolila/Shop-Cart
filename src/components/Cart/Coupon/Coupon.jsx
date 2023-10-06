@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UserUseCoupon, DeleteAllCart } from '../../../Redux/Actions/CartActions';
 import Notifications from '../../../CustomHooks/Notifications';
 import DeleteModal from '../../Utilities/DeleteModal/DeleteModal';
-
 const Coupon = ({data,reload,setReload}) => {  
   let dispatch=useDispatch()
   let [CouponValue,setCouponValue]=useState(data.coupon);

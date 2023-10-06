@@ -16,24 +16,25 @@
             h5{
                 font-size: 16px;
                 font-weight: 400;
-                span{
-                    margin :0px 10px;
+            }
+            .color{
+                padding: 18px;
+                border-radius: 50%;
+                width: 20px;
+            }
+            .price{
+                display: flex;
+                h5{
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+                div{
+                    margin-right:5px
                 }
             }
-        }
-    }
-    .quantaty{
-        display: flex;
-        h5{
-            font-size: 16px;
-            font-weight: 400;
-        }
-        div{
-            width:40px;
-            text-align: center;
-            border:1px solid $ThirdColor;
-            margin-right:10px
-
+            .quantaty{
+                @extend .price ;
+            }
         }
     }
    }

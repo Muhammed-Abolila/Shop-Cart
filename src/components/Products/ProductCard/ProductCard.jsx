@@ -5,9 +5,7 @@ import {RiShoppingCart2Fill} from "react-icons/ri"
 import ProductCardHook from '../../../CustomHooks/ProductsHooks/ProductCardHook';
 import { BaseUrl } from '../../../Redux/Type/Type';
 const ProductCard = ({CardProductData,favProduct}) => {
-  let [favStyle,handleWishlist]=ProductCardHook(CardProductData,favProduct);
-  console.log();
-  
+  let [favStyle,handleWishlist]=ProductCardHook(CardProductData,favProduct);   
   return (
       <Card className='product-card mt-4'>
         <Link to={`/details/${CardProductData._id}`} style={{textDecoration:"none"}}>
@@ -30,7 +28,18 @@ const ProductCard = ({CardProductData,favProduct}) => {
               <p>{CardProductData.ratingsAverage||0}</p>
             </div>
             <div className='price'>
-              <h5>{CardProductData.price}جنيه</h5>
+              {CardProductData.priceAfterDiscount?(
+                <>
+                <p className="price-before-discount">
+                  {CardProductData.price} جنيه
+                  <span></span>
+                </p>
+                <p>{CardProductData.priceAfterDiscount} جنيه</p>
+                </>
+              ):(
+                <p>{CardProductData.price} جنيه</p>
+              )}
+              
             </div>
           </div>
       </Card.Body>

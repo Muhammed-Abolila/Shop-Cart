@@ -11,7 +11,7 @@
 }
 
 .navbar .navbar-toggler {
-  background-color: white;
+  background-color: #fff;
   border: 2px solid #0072bc;
 }
 
@@ -44,7 +44,7 @@
 .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu {
   padding: 0px !important;
   background-color: #030303 !important;
-  color: white !important;
+  color: #fff !important;
   overflow: hidden;
 }
 
@@ -55,17 +55,17 @@
 }
 
 .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu a:hover {
-  background-color: white !important;
+  background-color: #fff !important;
   color: #0072bc !important;
 }
 
 .navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu .dropdown-divider {
-  background-color: white !important;
+  background-color: #fff !important;
   margin: 0px !important;
 }
 
 .navbar .navbar-collapse .navbar-nav a {
-  color: white;
+  color: #fff;
   text-decoration: none !important;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -182,12 +182,12 @@
 
 .subtitle-comp a:hover, .subtitle-comp .register .register-content .register-footer a:hover, .register .register-content .register-footer .subtitle-comp a:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .category-card {
   height: 250px;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #0072bc;
   border-radius: 10px;
   padding: 10px 5px;
@@ -235,7 +235,7 @@
   -webkit-box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
   border: 1px solid #0072bc !important;
-  height: 400px !important;
+  height: 435px !important;
   overflow: hidden;
 }
 
@@ -260,6 +260,7 @@
 .product-card .card-body .card-footer {
   padding: 0;
   margin: 0;
+  padding-top: 8px;
   background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -291,6 +292,28 @@
   font-weight: 600;
 }
 
+.product-card .card-body .card-footer .price p, .product-card .card-body .card-footer .user-order-body .row .content .disc .quantaty p, .user-order-body .row .content .disc .product-card .card-body .card-footer .quantaty p {
+  margin: 0px !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-card .card-body .card-footer .price .price-before-discount, .product-card .card-body .card-footer .user-order-body .row .content .disc .quantaty .price-before-discount, .user-order-body .row .content .disc .product-card .card-body .card-footer .quantaty .price-before-discount {
+  position: relative;
+}
+
+.product-card .card-body .card-footer .price .price-before-discount span, .product-card .card-body .card-footer .user-order-body .row .content .disc .quantaty .price-before-discount span, .user-order-body .row .content .disc .product-card .card-body .card-footer .quantaty .price-before-discount span {
+  background-color: red;
+  width: 120%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  display: block;
+  -webkit-transform: skew(210deg, 351deg);
+          transform: skew(210deg, 351deg);
+}
+
 @media screen and (max-width: 500px) {
   .card-footer h5 {
     font-size: .9rem !important;
@@ -300,7 +323,7 @@
 .brand-img {
   height: 150px;
   border: 1px solid #0072bc;
-  background-color: white;
+  background-color: #fff;
   border-radius: 5px;
   -webkit-box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
@@ -323,7 +346,7 @@
 
 .descount {
   background-color: #030303;
-  color: white;
+  color: #fff;
   border-radius: 5px;
 }
 
@@ -338,7 +361,7 @@
 
 footer {
   background-color: #030303;
-  color: white;
+  color: #fff;
 }
 
 footer .container {
@@ -352,7 +375,7 @@ footer .container ul {
 
 footer .container ul a, footer .container ul .register .register-content .register-footer a, .register .register-content .register-footer footer .container ul a {
   text-decoration: none;
-  color: white;
+  color: #fff;
   font-size: 16px;
 }
 
@@ -387,14 +410,14 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .pagination .page-item .prev-link, .pagination .page-item .next-link {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
   border-radius: 5px !important;
   border: 1px solid #0072bc !important;
 }
 
 .pagination .active-link .page-link {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
   border-radius: 5px !important;
   border: 1px solid #0072bc !important;
 }
@@ -421,14 +444,14 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .pagination .page-item .prev-link, .pagination .page-item .next-link {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
   border-radius: 5px !important;
   border: 1px solid #0072bc !important;
 }
 
 .pagination .active-link .page-link {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
   border-radius: 5px !important;
   border: 1px solid #0072bc !important;
 }
@@ -465,16 +488,16 @@ footer .container ul a, footer .container ul .register .register-content .regist
   margin-left: 5px;
 }
 
-.SlideSearch .price h6 {
+.SlideSearch .price h6, .SlideSearch .user-order-body .row .content .disc .quantaty h6, .user-order-body .row .content .disc .SlideSearch .quantaty h6 {
   margin-top: 15px;
   margin-bottom: 5px;
 }
 
-.SlideSearch .price li {
+.SlideSearch .price li, .SlideSearch .user-order-body .row .content .disc .quantaty li, .user-order-body .row .content .disc .SlideSearch .quantaty li {
   margin: 5px 0px;
 }
 
-.SlideSearch .price li input {
+.SlideSearch .price li input, .SlideSearch .user-order-body .row .content .disc .quantaty li input, .user-order-body .row .content .disc .SlideSearch .quantaty li input {
   margin-right: 10px;
   width: 80px;
   border-radius: 5px;
@@ -482,7 +505,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   padding: 2px !important;
 }
 
-.SlideSearch .price li input:focus {
+.SlideSearch .price li input:focus, .SlideSearch .user-order-body .row .content .disc .quantaty li input:focus, .user-order-body .row .content .disc .SlideSearch .quantaty li input:focus {
   border: 1px solid #0072bc !important;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -508,7 +531,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .subNavbarBg {
-  background-color: white;
+  background-color: #fff;
   border-bottom: 1px solid #0072bc;
 }
 
@@ -539,7 +562,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .ProductsSearchSubTitle .row .dropdown .dropdown-toggle {
   width: 170px;
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border-color: #0072bc;
   -webkit-transition: all .4s;
@@ -548,7 +571,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .ProductsSearchSubTitle .row .dropdown .dropdown-toggle:hover, .ProductsSearchSubTitle .row .dropdown .dropdown-toggle:focus {
   background-color: #0072bc !important;
-  color: white;
+  color: #fff;
 }
 
 .ProductsSearchSubTitle .row .dropdown .dropdown-toggle p {
@@ -578,7 +601,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .ProductsSearchSubTitle .row .dropdown .dropdown-menu .dropdown-item:hover {
-  color: white;
+  color: #fff;
   background-color: #0072bc;
 }
 
@@ -614,7 +637,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .item-details .carousel .carousel-inner .carousel-item .slider-img {
-  background-color: white;
+  background-color: #fff;
   padding: 30px !important;
 }
 
@@ -665,7 +688,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .item-details .item-content div button, .item-details .item-content div .register .register-content .form button, .register .register-content .form .item-details .item-content div button {
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border: 1px solid #0072bc;
   -webkit-transition: all .4s;
@@ -676,11 +699,34 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .item-details .item-content div button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
+}
+
+.item-details .item-content .price p, .item-details .item-content .user-order-body .row .content .disc .quantaty p, .user-order-body .row .content .disc .item-details .item-content .quantaty p {
+  margin: 0px !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.item-details .item-content .price .price-before-discount .price-before-discount-container, .item-details .item-content .user-order-body .row .content .disc .quantaty .price-before-discount .price-before-discount-container, .user-order-body .row .content .disc .item-details .item-content .quantaty .price-before-discount .price-before-discount-container {
+  position: relative;
+  margin-right: 3px;
+}
+
+.item-details .item-content .price .price-before-discount .price-before-discount-container span, .item-details .item-content .user-order-body .row .content .disc .quantaty .price-before-discount .price-before-discount-container span, .user-order-body .row .content .disc .item-details .item-content .quantaty .price-before-discount .price-before-discount-container span {
+  background-color: red;
+  width: 120%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  display: block;
+  -webkit-transform: skew(210deg, 351deg);
+          transform: skew(210deg, 351deg);
 }
 
 .rate-comments {
-  background-color: white;
+  background-color: #fff;
   border-radius: 5px;
   padding: 10px;
 }
@@ -717,7 +763,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .rate-comments .comments .add-comment button {
   margin: 15px 0px;
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border: 1px solid #0072bc;
   -webkit-transition: all .4s;
@@ -726,11 +772,11 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .rate-comments .comments .add-comment button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .cart-item {
-  background-color: white;
+  background-color: #fff;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -780,12 +826,12 @@ footer .container ul a, footer .container ul .register .register-content .regist
   width: 50px;
   padding-right: 13px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #fff;
 }
 
 .cart-item .cart-right .cart-content .quantaty .btn {
   border: 1px solid #0072bc;
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   margin-right: 10px;
   -webkit-transition: all .4s;
@@ -793,7 +839,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .cart-item .cart-right .cart-content .quantaty .btn:hover {
-  color: white;
+  color: #fff;
   background-color: #0072bc;
 }
 
@@ -826,7 +872,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   padding: 10px;
   border-radius: 5px;
   text-align: center;
-  background-color: white;
+  background-color: #fff;
 }
 
 .Coupon input:focus {
@@ -839,7 +885,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   width: 100%;
   padding: 10px 20px;
   border: 1px solid #0072bc;
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   margin-top: 10px;
   -webkit-transition: all .4s;
@@ -847,7 +893,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .Coupon .btn:hover {
-  color: white;
+  color: #fff;
   background-color: #0072bc;
 }
 
@@ -857,20 +903,20 @@ footer .container ul a, footer .container ul .register .register-content .regist
   border-radius: 5px;
   border: 1px solid red;
   background-color: red;
-  color: white !important;
+  color: #fff !important;
   margin-top: 10px;
 }
 
-.Coupon .price {
+.Coupon .price, .Coupon .user-order-body .row .content .disc .quantaty, .user-order-body .row .content .disc .Coupon .quantaty {
   margin: 15px 0px;
   font-weight: bold;
 }
 
-.Coupon .price span, .Coupon .price .register .register-content .register-footer a span, .register .register-content .register-footer a .Coupon .price span {
+.Coupon .price span, .Coupon .user-order-body .row .content .disc .quantaty span, .user-order-body .row .content .disc .Coupon .quantaty span, .Coupon .price .register .register-content .register-footer a span, .register .register-content .register-footer a .Coupon .price span {
   position: relative;
 }
 
-.Coupon .price span:after, .Coupon .price .register .register-content .register-footer a span:after, .register .register-content .register-footer a .Coupon .price span:after {
+.Coupon .price span:after, .Coupon .user-order-body .row .content .disc .quantaty span:after, .user-order-body .row .content .disc .Coupon .quantaty span:after, .Coupon .price .register .register-content .register-footer a span:after, .register .register-content .register-footer a .Coupon .price span:after {
   content: "";
   position: absolute;
   width: 122%;
@@ -887,7 +933,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .payment .payment-methods {
-  background-color: white;
+  background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   margin-top: 20px;
@@ -905,6 +951,48 @@ footer .container ul a, footer .container ul .register .register-content .regist
   margin-right: 5px;
 }
 
+.payment .payment-methods ul {
+  list-style: none;
+  padding: 0 !important;
+  margin-top: 25px;
+  width: 15%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.payment .payment-methods ul:hover li {
+  -webkit-transform: translatey(0);
+          transform: translatey(0);
+}
+
+.payment .payment-methods ul P {
+  border: 1px solid #0072bc;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.payment .payment-methods ul li {
+  -webkit-transform: translatey(300%);
+          transform: translatey(300%);
+  -webkit-transition: -webkit-transform .5s ease-in-out;
+  transition: -webkit-transform .5s ease-in-out;
+  transition: transform .5s ease-in-out;
+  transition: transform .5s ease-in-out, -webkit-transform .5s ease-in-out;
+  border: 1px solid #0072bc;
+  padding: 5px 0px;
+  text-align: center;
+  margin: auto;
+  border-radius: 0px 0px 5px 5px;
+  cursor: pointer;
+}
+
+.payment .payment-methods ul li:hover {
+  background-color: #0072bc;
+  color: #fff;
+}
+
 .payment .payment-method-footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -920,19 +1008,19 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .payment .payment-method-footer button, .payment .payment-method-footer .register .register-content .form button, .register .register-content .form .payment .payment-method-footer button {
   margin-right: 10px;
   border: 1px solid #0072bc;
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   -webkit-transition: all .4s;
   transition: all .4s;
 }
 
 .payment .payment-method-footer button:hover {
-  color: white;
+  color: #fff;
   background-color: #0072bc;
 }
 
 .admin-sidebar {
-  background-color: white;
+  background-color: #fff;
   border-radius: 5px;
 }
 
@@ -953,7 +1041,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .admin-sidebar ul li:hover, .admin-sidebar ul li:focus {
-  color: white;
+  color: #fff;
   background-color: #0072bc;
 }
 
@@ -961,7 +1049,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   -webkit-box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
   border: 1px solid #0072bc !important;
-  height: 430px !important;
+  height: 440px !important;
   overflow: hidden;
 }
 
@@ -1014,6 +1102,28 @@ footer .container ul a, footer .container ul .register .register-content .regist
   font-weight: 600;
 }
 
+.admin-product-card .card-body .card-footer .price p, .admin-product-card .card-body .card-footer .user-order-body .row .content .disc .quantaty p, .user-order-body .row .content .disc .admin-product-card .card-body .card-footer .quantaty p {
+  margin: 0px !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.admin-product-card .card-body .card-footer .price .price-before-discount, .admin-product-card .card-body .card-footer .user-order-body .row .content .disc .quantaty .price-before-discount, .user-order-body .row .content .disc .admin-product-card .card-body .card-footer .quantaty .price-before-discount {
+  position: relative;
+}
+
+.admin-product-card .card-body .card-footer .price .price-before-discount span, .admin-product-card .card-body .card-footer .user-order-body .row .content .disc .quantaty .price-before-discount span, .user-order-body .row .content .disc .admin-product-card .card-body .card-footer .quantaty .price-before-discount span {
+  background-color: red;
+  width: 120%;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  right: -7px;
+  display: block;
+  -webkit-transform: skew(210deg, 351deg);
+          transform: skew(210deg, 351deg);
+}
+
 @media screen and (max-width: 500px) {
   .card-footer h5 {
     font-size: .9rem !important;
@@ -1044,7 +1154,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .add-brand .inputs .name button {
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border: 1px solid #0072bc;
   -webkit-transition: background-color .4s,color .4s;
@@ -1055,7 +1165,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .add-brand .inputs .name button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .add-category .inputs .img {
@@ -1081,7 +1191,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .add-category .inputs .name button {
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border: 1px solid #0072bc;
   -webkit-transition: background-color .4s,color .4s;
@@ -1092,7 +1202,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .add-category .inputs .name button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .add-sub-category .inputs {
@@ -1100,7 +1210,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .add-sub-category .inputs button, .add-sub-category .inputs .register .register-content .form button, .register .register-content .form .add-sub-category .inputs button {
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border: 1px solid #0072bc;
   -webkit-transition: background-color .4s,color .4s;
@@ -1111,7 +1221,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .add-sub-category .inputs button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .add-coupon .inputs {
@@ -1119,7 +1229,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .add-coupon .inputs button, .add-coupon .inputs .register .register-content .form button, .register .register-content .form .add-coupon .inputs button {
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border: 1px solid #0072bc;
   -webkit-transition: background-color .4s,color .4s;
@@ -1130,7 +1240,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .add-coupon .inputs button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .add-product .inputs .multiselect-container .search-wrapper {
@@ -1138,7 +1248,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .add-product .inputs button, .add-product .inputs .register .register-content .form button, .register .register-content .form .add-product .inputs button {
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border: 1px solid #0072bc;
   -webkit-transition: background-color .4s,color .4s;
@@ -1149,7 +1259,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .add-product .inputs button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .add-product .inputs .colors-container .colors-inputs {
@@ -1178,7 +1288,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .user-sidebar {
-  background-color: white;
+  background-color: #fff;
   border-radius: 5px;
 }
 
@@ -1199,12 +1309,12 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .user-sidebar ul li:hover, .user-sidebar ul li:focus {
-  color: white;
+  color: #fff;
   background-color: #0072bc;
 }
 
 .user-orders-comp {
-  background-color: white;
+  background-color: #fff;
   padding: 15px 10px;
   border: 1px solid #0072bc;
   border-radius: 5px;
@@ -1238,13 +1348,13 @@ footer .container ul a, footer .container ul .register .register-content .regist
   color: gray;
 }
 
-.user-orders-comp .user-order-footer .price h4 {
+.user-orders-comp .user-order-footer .price h4, .user-orders-comp .user-order-footer .user-order-body .row .content .disc .quantaty h4, .user-order-body .row .content .disc .user-orders-comp .user-order-footer .quantaty h4 {
   font-size: 18px;
   font-weight: 400;
 }
 
 .user-address {
-  background-color: white;
+  background-color: #fff;
   padding: 10px 10px;
   border: 1px solid #0072bc;
   border-radius: 5px;
@@ -1303,7 +1413,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .user-profile-details {
-  background-color: white;
+  background-color: #fff;
   padding: 10px 10px;
   border: 1px solid #0072bc;
   border-radius: 5px;
@@ -1358,7 +1468,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .user-profile-details button, .user-profile-details .register .register-content .form button, .register .register-content .form .user-profile-details button {
   border: 1px solid #0072bc;
   color: #0072bc;
-  background-color: white;
+  background-color: #fff;
   margin-left: 10px;
   -webkit-transition: all .4s;
   transition: all .4s;
@@ -1366,7 +1476,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .user-profile-details button:hover, .user-profile-details .register .register-content .form button:hover, .register .register-content .form .user-profile-details button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .user-eddit-profile {
@@ -1418,30 +1528,29 @@ footer .container ul a, footer .container ul .register .register-content .regist
   font-weight: 400;
 }
 
-.user-order-body .row .content .disc h5 span {
-  margin: 0px 10px;
+.user-order-body .row .content .disc .color {
+  padding: 18px;
+  border-radius: 50%;
+  width: 20px;
 }
 
-.user-order-body .row .quantaty {
+.user-order-body .row .content .disc .price, .user-order-body .row .content .disc .quantaty {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.user-order-body .row .quantaty h5 {
-  font-size: 16px;
-  font-weight: 400;
+.user-order-body .row .content .disc .price h5, .user-order-body .row .content .disc .quantaty h5 {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.user-order-body .row .quantaty div {
-  width: 40px;
-  text-align: center;
-  border: 1px solid #0072bc;
-  margin-right: 10px;
+.user-order-body .row .content .disc .price div, .user-order-body .row .content .disc .quantaty div {
+  margin-right: 5px;
 }
 
 .order-card {
-  background-color: white;
+  background-color: #fff;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -1490,7 +1599,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   border: 1px solid #0072bc;
   padding: 5px 15px;
   border-radius: 5px;
-  background-color: white;
+  background-color: #fff;
 }
 
 .order-card .card-left {
@@ -1571,7 +1680,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .modal-container .modal-box .btns .btn {
   width: 40%;
   padding: 10px 15px !important;
-  color: white;
+  color: #fff;
 }
 
 .modal-container .modal-box .btns .back-btn {
@@ -1589,7 +1698,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .eddit-product .inputs button, .eddit-product .inputs .register .register-content .form button, .register .register-content .form .eddit-product .inputs button {
-  background-color: white;
+  background-color: #fff;
   color: #0072bc;
   border: 1px solid #0072bc;
   -webkit-transition: all .4s;
@@ -1600,7 +1709,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .eddit-product .inputs button:hover {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
 }
 
 .eddit-product .inputs .colors-container .colors-inputs {
@@ -1658,7 +1767,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
   width: 50%;
 }
 
@@ -1750,7 +1859,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .forgot-password .forgot-password-content .form button {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
   width: 50%;
 }
 
@@ -1796,7 +1905,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .verify .verify-content .form button {
   background-color: #0072bc;
-  color: white;
+  color: #fff;
   width: 50%;
 }
 
@@ -1826,7 +1935,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .copoun-card {
-  background-color: white;
+  background-color: #fff;
   padding: 10px;
   padding-bottom: 0px;
   margin-top: 20px;
@@ -1908,7 +2017,7 @@ body {
 .btn-style {
   border: 1px solid #0072bc !important;
   color: #0072bc !important;
-  background-color: white !important;
+  background-color: #fff !important;
   -webkit-transition: all .4s !important;
   transition: all .4s !important;
   width: -webkit-fit-content !important;
@@ -1919,7 +2028,7 @@ body {
 
 .btn-style:hover {
   background-color: #0072bc !important;
-  color: white !important;
+  color: #fff !important;
 }
 
 .input-style:focus {

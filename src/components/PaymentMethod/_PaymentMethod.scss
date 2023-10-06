@@ -12,6 +12,40 @@
                 margin-right: 5px;
             }
         }
+        ul{
+            list-style: none;
+            padding:0 !important;
+            margin-top:25px;
+            width:15%;
+            text-align: center;
+            overflow: hidden;
+            &:hover li{
+                transform: translatey(0);
+            }
+            P{
+                border:1px solid $ThirdColor;
+                padding:5px;
+                border-radius: 5px;
+                margin: 0;
+                cursor: pointer;
+                
+            }
+            li{
+                transform: translatey(300%);
+                transition:transform .5s ease-in-out;
+                border:1px solid $ThirdColor;
+                padding:5px 0px;
+                text-align: center;
+                margin: auto;
+                border-radius: 0px 0px 5px 5px;
+                cursor: pointer;
+                &:hover{
+                    background-color: $ThirdColor;
+                    color:$MainColor
+                } 
+            }
+            
+        }
     }
     .payment-method-footer{
         display: flex;

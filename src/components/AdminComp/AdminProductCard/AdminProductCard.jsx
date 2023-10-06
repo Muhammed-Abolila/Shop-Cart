@@ -25,7 +25,17 @@ const AdminAllProducts = ({productData,onDeleteProduct}) => {
               <p>{productData.ratingsQuantity}</p>
             </div>
             <div className='price'>
-              <h5>{productData.price} جنيه</h5>
+            {productData.priceAfterDiscount?(
+                <>
+                <p className="price-before-discount">
+                  {productData.price} جنيه
+                  <span></span>
+                </p>
+                <p>{productData.priceAfterDiscount} جنيه</p>
+                </>
+              ):(
+                <p>{productData.price} جنيه</p>
+              )}
             </div>
           </div>
       </Card.Body>

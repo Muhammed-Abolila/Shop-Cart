@@ -10,6 +10,7 @@ import { CouponReducers } from "./CouponReducers";
 import { AddressReducers } from "./AddressReducers";
 import { UserProfileReducer } from "./UserProfileReducer";
 import { CartReducer } from "./CartReducer";
+import { OrderReducer } from "./OrdersReducer";
 export const AllReducers=combineReducers({
     CategoryReducer:CategoryReducer,
     BrandReducer:BrandReducer,
@@ -21,5 +22,6 @@ export const AllReducers=combineReducers({
     CouponReducers:CouponReducers,
     AddressReducers:AddressReducers,
     UserProfileReducer:UserProfileReducer,
-    CartReducer:CartReducer
+    CartReducer:CartReducer,
+    OrderReducer:OrderReducer,
 })

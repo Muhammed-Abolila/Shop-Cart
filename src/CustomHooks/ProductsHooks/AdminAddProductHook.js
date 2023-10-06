@@ -158,12 +158,13 @@ const AdminAddProductHook = () => {
           notify("من فضلك أدخل ماركه المنتج")
         }else{
           let formData=new FormData();
-          formData.append("title",productName)
-          formData.append("description",productDesc)
-          formData.append("quantity",qty)
-          formData.append("price",priceBeforeDescount)
-          formData.append("imageCover",imgsAfterConvert[0])
-          formData.append("category",mainCategoryId)
+          formData.append("title",productName);
+          formData.append("description",productDesc);
+          formData.append("quantity",qty);
+          formData.append("price",priceBeforeDescount);
+          formData.append("priceAfterDiscount",priceAfterDescount);
+          formData.append("imageCover",imgsAfterConvert[0]);
+          formData.append("category",mainCategoryId);
           formData.append("brand",brandId);
           // the way to send array with form data
           imgsAfterConvert.map((img)=>formData.append("images",img))

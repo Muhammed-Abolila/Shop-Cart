@@ -45,6 +45,7 @@ useEffect(()=>{
       setProductName(singleProduct.data.title);
       setProductDesc(singleProduct.data.description);
       setPriceBeforeDescount(singleProduct.data.price);
+      setPriceAfterDescount(singleProduct.data.priceAfterDiscount);
       setQty(singleProduct.data.quantity);
       setCatId(singleProduct.data.category);
       setBrandId(singleProduct.data.brand);
@@ -147,7 +148,8 @@ let [notify]=Notifications(notifyStatus)
         formData.append("title",productName)
         formData.append("description",productDesc)
         formData.append("quantity",qty)
-        formData.append("price",priceBeforeDescount)
+        formData.append("price",priceBeforeDescount);
+        formData.append("priceAfterDiscount",priceAfterDescount);
         formData.append("category",catId)
         formData.append("brand",brandId);
         if(result===true){
@@ -170,7 +172,6 @@ let [notify]=Notifications(notifyStatus)
         setSelectedSubCategory("");
         setBrandId("");
         setSelectedColors([]);
-
   }
 }
 

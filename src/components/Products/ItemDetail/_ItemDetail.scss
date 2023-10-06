@@ -65,9 +65,31 @@
                     }
                 }
         }
+        .price{
+            p{
+                margin:0px !important;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .price-before-discount{
+                .price-before-discount-container{
+                    position: relative;
+                    margin-right:3px;
+                    span{
+                        background-color: red;
+                        width: 120%;
+                        height: 2px;
+                        position: absolute;
+                        top: 50%;
+                        right: -7px;
+                        display: block;
+                        transform: skew(210deg, 351deg);
+                    }
+                }
+                
+            }
+            
+        }
         
     }
-}
-@media screen and (max-width:991px){
-    
 }

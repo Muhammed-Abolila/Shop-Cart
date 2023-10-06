@@ -7,7 +7,9 @@ export const PostProductApi=(data)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{"Content-Type":"multipart/form-data",Authorization:` Bearer ${localStorage.getItem("token")}`}};
-            let response=await axios.post(`${BaseUrl}/api/v1/products`,data,config)
+            let response=await axios.post(`${BaseUrl}/api/v1/products`,data,config);
+            console.log(response);
+            
             dispatch({
                 type:CREATE_PRODUCT,
                 payload:response

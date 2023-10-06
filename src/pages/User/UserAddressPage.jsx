@@ -4,7 +4,9 @@ import { Col, Container, Row } from 'react-bootstrap'
 import SubTitle from '../../components/Utilities/SubTitle/SubTitle'
 import { Link } from 'react-router-dom'
 import UserAllAddresses from '../../components/UserComp/UserAllAddresses/UserAllAddresses';
+import UserAllAddressesHook from '../../CustomHooks/User/UserAllAddressesHook';
 const UserAddressPage = () => {
+    let [AllAddressesData,onDeleteAddress]=UserAllAddressesHook()
   return (
     <section className="pageStyle pt-3">
             <Container>
@@ -18,9 +20,12 @@ const UserAddressPage = () => {
                             <UserAllAddresses/>
                         </div>
                     </Col>
-                    <Link to="/user/add-address" style={{textDecoration:"none",textAlign:"center"} }>
-                       <button className='btn btn-style'>أضافه عنوان جديد</button>
-                    </Link>
+                    {AllAddressesData.length>=3?null:(
+                     <Link to="/user/add-address" style={{textDecoration:"none",textAlign:"center"} }>
+                        <button className='btn btn-style'>أضافه عنوان جديد</button>
+                     </Link>
+                    )}
+                    
                 </Row>
             </Container>
        </section>
