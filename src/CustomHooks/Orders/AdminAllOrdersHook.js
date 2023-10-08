@@ -9,7 +9,7 @@ const AdminAllOrdersHook = (ordersData) => {
     const isPaidChange=(e)=>{
         setIsPaid(e.target.value);
     };
-    
+    console.log(localStorage.getItem("token"));
     const onSendPaid=async()=>{
         if(isPaid=="0"){
             console.log("0");

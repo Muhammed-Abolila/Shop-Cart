@@ -5,7 +5,7 @@ import UserAllOrdersPageHook from '../../CustomHooks/User/UserAllOrdersPageHook'
 import AdminAllOrders from '../../components/AdminComp/AdminAllOrders/AdminAllOrders';
 import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
 const AdminAllOrdersPage = () => {
-    let [user,ordersResponse,ordersResponseData,pagination,getPageCount]=UserAllOrdersPageHook()
+    let [user,ordersResponse,ordersResponseData,pagination,getPageCount,reloadAfterChange,setReloadAfterChange]=UserAllOrdersPageHook()
     return(
         <section className="pageStyle pt-3">
         <Container>
@@ -17,7 +17,7 @@ const AdminAllOrdersPage = () => {
                     <SubTitle title="إداره جميع الطلبات"/>
                     <h5>عدد الطلبات #{ordersResponse.results}</h5>
                     <div className='pt-4'> 
-                    {ordersResponseData?ordersResponseData.map((data,index)=><AdminAllOrders key={index} ordersData={data}/>):null}
+                    {ordersResponseData?ordersResponseData.map((data,index)=><AdminAllOrders key={index} ordersData={data} reloadAfterChange={reloadAfterChange} setReloadAfterChange={setReloadAfterChange}/>):null}
                     </div>
                 </Col>
             </Row>

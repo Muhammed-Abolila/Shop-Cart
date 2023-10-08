@@ -1,9 +1,47 @@
 import { Link } from 'react-router-dom';
 import { Row, Col } from 'react-bootstrap';
 import { ToastContainer } from 'react-toastify';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ChangeOrderDeliver, ChangeOrderPaid } from '../../../Redux/Actions/OrdersActions';
+import Notifications from '../../../CustomHooks/Notifications';
 import AdminAllOrdersHook from '../../../CustomHooks/Orders/AdminAllOrdersHook';
-const AdminAllOrders = ({ordersData}) => {
- let [isPaidChange,onSendPaid,isDeliverChange,onSendDeliver]=AdminAllOrdersHook(ordersData)
+const AdminAllOrders = ({ordersData,reloadAfterChange,setReloadAfterChange}) => {
+//  let [isPaidChange,onSendPaid,isDeliverChange,onSendDeliver]=AdminAllOrdersHook(ordersData);
+ let [isPaid,setIsPaid]=useState('0');
+    let [isDeliver,setIsDeliver]=useState('0');
+    let dispatch=useDispatch();
+    const isPaidChange=(e)=>{
+        setIsPaid(e.target.value);
+    };
+    let response=useSelector((state)=>state.OrderReducer.OrderPaid);
+    let [notify]=Notifications(response)
+    const onSendPaid=async()=>{
+        if(isPaid=="0"){
+            notify("اختر قيمه");
+        }else if(isPaid=="false"){
+            notify("لايمكن تغيير الحاله الي لم يتم الدفع")
+        }else if(isPaid=="true"){
+            await dispatch(ChangeOrderPaid(ordersData._id));
+            setReloadAfterChange(!reloadAfterChange);
+        }
+    };
+    const isDeliverChange=(e)=>{
+      setIsDeliver(e.target.value)
+    };
+    const onSendDeliver=async()=>{
+      if(isDeliver=="0"){
+        notify("اختر قيمه");
+      }else if(isDeliver=="false"){
+        notify("لايمكن تغيير الحاله الي لم يتم التوصيل")
+      }else if(isDeliver=="true"){
+        await dispatch(ChangeOrderDeliver(ordersData._id));
+        setReloadAfterChange(!reloadAfterChange);
+      }
+    };
+    useEffect(()=>{
+      
+    },[])
   return (
     <div className="user-orders-comp">
       <div className="user-order-head">

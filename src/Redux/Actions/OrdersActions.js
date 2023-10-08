@@ -60,7 +60,7 @@ export const ChangeOrderPaid=(order_Id)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
-            let response=await axios.put(`${BaseUrl}/api/v1/orders/${order_Id}/pay`,config)
+            let response=await axios.put(`${BaseUrl}/api/v1/orders/${order_Id}/pay`,{},config);
             dispatch({
                 type:CHANGE_ORDER_PAID,
                 payload:response.data
@@ -78,7 +78,7 @@ export const ChangeOrderDeliver=(orderId)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
-            let response=await axios.put(`${BaseUrl}/api/v1/orders/${orderId}/deliver`,config);
+            let response=await axios.put(`${BaseUrl}/api/v1/orders/${orderId}/deliver`,{},config);
             dispatch({
                 type:CHANGE_ORDER_DELIVER,
                 payload:response.data
