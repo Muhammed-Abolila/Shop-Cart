@@ -10,7 +10,7 @@ import BrandsPage from "./pages/Brand/Brands";
 import ProductsSearchPage from "./pages/Products&SearchPage/ProductsSearchPage";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import PaymentMethodPage from "./pages/PaymentMethod/PaymentMethodPage";
-import OrdersPage from "./pages/AdminPages/OrdersPage";
+import AdminAllOrdersPage from "./pages/AdminPages/AdminAllOrdersPage";
 import AddCategoryPage from "./pages/AdminPages/AddCategoryPage";
 import AddBrandPage from "./pages/AdminPages/AddBrandPage";
 import AddSubCategoryPage from "./pages/AdminPages/AddSubCategoryPage";
@@ -28,6 +28,7 @@ import VerifyCodePage from "./pages/Auth/VerifyCode/VerifyCodePage";
 import RePasswordPage from "./pages/Auth/RePassword/RePasswordPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import AddCouponPage from "./pages/AdminPages/AddCouponPage";
+import AdminOrderDetails from "./pages/AdminPages/AdminOrderDetails";
 import ProtectedRouteComp from "./components/Utilities/ProtectedRouteComp/ProtectedRouteComp";
 import ProtectedRoute from "./CustomHooks/Auth/ProtectedRoute";
 import ProductsByCategory from "./pages/ProductsByCategory/ProductsByCategory";
@@ -54,7 +55,7 @@ function App() {
           <Route path="/products/brand/:id" element={<ProductsByBrand/>} />
 
           <Route element={<ProtectedRouteComp auth={isAdmin}/>}>
-            <Route path="/admin/orders" element={<OrdersPage/>} />
+            <Route path="/admin/orders" element={<AdminAllOrdersPage/>} />
             <Route path="/admin/manageproduct" element={<AdminManageProductPage/>} />
             <Route path="/admin/addbrand" element={<AddBrandPage/>} />
             <Route path="/admin/addcategory" element={<AddCategoryPage/>} />
@@ -62,6 +63,8 @@ function App() {
             <Route path="/admin/addproduct" element={<AddProductPage/>} />
             <Route path="/admin/addcoupon" element={<AddCouponPage/>} />
             <Route path="/admin/eddit-product/:id" element={<EdditProductPage/>} />
+            <Route path="/admin/order-details/:id" element={<AdminOrderDetails/>} />
+            
           </Route>
           <Route element={<ProtectedRouteComp auth={isUser}/>}>
             <Route path="/cart" element={<Cart/>}/>

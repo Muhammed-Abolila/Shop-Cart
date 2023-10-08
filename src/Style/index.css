@@ -235,7 +235,7 @@
   -webkit-box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
   border: 1px solid #0072bc !important;
-  height: 435px !important;
+  height: 460px !important;
   overflow: hidden;
 }
 
@@ -1547,84 +1547,6 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .user-order-body .row .content .disc .price div, .user-order-body .row .content .disc .quantaty div {
   margin-right: 5px;
-}
-
-.order-card {
-  background-color: #fff;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-.order-card .card-right .img-container {
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0px 10px;
-}
-
-.order-card .card-right .img-container img {
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-}
-
-.order-card .card-right .card-content div {
-  margin-bottom: 15px;
-}
-
-.order-card .card-right .card-content div h6 {
-  margin: 0px;
-}
-
-.order-card .card-right .card-content div h6 span {
-  font-weight: 400;
-}
-
-.order-card .card-right .card-content div .color {
-  padding: 4px 13px;
-  border-radius: 50%;
-}
-
-.order-card .card-right .card-content .quantaty h6 {
-  padding-top: 5px;
-  margin-left: 5px;
-}
-
-.order-card .card-right .card-content .quantaty p {
-  border: 1px solid #0072bc;
-  padding: 5px 15px;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.order-card .card-left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 100%;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: end;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.order-card .card-left div svg {
-  font-size: 20px;
-}
-
-.order-card .card-left div span, .order-card .card-left div .register .register-content .register-footer a span, .register .register-content .register-footer a .order-card .card-left div span {
-  padding-right: 5px;
 }
 
 .spinner-container {

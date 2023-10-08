@@ -13,13 +13,11 @@ const ProductCard = ({CardProductData,favProduct}) => {
             <Card.Img variant="top" src={`${BaseUrl}/products/${CardProductData.imageCover}`}/>
           ):(
             <Card.Img variant="top" src={CardProductData.imageCover}/>
-          )}
-          
+          )};
         </Link>
       <Card.Body>
-          <div className="fav-icon d-flex justify-content-between mb-2 mx-2">
+          <div className="fav-icon">
               <BsFillHeartFill style={{color: favStyle}} onClick={handleWishlist}/>
-              <RiShoppingCart2Fill style={{color: "gray"}}/>
           </div>
           <Card.Text>{CardProductData.title}</Card.Text>
           <div className="card-footer">

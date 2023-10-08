@@ -155,7 +155,6 @@ export const updateProduct=(productId,data)=>{
         try{
             let config={headers:{"Content-Type":"multipart/form-data",Authorization:` Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.put(`${BaseUrl}/api/v1/products/${productId}`,data,config);
-            console.log("response",response);
             dispatch({
                 type:UPDATE_PRODUCT,
                 payload:response

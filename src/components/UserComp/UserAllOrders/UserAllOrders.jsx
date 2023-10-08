@@ -1,6 +1,4 @@
-import React from 'react'
 import UserSingleOrder from '../UserSingleOrder/UserSingleOrder';
-
 const UserAllOrders = ({ordersData}) => { 
   return (
     <div className="user-orders-comp">
