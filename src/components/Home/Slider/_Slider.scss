@@ -1,37 +1,141 @@
 .slider{
-    height:80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(21,8,37);
-    background: linear-gradient(90deg, rgba(21,8,37,0.8491771708683473) 0%, rgba(38,11,102,0.9220063025210083) 50%, rgba(21,8,37,0.85) 100%);
+    overflow: hidden;
     .slider-item{
-         .caption-container{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                .img-container{
-                    width:35%;
-                    margin-left:20px;
-                img{
-                    width:100%;
+        height:80vh;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        .slider-caption{
+            position: absolute;
+            top:0;
+            left:50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .content{
+                background-color: #ffda0573;
+                padding: 50px 0px 50px 50px;
+                border-radius: 15px;
+                font-weight: 300;
+                text-align: start;
+                h2{
+                    font-size:1.9rem
                 }
-            }
+                h3{
+                    font-size:2.3rem
+                } 
+            }   
+        }
+    }
+    .carousel-control-prev{
+        opacity:1;
+        width:8%;
+        left:-140px;
+        transition:left .6s
+    }
+    .carousel-control-prev-icon{
+        background-color: $mainColor;
+        padding: 20px;
+        border-radius: 50%;
+        background-size: 70% 70%;
+    }
+    .carousel-control-next{
+        opacity:1;
+        width:8%;
+        right:-140px;
+        transition:right .6s
+    }
+    .carousel-control-next-icon{
+        background-color: $mainColor;
+        padding: 20px;
+        border-radius: 50%;
+        background-size: 70% 70%;
+    }
+    &:hover{
+        .carousel-control-prev{
+            left:0px
+        }
+        .carousel-control-next{
+            right:0px
+        }
+    }
+    .carousel-indicators{
+        button{
+            width:15px;
+            height:15px;
+            border-radius: 50%;
+            border:0;
+            background-color: $mainColor;
+            opacity:.3
+        }
+        .active{
+            background-color: $mainColor;
+            border:0;
+            opacity: 1
+        }
+    }
+};     
+// media Query
+@media screen and (max-width:900px){
+    .slider{
+        .slider-item{
             .slider-caption{
-                position:static;
+                .content{
+                    padding: 50px 0px 50px 30px;
+                    h2{
+                        font-size:1.2rem
+                    }
+                    h3{
+                        font-size:1.9rem
+                    } 
+                }   
             }
         }
     }
 }
-// media Query
-@media screen and (max-width:860px){
-    .slider-item{
-        .caption-container{
-            flex-direction: column;
-               .img-container{
-                width:70% !important;
-           }
-       }
-   }
-}
-
+@media screen and (max-width:640px){
+    .slider{
+        .slider-item{
+            .slider-caption{
+                left: 35%;
+                width: 50%;
+                .content{
+                    padding: 20px;
+                    h2{
+                        font-size:1rem
+                    }
+                    h3{
+                        font-size:1.5rem
+                    } 
+                }   
+            }
+        }
+    }
+    .carousel-control-prev{
+        width:14% !important;
+    }
+    .carousel-control-next{
+        width:14% !important;
+    }
+};
+@media screen and (max-width:460px){
+    .slider{
+        .slider-item{
+            .slider-caption{
+                .content{
+                    padding:50px 10px;
+                    h2{
+                        font-size:.8rem
+                    }
+                    h3{
+                        font-size:1.3rem
+                    } 
+                }   
+            }
+        }
+    }
+};

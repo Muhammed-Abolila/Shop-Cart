@@ -6,13 +6,13 @@ import ProductContainerHook from '../../../CustomHooks/ProductsHooks/ProductCont
 const ProductContainer = ({ProductData,title,btnName,pathName}) => {
    let[favProduct]=ProductContainerHook()
   return (
-    <section className='mt-5'> 
+    <section> 
       <SubTitle title={title} btnName={btnName} pathName={pathName}/>
       <Row>
         {ProductData?(
           ProductData.map((product,index)=>{
             return(
-              <Col xs={6} lg={3} key={index}>
+              <Col xs={12} sm={6} lg={3} key={index}>
                 <ProductCard CardProductData={product} favProduct={favProduct}/>
               </Col>
             )

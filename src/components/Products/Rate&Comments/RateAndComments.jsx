@@ -1,4 +1,3 @@
-
 import PaginationComp from '../../Utilities/Pagination/Pagination';
 import ReactStars from "react-rating-stars-component";
 import { ToastContainer } from 'react-toastify';
@@ -16,19 +15,19 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
   return (
     <section className='rate-comments'>
       <div className="rate-container d-flex">
-        <h4>التقييمات</h4>
+        <h2>Ratings</h2>
         <div className="rate mt-1 mx-2">
             <BsFillStarFill/>
             <p>{oneProductData.ratingsAverage}</p>
         </div>
         <div className="mt-1">
-          <p>({oneProductData.ratingsQuantity} تقييم)</p>
+          <p>({oneProductData.ratingsQuantity} Ratings)</p>
         </div>
       </div>
       <div className="comments">
         <div className="add-comment">
           <div className="user">
-          <h6>{user.name}</h6>
+          <h3>{user.name}</h3>
             <ReactStars
               count={5}
               value={rate}
@@ -47,7 +46,7 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
               cols="30" 
               rows="2"
               ></textarea>
-            <button className='btn' onClick={onSubmit} ref={btnRef}>إضافه تعليق</button>
+            <button className='btn' onClick={onSubmit} ref={btnRef}>Add Comment</button>
         </div>
         <div className="show-comments">
           {ReviewsData?(
@@ -60,7 +59,7 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
                   <h6>
                     {review.user.name}
                   </h6>
-                  <div className="rate mt-0 me-2">
+                  <div className="rate mt-0 ms-2">
                     <BsFillStarFill/>
                     <p>{review.rating}</p>
                   </div>

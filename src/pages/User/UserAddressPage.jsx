@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import UserAllAddresses from '../../components/UserComp/UserAllAddresses/UserAllAddresses';
 import UserAllAddressesHook from '../../CustomHooks/User/UserAllAddressesHook';
 const UserAddressPage = () => {
-    let [AllAddressesData,onDeleteAddress]=UserAllAddressesHook()
+  let [AllAddressesData,onDeleteAddress]=UserAllAddressesHook();
   return (
     <section className="pageStyle pt-3">
             <Container>
@@ -24,12 +24,11 @@ const UserAddressPage = () => {
                      <Link to="/user/add-address" style={{textDecoration:"none",textAlign:"center"} }>
                         <button className='btn btn-style'>أضافه عنوان جديد</button>
                      </Link>
-                    )}
-                    
+                    )}                    
                 </Row>
             </Container>
        </section>
-  )
-}
+  );
+};
 
 export default UserAddressPage

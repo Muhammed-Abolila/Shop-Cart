@@ -12,43 +12,43 @@ const Register = () => {
       <Container>
         <div className="register">
           <div className="register-content py-5 px-4">
-            <h3>إنشاء حساب جديد</h3>
+            <h2>Create New Account</h2>
             <div className="form my-4">
               <input 
                 value={userName} 
                 onChange={onUserNameChange}
                 className='form-control' 
                 type="text" 
-                placeholder='اسم المستخدم' />
+                placeholder='User Name' />
               <input 
                 value={userEmail} 
                 onChange={onUserEmailChange}
                 className='form-control mt-3' 
                 type="email" 
-                placeholder='البريد الإلكتروني' />
+                placeholder='E-mail' />
               <input 
                 value={userPhone} 
                 onChange={onUserPhoneChange}
                 className='form-control mt-3' 
                 type="number" 
-                placeholder='رقم الهاتف' />          
+                placeholder='Phone Number' />          
               <input 
                 value={userPassword} 
                 onChange={onUserPasswordChange}
                 className='form-control mt-3' 
                 type="password" 
-                placeholder='كلمه المرور' />
+                placeholder='Password' />
               <input 
                 value={userConfirmPassword} 
                 onChange={onUserConfirmPasswordChange}
                 className='form-control my-3' 
-                type="password" placeholder='تأكيد كلمة المرور ' />
-              <button className='btn' onClick={onSubmit}>إنشاء حساب</button>
+                type="password" placeholder='Confirm Password' />
+              <button className='btn' onClick={onSubmit}>Create</button>
             </div>
             <div className='register-footer'>
-              <p>لديك حساب بالفعل؟</p>
+              <p>Do you have an account?</p>
               <Link to="/login">
-                <span>إضغط هنا</span>
+                <span>Login</span>
               </Link>
             </div>
           </div>

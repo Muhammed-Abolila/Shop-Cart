@@ -8,21 +8,21 @@ const RePasswordPage = () => {
       <Container>
         <div className="verify">
           <div className="verify-content py-5 px-4">
-            <h3>إعاده تعيين كلمه السر</h3>
+            <h2>Re-Password</h2>
             <div className="form my-4">
               <input
                 value={password}
                 onChange={onPasswordChange} 
                 className='form-control mt-3' 
                 type="password" 
-                placeholder='أدخل الرقم السري الجديد'/>
+                placeholder='New Password'/>
                 <input
                 value={rePassword}
                 onChange={onRePasswordChange}
                 className='form-control my-3' 
                 type="password" 
-                placeholder='أعد إدخال الرقم السري الجديد'/>
-              <button className='btn' onClick={onSubmit}>إرسال</button>
+                placeholder='Confirm New Password'/>
+              <button className='btn' onClick={onSubmit}>Send</button>
             </div>
           </div>
         </div>

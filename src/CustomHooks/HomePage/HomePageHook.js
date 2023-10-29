@@ -17,13 +17,13 @@ const HomePageHook = () => {
     let CategoryData,HomeProductData,BrandData;
     try{
         if(CategoryResponse.data){
-            CategoryData=CategoryResponse.data.slice(0,5)
+            CategoryData=CategoryResponse.data.slice(0,6)
         }
         if(HomeProductResponse.data){
             HomeProductData=HomeProductResponse.data.slice(0,4)
         }
         if(BrandResponse.data){
-            BrandData=BrandResponse.data.slice(0,5)
+            BrandData=BrandResponse.data.slice(0,6)
         }
     }catch(e){}
     return [CategoryData,HomeProductData,BrandData,backgroundColor]

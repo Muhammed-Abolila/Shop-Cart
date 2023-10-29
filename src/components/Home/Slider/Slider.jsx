@@ -1,44 +1,25 @@
-
-import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import sliderImg from "../../../assets/image/google.jpg"
+import sliderImg1 from "../../../assets/image/header/main-banner.png";
+import sliderImg2 from "../../../assets/image/header/main-banner2.png";
 const Slider = () => {
   return (
     <Carousel className='slider'>
-      <Carousel.Item className='slider-item'>
-        <div className='caption-container'>
-          <div className="img-container">
-            <img src={sliderImg} alt="" />
-          </div>
+      <Carousel.Item className='slider-item' style={{backgroundImage:`url(${sliderImg1})` }}>
           <Carousel.Caption className='slider-caption'>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <div className="content">
+              <h2>Limited Offer 50% Off</h2>
+              <h3>Playing Video <br/>Games</h3>
+            </div>
           </Carousel.Caption>
-        </div>
       </Carousel.Item>
-      <Carousel.Item className='slider-item'>
-        <div className='caption-container'>
-          <div className="img-container">
-            <img src={sliderImg} alt="" />
-          </div>
+      <Carousel.Item className='slider-item' style={{backgroundImage:`url(${sliderImg2})` }}>
           <Carousel.Caption className='slider-caption'>
-            <h3>second slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <div className="content">
+              <h2>Limited Offer 50% Off</h2>
+              <h3>New Wireless<br/>Speaker</h3>
+            </div>
           </Carousel.Caption>
-        </div>
       </Carousel.Item>
-      <Carousel.Item className='slider-item'>
-        <div className='caption-container'>
-          <div className="img-container">
-            <img src={sliderImg} alt="" />
-          </div>
-          <Carousel.Caption className='slider-caption'>
-            <h3>Third slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </div>
-      </Carousel.Item>
-
     </Carousel>
   );
 };

@@ -7,14 +7,16 @@
     }
     a{
         text-decoration: none;
-        border: 1px solid $ThirdColor;
         padding:7px 15px;
         border-radius: 5px;
-        color:$ThirdColor;
+        background-color: $DarkColor;
+        color:$WhiteColor;
+        border-color: $DarkColor ;
         transition: all .4s;
         &:hover{
-            background-color: $ThirdColor;
-            color:$MainColor
+            background-color: $mainColor !important;
+            color:$DarkColor;
+            border-color: $mainColor ;
         }
     }   
 }

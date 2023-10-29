@@ -12,11 +12,11 @@ const HomePage = () => {
     <section className="pageStyle">
       <Slider/>
       <Container> 
-        {CategoryData?(<CategoryContainer CategoryData={CategoryData} title={"التصنيفات"} btnName={"المزيد"} pathName={"/allcategories"}/>):<GrowExample/>}
-        {HomeProductData?(<ProductContainer ProductData={HomeProductData} title={"الأكثر مبيعا"} btnName={"المزيد"}  pathName={"/products"}/>):<GrowExample/>}  
+        {CategoryData?(<CategoryContainer CategoryData={CategoryData} title={"Shop By Category"} btnName={"More"} pathName={"/allcategories"}/>):<GrowExample/>}
+        {HomeProductData?(<ProductContainer ProductData={HomeProductData} title={"Best Seller"} btnName={"More"}  pathName={"/products"}/>):<GrowExample/>}  
         <DescountComp/>
-        {HomeProductData?(<ProductContainer ProductData={HomeProductData} title={"أحدث الأزياء"} btnName={"المزيد"}  pathName={"/products"}/>):<GrowExample/>}
-        {BrandData?(<BrandsContainer BrandData={BrandData} title={"أشهر الماركات"} btnName={"المزيد"} pathName={"/brands"}/>):<GrowExample/>}
+        {HomeProductData?(<ProductContainer ProductData={HomeProductData} title={"Latest Products"} btnName={"More"}  pathName={"/products"}/>):<GrowExample/>}
+        {BrandData?(<BrandsContainer BrandData={BrandData} title={"Shop By Brands"} btnName={"More"} pathName={"/brands"}/>):<GrowExample/>}
       </Container>
     </section>
   )

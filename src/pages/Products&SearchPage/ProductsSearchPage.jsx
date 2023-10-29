@@ -1,8 +1,6 @@
 import React from 'react';
-import ProductsSearchNavbar from '../../components/Utilities/ProductsSearchNavBar/ProductsSearchNavbar';
 import ProductsSearchSubTitle from '../../components/Products/ProductsSearchSubTitle/ProductsSearchSubTitle';
 import { Col, Container, Row } from 'react-bootstrap';
-import ProductCard from '../../components/Products/ProductCard/ProductCard';
 import PaginationComp from '../../components/Utilities/Pagination/Pagination';
 import SlideSearch from '../../components/Products/SlideProductsSearch/SlideProductsSearch';
 import GrowExample from '../../components/Utilities/Spinner/Spinner';
@@ -13,7 +11,6 @@ const ProductsSearchPage = () => {
     
   return (
     <section className='pageStyle'>
-      <ProductsSearchNavbar/>
       <Container>
       <ProductsSearchSubTitle ProductData={items} getProduct={getProduct}/>
       <Row>

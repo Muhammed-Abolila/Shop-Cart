@@ -11,18 +11,18 @@ const ForgotPasswordPage = () => {
       <Container>
         <div className="forgot-password">
           <div className="forgot-password-content py-5 px-4">
-            <h3>نسيت كلمه السر</h3>
+            <h2>Forgot Password</h2>
             <div className="form my-4">
               <input 
                 value={email}
                 onChange={onEmailChange}
                 className='form-control my-3' 
                 type="email" 
-                placeholder='البريد الإلكتروني'/>
-              <button className='btn' onClick={onSubmit}>إرسال رمز التفعيل</button>
+                placeholder='E-mail'/>
+              <button className='btn' onClick={onSubmit}>verification Code</button>
               <div className='forgot-password-footer mt-2'>
               <Link to="/login" className="text-decoration-none">
-                <span>رجوع؟</span>
+                <span>back?</span>
               </Link>
             </div>
             </div>

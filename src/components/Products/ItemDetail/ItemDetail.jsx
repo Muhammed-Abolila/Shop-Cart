@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Carousel, Col, Row } from 'react-bootstrap';
-import PriceComp from '../../Utilities/PriceComp/PriceComp';
 import { useDispatch, useSelector } from 'react-redux';
 import { AddToCart } from '../../../Redux/Actions/CartActions';
 import Notifications from '../../../CustomHooks/Notifications';
@@ -18,7 +17,7 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
     // Add Product To Cart
     const onAddToCart=async()=>{
         if(oneProduct.availableColors.length>=1 && selectedColor==''){
-            notify("اختر اللون"); 
+            notify("Choose Color!"); 
         }else{
             await dispatch(AddToCart({
                 productId: oneProduct._id,
@@ -41,48 +40,64 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
                             </Carousel.Item>
                            )}) 
                         ):null}
-                        
                     </Carousel>
                 </Col>
                 <Col lg={8}>
-                    <div className='item-content mt-4 mt-lg-0'>
-                    <div>
-                        <h6>{oneCategory.name}:-</h6>
-                        <p className="pt-2">{oneProduct.title}</p>
-                    </div>
-                    <div>
-                        <h6>الماركه:-</h6>
-                        <p className="py-2">{oneBrand.name}</p>
-                        <ul>
-                            {oneProduct.availableColors?(oneProduct.availableColors.map((color,index)=>
-                            <li key={index} style={{backgroundColor:`${color}`,border:indexOfselectedColor===index?"2px solid #000":"2px solid transparent"}} onClick={()=>onColorChange(color,index)}></li>
-                                )):null}
-                        </ul>
-                    </div>
-                    <div>
-                        <h6>المواصفات:-</h6>
-                        <p className="pt-2">{oneProduct.description}</p>
-                    </div>
-                    <div className='price'>
-                        {oneProduct.priceAfterDiscount?(
-                            <>
-                            <p className="price-before-discount">السعر قبل الخصم :- 
-                             <span className="price-before-discount-container">
-                                {oneProduct.price}
-                                جنيه
-                                <span></span>
-                             </span> 
-                            
-                            </p>
-                            <p>السعر بعد الخصم :- {oneProduct.priceAfterDiscount} جنيه</p>
-                            </>
-                        ):(
-                            <p>{oneProduct.price} جنيه</p>
-                        )}
-                        
-                    </div>
-                    <div>
-                        <button className='btn' onClick={onAddToCart}>أضف للعربه</button>
+                    <div className='item-content mt-4'>
+                    <Row>
+                        <Col md={6}>
+                        <div className="title">
+                            <h2>Title :-</h2>
+                            <p className=" mt-2">{oneProduct.title}</p>
+                        </div>
+                        <div className="category">
+                            <h2>Category :-</h2>
+                            <p className=" mt-2">{oneCategory.name}</p>
+                        </div>
+                        <div className="brand">
+                            <h2>Brand :-</h2>
+                            <p className=" mt-2">{oneBrand.name}</p>
+                        </div>
+                        </Col>
+                        <Col md={6}>
+                        {oneProduct.availableColors?(
+                            <div className="color">
+                                <h2>Colors :-</h2>
+                                <ul className="color">
+                                    {oneProduct.availableColors.map((color,index)=>
+                                        <li key={index} className=" mt-2" style={{backgroundColor:`${color}`,border:indexOfselectedColor===index?"2px solid #000":"2px solid transparent"}} onClick={()=>onColorChange(color,index)}></li>
+                                        )}
+                                </ul>
+                            </div>
+                            ):null}
+                            <div className="details">
+                                <h2>Details:-</h2>
+                                <p className=" mt-2">{oneProduct.description}</p>
+                            </div>
+                            <div className='price'>
+                                {oneProduct.priceAfterDiscount?(
+                                    <>
+                                    <h2>Price :- </h2>
+                                    <div className="price-container mt-2">
+                                        <p className="me-2 price-offer">{oneProduct.price} EGP
+                                        <span></span>
+                                        </p> 
+                                        <p>{oneProduct.priceAfterDiscount} EGP</p>
+                                    </div>
+                                    </>
+                                ):(
+                                    <>
+                                    <h2>Price :- </h2>
+                                    <p>{oneProduct.price} EGP</p>
+                                    </> 
+                                )}
+                                
+                            </div>
+                        </Col>
+                    </Row>
+                    <div className="add-btn">
+                        <button className='btn' onClick={onAddToCart}>Add To Cart</button>
+                        <button className='btn' onClick={onAddToCart}>Add To Wish List</button>
                     </div>
                 </div>
             </Col>

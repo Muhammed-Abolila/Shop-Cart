@@ -1,9 +1,7 @@
 import React from 'react';
-import { Container, Row } from 'react-bootstrap'
-import CategoryCard from '../../components/Category/CategoryCard/CategoryCard'
+import { Container, Row } from 'react-bootstrap';
 import PaginationComp from '../../components/Utilities/Pagination/Pagination'
 import GrowExample from '../../components/Utilities/Spinner/Spinner'
-import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
 import AllCategoriesPageHook from '../../CustomHooks/CtegoryHooks/AllCategoriesPageHook';
 import CategoryContainer from '../../components/Home/CategoryContainer/CategoryContainer';
 const AllCategories = () => {

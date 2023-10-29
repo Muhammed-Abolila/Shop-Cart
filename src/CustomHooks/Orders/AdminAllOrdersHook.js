@@ -1,37 +1,62 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ChangeOrderDeliver, ChangeOrderPaid } from '../../Redux/Actions/OrdersActions';
 import Notifications from '../../CustomHooks/Notifications';
-const AdminAllOrdersHook = (ordersData) => {
-    let [isPaid,setIsPaid]=useState('0');
-    let [isDeliver,setIsDeliver]=useState('0');
-    let dispatch=useDispatch();
-    const isPaidChange=(e)=>{
-        setIsPaid(e.target.value);
-    };
-    console.log(localStorage.getItem("token"));
-    const onSendPaid=async()=>{
-        if(isPaid=="0"){
-            console.log("0");
-        }else if(isPaid=="false"){
-            console.log("false");
-        }else if(isPaid=="true"){
-            await dispatch(ChangeOrderPaid(ordersData._id))
-        }
-     
-    };
-    const isDeliverChange=(e)=>{
-      setIsDeliver(e.target.value)
-    };
-    const onSendDeliver=async()=>{
-      if(isDeliver=="0"){
-        console.log("اختر قيمه");
-      }else if(isDeliver=="false"){
-        console.log("لايمكن تغيير الحاله الي لم يتم التوصيل")
-      }else if(isDeliver=="true"){
-        await dispatch(ChangeOrderDeliver(ordersData._id))
+const AdminAllOrdersHook = (ordersData,reloadAfterChange,setReloadAfterChange) => {
+  let [isPaid,setIsPaid]=useState('0');
+  let [isDeliver,setIsDeliver]=useState('0');
+  let [paidLoading,setPaidLoading]=useState(false);
+  let [deliverLoading,setDeliverLoading]=useState(false);
+  let dispatch=useDispatch();
+  // Change Paid Status
+  const isPaidChange=(e)=>{
+      setIsPaid(e.target.value);
+  };
+  let paidResponse=useSelector((state)=>state.OrderReducer.OrderPaid);
+  let [notify]=Notifications(paidResponse)
+  const onSendPaid=async()=>{
+      if(isPaid=="0"){
+          notify("اختر قيمه");
+      }else if(isPaid=="false"){
+          notify("لايمكن تغيير الحاله الي لم يتم الدفع")
+      }else if(isPaid=="true"){
+          setPaidLoading(true)
+          await dispatch(ChangeOrderPaid(ordersData._id));
+          setReloadAfterChange(!reloadAfterChange);
+          setPaidLoading(false)
       }
-    };
+  };
+  useEffect(()=>{
+    if(paidLoading===false){
+      if(paidResponse.status=="Success"){
+        notify("تمت التغيير بنجاح")
+      }
+    }
+  },[paidLoading]);
+  // Change Deliver Status
+  const isDeliverChange=(e)=>{
+    setIsDeliver(e.target.value)
+  };
+  const onSendDeliver=async()=>{
+    if(isDeliver=="0"){
+      notify("اختر قيمه");
+    }else if(isDeliver=="false"){
+      notify("لايمكن تغيير الحاله الي لم يتم التوصيل")
+    }else if(isDeliver=="true"){
+      setDeliverLoading(true);
+      await dispatch(ChangeOrderDeliver(ordersData._id));
+      setReloadAfterChange(!reloadAfterChange);
+      setDeliverLoading(false);
+    }
+  };
+  let deliverResponse=useSelector((state)=>state.OrderReducer.OrderDeliver);
+  useEffect(()=>{
+    if(deliverLoading===false){
+      if(deliverResponse.status=="Success"){
+        notify("تمت التغيير بنجاح")
+      }
+    }
+  },[deliverLoading]);
     return [isPaidChange,onSendPaid,isDeliverChange,onSendDeliver]
 };
 export default AdminAllOrdersHook

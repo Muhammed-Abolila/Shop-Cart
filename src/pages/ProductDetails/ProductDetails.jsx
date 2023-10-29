@@ -11,11 +11,12 @@ const ProductDetails = () => {
   let [oneProduct,oneCategory,oneBrand,SameProductData]=ProductDetailsHook(id);
   return (
     <section className='product-details pb-5 pageStyle'>
-        <ProductsSearchNavbar/>
         <Container>
             <ItemDetail oneProduct={oneProduct} oneCategory={oneCategory} oneBrand={oneBrand}/>
             <RateAndComments oneProductData={oneProduct}/>
-            {SameProductData?(<ProductContainer ProductData={SameProductData} title="منتجات قد تعجبك"/>):null}
+            <div className="mt-3">
+                {SameProductData?(<ProductContainer ProductData={SameProductData} title="Product You Like"/>):null}
+            </div>
         </Container>
     </section>
   )

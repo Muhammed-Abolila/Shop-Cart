@@ -2,9 +2,6 @@
     @extend .login;
     .register-content{
         @extend .login-content;
-        h3{
-            font-size: 23px;
-        }
         .form{
             @extend .form;
             button{

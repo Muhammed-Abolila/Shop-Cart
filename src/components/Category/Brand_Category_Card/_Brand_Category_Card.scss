@@ -1,0 +1,72 @@
+    .category-card{
+        height:200px;
+        background-color: $MainColor;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: rgba(65, 73, 79, 0.64)0px 0px 21px;
+        overflow: hidden;
+        position: relative;
+        .img-container{
+            height:200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            img{
+                width:100%;
+                transition: transform .4s ease-in-out;
+            }
+        }
+        .card-content{
+            position: absolute;
+            top: 0;
+            left:0;
+            right:0;
+            bottom:0;
+            color:$DarkColor;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            .left{
+                position: absolute;
+                top: 0;
+                left:130%;
+                bottom:0;
+                right: 0;
+                background-color: rgba(255 ,218, 5 , .75);
+                border-left:.5px solid $WhiteColor;
+                transition:left .4s .4s;
+            }
+            .right{
+                position: absolute;
+                top: 0;
+                left:0;
+                right:130%;
+                bottom:0;
+                background-color: rgba(255 ,218, 5 , .75);
+                border-right:.5px solid $WhiteColor;
+                transition:right .4s .4s;
+            }
+            h2{
+                position: absolute;
+                top: -50%;
+                font-size:1rem;
+                transition:top .3s ease-in .6s;
+            }
+        }
+        &:hover{
+            img{
+                transform: scale(1.2);
+            }
+            .left{
+                left:50%;
+            }
+            .right{
+                right:50%;
+            }
+            h2{
+                top: 40%;
+            }
+        }
+    }

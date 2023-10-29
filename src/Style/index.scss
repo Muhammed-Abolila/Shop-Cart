@@ -2,9 +2,8 @@
 @import "../components/Utilities/NavBarLogin/NavBarLogin";
 @import "../components/Home/Slider/Slider";
 @import "../components/Utilities/SubTitle/SubTitle";
-@import "../components/Category/CategoryCard/CategoryCard"; 
+@import "../components/Category/Brand_Category_Card/Brand_Category_Card"; 
 @import "../components/Products/ProductCard/ProductCard";
-@import "../components/Brands/BrandsCard/BrandsCard";
 @import "../components/Home/DescountComponent/DescountComp";
 @import "../components/Utilities/Footer/Footer";
 @import "../components/Utilities/Pagination/pagination";
@@ -45,13 +44,14 @@
 @import "../components/Utilities/NoProductYet/NoProductYet";
 
 body{
-    direction: rtl;
     position:relative !important;
+    font-family: 'Roboto', sans-serif;
+    background-color:$pageColor !important;
+    // direction: rtl;
+    // background-color:red !important;
 }
 .pageStyle{
-    background-color:$pageColor !important;
     min-height: 670px !important;
-    padding-bottom: 70px  !important;
 }
 .btn-style{
     border:1px solid $ThirdColor !important;
@@ -80,13 +80,13 @@ body{
     }
     p{
         font-size: 17px;
-        margin-right: 5px;
+        margin-left: 5px;
         font-weight: 600;
     }
 };
 .eddit-icon{
     font-size: 25px !important;
-    margin-right: 5px !important;
+    margin-left: 5px !important;
     color:$ThirdColor !important;
     cursor: pointer !important;
 }

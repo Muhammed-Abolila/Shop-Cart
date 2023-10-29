@@ -93,15 +93,15 @@ let sortFromLocalStorage='',sort;
     }else{
       sortFromLocalStorage=''
     }
-    if(sortFromLocalStorage==="بدون ترتيب"){
+    if(sortFromLocalStorage==="Recommended"){
       sort=''
-    }else if(sortFromLocalStorage==="الأعلي تقييماََ"){
+    }else if(sortFromLocalStorage==="Top Ratedََ"){
       sort="-ratingsQuantity"
-    }else if(sortFromLocalStorage==="الأكثر مبيعاََ"){
+    }else if(sortFromLocalStorage==="Best Seller"){
       sort="-sold"
-    }else if(sortFromLocalStorage==="السعر من الأعلي للأقل"){
+    }else if(sortFromLocalStorage==="High To Low"){
       sort="-price"
-    }else if(sortFromLocalStorage==="السعر من الأقل للأعلي"){
+    }else if(sortFromLocalStorage==="Low To High"){
       sort="+price"
     }
   };

@@ -1,9 +1,20 @@
 .navbar{
-    background-color: $MainBgColor !important;
+    background-color: $DarkColor !important;
+    padding:15px 0px;
     .navbar-brand{
-        width: 70px !important;
-        img{
-            width:100%
+        display: flex;
+        align-items: center;
+        svg{
+            background-color: $mainColor;
+            border-radius:50%;
+            padding:10px;
+            font-size: 3rem;
+            margin-right: 0.5rem;
+        }
+        h1{
+            color:#fff;
+            font-size: 2rem;
+            font-weight: $FW_3;
         }
     }
     .navbar-toggler {
@@ -15,17 +26,15 @@
     }
     .navbar-collapse{
         .search{
-            width:65% !important;
-            border:2px solid transparent;
+            width:55% !important;
+            border:1px solid transparent;
         &:focus{
             box-shadow: none;
-            border:2px solid $ThirdColor;
+            border:1px solid $mainColor;
         }
     }
         .navbar-nav{
             .dropdown{
-                margin-top: 13px;
-                margin-right: 5px;
                 font-size: 18px;
                 .nav-link::after{
                     margin: 0;
@@ -33,50 +42,63 @@
                 };
                 .dropdown-menu{
                     padding:0px !important;
-                    background-color: $MainBgColor !important;
-                    color:$MainColor !important;
+                    background-color: $DarkColor !important;
                     overflow: hidden;
                     a{
                         padding:15px !important;
-                        transition:background-color .4s,color .4s;
+                        transition:color .4s;
                         &:hover{
-                            background-color: $MainColor !important;
-                            color:$ThirdColor !important;
+                            color:$mainColor !important;
                         }
                     }
                     .dropdown-divider{
-                        background-color: $MainColor !important;
+                        background-color: $mainColor !important;
                         margin:0px !important
                     }
                 }
             }
             a{
-                color:$MainColor;
+                color:$WhiteColor;
                 text-decoration: none !important; 
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 .cart-logo{
                     position: relative;
-                    margin-right:10px;
+                    margin:0px 10px;
                     svg{
-                        color: $ThirdColor;
-                        margin-top: 13px;
                         font-size: 30px;
                     };
                     .count{
                         position: absolute;
-                        bottom: 20px;
-                        right: 30px;
-                        background-color: red;
-                        padding: 5px;
-                        text-align: center;
+                        top: 0;
+                        right: 0;
+                        transform: translate(50%,-50%);
+                        font-size: 15px;
+                        width: 22px;
+                        height: 22px;
+                        z-index: 3;
+                        color: #000;
+                        background-color: $mainColor;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         border-radius: 50%;
-                        font-size: 18px;
-                        font-weight: bold;
+                        font-weight: $FW_3;
                     }
                 }
                 
+            }
+        }
+        .login-icon{
+            display: flex;
+            svg{
+                font-size: 35px;
+            }
+            div{
+                margin-top: 2px;
+                font-size: 20px;
+                margin-left: 4px;
             }
         }
     }

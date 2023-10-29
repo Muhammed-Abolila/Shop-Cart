@@ -1,23 +1,14 @@
-import React from 'react'
-import { Col, Row } from 'react-bootstrap'
-import thumb from "../../../assets/image/labtop.png";
+import discImage from "../../../assets/image/discount/discount.png";
 const DescountComp = () => {
   return (
-        <section className='descount mt-5 py-4'>
-            <Row className='p-0 m-0 py-4 justify-content-center align-items-center'>
-                <Col>
-                 <div className='img-container'>
-                    <img src={thumb} alt="" />
-                 </div>
-                </Col>
-                <Col>
-                 <div>
-                    <h5>خصم 30% علي اللابتوب</h5>
-                 </div>
-                </Col>
-            </Row> 
+        <section className='my-5'>
+            <div className="discount" style={{backgroundImage:`url(${discImage})`}}>
+              <div className="caption">
+                <h2>Exclusively High Quality Products</h2>
+                <h3>Nikon Normal <br/>55mm F/1.2<br/> manual Focus Lens</h3>
+              </div>
+            </div>
         </section>
   )
 }
-
-export default DescountComp
+export default DescountComp;

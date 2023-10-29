@@ -10,31 +10,31 @@ let [loginEmail,loginPassword,onLoginEmailChange,onLoginPasswordChange,onSubmit]
       <Container>
         <div className="login">
           <div className="login-content py-5 px-4">
-            <h3>تسجيل الدخول</h3>
+            <h2>Login</h2>
             <div className="form my-4">
               <input 
                 value={loginEmail}
                 onChange={onLoginEmailChange}
                 className='form-control' 
                 type="email" 
-                placeholder='البريد الإلكتروني'/>
+                placeholder='E-mail'/>
               <input
                 value={loginPassword}
                 onChange={onLoginPasswordChange} 
                 className='form-control my-3' 
                 type="password" 
-                placeholder='كلمة المرور' />
-              <button className='btn' onClick={onSubmit}>الدخول</button>
+                placeholder='Password' />
+              <button className='btn' onClick={onSubmit}>Login</button>
             </div>
             <div className='login-footer'>
-              <p>ليس لديك حساب؟</p>
+              <p>Don't have an account?</p>
               <Link to="/register">
-                <span>إضغط هنا</span>
+                <span>Sign up</span>
               </Link>
             </div>
             <div className='login-footer'>
               <Link to="/forgot-password">
-                <span>هل نسيت كلمه السر؟</span>
+                <span>Forgot Password?</span>
               </Link>
             </div>
           </div>
@@ -43,6 +43,5 @@ let [loginEmail,loginPassword,onLoginEmailChange,onLoginPasswordChange,onSubmit]
       <ToastContainer autoClose={2000}/>
     </section>
   )
-}
-
-export default Login
+};
+export default Login;

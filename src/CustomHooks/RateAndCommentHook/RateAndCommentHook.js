@@ -28,22 +28,22 @@ const RateAndCommentHook = (id) => {
   let [notify]=Notifications(responseData)
   const onSubmit= async(e)=>{
     if(rate==0){
-        notify("إختر تقييم")
+        notify("Choose Rate")
     }else if(comment==""){
-      notify("اكتب تعليق")
+      notify("Add Comment")
     }else{
       setLoading(true)
-      if(e.target.innerHTML=="إضافه تعليق"){
+      if(e.target.innerHTML=="Add Comment"){
         await dispatch(UserCreateRate(id,{
           "review": comment,
           "rating": rate
         }));
-      }else if(e.target.innerHTML=="تعديل التعليق"){
+      }else if(e.target.innerHTML=="Eddit Comment"){
         await dispatch(UpdateReview(reviewId,{
           "review": comment,
           "rating": rate
         }))
-        btnRef.current.innerHTML="إضافه تعليق"
+        btnRef.current.innerHTML="Add Comment"
       }
       setRate(1);
       setComment("")
@@ -56,7 +56,7 @@ const RateAndCommentHook = (id) => {
         if(responseData.data.errors){
           notify(responseData.data.errors[0].msg);
         }else if(responseData.status==403){
-          notify("غير مسموح للأدمن بالتقييم");
+          notify("Admin Can't Rate");
         }
         
       }
@@ -86,7 +86,7 @@ const onUpdateComment=(review)=>{
   setReviewId(review._id)
   setRate(review.rating);
   setComment(review.review);
-  btnRef.current.innerHTML="تعديل التعليق"
+  btnRef.current.innerHTML="Eddit Comment"
 }
 return [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
     onDeleteComment,onUpdateComment,user]

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import PaginationComp from '../../components/Utilities/Pagination/Pagination';
-import BrandsCard from '../../components/Brands/BrandsCard/BrandsCard';
-import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
 import GrowExample from '../../components/Utilities/Spinner/Spinner';
 import AllBrandsPageHook from '../../CustomHooks/BrandsHooks/AllBrandsPageHook';
 import BrandsContainer from '../../components/Home/BrandsContainer/BrandsContainer';

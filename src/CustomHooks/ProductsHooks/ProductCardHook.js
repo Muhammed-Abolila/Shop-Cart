@@ -6,7 +6,7 @@ import { useState, useEffect} from 'react';
     let user=JSON.parse(localStorage.getItem("user"));
     let fav=favProduct.includes(CardProductData._id)
     let [favItem,setFavItem]= useState(fav);
-    let favStyle=favItem?'red':'gray';
+    let favStyle=favItem?'red':'#223040';
     const handleWishlist=async()=>{
       if(localStorage.getItem("token")!=null){
         if(user.role=="user"){

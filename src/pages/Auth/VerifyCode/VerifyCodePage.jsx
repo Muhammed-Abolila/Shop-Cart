@@ -10,13 +10,13 @@ const VerifyCodePage = () => {
       <Container>
         <div className="verify">
           <div className="verify-content py-5 px-4">
-            <h3>أدخل الرمز المرسل...</h3>
+            <h2>Enter Verfication Code...</h2>
             <div>
-                <h6>تحقق من 
-                  {Email?(<p className="mt-2 mb-0">{Email}</p>):(<p className="mt-2 mb-0">البريد الإلكتروني</p>)}
-                </h6>
+                <h3>
+                  {Email?(<p className="mt-2 mb-0">{Email}</p>):(<p className="mt-2 mb-0">E-mail</p>)}
+                </h3>
                 <Link to="/forgot-password" className="text-decoration-none">
-                <p> تغيير البريد الإلكتروني</p>
+                  <p>Change E-mail</p>
                 </Link>
             </div>
             <div className="form my-4">
@@ -25,8 +25,8 @@ const VerifyCodePage = () => {
                 onChange={onVerifyCodeChange}
                 className='form-control my-3' 
                 type="text" 
-                placeholder='رمز التفعيل'/>
-              <button className='btn' onClick={onSubmit}>إرسال</button>
+                placeholder='Verfication Code'/>
+              <button className='btn' onClick={onSubmit}>Send</button>
             </div>
           </div>
         </div>

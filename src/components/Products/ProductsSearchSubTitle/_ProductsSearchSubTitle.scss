@@ -1,22 +1,30 @@
 .ProductsSearchSubTitle{
-    .row{
+    .content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         .dropdown{
             .dropdown-toggle{
-                width:170px;
-                background-color: $MainColor;
-                color:$ThirdColor;
-                border-color: $ThirdColor ;
+                width:160px;
+                background-color: $DarkColor;
+                color:$WhiteColor;
+                border-color: $DarkColor ;
                 transition: all .4s;
                 &:hover,&:focus{
-                    background-color: $ThirdColor !important;
-                    color:$MainColor;
+                    background-color: $mainColor !important;
+                    color:$DarkColor;
+                    border-color: $mainColor ;
                 }
-                p{
-                    
-                    padding:5px 0px;
-                    margin: 0;
+                .sort{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                     svg{
-                        margin-left: 5px;
+                        font-size: 35px;
+                    }
+                    p{
+                        margin: 0 !important;
+                        margin-top: 12px;
                     }
                 }
                 &:after{
@@ -25,15 +33,18 @@
             }
             .dropdown-menu{
                 overflow: hidden;
-                width:170px;
+                width:160px;
                 margin:0;
                 padding:0;
                 .dropdown-item{
                     padding: 0px !important;
                     transition: all .4s;
+                    background-color: $DarkColor;
+                    color:$WhiteColor;
+                    border-color: $DarkColor ;
                     &:hover{
-                        color:$MainColor;
-                        background-color: $ThirdColor;
+                        background-color: $mainColor !important;
+                        color:$DarkColor;
                     }
                     p{
                         margin: 0 !important;
@@ -41,10 +52,14 @@
                     }
                     hr{
                         margin:0;
+                        color: $mainColor;
                     }
                 }
             }
         }
+    }
+    .row{
+        
     }  
 };
 @media screen and (max-width:575px){

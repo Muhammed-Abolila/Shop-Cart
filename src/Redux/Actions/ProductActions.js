@@ -45,7 +45,7 @@ export const GetLimitProductApi=(pageNumber)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
-            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=9&page=${pageNumber}`,config);            
+            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=8&page=${pageNumber}`,config);            
             dispatch({
                 type:GET_ALL_PRODUCTS,
                 payload:response.data
@@ -63,7 +63,7 @@ export const GetProductsByCat=(pageNumber,categoryId)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
-            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=1&page=${pageNumber}&category=${categoryId}`,config);            
+            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=8&page=${pageNumber}&category=${categoryId}`,config);            
             dispatch({
                 type:GET_PRODUCTS_BY_CATEGORY,
                 payload:response.data
@@ -81,7 +81,7 @@ export const GetProductsByBrand=(pageNumber,BrandId)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
-            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=1&page=${pageNumber}&brand=${BrandId}`,config);            
+            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=8&page=${pageNumber}&brand=${BrandId}`,config);            
             dispatch({
                 type:GET_PRODUCTS_BY_BRAND,
                 payload:response.data
@@ -172,7 +172,7 @@ export const GetProductSearch=(QueryString)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
-            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=9&${QueryString}`,config);
+            let response=await axios.get(`${BaseUrl}/api/v1/products?limit=8&${QueryString}`,config);
             dispatch({
                 type:GET_PRODUCT_SEARCH,
                 payload:response.data,

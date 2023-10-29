@@ -7,19 +7,30 @@
         width:60%;
         text-align: center;
         h3{
-            font-size: 23px;
+            font-size: 1.5rem;
+            font-weight: $FW-2;
+        }
+        a{
+            color:$mainColor !important;
         }
         .form{
             input{
                 &:focus{
                     box-shadow: none;
-                    border:1px solid $ThirdColor
+                    border:1px solid $mainColor
                 }
             }
             button{
-                background-color: $ThirdColor;
-                color:$MainColor;
+                background-color: $DarkColor;
+                color:$WhiteColor;
+                border-color: $DarkColor ;
+                transition: all .4s;
                 width:50%;
+                &:hover{
+                    background-color: $mainColor !important;
+                    color:$DarkColor;
+                    border-color: $mainColor ;
+                }
             }
         }
     }
@@ -28,7 +39,7 @@
     .verify{
         .verify-content{
             padding: 0;
-            h3{
+            h2{
                 font-size: 17px
             }
             .form{
