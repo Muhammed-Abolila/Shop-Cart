@@ -3,30 +3,32 @@ import { ToastContainer } from "react-toastify";
 import UserEdditProfileHook from "../../../CustomHooks/User/UserEdditProfileHook";
 const UserEdditProfile = ({setShowUpdateModal}) => {
  let [userName,onUserNameChange,userPhone,onUserPhoneChange,userEmail,onUserEmailChange,
-  handleClick]=UserEdditProfileHook(setShowUpdateModal)
+  handleClick,backClick]=UserEdditProfileHook(setShowUpdateModal)
  return (
     <div className='user-eddit-profile'>
       <div className="user-eddit-content">
-        <SubTitle title="تعديل الصفحه الشخصيه"/>
-        <div className="mt-4">
+        <h3 className="mb-4">Edit Profile</h3>
+        <div>
           <input 
             value={userName}
             onChange={onUserNameChange}
             type="text" 
             className='form-control input-style'
-            placeholder="أدخل اسم المستخدم"/>
+            placeholder="User Name"/>
           <input 
             value={userPhone}
             onChange={onUserPhoneChange}
             type="number" 
             className='form-control input-style mt-2 mb-3'
-            placeholder="أدخل رقم الهاتف"/>
+            placeholder="Phone"/>
           <input 
             value={userEmail}
             onChange={onUserEmailChange}
-            type="email" 
+            type="email"
+            placeholder="E-mail"
             className='form-control input-style mt-2 mb-3'/>
-          <button className='btn btn-style' onClick={handleClick}>حفظ التعديلات</button>
+            <button className='btn btn-style' onClick={backClick}>Back</button>
+            <button className='btn btn-style ms-2' onClick={handleClick}>Save</button>
         </div>
       </div>
       <ToastContainer/>

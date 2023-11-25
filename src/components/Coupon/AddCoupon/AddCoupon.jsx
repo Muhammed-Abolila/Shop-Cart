@@ -7,13 +7,13 @@ const AddCoupon = () => {
     onCouponDiscountChange,AllCouponsData,reloadAfterDelete,setReloadAfterDelete,
     reloadAfterUpdate,setReloadAfterUpdate,handleClick]=AddCouponHook()
   return (
-      <div className="inputs mt-3">
+      <div className="inputs mt-3 text-end">
           <input
             value={couponName}
             onChange={onCouponNameChange} 
             className="form-control input-style" 
             type="text" 
-            placeholder=' اسم الكوبون' />
+            placeholder='coupon name' />
           <input
             value={couponDate}
             onChange={onCouponDateChange}
@@ -22,14 +22,14 @@ const AddCoupon = () => {
             onBlur={()=>dateRef.current.type="text"}
             className="form-control input-style my-3" 
             type="text" 
-            placeholder='تاريخ الإنتهاء' />
+            placeholder='expire date' />
           <input
             value={couponDiscount}
             onChange={onCouponDiscountChange}  
-            className="form-control input-style" 
+            className="form-control input-style mb-3" 
             type="number" 
-            placeholder='قيمه الخصم' />
-        <button className='btn' onClick={handleClick}>حفظ</button> 
+            placeholder='discount percentage' />
+        <button className='btn btn-style' onClick={handleClick}>Save</button> 
         {AllCouponsData?(
               AllCouponsData.map((couponData,index)=>
               <CouponCard

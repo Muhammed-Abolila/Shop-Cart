@@ -1,4 +1,4 @@
-const DeleteModal = ({data,onDelete,setShowDeleteModal}) => {
+const DeleteModal = ({data,onDelete,setShowDeleteModal}) => {  
   const undoDeletion=()=>{
     setShowDeleteModal(false)
   }
@@ -9,11 +9,11 @@ const DeleteModal = ({data,onDelete,setShowDeleteModal}) => {
       return (
         <div className="modal-container">
           <div className="modal-box">
-            <h6>تأكيد الحذف</h6>
-            <p>هل تريد حذف <span className="text-danger fw-bold fs-5">{data.product?data.product.title:"العربه"||data.name||data.title||data.alias||'التعليق'}</span> بالتأكيد ؟ </p>
+            <h5>Delete Confirmation:-</h5>
+            <p>Do you want to delete <span className="text-danger fw-bold fs-5">{data.product?data.product.title:"Cart"||data.name||data.title||data.alias||'Comment'}</span> ?</p>
             <div className="btns">
-              <button className="btn back-btn" onClick={undoDeletion}>التراجع</button>
-              <button className="me-3 btn delete-btn" onClick={confirmDeletion}>حذف</button>
+              <button className="btn btn-style" onClick={undoDeletion}>Back</button>
+              <button className="btn delete-btn" onClick={confirmDeletion}>Delete</button>
             </div>
           </div>
         </div>

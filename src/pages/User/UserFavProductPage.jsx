@@ -3,17 +3,27 @@ import { Col, Container, Row } from 'react-bootstrap'
 import ProductContainer from '../../components/Home/ProductContainer/ProductContainer';
 import GrowExample from '../../components/Utilities/Spinner/Spinner';
 import UserFavProductPageHook from '../../CustomHooks/UserFavProductPage/UserFavProductPageHook';
+import NoProductYet from '../../components/Utilities/NoProductYet/NoProductYet';
 const UserFavProductPage = () => {
-    let [wishListProductData]=UserFavProductPageHook()
+    let [wishListProductData,lengthOfWishlistArray,reload,setReload]=UserFavProductPageHook();
+    console.log("UserFavProductPage",reload);
   return (
     <section className="pageStyle pt-3">
             <Container>
                 <Row className="mb-3">
-                    <Col sm={2}>
+                <Col xs={{span:8,offset:2}} md={{span:3,offset:0}}>
                         <UesrSideBarComp/>
                     </Col>
-                    <Col sm={10}>
-                    {wishListProductData?(<ProductContainer  ProductData={wishListProductData} title={"منتجاتك المفضله"}/>):<GrowExample/>}
+                    <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
+                        <h3>Favorite Products</h3>
+                        {wishListProductData.lenght>=1?(
+                            <div> 
+                                {wishListProductData?(<ProductContainer ProductData={wishListProductData}/>):<GrowExample/>}
+                            </div>
+                        ):(
+                            <NoProductYet msg="No Products Yet"/>
+                        )}
+                        
                     </Col>
                 </Row>
             </Container>

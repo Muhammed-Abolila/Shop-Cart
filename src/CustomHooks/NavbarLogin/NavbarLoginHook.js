@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import ProductsSearchPageHook from '../ProductsHooks/ProductsSearchPageHook';
 import { useNavigate } from "react-router";
-const NavbarLoginHook = () => {
-    let [items,pagination,getPageCount,getProduct]=ProductsSearchPageHook();
-    let Navigate=useNavigate()
+const NavbarLoginHook = (getProduct) => {
+    let Navigate=useNavigate();
+    let [user,setUser]=useState("");
     let [searchWord,setSearchWord]=useState('');
     let searchWordStorage='';
       if(localStorage.getItem("searchWord")!=null){
@@ -24,8 +24,25 @@ const NavbarLoginHook = () => {
         },1000)
     },[searchWord]);
 
-    // Show User Data
+    
+    useEffect(()=>{
+      if(localStorage.getItem("user")!=null){
+        setUser(JSON.parse(localStorage.getItem("user")));
+      }
+    },[])
+    const logOut=()=>{
+      localStorage.removeItem("user");
+      localStorage.removeItem("token");
+      setUser("");
+    }
+    let sidebar=document.getElementById("sidebar");
+    const openSideBar=()=>{
+      sidebar.style.left="0"
+    }
+    const closeSideBar=()=>{
+      sidebar.style.left="-100%" 
+  }
 
-    return [searchWordStorage,onChangeSearchword]
+    return [searchWordStorage,onChangeSearchword,logOut,openSideBar,closeSideBar,user]
 }
 export default NavbarLoginHook

@@ -5,16 +5,8 @@
         align-items: center;
         .dropdown{
             .dropdown-toggle{
-                width:160px;
-                background-color: $DarkColor;
-                color:$WhiteColor;
-                border-color: $DarkColor ;
-                transition: all .4s;
-                &:hover,&:focus{
-                    background-color: $mainColor !important;
-                    color:$DarkColor;
-                    border-color: $mainColor ;
-                }
+                width:160px !important;
+                padding:4px 10px !important;
                 .sort{
                     display: flex;
                     justify-content: space-between;
@@ -36,6 +28,7 @@
                 width:160px;
                 margin:0;
                 padding:0;
+                top:-8px;
                 .dropdown-item{
                     padding: 0px !important;
                     transition: all .4s;
@@ -57,10 +50,7 @@
                 }
             }
         }
-    }
-    .row{
-        
-    }  
+    } 
 };
 @media screen and (max-width:575px){
     .ProductsSearchSubTitle{

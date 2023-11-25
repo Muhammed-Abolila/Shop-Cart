@@ -1,7 +1,7 @@
 import React from 'react'
 import SubTitle from '../../Utilities/SubTitle/SubTitle'
 import {Row} from 'react-bootstrap';
-import GrowExample from '../../Utilities/Spinner/Spinner';
+import Spinner from '../../Utilities/Spinner/Spinner';
 import Brand_Category_Card from '../../Category/Brand_Category_Card/Brand_Category_Card';
 const CategoryContainer = ({CategoryData,title,btnName,pathName}) => {
   return (
@@ -12,7 +12,7 @@ const CategoryContainer = ({CategoryData,title,btnName,pathName}) => {
             CategoryData.map((item,index)=>
               <Brand_Category_Card key={index} item={item}/>
             )
-          ):<GrowExample/>}
+          ):<Spinner/>}
         </Row>
     </section>
   )

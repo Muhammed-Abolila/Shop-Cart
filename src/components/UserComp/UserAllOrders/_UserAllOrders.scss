@@ -1,7 +1,7 @@
  .user-orders-comp{
-    background-color: $MainColor;
+    background-color: $WhiteColor;
     padding:15px 10px;
-    border:1px solid $ThirdColor;
+    border:1px solid $mainColor;
     border-radius: 5px;
     margin-bottom:15px;
     .user-order-head{
@@ -11,10 +11,6 @@
         }
     }
     .user-order-footer{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding:0px 10px;
         .status{
             h4{
                 font-size: 18px;
@@ -25,9 +21,11 @@
             }
         }
         .price{
+            display: flex;
+            flex-wrap: wrap;
             h4{
                 font-size: 18px;
-            font-weight: 400;
+                font-weight: 400;
             }
         }
     }

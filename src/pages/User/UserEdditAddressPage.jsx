@@ -8,11 +8,11 @@ const UserEdditAddressPage = () => {
     <section className="pageStyle pt-3">
             <Container>
                 <Row className="mb-3">
-                    <Col sm={2}>
+                <Col xs={{span:8,offset:2}} md={{span:3,offset:0}}>
                         <UesrSideBarComp/>
                     </Col>
-                    <Col sm={7}>
-                        <SubTitle title="تعديل العنوان"/>
+                    <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
+                        <h3 className="mb-4">Edit Address</h3>
                         <UserEdditAddress/>
                     </Col>
                 </Row>

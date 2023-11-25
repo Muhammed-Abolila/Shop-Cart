@@ -44,13 +44,13 @@ const UserEdditAddressHook = () => {
     // Send Address Data
     const handleClick= async()=>{
       if(alias==""){
-        notify("أدخل المدينه");
+        notify("Insert City");
         return;
       }else if(addressDetails==''){
-        notify("أدخل العنوان تفصيلي");
+        notify("Insert detailed address");
         return;
       }else if(phone==''){
-        notify("أدخل رقم الهاتف");
+        notify("Insert Phone Number");
         return;
       }else{
         setLoading(true)

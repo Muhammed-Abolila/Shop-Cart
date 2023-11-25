@@ -12,9 +12,9 @@ const BrandsPage = () => {
     )
   }else{
     return(
-      <section className="pageStyle">
-        <Container className='py-5'>
-          {AllBrandsData?(<BrandsContainer BrandData={AllBrandsData} title={"أشهر الماركات"}/>):<GrowExample/>}
+      <section className="pageStyle py-3 mb-5">
+        <Container className=''>
+          {AllBrandsData?(<BrandsContainer BrandData={AllBrandsData} title={"All Brands"}/>):<GrowExample/>}
           {Pagination>1?(<PaginationComp PaginationData={Pagination} getPageCount={getPageCount}/>):null}
         </Container>
       </section>

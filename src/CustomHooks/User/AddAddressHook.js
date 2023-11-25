@@ -21,13 +21,13 @@ const AddAddressHook = () => {
     let [notify]=Notifications(response)
     const handleClick=()=>{
       if(alias==""){
-        notify("أدخل المدينه");
+        notify("Insert City");
         return;
       }else if(addressDetails==''){
-        notify("أدخل العنوان تفصيلي");
+        notify("Insert Detailed Address");
         return;
       }else if(phone==''){
-        notify("أدخل رقم الهاتف");
+        notify("Insert Phone Number");
         return;
       }else{
         setLoading(true)

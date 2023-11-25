@@ -1,7 +1,5 @@
-import React from 'react'
 import UesrSideBarComp from '../../components/UserComp/SideBarComp/UserSideBarComp'
 import { Col, Container, Row } from 'react-bootstrap';
-import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
 import UserProfileDetails from '../../components/UserComp/UserProfileDetails/UserProfileDetails';
 import ChangePassword from '../../components/UserComp/ChangePassword/ChangePassword';
 const UserProfilePage = () => {
@@ -9,15 +7,13 @@ const UserProfilePage = () => {
     <section className="pageStyle pt-3">
             <Container>
                 <Row className="mb-3">
-                    <Col sm={2}>
+                <Col xs={{span:8,offset:2}} md={{span:3,offset:0}}>
                         <UesrSideBarComp/>
                     </Col>
-                    <Col sm={10}>
-                    <SubTitle title="الصفحه الشخصيه"/> 
-                        <Row>
-                            <UserProfileDetails/>
-                        </Row>
-                        <SubTitle title="تغيير كلمه السر"/> 
+                    <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
+                        <h3 className="mb-4">Personal Profile</h3>
+                        <UserProfileDetails/>
+                        <h3 className="mb-2 mt-3">Change Password</h3>
                         <Row>
                             <ChangePassword/>
                         </Row>

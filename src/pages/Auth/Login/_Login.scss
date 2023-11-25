@@ -33,8 +33,12 @@
                 text-decoration: none !important;
                 margin-left: 5px;
                 span{
-                    color:$mainColor;
-                    
+                    color:$DarkColor;
+                    font-weight: $FW-3;
+                    transition: color .3s;
+                    &:hover{
+                        color: $mainColor;
+                    }
                 }
             }
             

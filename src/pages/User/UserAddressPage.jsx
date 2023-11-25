@@ -11,20 +11,21 @@ const UserAddressPage = () => {
     <section className="pageStyle pt-3">
             <Container>
                 <Row className="mb-3">
-                    <Col sm={2}>
+                <Col xs={{span:8,offset:2}} md={{span:3,offset:0}}>
                         <UesrSideBarComp/>
                     </Col>
-                    <Col sm={10}>
-                        <SubTitle title="دفتر العناوين"/>
-                        <div className="pt-4">
+                    <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
+                        <h3 className="mb-4">Addresses</h3>
+                        <div className="">
                             <UserAllAddresses/>
                         </div>
+                        {AllAddressesData.length>=3?null:(
+                            <Link to="/user/add-address" style={{textDecoration:"none"} }>
+                                <button className='btn btn-style'>Add New Address</button>
+                            </Link>
+                        )}
                     </Col>
-                    {AllAddressesData.length>=3?null:(
-                     <Link to="/user/add-address" style={{textDecoration:"none",textAlign:"center"} }>
-                        <button className='btn btn-style'>أضافه عنوان جديد</button>
-                     </Link>
-                    )}                    
+                                        
                 </Row>
             </Container>
        </section>

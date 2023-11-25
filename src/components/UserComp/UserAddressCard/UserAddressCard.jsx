@@ -14,11 +14,11 @@ const UserAddressCard = ({AddressesData,onDeleteAddress}) => {
           </div>
         </div>
         <div className="address">
-          <h5>العنوان:- </h5>
+          <h5>Address:- </h5>
           <p>{AddressesData.details}</p>
         </div>
         <div className="phone">
-          <h5>الهاتف:- </h5>
+          <h5>Phone:- </h5>
           <p>{AddressesData.phone}</p>
         </div>
     </div>

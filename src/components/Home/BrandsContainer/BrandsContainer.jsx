@@ -1,8 +1,8 @@
 import React from 'react'
 import SubTitle from "../../Utilities/SubTitle/SubTitle"
-import { Row, Col } from 'react-bootstrap';
-import GrowExample from "../../Utilities/Spinner/Spinner"
+import { Row } from 'react-bootstrap';
 import Brand_Category_Card from '../../Category/Brand_Category_Card/Brand_Category_Card';
+import Spinner from '../../Utilities/Spinner/Spinner';
 const BrandsContainer = ({BrandData,title,btnName,pathName}) => {
   return (
     <section className='mb-5 mt-4'> 
@@ -12,7 +12,7 @@ const BrandsContainer = ({BrandData,title,btnName,pathName}) => {
             BrandData.map((item,index)=>
               <Brand_Category_Card key={index} item={item}/>
             )
-          ):<GrowExample/>}
+          ):<Spinner/>}
         </Row>
     </section>
   )

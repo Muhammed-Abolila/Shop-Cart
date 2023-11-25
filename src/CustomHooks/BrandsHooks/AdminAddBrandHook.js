@@ -22,15 +22,14 @@ const AdminAddBrandHook = () => {
   const onNameChange=(e)=>{
     setBrandName(e.target.value);
   }
-
   const handleBrandData=()=>{
     if (!navigator.onLine){
-      notify("الرجاء الإتصال بالإنترنت");
+      notify("Connect To The Internet");
     }else{
       if(selectedImage==null){
-        notify("من فضلك ادخل صوره الماركه");
+        notify("Insert Brand Image");
       }else if(brandName==""){
-        notify("من فضلك أدخل اسم الماركه");
+        notify("Insert Brand Name");
       }else{
         let formData=new FormData();
         formData.append("name",brandName);

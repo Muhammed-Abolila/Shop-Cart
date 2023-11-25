@@ -28,16 +28,7 @@
                 }  
             }
             button{
-                margin:15px 0px;
-                background-color: $DarkColor;
-                color:$WhiteColor;
-                border-color: $DarkColor ;
-                transition: all .4s;
-                &:hover,&:focus{
-                    background-color: $mainColor !important;
-                    color:$DarkColor;
-                    border-color: $mainColor ;
-                }
+                margin:15px 0px !important;
              }
         }
     }

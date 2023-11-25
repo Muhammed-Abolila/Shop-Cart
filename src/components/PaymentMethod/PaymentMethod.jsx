@@ -1,16 +1,22 @@
-import PriceComp from '../Utilities/PriceComp/PriceComp';
 import UserAllAddressesHook from '../../CustomHooks/User/UserAllAddressesHook';
 import { useState, useEffect } from 'react';
 import CartPageHook from '../../CustomHooks/CartHooks/CartPageHook';
 import { useDispatch, useSelector } from 'react-redux';
-import { PostOrder } from '../../Redux/Actions/OrdersActions';
+import { CreateCashOrder, CreateCreditOrder } from '../../Redux/Actions/OrdersActions';
 import Notifications from '../../CustomHooks/Notifications';
 import { ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router';
-
+import Dropdown from 'react-bootstrap/Dropdown';
+import { BiSortDown } from 'react-icons/bi';
 const PaymentMethod = () => {
   let dispatch=useDispatch();
+  let [loading,setLoading]=useState(true)
   let Navigate=useNavigate();
+  let [paymentMethod,setPaymentMethod]=useState("");
+  // When User Choose Payment Method
+  const ChoosePaymentMethod=(e)=>{
+    setPaymentMethod(e.target.value);
+  }
   // Get Cart Id
   let [productsCartData,reload,setReload,lengthOfArray,productCartDataToCoupone]=CartPageHook()
   // Get Addresses Data
@@ -18,7 +24,7 @@ const PaymentMethod = () => {
   // Choose Address And Change Text
   let [choseenAddress,setChoseenAddress]=useState();
   let [indexOfSelectedAddress,setIndexOfSelectedAddress]=useState('');
-  let [text,setText]=useState("اختر عنوان للشحن")
+  let [text,setText]=useState("Choose Address")
   let choosenStyle={
     backgroundColor: "#0072bc",
     color:"#fff"
@@ -28,56 +34,114 @@ const PaymentMethod = () => {
     setChoseenAddress(data);
     setText(data.alias)
   };
+   // Credit PaymentMethod
+   const sendCreditOrder=async()=>{
+     if(choseenAddress==undefined){
+      notify("Choose Address");
+     }else{
+      setLoading(true)
+      await dispatch(CreateCreditOrder(productCartDataToCoupone._id,{
+        shippingAddress:{
+          city: choseenAddress.details,
+          phone:choseenAddress.phone,
+          details: choseenAddress.alias,
+          }
+    }));
+      setLoading(false)
+     }  
+  }
   // cash PaymentMethod
-  const sendData=async()=>{
+  const sendCashOrder=async()=>{
     if(choseenAddress==undefined){
-      notify("اختر عنوان للشحن")
+     notify("Choose Address");
     }else{
-      await dispatch(PostOrder(productCartDataToCoupone._id,{
-          shippingAddress:{
-            city: choseenAddress.details,
-            phone:choseenAddress.phone,
-            details: choseenAddress.alias,
-            }
-      }));
+      setLoading(true)
+     await dispatch(CreateCashOrder(productCartDataToCoupone._id,{
+       shippingAddress:{
+         city: choseenAddress.details,
+         phone:choseenAddress.phone,
+         details: choseenAddress.alias,
+         }
+   }));
+   setLoading(false)
+    }  
+ }
+  
+  const sendData=async()=>{
+    if(paymentMethod=="credit"){
+      sendCreditOrder()
+    }else if(paymentMethod=="cash"){
+      sendCashOrder()
+    }else{
+      notify("Choose Payment Method")
     }
   };
-  let orderResponse=useSelector((state)=>state.OrderReducer.postOrder);
-  let [notify]=Notifications(orderResponse);
+  let cashOrderResponse=useSelector((state)=>state.OrderReducer.CashOrder);
+  let creditOrderResponse=useSelector((state)=>state.OrderReducer.CreditOrder);
+
+  let CreditData;
+  try{
+    if(creditOrderResponse){
+      CreditData=creditOrderResponse.data;
+    }
+  }catch(e){}
+  useEffect(()=>{
+    if(CreditData){
+      window.open(creditOrderResponse.data.session.url)
+    }
+  },[CreditData])
+  let [notify]=Notifications(cashOrderResponse);
   let productsCartlength=0;
   try{
     if(productsCartData){
       productsCartlength=productsCartData.length
     }
   }catch(e){}
+  
   useEffect(()=>{
-    if(productsCartlength<1||orderResponse.status===201){
+    if(productsCartlength<1||cashOrderResponse.status===201){
       Navigate("/user/allorders")
     }
-  },[orderResponse]);
-  console.log();
-  
+  },[cashOrderResponse]);
   return (
     <section className='payment'>
-    <div className='payment-methods'>
-      <div >
-        <input style={{cursor:"pointer"}} type="radio" name="payment" value="credit" id="credit"/>
-        <label style={{cursor:"pointer"}} for="credit">الدفع عن طريق البطاقه الإئتمانيه</label>
-      </div>
+      <div className='payment-methods'>
+        <div >
+          <input onChange={ChoosePaymentMethod} style={{cursor:"pointer"}} type="radio" name="payment" value="credit" id="credit"/>
+          <label style={{cursor:"pointer"}} for="credit">Credit Card</label>
+        </div>
+        <div>
+          <input onChange={ChoosePaymentMethod} style={{cursor:"pointer"}} type="radio" name="payment" value="cash" id="cash"/>
+          <label style={{cursor:"pointer"}} for="cash">Cash</label>
+        </div>
       <div>
-        <input style={{cursor:"pointer"}} type="radio" name="payment" value="cash" id="cash"/>
-        <label style={{cursor:"pointer"}} for="cash">الدفع عند الإستلام</label>
+        <Dropdown className='text-start'>
+            <Dropdown.Toggle className="btn-style">
+              <div className="sort">
+                  <p>{text}</p>
+                  <BiSortDown/>
+              </div>
+            </Dropdown.Toggle>
+            <Dropdown.Menu className='text-center'>
+             {AllAddressesData.length>0?(AllAddressesData.map((data,index)=>
+                <Dropdown.Item>
+                  <p key={index} value={data._id} 
+                    onClick={()=>onChooseAddress(data,index)}>{data.alias}
+                  </p>
+                  <hr/>
+                  </Dropdown.Item>
+                )):
+                <Dropdown.Item>
+                  <p value={0}>No Addresses</p>
+                </Dropdown.Item>
+                }
+            </Dropdown.Menu>
+        </Dropdown>
       </div>
-      <ul >
-        <p>{text}</p>
-        {AllAddressesData.length>0?(AllAddressesData.map((data,index)=>
-          <li key={index} value={data._id} style={{color:indexOfSelectedAddress===index&&`${choosenStyle.color}`,backgroundColor:indexOfSelectedAddress===index&&`${choosenStyle.backgroundColor}`}} onClick={()=>onChooseAddress(data,index)}>{data.alias}</li>
-          )):<li value={0}>لا يوجد عناوين للشحن</li>}
-      </ul>
-    </div>
-    <div className='payment-method-footer mt-2'>
-        <button className='btn' onClick={sendData}>إتمام الشراء</button>
-    </div>
+      </div>
+      <div className='payment-method-footer mt-2'>
+          <button className='btn btn-style' onClick={sendData}>Complete Purchase</button>
+      </div>
     <ToastContainer/>
     </section>
   )

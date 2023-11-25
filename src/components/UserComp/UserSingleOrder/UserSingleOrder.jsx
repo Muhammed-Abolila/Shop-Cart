@@ -6,34 +6,60 @@ const UserSingleOrder = ({singleOrder}) => {
   return (
     <div>
       <Row>
-          <Col sm={2}>
+          <Col sm={12} md={4}>
             <div className="img-container">
               <Link to={`/details/${singleOrder.product._id}`}>
                 <img src={`${BaseUrl}/products/${singleOrder.product.imageCover}`} alt={singleOrder.product.title} />
               </Link>
             </div>
             </Col>
-            <Col sm={10}>
+            <Col sm={12} md={8} className="mt-5 mt-md-0">
               <div className="content">
-                <div className="disc">
-                  <h5>{singleOrder.product.title}</h5>
-                  <div className="rate-container d-flex justify-content-start align-items-center">
-                    <div className="rate">
-                      <BsFillStarFill/>
-                      <p>{singleOrder.product.ratingsAverage||0}</p>
-                    </div>
-                    <div className="rate-qty m-0 me-2">({singleOrder.product.ratingsQuantity||0} تقييم )</div>
-                  </div>
-                  <div className="color" style={{backgroundColor:`${singleOrder.color}`}}></div>
-                  <div className="price mt-2">
-                    <h5>السعر :- </h5> 
-                    <div>{singleOrder.price}</div>
-                  </div>
-                  <div className="quantaty mt-2">
-                    <h5>الكميه :- </h5> 
-                    <div>{singleOrder.count}</div>
-                  </div>
-                </div>
+                <Row>
+                    <Col xs={6}>
+                      <div className="disc">
+                          <h5>Title :-</h5>
+                          <p className="mt-2">{singleOrder.product.title}</p>
+                      </div>
+                      {singleOrder.color?(
+                      <div className="color-container">
+                          <h5>Color :-</h5>
+                          <div className="color" style={{backgroundColor:`${singleOrder.color}`}}></div>
+                      </div>
+                      ):
+                      <div>
+                        <h5>Color :-</h5>
+                        <p className="mt-2">No Colors</p>
+                      </div>
+                      }
+                    </Col>
+                    <Col xs={6}>
+                    <div className="rate-container d-flex">
+                      <div className="rate m-0">
+                          <p>{singleOrder.product.ratingsAverage||0}</p>
+                          <BsFillStarFill/>
+                        </div>
+                        {singleOrder.product.ratingsQuantity==1?(
+                          <div className="rate-qty m-0">({singleOrder.product.ratingsQuantity||0} rating )</div>
+                        ):(
+                          <div className="rate-qty m-0">({singleOrder.product.ratingsQuantity||0} ratings )</div>
+                        )}
+
+                      </div>
+                      <div className="price mt-2">
+                        <h5>Price :- </h5> 
+                        <p className="mt-2">{singleOrder.price} EGP</p>
+                      </div>
+                      <div className="quantaty mt-2">
+                        <h5>Quantity :- </h5> 
+                        {singleOrder.count==1?(
+                          <p className="mt-2">{singleOrder.count} Item</p>
+                        ):(
+                          <p className="mt-2">{singleOrder.count} Items</p>
+                        )}
+                      </div>
+                    </Col>
+                </Row>
               </div>
             </Col>
         </Row>

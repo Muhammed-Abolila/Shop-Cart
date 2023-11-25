@@ -6,25 +6,25 @@ const SideBar = () => {
     <div className='admin-sidebar'>
        <ul>
           <Link to="/admin/orders" style={{textDecoration:"none"}}>
-              <li>إداره الطلبات</li>
+              <li>Orders Managment</li>
           </Link>
           <Link to="/admin/manageproduct" style={{textDecoration:"none"}}>
-              <li>إداره المنتجات</li>
+              <li>Products Managment</li>
           </Link>
           <Link to="/admin/addbrand" style={{textDecoration:"none"}}>
-              <li>أضف ماركه</li>
+              <li>Add Brand</li>
           </Link>
           <Link to="/admin/addcategory" style={{textDecoration:"none"}}>
-              <li>أضف تصنيف</li>
+              <li>Add Category</li>
           </Link>
           <Link to="/admin/addsubcategory" style={{textDecoration:"none"}}>
-              <li>أضف تصنيف فرعي</li>
+              <li>Add Sub-Category</li>
           </Link>
           <Link to="/admin/addproduct" style={{textDecoration:"none"}}>
-              <li>أضف منتج</li>
+              <li>Add Product</li>
           </Link>
           <Link to="/admin/addcoupon" style={{textDecoration:"none"}}>
-              <li>أضف كوبون خصم</li>
+              <li>Add Coupon</li>
           </Link>
        </ul>
     </div>

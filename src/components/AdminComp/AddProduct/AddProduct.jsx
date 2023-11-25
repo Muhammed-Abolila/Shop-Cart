@@ -11,9 +11,9 @@ const [AllCategoryData,AllBrandsData,images,productName,onProductNameChange,prod
        removeColor,handleProductData,setImages,selectedColors,setShowPicker]=AdminAddProductHook()
   
   return (
-    <div className="inputs mt-3">
+    <div className="inputs my-3">
         <div className="img">
-          <div className="mb-2">صور المنتج</div>
+          <div className="mb-2">Product Images</div>
           <MultiImageInput
             images={images}
             setImages={setImages}
@@ -26,13 +26,13 @@ const [AllCategoryData,AllBrandsData,images,productName,onProductNameChange,prod
             }}
           />
         </div>
-        <input className="form-control input-style" type="text" placeholder=' اسم  المنتج' value={productName} onChange={onProductNameChange}/>
-        <textarea className="form-control mt-3 input-style" name="" id="" cols="30" rows="3" placeholder='وصف المنتج' value={productDesc} onChange={onProductDescChange}></textarea>
-        <input className="form-control mt-3 input-style" type="number" placeholder='السعر قبل الخصم' value={priceBeforeDescount} onChange={onPriceBeforeDescountChange}/>
-        <input className="form-control mt-3 input-style" type="number" placeholder=' سعر  المنتج'  value={priceAfterDescount} onChange={onPriceAfterDescountChange}/>
-        <input className="form-control mt-3 input-style" type="number" placeholder='الكميه'  value={qty} onChange={onQtyChange}/>
+        <input className="form-control input-style" type="text" placeholder='Product Name' value={productName} onChange={onProductNameChange}/>
+        <textarea className="form-control mt-3 input-style" name="" id="" cols="30" rows="3" placeholder='Description' value={productDesc} onChange={onProductDescChange}></textarea>
+        <input className="form-control mt-3 input-style" type="number" placeholder='Price Before Discount' value={priceBeforeDescount} onChange={onPriceBeforeDescountChange}/>
+        <input className="form-control mt-3 input-style" type="number" placeholder='Price After Discount'  value={priceAfterDescount} onChange={onPriceAfterDescountChange}/>
+        <input className="form-control mt-3 input-style" type="number" placeholder='Quantity'  value={qty} onChange={onQtyChange}/>
         <select className="form-control mt-3 input-style" onChange={onSelectMainCategory}>
-          <option value={0}>التصنيف الرئيسى</option>
+          <option value={0}>Choose Main Category</option>
           {AllCategoryData?(AllCategoryData.map((item)=><option key={item._id} value={item._id}>{item.name}</option>)):null}
         </select>
         <Multiselect
@@ -40,17 +40,17 @@ const [AllCategoryData,AllBrandsData,images,productName,onProductNameChange,prod
           onSelect={onSelect}
           onRemove={onRemove}
           displayValue="name"
-          placeholder="التصنيف الفرعي"
-          className="form-control mt-3 input-style text-end p-0"
+          placeholder="Choose Sub-Category"
+          className="form-control mt-3 input-style p-0"
           />
         <select className="form-control mt-3 input-style" onChange={onSelectBrands}>
-          <option value={0}>الماركه</option>
+          <option value={0}>Choose Brand</option>
           {AllBrandsData?(AllBrandsData.map((item)=><option key={item._id} value={item._id}>{item.name}</option>)):null}
         </select>
         <div className="colors-container">
-          <div className="my-2">الألوان المتاحه للمنتج</div>
+          <div className="my-2">Choose Colors</div>
           <div className="colors-inputs">
-            {selectedColors?(selectedColors.map((color,index)=><div key={index} className="color" style={{backgroundColor:`${color}`}} onClick={()=>removeColor(color)}></div>)):null}
+            {selectedColors?(selectedColors.map((color,index)=><div key={index} className="color" style={{backgroundColor:`${color}`,border:"2px solid #ffda05"}} onClick={()=>removeColor(color)}></div>)):null}
             {selectedColors.length<=4?
             (
               <div className="color" onClick={()=>setShowPicker(!showPicker)} style={{backgroundImage:`url(${addLogo})`,cursor:"pointer"}}></div>
@@ -66,8 +66,8 @@ const [AllCategoryData,AllBrandsData,images,productName,onProductNameChange,prod
           </div>
           
         </div>
-        <div className='text-start'>
-          <button className='btn' onClick={handleProductData}>حفظ</button>
+        <div className='text-end'>
+          <button className='btn btn-style' onClick={handleProductData}>Save</button>
         </div>
         <ToastContainer />
     </div>

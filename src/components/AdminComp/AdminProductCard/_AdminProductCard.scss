@@ -1,6 +1,6 @@
 .admin-product-card{
     box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
-    border:1px solid $ThirdColor !important;
+    border:1px solid $mainColor !important;
     height:440px !important;
     overflow: hidden;
     img{
@@ -9,60 +9,62 @@
     }
     .card-body{
         padding-bottom:0px;
-        .fav-icon{
-            text-align: left;
-            color:#c1c1c1;
+        h2{
+            font-size:1.2rem;
+            text-align: start
         }
-        .card-footer{
-            padding: 0;
-            margin: 0;
-            padding-top:10px;
-            background-color: transparent;
+        .price{
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top:1px solid $ThirdColor;
-            .rate{
-                display: flex;
-                margin-top: 10px;
-                color: #ffca28;
-                svg{
-                    font-size: 20px;   
-                }
-                p{
-                    font-size: 17px;
-                    margin-right: 5px;
-                    font-weight: 600;
+            p{
+                margin:0px !important;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .price-before-discount{
+                position: relative;
+                color: gray;
+                margin-left:10px !important;
+                font-size: 15px;
+                margin-top:2px !important;
+                span{
+                    background-color: red;
+                    width: 120%;
+                    height: 2px;
+                    position: absolute;
+                    top: 37%;
+                    right: -7px;
+                    display: block;
+                    transform: skew(210deg, 351deg);
                 }
             }
-            .price{
-                p{
-                    margin:0px !important;
-                    font-size: 18px;
-                    font-weight: bold;
-                }
-                .price-before-discount{
-                    position: relative;
-                    span{
-                        background-color: red;
-                        width: 120%;
-                        height: 2px;
-                        position: absolute;
-                        top: 50%;
-                        right: -7px;
-                        display: block;
-                        transform: skew(210deg, 351deg);
-                    }
-                }
                 
-            }
-        }
-    } 
-};
-@media screen and (max-width:500px){
-    .card-footer{
-        h5{
-            font-size: .9rem !important;
         }
     }
-}
+    .layer{
+        position: absolute;
+        background-color: $mainColor;
+        top:0;
+        bottom:0;
+        right:0;
+        width:0px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        font-size: 1.2rem;
+        transition: width .4s ease-in-out;
+        border-radius: 5px 0px 0px 5px;
+        z-index: 99;
+        svg{
+            font-size: 25px;
+            margin: 20px 15px;
+            color:$DarkColor;
+            cursor: pointer;
+        }
+    }
+    &:hover{
+        .layer{
+            width:55px;
+        }
+    }
+};

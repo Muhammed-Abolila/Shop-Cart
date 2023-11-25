@@ -1,4 +1,3 @@
-import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { BsGithub,BsLinkedin,BsWhatsapp } from 'react-icons/bs';
 const Footer = () => {
@@ -6,15 +5,9 @@ const Footer = () => {
     <footer>
       <Container>
         <Row>
-          <Col>
-            <ul className='list-unstyled d-flex justify-content-start align-items-center m-0'>
-              <li>الشروط والأحكام</li>
-              <li className='px-2'>سياسه الخصوصيه</li>
-              <li> اتصل بنا</li>
-            </ul>
-          </Col>
-          <Col>
-          <ul className='list-unstyled d-flex justify-content-end align-items-center m-0'>
+          
+          <Col sm={{span:3}} >
+          <ul className='list-unstyled d-flex justify-content-start align-items-center m-0'>
               <li>
                 <a href="https://github.com/Muhammed-Abolila" target="_blank">
                   <BsGithub />
@@ -29,6 +22,19 @@ const Footer = () => {
                 <a href="https://wa.me/01014391039"  target="_blank">
                   <BsWhatsapp/>
                 </a>
+              </li>
+            </ul>
+          </Col>
+          <Col sm={{span:9}}  >
+            <ul className='list-unstyled d-flex justify-content-end align-items-center m-0'>
+              <li>
+                <a href="#">Terms</a>
+              </li>
+              <li className='px-2'>
+                <a href="#">Privacy-Policy</a>
+              </li>
+              <li>
+                <a href="#">Contact Us</a>
               </li>
             </ul>
           </Col>

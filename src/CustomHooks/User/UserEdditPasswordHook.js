@@ -23,13 +23,13 @@ const UserEdditPasswordHook = () => {
     let [notify]=Notifications(response);
     const handleClick=async()=>{
       if(oldPass==""){
-        notify("أدخل الرقم السري القديم");
+        notify("Insert Old Password");
       }else if(newPass==""){
-        notify("أدخل الرقم السري الجديد");
+        notify("Insert New Password");
       }else if(newRePass==""){
-        notify("أعد إدخال الرقم السري الجديد");
+        notify("RePassword");
       }else if(newRePass!=newPass){
-        notify("كلمه السر غير متطابقه");
+        notify("Password does not match");
       }else{
         setLoading(true);
         await dispatch(UpdateUserPassword({

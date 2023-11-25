@@ -1,20 +1,17 @@
-import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import SideBar from '../../components/AdminComp/SideBarComp/SideBar'
 import AddSubCategory from '../../components/AdminComp/AddSubCategory/AddSubCategory';
-import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
-
 const AddSubCategoryPage = () => {
     return(
         <section className="pageStyle pt-3">
              <Container>
-                 <Row>
-                     <Col sm={2}>
-                         <SideBar/>
-                     </Col>
-                     <Col sm={7}>
+                <Row className="mb-3">
+                <Col xs={{span:8,offset:2}} md={{span:3,offset:0}}>
+                    <SideBar/>
+                </Col>
+                <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
+                        <h3>Add New Sub-Category</h3>
                          <div className='add-sub-category'>
-                            <SubTitle title="أضف تصنيف فرعي جديد"/>
                             <AddSubCategory/>
                          </div>
                      </Col>

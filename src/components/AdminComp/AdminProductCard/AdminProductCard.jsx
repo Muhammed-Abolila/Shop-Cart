@@ -1,46 +1,67 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Card, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { BsFillStarFill } from "react-icons/bs";
 import { FaRegEdit } from 'react-icons/fa';
 import DeleteBtn from '../../Utilities/DeleteBtn/DeleteBtn';
+import ReactStars from 'react-rating-stars-component';
+import { AiFillEye } from 'react-icons/ai';
 const AdminAllProducts = ({productData,onDeleteProduct}) => {
   return ( 
-    <Col  sm={6} lg={4}>
-      <Card className='admin-product-card mt-4'>
-        <div className='card-head d-flex justify-content-between align-items-center px-2 mt-1'>
+    <Col xs={{ span: 9}} sm={{span:6}} md={{span:6}} lg={{span:4}} xl={{span:3}}>
+      <Card className='admin-product-card mb-4'>
+        <div className='card-head d-flex justify-content-start align-items-center px-2 mt-1'>
             <DeleteBtn data={productData} onDelete={onDeleteProduct}/>
             <Link to={`/admin/eddit-product/${productData._id}`} style={{textDecoration:"none"}}>
               <span className="eddit-icon"><FaRegEdit/></span>
             </Link>
         </div>
-        <Link to={`/details/${productData._id}`} style={{textDecoration:"none"}}>
-          <Card.Img variant="top" src={productData.imageCover} />
-        </Link>
-      <Card.Body>
-          <Card.Text>{productData.title}</Card.Text> 
-          <div className="card-footer">
-            <div className="rate">
-              <BsFillStarFill/>
-              <p>{productData.ratingsQuantity}</p>
-            </div>
-            <div className='price'>
+        <Card.Img variant="top" src={productData.imageCover} />
+        <Card.Body>
+          <h2>{productData.title}</h2>
+          <ReactStars
+              count={5}
+              value={productData.ratingsAverage}
+              size={24}
+              edit={false}
+              isHalf={true}
+              color="#c1c1c1"
+              activeColor="#ffd700"
+            />
+          <div className='price'>
             {productData.priceAfterDiscount?(
-                <>
-                <p className="price-before-discount">
-                  {productData.price} جنيه
-                  <span></span>
-                </p>
-                <p>{productData.priceAfterDiscount} جنيه</p>
-                </>
+              <>
+              <p>{productData.priceAfterDiscount} EGP</p>
+              <p className="price-before-discount">
+                {productData.price} EGP
+                <span></span>
+              </p>
+              </>
               ):(
-                <p>{productData.price} جنيه</p>
-              )}
-            </div>
+              <p>{productData.price} EGP</p>
+              )}    
           </div>
       </Card.Body>
+      <div className="layer">
+          <Link to={`/details/${productData._id}`} style={{textDecoration:"none"}}>
+              <AiFillEye/>
+          </Link>
+      </div>
       </Card>
     </Col>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   )
 }
 export default AdminAllProducts;

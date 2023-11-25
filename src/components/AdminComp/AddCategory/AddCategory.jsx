@@ -4,9 +4,8 @@ const AddCategory = () => {
 let [CategoryImg,onImageChange,onNameChange,CategoryName,handleCategoryData]=AdminAddCategoryHook()
   return (
       <div className="inputs mt-3">
+        <h4>Category Image</h4>
         <div className="img">
-          <div>صوره التصنيف</div>
-          <div>
             <label htmlFor="category-img">
               <img 
                 src={CategoryImg} 
@@ -18,17 +17,16 @@ let [CategoryImg,onImageChange,onNameChange,CategoryName,handleCategoryData]=Adm
                 id="category-img" 
                 onChange={onImageChange}
                 />
-          </div>
         </div>
-        <div className="name text-start">
+        <div className="name text-end">
           <input 
-            className="form-control input-style"
+            className="form-control input-style mb-2"
             type="text"
-            placeholder='اسم التصنيف'
+            placeholder='category name'
             onChange={onNameChange} 
             value={CategoryName}
             />
-          <button className='btn' onClick={handleCategoryData}>حفظ</button>
+          <button className='btn btn-style' onClick={handleCategoryData}>Save</button>
         </div> 
         <ToastContainer />
       </div>

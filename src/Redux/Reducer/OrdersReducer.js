@@ -1,6 +1,7 @@
-import { POST_ORDER, GET_ALL_ORDERS, GET_SPACIFIC_ORDER, CHANGE_ORDER_DELIVER, CHANGE_ORDER_PAID } from "../Type/Type";
+import { POST_ORDER, GET_ALL_ORDERS, GET_SPACIFIC_ORDER, CHANGE_ORDER_DELIVER, CHANGE_ORDER_PAID, POST_ORDER_VISA } from "../Type/Type";
 let initialValue={
-    postOrder:[],
+    CashOrder:[],
+    CreditOrder:[],
     GetAllOrders:[],
     GetSpacificOrder:[],
     OrderPaid:[],
@@ -11,8 +12,13 @@ export const OrderReducer=(state=initialValue,action)=>{
         case POST_ORDER:
             return{
                 ...state,
-                postOrder:action.payload
+                CashOrder:action.payload
             };
+        case POST_ORDER_VISA:
+            return{
+                ...state,
+                CreditOrder:action.payload
+            }
         case GET_ALL_ORDERS:
             return{
                 ...state,

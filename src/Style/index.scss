@@ -9,13 +9,11 @@
 @import "../components/Utilities/Pagination/pagination";
 @import "../components/Utilities/Pagination/pagination";
 @import "../components/Products/SlideProductsSearch/SlideProductsSearch";
-@import "../components/Utilities/ProductsSearchNavBar/ProductsSearchNavbar";
 @import "../components/Products/ProductsSearchSubTitle/ProductsSearchSubTitle";
 @import "../components/Products/ItemDetail/ItemDetail";
 @import "../components/Products/Rate&Comments/RateAndComments";
 @import "../components/Cart/CartItem/CartItem";
 @import "../components/Cart/Coupon/Coupon";
-@import "../components/Utilities/PriceComp/PriceComp";
 @import "../components/PaymentMethod/PaymentMethod";
 @import "../components/AdminComp/SideBarComp/SideBar";
 @import "../components/AdminComp/AdminProductCard/AdminProductCard";
@@ -42,32 +40,35 @@
 @import "../components/Utilities/DeleteBtn/DeleteBtn";
 @import "../components/Coupon/UpdateCouponModal/UpdateCouponeModal";
 @import "../components/Utilities/NoProductYet/NoProductYet";
+@import "../components/AdminComp/AdminAllOrders/AdminALLOrders";
 
 body{
     position:relative !important;
     font-family: 'Roboto', sans-serif;
     background-color:$pageColor !important;
-    // direction: rtl;
-    // background-color:red !important;
+    overflow-x: hidden !important;
 }
 .pageStyle{
     min-height: 670px !important;
 }
 .btn-style{
-    border:1px solid $ThirdColor !important;
-    color:$ThirdColor !important;
-    background-color: $MainColor !important;
+    border:1px solid $DarkColor !important;
+    color:$WhiteColor !important;
+    background-color: $DarkColor !important;
     transition: all .4s !important;
     width:fit-content !important;
     margin: auto !important;
+    border-radius: 5px;
+    padding:7px 15px;
     &:hover{
-        background-color:$ThirdColor !important;
-        color: $MainColor !important;
+        background-color: $mainColor !important;
+        color:$DarkColor !important;
+        border-color: $mainColor !important;
     }
 }
 .input-style{
     &:focus{
-        border: 1px solid $ThirdColor !important;
+        border: 1px solid $mainColor !important;
         box-shadow: none !important;
     }
 };
@@ -87,6 +88,6 @@ body{
 .eddit-icon{
     font-size: 25px !important;
     margin-left: 5px !important;
-    color:$ThirdColor !important;
+    color:$EdditIconColor !important;
     cursor: pointer !important;
 }

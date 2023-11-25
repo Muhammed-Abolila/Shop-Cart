@@ -11,7 +11,14 @@
             font-weight: $FW-2;
         }
         a{
-            color:$mainColor !important;
+            span{
+                color:$DarkColor;
+                font-weight: $FW-3;
+                transition: color .3s;
+                &:hover{
+                    color: $mainColor;
+                }
+            }
         }
         .form{
             input{

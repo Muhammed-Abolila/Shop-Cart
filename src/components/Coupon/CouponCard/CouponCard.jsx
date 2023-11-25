@@ -10,26 +10,27 @@ const CouponCard = ({couponData,reloadAfterDelete,setReloadAfterDelete,reloadAft
       <div className="card-body">
           <div className="info">
             <div className="coup-name d-flex">
-                <h6 className="ps-2"> اسم الكوبون:- </h6>
+                <h4 className="pe-2">Coupon Name:- </h4>
                 <p>{couponData.name}</p>
             </div>
             <div className="coup-date d-flex">
-                <h6 className="ps-2">  تاريخ الإنتهاء:- </h6>
+                <h4 className="pe-2">Expire Date:- </h4>
                 <p>{choosenDate}</p>
             </div>
             <div className="coup-disc d-flex">
-                <h6 className="ps-2"> قيمه الخصم:- </h6>
+                <h4 className="pe-2">Discount Percentage:- </h4>
                 <p>{couponData.discount}%</p>
             </div>
           </div>
           <div className="eddit-delete-icons">
             <DeleteBtn data={couponData} onDelete={onDeleteCoupone}/>
             <span onClick={showUpdateModalFunc} className="eddit-icon"><FaRegEdit/></span>
-            {showUpdateModal==true?(<UpdateCouponModal 
-                                      couponData={couponData}
-                                      reloadAfterUpdate={reloadAfterUpdate}
-                                      setReloadAfterUpdate={setReloadAfterUpdate}
-                                      setShowUpdateModal={setShowUpdateModal}/>):null}
+            {showUpdateModal==true?(
+            <UpdateCouponModal 
+              couponData={couponData}
+              reloadAfterUpdate={reloadAfterUpdate}
+              setReloadAfterUpdate={setReloadAfterUpdate}
+              setShowUpdateModal={setShowUpdateModal}/>):null}
           </div>
       </div>
     </div>

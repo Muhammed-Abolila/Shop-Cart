@@ -8,21 +8,20 @@ footer{
             padding:15px;
             a{
                 text-decoration: none;
-                color:$MainColor;
+                color:$WhiteColor;
                 font-size: 16px;
             }
         }
 
     }
 }
-@media screen and (max-width:767px){
+@media screen and (max-width:575px){
     footer{
         .container{
             .row{
-                flex-direction: column;
                 ul{
-                    justify-content: center !important;
-                    padding: 10px;
+                justify-content: center !important;
+                padding: 10px;
                 }
             }
     

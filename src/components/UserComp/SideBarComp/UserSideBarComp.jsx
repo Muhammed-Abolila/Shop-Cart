@@ -6,16 +6,16 @@ const UesrSideBarComp = () => {
     <div className='user-sidebar'>
        <ul>
           <Link to="/user/allorders" style={{textDecoration:"none"}}>
-              <li>إداره الطلبات</li>
+              <li>Manage Orders</li>
           </Link>
           <Link to="/user/favproduct" style={{textDecoration:"none"}}>
-              <li> المنتجات المفضله</li>
+              <li>Favorite products</li>
           </Link>
           <Link to="/user/address" style={{textDecoration:"none"}}>
-              <li>العناوين الشخصيه</li>
+              <li>Personal Addresses</li>
           </Link>
           <Link to="/user/profile" style={{textDecoration:"none"}}>
-              <li>الملف الشخصي</li>
+              <li>Profile</li>
           </Link>
        </ul>
     </div>

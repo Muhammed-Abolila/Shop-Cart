@@ -5,18 +5,6 @@
                 border:none !important
             }
         }
-        button{
-            background-color: $MainColor;
-            color:$ThirdColor;
-            border:1px solid $ThirdColor;
-            transition: background-color .4s,color .4s;
-            padding:10px 30px;
-            margin-top:10px;
-            &:hover{
-                background-color: $ThirdColor;
-                color:$MainColor;
-            }
-        }
         .colors-container{
             .colors-inputs{
                 display: flex;

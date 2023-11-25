@@ -1,13 +1,14 @@
 import { Card} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { BsFillHeartFill, BsFillStarFill } from "react-icons/bs";
+import { BsFillHeartFill} from "react-icons/bs";
 import { AiFillEye} from "react-icons/ai";
-import { ImCart} from "react-icons/im";
 import ProductCardHook from '../../../CustomHooks/ProductsHooks/ProductCardHook';
 import { BaseUrl } from '../../../Redux/Type/Type';
 import ReactStars from 'react-rating-stars-component';
+import UserFavProductPageHook from '../../../CustomHooks/UserFavProductPage/UserFavProductPageHook';
 const ProductCard = ({CardProductData,favProduct}) => {
-  let [favStyle,handleWishlist]=ProductCardHook(CardProductData,favProduct);   
+  let [wishListProductData,lengthOfWishlistArray,reload,setReload]=UserFavProductPageHook();
+  let [favStyle,handleWishlist,scrollToTop]=ProductCardHook(CardProductData,favProduct,reload,setReload);
   return (
       <Card className='product-card mb-3'>
             {window.location.pathname==="/user/favproduct"?(
@@ -17,13 +18,6 @@ const ProductCard = ({CardProductData,favProduct}) => {
               ):(
               <div className="image-container">
                 <Card.Img variant="top" src={CardProductData.imageCover}/>
-                <div className="layer">
-                  <ImCart/>
-                  <BsFillHeartFill style={{color: favStyle}} onClick={handleWishlist}/>
-                  <Link to={`/details/${CardProductData._id}`} style={{textDecoration:"none"}}>
-                    <AiFillEye/>
-                  </Link>
-                </div>
               </div>
             )}
       <Card.Body>
@@ -52,11 +46,10 @@ const ProductCard = ({CardProductData,favProduct}) => {
           </div>
       </Card.Body>
       <div className="layer">
-            <ImCart/>
-            <BsFillHeartFill style={{color: favStyle}} onClick={handleWishlist}/>
-            <Link to={`/details/${CardProductData._id}`} style={{textDecoration:"none"}}>
-                <AiFillEye/>
-            </Link>
+          <BsFillHeartFill style={{color: favStyle}} onClick={handleWishlist}/>
+          <Link to={`/details/${CardProductData._id}`}  onClick={scrollToTop} style={{textDecoration:"none"}}>
+              <AiFillEye/>
+          </Link>
       </div>
     </Card> 
   )

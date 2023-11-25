@@ -1,66 +1,79 @@
 .payment{
     .payment-methods{
-        background-color: $MainColor;
+        background-color: $WhiteColor;
         padding:20px;
         border-radius: 5px;
         margin-top:20px;
         div{
-            display: flex;
             margin-bottom: 10px;
-            p{
-                margin:0;
-                margin-right: 5px;
+            label{
+                margin-left: 5px;
             }
+
+
+
+
+
+
+            .dropdown{
+                .dropdown-toggle{
+                    width:fit-content;
+                    padding:4px 10px !important;
+                    .sort{
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        svg{
+                            font-size: 25px;
+                            margin-left:10px;
+                        }
+                        p{
+                            margin: 0 !important;
+                        }
+                    }
+                    &:after{
+                        display: none !important;
+                    }
+                }
+                .dropdown-menu{
+                    overflow: hidden;
+                    width:160px;
+                    margin:0;
+                    padding:0;
+                    top:-8px;
+                    .dropdown-item{
+                        padding: 0px !important;
+                        transition: all .4s;
+                        background-color: $DarkColor;
+                        color:$WhiteColor;
+                        border-color: $DarkColor ;
+                        &:hover{
+                            background-color: $mainColor !important;
+                            color:$DarkColor;
+                        }
+                        p{
+                            margin: 0 !important;
+                            padding:10px
+                        }
+                        hr{
+                            margin:0;
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+
+
+
+
+
         }
-        ul{
-            list-style: none;
-            padding:0 !important;
-            margin-top:25px;
-            width:15%;
-            text-align: center;
-            overflow: hidden;
-            &:hover li{
-                transform: translatey(0);
-            }
-            P{
-                border:1px solid $ThirdColor;
-                padding:5px;
-                border-radius: 5px;
-                margin: 0;
-                cursor: pointer;
-                
-            }
-            li{
-                transform: translatey(300%);
-                transition:transform .5s ease-in-out;
-                border:1px solid $ThirdColor;
-                padding:5px 0px;
-                text-align: center;
-                margin: auto;
-                border-radius: 0px 0px 5px 5px;
-                cursor: pointer;
-                &:hover{
-                    background-color: $ThirdColor;
-                    color:$MainColor
-                } 
-            }
-            
-        }
+
     }
     .payment-method-footer{
         display: flex;
-        justify-content: end;
-        align-items: center;
         button{
-            margin-right: 10px;
-            border:1px solid $ThirdColor;
-            background-color: $MainColor;
-            color:$ThirdColor;
-            transition:all .4s;
-            &:hover{
-                color:$MainColor;
-                background-color: $ThirdColor;
-            }
+            margin-right: 0px !important;
         }
     }
 }

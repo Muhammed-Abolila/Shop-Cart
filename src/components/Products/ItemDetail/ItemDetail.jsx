@@ -1,31 +1,10 @@
-import React, { useState } from 'react'
 import { Carousel, Col, Row } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { AddToCart } from '../../../Redux/Actions/CartActions';
-import Notifications from '../../../CustomHooks/Notifications';
 import { ToastContainer } from 'react-toastify';
+import CartPageHook from '../../../CustomHooks/CartHooks/CartPageHook';
+import ItemDetailsHook from '../../../CustomHooks/ProductsHooks/ItemDetailsHook';
 const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
-    let dispatch=useDispatch();
-    let [selectedColor,setSelectedColor]=useState("");
-    let [indexOfselectedColor,setIndexOfSelectedColor]=useState("");
-    const onColorChange=(color,index)=>{
-        setIndexOfSelectedColor(index)
-        setSelectedColor(color)
-    };
-    let response=useSelector((state)=>state.CartReducer.AddToCart);
-    let [notify]=Notifications(response)
-    // Add Product To Cart
-    const onAddToCart=async()=>{
-        if(oneProduct.availableColors.length>=1 && selectedColor==''){
-            notify("Choose Color!"); 
-        }else{
-            await dispatch(AddToCart({
-                productId: oneProduct._id,
-                color: selectedColor
-            }));
-            window.location.reload()
-        }  
-    }
+    let [productsCartData,reload,setReload,lengthOfArray,productCartDataToCoupone]=CartPageHook()
+    let [indexOfselectedColor,onColorChange,onAddToCart]=ItemDetailsHook(oneProduct,reload,setReload)
   return ( 
     <section className='item-details my-3 py-4'>
                 <Row> 
@@ -35,7 +14,7 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
                            oneProduct.images.map((image,index)=>{return(
                             <Carousel.Item key={index}>
                                 <div className='slider-img'>
-                                    <img src={image} alt="" />
+                                    <img src={image} alt={oneProduct.title} />
                                 </div> 
                             </Carousel.Item>
                            )}) 
@@ -61,7 +40,7 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
                         </Col>
                         <Col md={6}>
                         {oneProduct.availableColors?(
-                            <div className="color">
+                            <div className="color-container">
                                 <h2>Colors :-</h2>
                                 <ul className="color">
                                     {oneProduct.availableColors.map((color,index)=>
@@ -95,9 +74,8 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
                             </div>
                         </Col>
                     </Row>
-                    <div className="add-btn">
-                        <button className='btn' onClick={onAddToCart}>Add To Cart</button>
-                        <button className='btn' onClick={onAddToCart}>Add To Wish List</button>
+                    <div className="btns">
+                        <button className='btn btn-style' onClick={onAddToCart}>Add To Cart</button>
                     </div>
                 </div>
             </Col>

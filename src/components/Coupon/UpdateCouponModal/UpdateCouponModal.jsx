@@ -2,12 +2,11 @@ import { ToastContainer } from "react-toastify";
 import UpdateCouponeModalHook from "../../../CustomHooks/CouponHooks/UpdateCouponeModalHook";
 const UpdateCouponModal = ({couponData,setShowUpdateModal,reloadAfterUpdate,setReloadAfterUpdate}) => {
   let [couponNameUpdate,OnNameChange,couponExpireUpdate,OnExpireChange,
-    couponDiscountUpdate,OnDiscountChange,handleClick]=UpdateCouponeModalHook(couponData,setShowUpdateModal,reloadAfterUpdate,setReloadAfterUpdate) 
+    couponDiscountUpdate,OnDiscountChange,backFunc,handleClick]=UpdateCouponeModalHook(couponData,setShowUpdateModal,reloadAfterUpdate,setReloadAfterUpdate) 
   return (
     <div className="update-Coupone-modal">
       <div className="modal-box">
-          <h6>تعديل الكوبون :- {couponData.name}</h6>
-          <div className="modal-inputs my-4">
+          <div className="modal-inputs mb-4">
             <input 
               value={couponNameUpdate}
               onChange={OnNameChange}
@@ -28,7 +27,8 @@ const UpdateCouponModal = ({couponData,setShowUpdateModal,reloadAfterUpdate,setR
               />
         </div>
         <div className="btns">
-          <button className="btn btn-primary" onClick={handleClick}>الحفظ</button>
+          <button className="btn back-btn" onClick={backFunc}>Back</button>
+          <button className="btn btn-style" onClick={handleClick}>Save</button>
         </div>
       </div>
       <ToastContainer/>

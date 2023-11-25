@@ -47,19 +47,19 @@ const AdminAddProductHook = () => {
   };
 
    //  Admin Change Price Before Descount
-   const [priceBeforeDescount,setPriceBeforeDescount]=useState("السعر قبل الخصم");
+   const [priceBeforeDescount,setPriceBeforeDescount]=useState("Price Before Discount");
    const onPriceBeforeDescountChange=(e)=>{
     setPriceBeforeDescount(e.target.value);
    };
 
     //  Admin Change Price After Descount
-    const [priceAfterDescount,setPriceAfterDescount]=useState("سعر المنتج");
+    const [priceAfterDescount,setPriceAfterDescount]=useState("Price");
     const onPriceAfterDescountChange=(e)=>{
       setPriceAfterDescount(e.target.value);
      };
      
    //  Admin Change Quantaty
-   const [qty,setQty]=useState("الكميه");
+   const [qty,setQty]=useState("Quantity");
     const onQtyChange=(e)=>{
       setQty(e.target.value);
      };
@@ -141,21 +141,21 @@ const AdminAddProductHook = () => {
         const imgsAfterConvert=Array.from(Array(Object.keys(images).length).keys()).map((item,index)=>
         dataURLtoFile(images[index],Math.random()+".png"));
         if(images=={}||images==""){
-          notify("من فضلك أدخل صوره المنتج")
+          notify("Insert Product Image")
         }else if(productName==""){
-          notify("من فضلك أدخل إسم المنتج")
+          notify("Insert Product Name")
         }else if(productDesc==""){
-          notify("من قضلك أدخل وصف للمنتج")
-        }else if(priceAfterDescount=="سعر المنتج"){
-          notify("من فضلك أدخل السعر النهائي للمنتج")
-        }else if(qty=="الكميه"){
-          notify("من فضلك أدخل كميه المنتج")
+          notify("Insert Product Description")
+        }else if(priceAfterDescount=="Price"){
+          notify("Insert Product Price")
+        }else if(qty=="Quantity"){
+          notify("Insert Product Quantity")
         }else if(mainCategoryId==""){
-          notify("من فضلك أدخل التصنيف الرئيسي للمنتج")
+          notify("Choose Main Category")
         }else if(selectedSubCategory==""){
-          notify("من فضلك أدخل التصنيف الفرعي للمنتج")
+          notify("Choose sub-Category")
         }else if(brandId==""){
-          notify("من فضلك أدخل ماركه المنتج")
+          notify("Choose Brand")
         }else{
           let formData=new FormData();
           formData.append("title",productName);
@@ -174,8 +174,8 @@ const AdminAddProductHook = () => {
           setImages({});
           setProductName("");
           setProductDesc("");
-          setPriceBeforeDescount("السعر قبل الخصم");
-          setPriceAfterDescount("سعر المنتج");
+          setPriceBeforeDescount("Price Before Discount");
+          setPriceAfterDescount("Price");
           setQty("");
           setMainCategoryId("");
           setSelectedSubCategory('');

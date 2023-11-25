@@ -10,7 +10,7 @@ const CartPageHook = () => {
       };
       get();
     },[reload]);
-    let productsCart=useSelector((state)=>state.CartReducer.ProductsCart);
+    let productsCart=useSelector((state)=>state.CartReducer.ProductsCart);    
     let productCartDataToCoupone=[]
     let productsCartData;
     let lengthOfArray;

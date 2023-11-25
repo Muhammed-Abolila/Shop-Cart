@@ -9,9 +9,7 @@ const UserEdditProfileHook = (setShowUpdateModal) => {
     let [userPhone,setUserPhone]=useState(user.phone);
     let [userEmail,setUserEmail]=useState(user.email);
     let [loading,setLoading]=useState(true);
-    let response=useSelector((state)=>state.UserProfileReducer.UpdateUserProfile);
-    console.log(response);
-    
+    let response=useSelector((state)=>state.UserProfileReducer.UpdateUserProfile);  
     let [notify]=Notifications(response)
     const onUserNameChange=(e)=>{
       setUserName(e.target.value)
@@ -22,13 +20,16 @@ const UserEdditProfileHook = (setShowUpdateModal) => {
     const onUserEmailChange=(e)=>{
       setUserEmail(e.target.value)
     }
+    const backClick=()=>{
+      setShowUpdateModal(false);
+    }
     const handleClick=async()=>{
       if(userName==""){
-        notify("أدخل اسم المستخدم");
+        notify("Insert User Name");
       }else if(userEmail==""){
-        notify("أدخل البريد الإلكتروني");
+        notify("Insert E-mail");
       }else if(userPhone==""){
-        notify("أدخل رقم الهاتف");
+        notify("Insert Phone Number");
       }else{
         setLoading(true)
         let body=[];
@@ -65,7 +66,6 @@ const UserEdditProfileHook = (setShowUpdateModal) => {
       }
     },[loading]);
     return [userName,onUserNameChange,userPhone,onUserPhoneChange,userEmail,onUserEmailChange,
-        handleClick]
+        handleClick,backClick]
 }
-
 export default UserEdditProfileHook

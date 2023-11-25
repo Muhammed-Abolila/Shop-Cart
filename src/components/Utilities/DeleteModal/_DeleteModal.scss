@@ -11,10 +11,10 @@
     align-items: center;
     text-align: start;
     .modal-box{
-        background-color: #fff;
-        width:25%;
-        padding:15px 10px;
-        border:1px solid $ThirdColor;
+        background-color: $WhiteColor;
+        width:400px;
+        padding:35px 10px;
+        border:1px solid $DarkColor;
         border-radius: 5px;
         p{
             margin: 17px 6px;
@@ -22,18 +22,26 @@
         .btns{
             text-align: end;
             .btn{
-                width:40%;
                 padding:10px 15px !important;
-                color:$MainColor;
-            }
-            .back-btn{
-                background-color: $ThirdColor;
-                border:none;
+                color:$WhiteColor;
             }
             .delete-btn{
-                background-color:red;
-                border:none;
+                border:1px solid red !important;
+                color:$WhiteColor !important;
+                background-color: red !important;
+                width:fit-content !important;
+                margin: 0px 10px !important;
+                border-radius: 5px;
+                padding:7px 15px;
             }
         }
     }
-}
+};
+// Media-Query
+@media screen and (max-width:575px){
+    .modal-container{
+        .modal-box{
+            width:300px;
+        }
+    }
+};

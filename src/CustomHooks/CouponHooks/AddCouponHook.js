@@ -34,17 +34,17 @@ const AddCouponHook = () => {
     // Handle Click And Send Data
     const handleClick=async()=>{
       if(couponName==''){
-        notify("ادخل اسم الكوبون");
+        notify("Insert Coupon Name");
       }else if(couponDate==''){
-        notify("ادخل تاريخ انتهاء الكوبون");
+        notify("Insert Expire Date");
       }else if(couponDate<currentDate){
-        notify("ادخل تاريخ صالح");
+        notify("Insert Valid Date");
       }else if(couponDiscount==''){
-        notify("ادخل قيمه الخصم");
+        notify("Insert Discount");
       }else if(couponDiscount<=0){
-        notify("ادخل قيمه موجبه");
+        notify("Insert Valid Value");
       }else if(couponDiscount>100){
-        notify("ادخل قيمه أقل من 100");
+        notify("Insert Value Less Than 100");
       }else{
         setLoading(true)
         await dispatch(AdminCreateCoupon({
@@ -61,7 +61,7 @@ const AddCouponHook = () => {
     useEffect(()=>{
       if(loading==false){
         if(response.status==400){
-          notify("يوجد كوبون بنفس الاسم ادخل اسم جديد");
+          notify("This Coupon Name Is Used");
         }
       }
     },[loading])

@@ -10,13 +10,39 @@
     justify-content: center;
     align-items: center;
     .modal-box{
-        background-color: #fff;
-        width:40%;
+        background-color: $WhiteColor;
+        width:400px;
         padding:15px 10px;
-        border:1px solid $ThirdColor;
+        border:1px solid $DarkColor;
         border-radius: 5px;
         .btns{
-            text-align: end
+            text-align: end;
+            .btn{
+                padding:10px 15px !important;
+            }
+            .back-btn{
+                border:1px solid $mainColor !important;
+                color:$DarkColor !important;
+                background-color: $mainColor !important;
+                transition: all .4s !important;
+                width:fit-content !important;
+                margin-right: 10px !important;
+                border-radius: 5px;
+                padding:7px 15px;
+                &:hover{
+                    background-color: $DarkColor !important;
+                    color:$WhiteColor !important;
+                    border-color: $DarkColor !important;
+                }
+            }
         }
     }
-}
+};
+// Media-Query
+@media screen and (max-width:575px){
+    .update-Coupone-modal{
+        .modal-box{
+            width:300px;
+        }
+    }
+};

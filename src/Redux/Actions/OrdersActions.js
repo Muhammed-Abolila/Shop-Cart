@@ -1,8 +1,7 @@
 import axios from "axios";
-import { BaseUrl,POST_ORDER,GET_ALL_ORDERS,GET_SPACIFIC_ORDER,CHANGE_ORDER_DELIVER, CHANGE_ORDER_PAID } from "../Type/Type";
-
+import { BaseUrl,POST_ORDER,GET_ALL_ORDERS,GET_SPACIFIC_ORDER,CHANGE_ORDER_DELIVER, CHANGE_ORDER_PAID, POST_ORDER_VISA } from "../Type/Type";
 // post order
-export const PostOrder=(cartId,data)=>{
+export const CreateCashOrder=(cartId,data)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
@@ -19,6 +18,24 @@ export const PostOrder=(cartId,data)=>{
         }
     }
 };
+// Post order by visa
+export const CreateCreditOrder=(cartId,data)=>{
+    return async(dispatch)=>{
+        try{
+            let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
+            let response=await axios.get(`${BaseUrl}/api/v1/orders/checkout-session/${cartId}`,config);    
+            dispatch({
+                type:POST_ORDER_VISA,
+                payload:response,
+            })
+        }catch(e){
+            dispatch({
+                type:POST_ORDER_VISA,
+                payload:e.response,
+            })
+        }
+    }
+}
 // get all orders
 export const GetAllOrders=(pageNumber)=>{
     return async(dispatch)=>{

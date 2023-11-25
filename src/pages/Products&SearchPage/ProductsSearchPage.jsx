@@ -10,7 +10,7 @@ const ProductsSearchPage = () => {
   let [items,pagination,getPageCount,getProduct]=ProductsSearchPageHook();
     
   return (
-    <section className='pageStyle'>
+    <section className='pageStyle py-3 mb-5'>
       <Container>
       <ProductsSearchSubTitle ProductData={items} getProduct={getProduct}/>
       <Row>

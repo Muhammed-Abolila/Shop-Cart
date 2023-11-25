@@ -9,9 +9,31 @@
     justify-content: center;
     align-items: center;
     .user-eddit-content{
+        border:1px solid $mainColor;
         width:50% !important;
-        background-color: #9d9d9d;
+        background-color: $WhiteColor;
         padding:10px 20px;
-        border-radius: 5px
+        border-radius: 5px;
+        h3{
+            text-align: start;
+        }
+        .back-btn{
+            margin-right:20px !important;
+            background-color: #22304033 !important;
+            color:$DarkColor !important;
+            border:1px solid #22304033 !important;
+            &:hover{
+                background-color: $mainColor !important;
+                color:$DarkColor !important;
+                border-color: $mainColor !important;
+            }
+        }
     }
+};
+@media screen and (max-width:767px){
+    .user-eddit-profile{
+        .user-eddit-content{
+            width:75% !important;
+        }
+    };
 }

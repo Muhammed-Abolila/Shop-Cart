@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import ProductsSearchNavbar from '../../components/Utilities/ProductsSearchNavBar/ProductsSearchNavbar'
 import { Container } from 'react-bootstrap'
 import ProductContainer from '../../components/Home/ProductContainer/ProductContainer'
 import ItemDetail from '../../components/Products/ItemDetail/ItemDetail'
@@ -15,7 +14,7 @@ const ProductDetails = () => {
             <ItemDetail oneProduct={oneProduct} oneCategory={oneCategory} oneBrand={oneBrand}/>
             <RateAndComments oneProductData={oneProduct}/>
             <div className="mt-3">
-                {SameProductData?(<ProductContainer ProductData={SameProductData} title="Product You Like"/>):null}
+                {SameProductData?(<ProductContainer ProductData={SameProductData} title="Products You May Like :-"/>):null}
             </div>
         </Container>
     </section>

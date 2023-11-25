@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Col, Row } from 'react-bootstrap'
-import thumb from "../../../assets/image/item.png";
 import DeleteBtn from '../../Utilities/DeleteBtn/DeleteBtn';
 import { useDispatch, useSelector } from 'react-redux';
 import { DeleteOneProductCart, UpdateProductQuantity } from '../../../Redux/Actions/CartActions';
 import Notifications from '../../../CustomHooks/Notifications';
 import { ToastContainer } from 'react-toastify';
 import { BaseUrl } from '../../../Redux/Type/Type';
-const CartItem = ({data,reload,setReload}) => {
+import { Link } from 'react-router-dom';
+const CartItem =({data,reload,setReload}) => {
     let dispatch=useDispatch();
     let [qntValue,setQntValue]=useState(data.count);
     const onQntChange=(e)=>{
@@ -33,31 +33,39 @@ const CartItem = ({data,reload,setReload}) => {
         <Col  className='col-10'>
             <div className='cart-right '>
                 <Row>
-                    <Col className='col-3'>
+                    <Col className='col-4'>
                         <div className="img-container">
-                            <img src={`${BaseUrl}/products/${data.product.imageCover}`} alt="" />
+                            <Link to={`/details/${data.product._id}`}>
+                                <img src={`${BaseUrl}/products/${data.product.imageCover}`} alt="" />
+                            </Link>
                         </div>
                     </Col>
-                    <Col className='col-9'>
+                    <Col className='col-8'>
                         <div className='cart-content'>
                             <div>
-                                <h6>{data.product.title}</h6>
+                                <h3 className='mb-2'>Title:-</h3>
+                                <span>{data.product.title}</span>
                             </div>
                             <div>
-                                <h6 className='mb-2'>التصنيف:- <span>{data.product.category.name}</span></h6>
+                                <h3 className='mb-2'>Category:-</h3>
+                                <span>{data.product.category.name}</span>
                             </div>
                             <div>
-                                <h6 className='mb-2'>الماركه:- <span>{data.product.brand&&data.product.brand.name}</span></h6>
-                                <span className='color' style={{backgroundColor:`${data.color}`}}></span>
+                                <h3 className='mb-2'>Brand:-</h3>
+                                <span>{data.product.brand&&data.product.brand.name}</span>
+                            </div>
+                            <div>
+                                <h3 className='mb-2'>Color:-</h3>
+                                <div className='color' style={{backgroundColor:`${data.color}`}}></div>
                             </div>
                             <div className='quantaty d-flex '>
-                                <h6>الكميه</h6>
+                                <h3>Quantity:- </h3>
                                 <input
                                     min={0}
                                     value={qntValue}
                                     onChange={onQntChange}
                                     type="number"/>
-                                <button className="btn" onClick={changeQty}>تطبيق</button>
+                                <button className="btn btn-style" onClick={changeQty}>Apply</button>
                             </div> 
                         </div>
                     </Col>
@@ -66,12 +74,14 @@ const CartItem = ({data,reload,setReload}) => {
         </Col>
         <Col className='col-2'>
             <div className='cart-left'>
-                <div>
-                    <DeleteBtn data={data} onDelete={onDeleteProductCart}/>
-                </div>
-                <h6>{data.price} جنيه</h6>
+                <DeleteBtn data={data} onDelete={onDeleteProductCart}/>
             </div>
         </Col>
+        <hr/>
+        <div className="price">
+            <h3>Item Price:- </h3>
+            <span>{data.price} EGP</span>
+        </div>
       </Row>
       <ToastContainer/>
     </div>

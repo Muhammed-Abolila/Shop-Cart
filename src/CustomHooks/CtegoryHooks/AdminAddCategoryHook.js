@@ -26,13 +26,13 @@ const AdminAddCategoryHook = () => {
     // When Admin Click Save Button
     const handleCategoryData=()=>{
       if (!navigator.onLine){
-        notify("الرجاء الإتصال بالإنترنت");
+        notify("Connect To The Internet");
       }else{
         if(selectedImage==null){
-          notify("من فضلك ادخل صوره الصنف");
+          notify("Insert Category Image");
           return;
         }else if(CategoryName==""){
-          notify("من فضلك ادخل اسم الصنف");
+          notify("Insert Category Name");
           return;
         } 
         let formData=new FormData()

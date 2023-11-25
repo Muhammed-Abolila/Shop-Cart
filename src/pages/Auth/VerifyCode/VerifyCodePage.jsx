@@ -16,7 +16,7 @@ const VerifyCodePage = () => {
                   {Email?(<p className="mt-2 mb-0">{Email}</p>):(<p className="mt-2 mb-0">E-mail</p>)}
                 </h3>
                 <Link to="/forgot-password" className="text-decoration-none">
-                  <p>Change E-mail</p>
+                  <span>Change E-mail?</span>
                 </Link>
             </div>
             <div className="form my-4">

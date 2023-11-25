@@ -3,29 +3,29 @@ import UserEdditPasswordHook from "../../../CustomHooks/User/UserEdditPasswordHo
 const ChangePassword = () => {
   let [oldPass,onOldPassChange,newPass,onNewPassChange,newRePass,onNewRePassChange,handleClick]=UserEdditPasswordHook()
   return (
-    <div className='w-50 text-start mt-3'>
+    <div className='w-75 text-start'>
       <input
         value={oldPass}
         onChange={onOldPassChange}
         className='form-control input-style' 
         type="password" 
-        placeholder='كلمه السر القديمه'
+        placeholder='Old Password'
         />
       <input
         value={newPass}
         onChange={onNewPassChange} 
         className='form-control mt-2 input-style' 
         type="password" 
-        placeholder='كلمه السر الجديده'
+        placeholder='New Password'
         />
       <input
         value={newRePass}
         onChange={onNewRePassChange} 
         className='form-control mt-2 mb-3 input-style' 
         type="password" 
-        placeholder='أعد إدخال كلمه السر الجديده'
+        placeholder='Confirm Password'
         />
-      <button className='btn btn-style' onClick={handleClick}>حفظ كلمه السر</button>
+      <button className='btn btn-style' onClick={handleClick}>Change Password</button>
       <ToastContainer/>
     </div>
   )

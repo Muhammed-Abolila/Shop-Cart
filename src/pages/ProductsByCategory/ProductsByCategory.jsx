@@ -8,11 +8,11 @@ const ProductsByCategory = () => {
     let {id}=useParams()
     let [itemData,pagination,getPageCount]=ProductsByCatHook(id)
   return (
-    <section className='pageStyle'>
+    <section className='pageStyle py-3 mb-5'>
       <Container>
       <Row>
         <Col lg={12}>
-         {itemData.length>0?(<ProductContainer  ProductData={itemData}/>):<NoProductYet msg={"لاتوجد منتجات في هذا التصنيف حاليا..."}/>}
+         {itemData.length>0?(<ProductContainer  ProductData={itemData}/>):<NoProductYet msg={"There Is No Products Now..."}/>}
         </Col>
       </Row>
       {pagination>1?(<PaginationComp PaginationData={pagination} getPageCount={getPageCount}/>):null}

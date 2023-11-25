@@ -1,7 +1,7 @@
 .user-address{
-    background-color: $MainColor;
+    background-color: $WhiteColor;
     padding:10px 10px;
-    border:1px solid $ThirdColor;
+    border:1px solid $mainColor;
     border-radius: 5px;
     margin-bottom:15px;
     .address-head{
@@ -16,25 +16,25 @@
     .address{
         display: flex;
         margin-top: 10px;
-        margin-right:5px;
+        margin-left:5px;
         h5{
             font-size: 16px;
             font-weight: 400;
         }
         p{
-            margin-right:5px;
+            margin-left:5px;
         }
     }
     .phone{
         display: flex;
         margin-top: 10px;
-        margin-right:5px;
+        margin-left:5px;
         h5{
             font-size: 16px;
             font-weight: 400;
         }
         p{
-            margin-right:5px;
+            margin-left:5px;
         }
     }
 }

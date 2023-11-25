@@ -4,19 +4,5 @@
     align-items: center;
     .subtitle-head{
         font-size:20px;
-    }
-    a{
-        text-decoration: none;
-        padding:7px 15px;
-        border-radius: 5px;
-        background-color: $DarkColor;
-        color:$WhiteColor;
-        border-color: $DarkColor ;
-        transition: all .4s;
-        &:hover{
-            background-color: $mainColor !important;
-            color:$DarkColor;
-            border-color: $mainColor ;
-        }
     }   
 }

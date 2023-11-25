@@ -3,22 +3,33 @@ import SideBar from '../../components/AdminComp/SideBarComp/SideBar';
 import PaginationComp from '../../components/Utilities/Pagination/Pagination';
 import UserAllOrdersPageHook from '../../CustomHooks/User/UserAllOrdersPageHook';
 import AdminAllOrders from '../../components/AdminComp/AdminAllOrders/AdminAllOrders';
-import SubTitle from '../../components/Utilities/SubTitle/SubTitle';
+import Spinner from '../../components/Utilities/Spinner/Spinner';
+import NoProductYet from '../../components/Utilities/NoProductYet/NoProductYet';
 const AdminAllOrdersPage = () => {
     let [user,ordersResponse,ordersResponseData,pagination,getPageCount,reloadAfterChange,setReloadAfterChange]=UserAllOrdersPageHook()
     return(
-        <section className="pageStyle pt-3">
+        <section className="pageStyle py-3 mb-5">
         <Container>
             <Row className="mb-3">
-                <Col sm={2}>
+            <Col xs={{span:8,offset:2}} md={{span:3,offset:0}}>
                     <SideBar/>
                 </Col>
-                <Col sm={10}>
-                    <SubTitle title="إداره جميع الطلبات"/>
-                    <h5>عدد الطلبات #{ordersResponse.results}</h5>
-                    <div className='pt-4'> 
-                    {ordersResponseData?ordersResponseData.map((data,index)=><AdminAllOrders key={index} ordersData={data} reloadAfterChange={reloadAfterChange} setReloadAfterChange={setReloadAfterChange}/>):null}
-                    </div>
+                <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
+                    <h3 className="mb-4">Manage All Orders</h3>
+                    {ordersResponseData.length>=1?(
+                        <div> 
+                            {ordersResponseData?ordersResponseData.map((data,index)=>
+                                <AdminAllOrders 
+                                    key={index} 
+                                    ordersData={data} 
+                                    reloadAfterChange={reloadAfterChange} 
+                                    setReloadAfterChange={setReloadAfterChange}
+                                />):(
+                                    <Spinner/>
+                                )}
+                        </div>
+                    ):(<NoProductYet msg="No Orders Yet"/>)}
+                    
                 </Col>
             </Row>
             {pagination>1&&<PaginationComp PaginationData={pagination} getPageCount={getPageCount}/>}

@@ -5,9 +5,9 @@ import PaymentMethod from '../../components/PaymentMethod/PaymentMethod'
 
 const PaymentMethodPage = () => {
   return (
-    <section className='pageStyle'>
+    <section className='pageStyle pt-3'>
       <Container>
-        <SubTitle title="إختر طريقه الدفع"/>
+        <SubTitle title="Choose Payment Method"/>
         <PaymentMethod/>
       </Container>
     </section>

@@ -99,22 +99,12 @@
                 }
             }
         }
-        .add-btn{
-            display: flex;
-            align-items: center;
+        .btns{
+            
             button{
-                background-color: $DarkColor;
-                color:$WhiteColor;
-                border-color: $DarkColor ;
-                transition: all .4s;
-                padding:10px;
-                margin-right:10px;
-                width:25%;
-                &:hover,&:focus{
-                    background-color: $mainColor !important;
-                    color:$DarkColor;
-                    border-color: $mainColor ;
-                }
+                padding:10px !important;
+                margin-right:10px !important;
+                width:25% !important;
             }
         }
         

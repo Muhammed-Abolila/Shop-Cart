@@ -1,7 +1,7 @@
  .user-profile-details{
-    background-color: $MainColor;
-    padding:10px 10px;
-    border:1px solid $ThirdColor;
+    background-color: $WhiteColor;
+    padding:10px;
+    border:1px solid $mainColor;
     border-radius: 5px;
     margin-bottom:15px;
     .name{
@@ -11,7 +11,7 @@
             font-weight: 400;
         }
         p{
-            margin-right:5px;
+            margin-left:5px;
         }
     }
     .phone{
@@ -21,7 +21,7 @@
             font-weight: 400;
         }
         p{
-            margin-right:5px;
+            margin-left:5px;
         }
     }
     .email{
@@ -31,18 +31,7 @@
             font-weight: 400;
         }
         p{
-            margin-right:5px;
-        }
-    }
-    button{
-        border:1px solid $ThirdColor;
-        color:$ThirdColor;
-        background-color: $MainColor;
-        margin-left: 10px;
-        transition: all .4s;
-        &:hover{
-            background-color:$ThirdColor;
-            color: $MainColor;
+            margin-left:5px;
         }
     }
  }

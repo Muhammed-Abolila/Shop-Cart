@@ -11,7 +11,7 @@ import DeleteBtn from '../../Utilities/DeleteBtn/DeleteBtn';
 const RateAndComments = ({oneProductData}) => {
   let {id}=useParams();
 let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
-    onDeleteComment,onUpdateComment,user]=RateAndCommentHook(id)
+    onDeleteComment,onUpdateComment,user]=RateAndCommentHook(id);
   return (
     <section className='rate-comments'>
       <div className="rate-container d-flex">
@@ -27,7 +27,8 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
       <div className="comments">
         <div className="add-comment">
           <div className="user">
-          <h3>{user.name}</h3>
+            {user?(<h3>{user.name}</h3>):(<h3>Gest</h3>)}
+          
             <ReactStars
               count={5}
               value={rate}
@@ -46,7 +47,7 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
               cols="30" 
               rows="2"
               ></textarea>
-            <button className='btn' onClick={onSubmit} ref={btnRef}>Add Comment</button>
+            <button className='btn btn-style' onClick={onSubmit} ref={btnRef}>Add Comment</button>
         </div>
         <div className="show-comments">
           {ReviewsData?(

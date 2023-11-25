@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 const SubTitle = ({title,btnName,pathName}) => {
   return (
       <div className='subtitle-comp mb-3'>
-        <h3 className='subtitle-heade'>{title}</h3>
+        <h2 className='subtitle-heade'>{title}</h2>
         {btnName?
-          <Link to={`${pathName}`}>
-            <span>{btnName}</span>
+          <Link to={`${pathName}`} style={{textDecoration:"none"}}>
+            <button  className="btn-style">{btnName}</button>
           </Link>
         :null}
       </div>

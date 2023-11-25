@@ -8,6 +8,7 @@ const UpdateCouponeModalHook = (couponData,setShowUpdateModal,reloadAfterUpdate,
     const[couponExpireUpdate,setCouponExpireUpdate]=useState(couponData.expire);
     const[couponDiscountUpdate,setCouponDiscountUpdate]=useState(couponData.discount);
     const[loading,setLoading]=useState(true);
+    
    // on coupone Name Change
    const OnNameChange=(e)=>{
      setCouponNameUpdate(e.target.value)
@@ -22,19 +23,22 @@ const UpdateCouponeModalHook = (couponData,setShowUpdateModal,reloadAfterUpdate,
    }
    let updateCoupon=useSelector((state)=>state.CouponReducers.UpdateCoupon);
    let [notify]=Notifications(updateCoupon);
-   // console.log(updateCoupon);
    
+   const backFunc=()=>{
+    setShowUpdateModal(false)
+   }
+
    const handleClick=async()=>{
      if(couponNameUpdate==''){
-       notify("ادخل اسم الكوبون");
+       notify("Enter Coupon Name");
      }else if(couponExpireUpdate==''){
-       notify("ادخل تاريخ انتهاء الكوبون");
+       notify("Enter Expire Date");
      }else if(couponDiscountUpdate==''){
-       notify("ادخل قيمه الخصم");
+       notify("Enter Discount Percentage");
      }else if(couponDiscountUpdate<=0){
-       notify("ادخل قيمه اكبر من الصفر");
+       notify("Discount Percentage Must Be Bigger Than 0");
      }else if(couponDiscountUpdate>100){
-       notify("ادخل قيمه أقل من 100");
+       notify("Discount Percentage Must Be Less Than 100");
      }else{
        setLoading(true)
        await dispatch(AdminUpdateCoupon(couponData._id,{
@@ -48,19 +52,19 @@ const UpdateCouponeModalHook = (couponData,setShowUpdateModal,reloadAfterUpdate,
    useEffect(()=>{
      if(loading==false){
        if(updateCoupon.status==200){
-         notify("تم تعديل كوبون الخصم");
+         notify("Done");
          setCouponNameUpdate('');
          setCouponExpireUpdate('');
          setCouponDiscountUpdate('');
          setShowUpdateModal(false)
-         setReloadAfterUpdate(!reloadAfterUpdate)
+         setReloadAfterUpdate(!reloadAfterUpdate);
        }else if(updateCoupon.status!=200){
          notify(updateCoupon.data.message)
        }
    }
    },[loading]);
    return [couponNameUpdate,OnNameChange,couponExpireUpdate,OnExpireChange,
-           couponDiscountUpdate,OnDiscountChange,handleClick]
+           couponDiscountUpdate,OnDiscountChange,backFunc,handleClick]
 }
 
 export default UpdateCouponeModalHook

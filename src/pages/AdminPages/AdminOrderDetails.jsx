@@ -22,21 +22,21 @@ const AdminOrderDetails = () => {
         }
     }catch(e){};
   return (
-      <section className="pageStyle">
+      <section className="pageStyle my-5">
           <Container>
           {spacificOrderResponseData?(
             <div className="user-orders-comp">
-            <div className="user-order-head bg-danger">
-            <h4>الطلب رقم #{spacificOrderResponseData.id}</h4>
+                <div className="user-order-head">
+                <h4>Order Number #{spacificOrderResponseData.id}</h4>
+                </div>
+                <div className="user-order-body">
+                {spacificOrderResponseData?spacificOrderResponseData.cartItems.map((data,index)=><AdminSingleOrder key={index} singleOrder={data}/>):null}
+                </div>
+                <Link to="/admin/orders">
+                <button className="btn btn-style">Back</button>
+                </Link>
             </div>
-            <div className="user-order-body">
-            {spacificOrderResponseData?spacificOrderResponseData.cartItems.map((data,index)=><AdminSingleOrder key={index} singleOrder={data}/>):null}
-            </div>
-            <Link to="/admin/orders">
-            <button className="btn btn-primary">الرجوع</button>
-            </Link>
-        </div>
-      ):(<h2>لاتوجد بيانات</h2>)}
+      ):(<h2>There Is No Data </h2>)}
           </Container>
       </section>
   )

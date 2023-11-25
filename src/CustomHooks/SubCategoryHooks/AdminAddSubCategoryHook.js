@@ -39,12 +39,12 @@ const AdminAddSubCategoryHook = () => {
    //  on  Admin Send Data To Back-End
    const handleSubCategoryData=()=>{
      if(!navigator.onLine){
-      notify("الرجاء الإتصال بالإنترنت");
+      notify("Connect To The Internet");
      }else{
       if(name===""){
-        notify("من فضلك أدخل إسم التصنيف الفرعي");
+        notify("Insert Sub-Category Name");
       }else if(id==="0"){
-        notify("من فضلك إختر التصنيف الرئيسي");
+        notify("Choose Main Category");
       }else{
         dispatch(postSubCategoryData({name:name,category:id}));
         setName("");

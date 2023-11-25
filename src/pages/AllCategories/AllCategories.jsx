@@ -10,15 +10,9 @@ const AllCategories = () => {
     return(<GrowExample/>)
   }else{
     return (  
-      <section className="pageStyle">
-        <Container className='py-5'>
-        {CategoryData?(<CategoryContainer CategoryData={CategoryData} title={"التصنيفات"}/>):<GrowExample/>}
-          {/* <SubTitle title="كل التصنيفات"/>
-          <Row className='justify-content-evenly'>
-            {CategoryData?(
-              CategoryData.map((item,index)=><CategoryCard  key={index} img={item.image} category={item.name} background={backgroundColor[Math.floor(Math.random()*6)/1]}/>)
-            ):null}
-          </Row> */}
+      <section className="pageStyle py-3 mb-5">
+        <Container className=''>
+        {CategoryData?(<CategoryContainer CategoryData={CategoryData} title={"All Categories"}/>):<GrowExample/>}
           {PaginationData>1?(<PaginationComp PaginationData={PaginationData} getPageCount={getPageCount}/>):null}
         </Container>
       </section>

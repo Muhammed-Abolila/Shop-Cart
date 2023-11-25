@@ -15,11 +15,17 @@ const ProductContainerHook = () => {
     getData();
   },[]);
   let ProductsInWishlist=useSelector((state)=>state.WishListReducers.WishListProduct);
+  let ProductsInWishlistData;
+  try{
+    if(ProductsInWishlist){
+      ProductsInWishlistData=ProductsInWishlist.data
+    }
+  }catch(e){}
   useEffect(()=>{
     if(localStorage.getItem("token")!=null){
       if(loading===false){
-        if(ProductsInWishlist){
-          setFavProduct(ProductsInWishlist.data.map(itemId=>itemId._id)); 
+        if(ProductsInWishlistData){
+          setFavProduct(ProductsInWishlistData.map(itemId=>itemId._id)); 
         }
       };
     }
