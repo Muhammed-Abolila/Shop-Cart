@@ -5,7 +5,7 @@ import CouponCardHook from "../../../CustomHooks/CouponHooks/CouponCardHook";
 const CouponCard = ({couponData,reloadAfterDelete,setReloadAfterDelete,reloadAfterUpdate,setReloadAfterUpdate}) => {
   let [choosenDate,onDeleteCoupone,showUpdateModalFunc,showUpdateModal,
       setShowUpdateModal]=CouponCardHook(couponData,reloadAfterDelete,setReloadAfterDelete)
-  return (
+      return (
     <div className="copoun-card">
       <div className="card-body">
           <div className="info">
@@ -23,7 +23,7 @@ const CouponCard = ({couponData,reloadAfterDelete,setReloadAfterDelete,reloadAft
             </div>
           </div>
           <div className="eddit-delete-icons">
-            <DeleteBtn data={couponData} onDelete={onDeleteCoupone}/>
+            <DeleteBtn text={couponData.name} data={couponData} onDelete={onDeleteCoupone}/>
             <span onClick={showUpdateModalFunc} className="eddit-icon"><FaRegEdit/></span>
             {showUpdateModal==true?(
             <UpdateCouponModal 

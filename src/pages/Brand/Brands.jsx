@@ -4,11 +4,12 @@ import PaginationComp from '../../components/Utilities/Pagination/Pagination';
 import GrowExample from '../../components/Utilities/Spinner/Spinner';
 import AllBrandsPageHook from '../../CustomHooks/BrandsHooks/AllBrandsPageHook';
 import BrandsContainer from '../../components/Home/BrandsContainer/BrandsContainer';
+import Spinner from '../../components/Utilities/Spinner/Spinner';
 const BrandsPage = () => {
-  let [AllBrandsData,Loading,Pagination,getPageCount]=AllBrandsPageHook()
+  let [AllBrandsData,Loading,Pagination,getPageCount]=AllBrandsPageHook();
   if(Loading===true){
     return(
-      <GrowExample/>
+      <Spinner/>
     )
   }else{
     return(

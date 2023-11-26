@@ -6,22 +6,24 @@ import Notifications from '../../CustomHooks/Notifications';
 import { SendEmialToGetVerifyCode } from '../../Redux/Actions/AuthActions';
 
 const ForgotPasswordPageHook = () => {
-    
     let navigate=useNavigate();
     let dispatch=useDispatch()
     let [email,setEmail]=useState('');
     let response=useSelector((state)=>state.AuthReducers.ForgotPassword);
     let [notify]=Notifications(response)
     const onEmailChange=(e)=>{
-      setEmail(e.target.value)
+      setEmail(e.target.value);
     }
+    console.log(email);
+    
     const onSubmit=()=>{
       if(email==''){
-        notify("أدخل البريد الإلكتروني")
+        notify("Insert E-mail")
       }else{
         dispatch(SendEmialToGetVerifyCode({
           "email":email
         }));
+        localStorage.setItem("Email",email)
       }   
     };
     // To Notify db Errors
@@ -29,7 +31,6 @@ const ForgotPasswordPageHook = () => {
       if(response.data){
         if(response.data.status=='Success'){
           notify(response.data.message);
-          localStorage.setItem("Email",email)
           setEmail("")
           setTimeout(()=>{
             navigate("/verify")

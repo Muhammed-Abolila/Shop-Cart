@@ -8,8 +8,6 @@ import { ToastContainer } from 'react-toastify';
 import { BaseUrl } from '../../../Redux/Type/Type';
 import { Link } from 'react-router-dom';
 const CartItem =({data,reload,setReload}) => {
-    console.log(data);
-    
     let dispatch=useDispatch();
     let [qntValue,setQntValue]=useState(data.count);
     const onQntChange=(e)=>{
@@ -76,7 +74,7 @@ const CartItem =({data,reload,setReload}) => {
         </Col>
         <Col className='col-2'>
             <div className='cart-left'>
-                <DeleteBtn data={data} onDelete={onDeleteProductCart}/>
+                <DeleteBtn text={data.product.title} data={data} onDelete={onDeleteProductCart}/>
             </div>
         </Col>
         <hr/>

@@ -18,11 +18,11 @@ const RePasswordPageHook = () => {
     let [notify]=Notifications(response)
     const onSubmit=()=>{
         if(password==""){
-            notify("أدخل الرقم السري الجديد");
+            notify("Insert New Password");
         }else if(rePassword==""){
-            notify("أعد إدخال الرقم السري");
+            notify("Re-Password");
         }else if(rePassword!=password){
-            notify("كلمه السر غير متطابقه"); 
+            notify("Password Doesn't Match"); 
         }else{
             dispatch(SendDataToRePassword({
                 "email":localStorage.getItem("Email"),
@@ -33,7 +33,6 @@ const RePasswordPageHook = () => {
     useEffect(()=>{
         if(response.data){
             if(response.data.token){
-                notify("تم تغيير الرقم السري");
                 setPassword("");
                 setRePassword("");
                 setTimeout(()=>{;

@@ -13,7 +13,7 @@ const Register = () => {
         <div className="register">
           <div className="register-content py-5 px-4">
             <h2>Create New Account</h2>
-            <div className="form my-4">
+            <div className="form my-3">
               <input 
                 value={userName} 
                 onChange={onUserNameChange}

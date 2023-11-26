@@ -12,7 +12,6 @@ const UserEdditAddressPage = () => {
                         <UesrSideBarComp/>
                     </Col>
                     <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
-                        <h3 className="mb-4">Edit Address</h3>
                         <UserEdditAddress/>
                     </Col>
                 </Row>

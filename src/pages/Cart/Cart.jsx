@@ -20,10 +20,10 @@ const Cart = () => {
                 productsCartData.map((data,index)=><CartItem key={index} data={data} reload={reload} setReload={setReload}/>)
               ):(
               <Spinner/>
-              )};
+              )}
             </Col>
           ):(<NoProductYet msg="Your Cart Empty"/>)}
-          <Col className='col-6 col-lg-2'>
+          <Col className='col-7 col-lg-2'>
             {lengthOfArray>=1?(
               <Coupon data={productCartDataToCoupone} reload={reload} setReload={setReload}/>
             ):null}

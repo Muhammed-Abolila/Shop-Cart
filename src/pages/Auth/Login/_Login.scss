@@ -18,7 +18,7 @@
                 color:$WhiteColor;
                 border-color: $DarkColor ;
                 transition: all .4s;
-                width:50%;
+                width:135px !important;
                 &:hover{
                     background-color: $mainColor !important;
                     color:$DarkColor;
@@ -45,21 +45,28 @@
         }
     }
 };
+@media screen and (max-width:767px){
+    .login{
+        .login-content{
+            width:95%;
+            padding: 0;
+            .form{
+                button{
+                    width:135px !important;
+                }
+            }
+        }
+    };
+}
 @media screen and (max-width:460px){
     .login{
         .login-content{
+            width:100%;
             padding: 0;
-            h3{
-                font-size: 17px
-            }
             .form{
                 button{
-                    width:80%;
+                    width:110px !important;
                 }
-            }
-            .login-footer{
-                flex-direction: column;
-                
             }
         }
     };

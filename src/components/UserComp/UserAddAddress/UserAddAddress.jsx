@@ -3,7 +3,8 @@ import AddAddressHook from "../../../CustomHooks/User/AddAddressHook";
 const UserAddAddress = () => {
   let  [alias,onAliasChange,addressDetails,onAddressDetailsChange,phone,onPhoneChange,handleClick]=AddAddressHook()
   return (
-    <div className='user-eddit-address text-start'>
+    <div className='user-eddit-address'>
+      <h3 className="mb-4">Add New Address</h3>
       <input 
         value={alias}
         onChange={onAliasChange}

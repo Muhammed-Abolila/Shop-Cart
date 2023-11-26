@@ -1,6 +1,7 @@
 .header{
     padding:15px 0px;
     background-color: $DarkColor;
+    position: relative;
     .container{
     .brand{
         .brand-name{
@@ -40,6 +41,7 @@
         color: $WhiteColor;
         font-size: 35px;
         transition:color .4s ease-in;
+        cursor: pointer;
         &:hover{
             color:$mainColor;
         }
@@ -113,7 +115,8 @@
                 justify-content: center;
                 align-items: center;
                 color:$WhiteColor;
-                text-decoration: none !important; 
+                text-decoration: none !important;
+                cursor: pointer;
                 svg{
                     font-size: 35px;
                 }
@@ -131,13 +134,46 @@
             margin-right:15px;
             font-size: 30px;
             color:$WhiteColor;
+            cursor: pointer;
             &:hover{
                 color:$mainColor;
             }
+        } 
+    }
+    }
+    // Start Search Layer
+    .search-layer{
+        background-color: $DarkColor;
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: searchAnimation 1s 1;
+        .search-layer-input{
+            width:450px !important;
+            &:focus{
+                box-shadow: none;
+                border:1px solid $mainColor;
+            }
         }
-        
+        .close{
+            position: absolute;
+            top: 9px;
+            right: 20px;
+            cursor: pointer;
+            svg{
+                font-size: 30px;
+                color:red; 
+            }
+        }
     }
+    @keyframes searchAnimation {
+        0%{scale:1.2}
+        60%{scale:.9}
+        100%{scale:1}
     }
+    // End Search Layer
     // Satrt Side Bar
     .sidebar{
         position:fixed;
@@ -146,7 +182,7 @@
         left:-100%;
         width:220px;
         z-index: 99999;
-        transition: left 1.5s ease-in;
+        transition: left 1s ease-in-out;
         background-color: $WhiteColor;
         .sidebar-top{
             padding:10px 5px;
@@ -175,7 +211,7 @@
             }
             span{
                 font-size: 30px;
-                color:$WhiteColor;
+                color:red;
                 cursor: pointer;
             }
         }
@@ -242,7 +278,7 @@
     }
     };
 };
-@media screen and (max-width:575px){
+@media screen and (max-width:767px){
     .header{
         .container{
             .search-input{
@@ -262,4 +298,29 @@
             }
         };
     }
+};
+@media screen and (max-width:575px){
+    .header{
+        .search-layer{
+            .search-layer-input{
+                width:300px !important;
+            }
+        }
+}
+}
+@media screen and (max-width:400px){
+    .header{
+        .search-layer{
+            .search-layer-input{
+                width:230px !important;
+            }
+            .close{
+                top: 4px;
+                right: 5px;
+                svg{
+                    font-size: 30px;
+                }
+            }
+        }
+}
 }

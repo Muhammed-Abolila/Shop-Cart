@@ -3,7 +3,7 @@ import UserEdditPasswordHook from "../../../CustomHooks/User/UserEdditPasswordHo
 const ChangePassword = () => {
   let [oldPass,onOldPassChange,newPass,onNewPassChange,newRePass,onNewRePassChange,handleClick]=UserEdditPasswordHook()
   return (
-    <div className='w-75 text-start'>
+    <div className='change-password'>
       <input
         value={oldPass}
         onChange={onOldPassChange}

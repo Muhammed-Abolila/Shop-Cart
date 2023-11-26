@@ -14,9 +14,7 @@ const UserProfilePage = () => {
                         <h3 className="mb-4">Personal Profile</h3>
                         <UserProfileDetails/>
                         <h3 className="mb-2 mt-3">Change Password</h3>
-                        <Row>
-                            <ChangePassword/>
-                        </Row>
+                        <ChangePassword/>
                     </Col>
                 </Row>
             </Container>

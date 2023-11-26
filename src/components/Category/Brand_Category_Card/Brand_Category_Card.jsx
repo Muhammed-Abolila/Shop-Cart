@@ -1,7 +1,7 @@
 import React from 'react'
 import {Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-const Brand_Category_Card = ({item}) => {  
+const Brand_Category_Card = ({item}) => {
   return (
           <Col 
             xs={6}

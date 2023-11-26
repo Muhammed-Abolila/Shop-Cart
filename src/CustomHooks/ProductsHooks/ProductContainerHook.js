@@ -19,6 +19,8 @@ const ProductContainerHook = () => {
   try{
     if(ProductsInWishlist){
       ProductsInWishlistData=ProductsInWishlist.data
+    }else{
+      ProductsInWishlistData=[];
     }
   }catch(e){}
   useEffect(()=>{

@@ -3,7 +3,6 @@ import { CiLogin } from "react-icons/ci";
 import {FaOpencart} from 'react-icons/fa';
 import NavbarLoginHook from "../../../CustomHooks/NavbarLogin/NavbarLoginHook";
 import { NavDropdown, Row, Col } from "react-bootstrap";
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { RiShoppingCart2Fill } from "react-icons/ri";
 import CartPageHook from "../../../CustomHooks/CartHooks/CartPageHook";
@@ -15,12 +14,19 @@ import { MdAccountCircle,MdDashboard} from "react-icons/md";
 import { TiThMenuOutline } from "react-icons/ti";
 import UserFavProductPageHook from '../../../CustomHooks/UserFavProductPage/UserFavProductPageHook';
 import ProductsSearchPageHook from '../../../CustomHooks/ProductsHooks/ProductsSearchPageHook';
+import { useState } from 'react';
 const NavbarLogin = () => {
   let [productsCartData,reload,setReload,lengthOfCartArray,productCartDataToCoupone]=CartPageHook();
   let [wishListProductData,lengthOfWishlistArray]=UserFavProductPageHook(); 
   let [items,pagination,getPageCount,getProduct]=ProductsSearchPageHook();
   let [searchWordStorage,onChangeSearchword,logOut,openSideBar,closeSideBar,user]=NavbarLoginHook(getProduct);
-
+  const [showSearchLayer, setshowSearchLayer] = useState(false);
+  const showSearchLayerFun=()=>{
+    setshowSearchLayer(true)
+  };
+  const closeSearchLayerFun=()=>{
+    setshowSearchLayer(false)
+  }
   return (
     <header className="header">
       <Container>
@@ -29,7 +35,7 @@ const NavbarLogin = () => {
             <div className="brand">
               <Link to="/" className="brand-name">
                 <FaOpencart/>
-                <h1>FreshCart</h1>
+                <h1>ShopCart</h1>
               </Link>
             </div>
           </Col>
@@ -41,8 +47,8 @@ const NavbarLogin = () => {
               type="search" 
               placeholder="Search for product..."
               />
-              <div className="search-icon">
-              <IoSearch />
+              <div className="search-icon" onClick={showSearchLayerFun}>
+                <IoSearch />
               </div>
           </Col>
           <Col xs={{span:1}} sm={{span:1}}  md={{span:2}} lg={{span:3}} >
@@ -94,49 +100,65 @@ const NavbarLogin = () => {
           </Col>
         </Row>
       </Container>
+      {/* start search layer */}
+      {showSearchLayer==true?(
+        <div className="search-layer">
+          <input 
+              value={searchWordStorage}
+              onChange={onChangeSearchword}
+              className="search-layer-input form-control" 
+              type="search" 
+              placeholder="Search for product..."
+          />
+          <div className="close" onClick={closeSearchLayerFun}>
+            <IoIosCloseCircleOutline/>
+          </div>
+        </div>
+      ):null}
+      
+      {/* End search layer */}
       {/* Start Side Bar */}
       <div className="sidebar" id="sidebar">
       <div className="sidebar-top">
-        <Link to="/" className="brand-name">
+        <Link to="/" className="brand-name" onClick={closeSideBar}>
             <FaOpencart/>
-            <h1>FreshCart</h1>
+            <h1>ShopCart</h1>
         </Link>
         <span onClick={closeSideBar}>
             <IoIosCloseCircleOutline/>
         </span>
-        
       </div>
       {user.role==="user"?(
         <ul className="sidebar-list">
           <li>
-            <Link to="/cart">
+            <Link to="/cart" onClick={closeSideBar}>
               <RiShoppingCart2Fill/>
-              <span>cart ({lengthOfCartArray||0})</span>
+              <span>Cart ({lengthOfCartArray||0})</span>
             </Link>
           </li>
           <li>
-            <Link to="/user/favproduct">
+            <Link to="/user/favproduct" onClick={closeSideBar}>
               <BsFillHeartFill/>
-              <span>wishlist ({lengthOfWishlistArray||0})</span>
+              <span>Wishlist ({lengthOfWishlistArray||0})</span>
             </Link>
           </li>
           <li>
-            <Link to="/user/profile">
+            <Link to="/user/profile" onClick={closeSideBar}>
               <MdAccountCircle />
-              <span>profile</span>
+              <span>Profile</span>
             </Link>
           </li>
           <li>
             <Link to="/login" onClick={logOut}>
               <CiLogout />
-              <span>logout</span>
+              <span>Logout</span>
             </Link>
           </li>
         </ul>
       ):(
         <ul className="sidebar-list">
           <li>
-            <Link to="/admin/manageproduct">
+            <Link to="/admin/manageproduct" onClick={closeSideBar}>
               <MdDashboard />
               <span>Dashboard</span>
             </Link>
@@ -144,7 +166,7 @@ const NavbarLogin = () => {
           <li>
             <Link to="/login" onClick={logOut}>
               <CiLogout />
-              <span>logout</span>
+              <span>Logout</span>
             </Link>
           </li>
         </ul>

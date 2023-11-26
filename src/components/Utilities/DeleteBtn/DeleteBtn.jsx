@@ -1,7 +1,7 @@
 import {RiDeleteBin5Line} from 'react-icons/ri';
 import { useState } from 'react';
 import DeleteModal from '../DeleteModal/DeleteModal';
-const DeleteBtn = ({data,onDelete}) => {
+const DeleteBtn = ({text,data,onDelete}) => {
   let [showDeleteModal,setShowDeleteModal]=useState(false);
   const showDeleteModalFunc=()=>{
     setShowDeleteModal(true)
@@ -9,7 +9,7 @@ const DeleteBtn = ({data,onDelete}) => {
   return ( 
     <>
       <span  onClick={showDeleteModalFunc} className="delete-icon"><RiDeleteBin5Line/></span>
-      {showDeleteModal==true?(<DeleteModal data={data} onDelete={onDelete} setShowDeleteModal={setShowDeleteModal}/>):null}
+      {showDeleteModal==true?(<DeleteModal text={text} data={data} onDelete={onDelete} setShowDeleteModal={setShowDeleteModal}/>):null}
     </>   
   )
 }; 

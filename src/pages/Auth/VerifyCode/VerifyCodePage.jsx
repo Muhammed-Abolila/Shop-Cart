@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import VerifyCodePageHook from '../../../CustomHooks/Auth/VerifyCodePageHook';
 const VerifyCodePage = () => {
-  let [Email,resetCode,onVerifyCodeChange,onSubmit]=VerifyCodePageHook()
+  let [Email,resetCode,onVerifyCodeChange,onSubmit]=VerifyCodePageHook();
   return (
     <section>
       <Container>
@@ -15,11 +15,8 @@ const VerifyCodePage = () => {
                 <h3>
                   {Email?(<p className="mt-2 mb-0">{Email}</p>):(<p className="mt-2 mb-0">E-mail</p>)}
                 </h3>
-                <Link to="/forgot-password" className="text-decoration-none">
-                  <span>Change E-mail?</span>
-                </Link>
             </div>
-            <div className="form my-4">
+            <div className="form my-3">
               <input 
                 value={resetCode}
                 onChange={onVerifyCodeChange}
@@ -28,6 +25,9 @@ const VerifyCodePage = () => {
                 placeholder='Verfication Code'/>
               <button className='btn' onClick={onSubmit}>Send</button>
             </div>
+            <Link to="/forgot-password" className="text-decoration-none">
+                <span>Change E-mail?</span>
+            </Link>
           </div>
         </div>
       </Container>

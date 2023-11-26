@@ -22,7 +22,7 @@ const Coupon = ({data,reload,setReload}) => {
         <button className='btn btn-style'>Complete</button>
       </Link>
       <button className='btn-delete' onClick={onShowDeleteModalFunc}>Delete Cart</button>
-      {showDeleteModal===true&&<DeleteModal data={data} onDelete={onDeleteAllCart} setShowDeleteModal={setShowDeleteModal}/>}
+      {showDeleteModal===true&&<DeleteModal text="Cart" data={data} onDelete={onDeleteAllCart} setShowDeleteModal={setShowDeleteModal}/>}
     </div>
   )
 };

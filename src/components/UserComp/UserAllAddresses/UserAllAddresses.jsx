@@ -1,19 +1,23 @@
-import UserAddressCard from '../UserAddressCard/UserAddressCard';
-import GrowExample from '../../Utilities/Spinner/Spinner';
-import UserAllAddressesHook from '../../../CustomHooks/User/UserAllAddressesHook';
+import UserAddressCard from "../UserAddressCard/UserAddressCard";
+import UserAllAddressesHook from "../../../CustomHooks/User/UserAllAddressesHook";
+import Spinner from "../../Utilities/Spinner/Spinner";
 const UserAllAddresses = () => {
-    let [AllAddressesData,onDeleteAddress]=UserAllAddressesHook()
+  let [AllAddressesData, onDeleteAddress] = UserAllAddressesHook();
   return (
     <>
-    {AllAddressesData?(
-        AllAddressesData.map((AddressesData,index)=><UserAddressCard 
-            key={index} 
+      {AllAddressesData ? (
+        AllAddressesData.map((AddressesData, index) => (
+          <UserAddressCard
+            key={index}
             AddressesData={AddressesData}
             onDeleteAddress={onDeleteAddress}
-            />)
-    ):<GrowExample/>}
+          />
+        ))
+      ) : (
+        <Spinner />
+      )}
     </>
-  )
-}
+  );
+};
 
-export default UserAllAddresses
+export default UserAllAddresses;

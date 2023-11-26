@@ -10,7 +10,7 @@ const AdminAllProducts = ({productData,onDeleteProduct}) => {
     <Col xs={{ span: 9}} sm={{span:6}} md={{span:6}} lg={{span:4}} xl={{span:3}}>
       <Card className='admin-product-card mb-4'>
         <div className='card-head d-flex justify-content-start align-items-center px-2 mt-1'>
-            <DeleteBtn data={productData} onDelete={onDeleteProduct}/>
+            <DeleteBtn text={productData.title} data={productData} onDelete={onDeleteProduct}/>
             <Link to={`/admin/eddit-product/${productData._id}`} style={{textDecoration:"none"}}>
               <span className="eddit-icon"><FaRegEdit/></span>
             </Link>

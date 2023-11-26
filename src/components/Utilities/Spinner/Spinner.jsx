@@ -1,7 +1,7 @@
 function Spinner() {
   return (
     <div className="loader-container">
-      <span class="loader">Load&nbsp;ng</span>
+      <span class="loader">L &nbsp; ading</span>
     </div>
   );
 };

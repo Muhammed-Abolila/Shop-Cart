@@ -15,7 +15,7 @@ const VerifyCodePageHook = () => {
     let [notify]=Notifications(response)
     const onSubmit=()=>{
       if(resetCode==''){
-        notify("أدخل كود التفعيل");
+        notify("Insert Verify Code");
       }else{
         dispatch(SendVerifyCodeToRepassword({
           "resetCode":resetCode

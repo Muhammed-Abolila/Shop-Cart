@@ -12,7 +12,7 @@ const ForgotPasswordPage = () => {
         <div className="forgot-password">
           <div className="forgot-password-content py-5 px-4">
             <h2>Forgot Password</h2>
-            <div className="form my-4">
+            <div className="form my-3">
               <input 
                 value={email}
                 onChange={onEmailChange}

@@ -16,7 +16,7 @@ const UserAddressPage = () => {
                     </Col>
                     <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
                         <h3 className="mb-4">Addresses</h3>
-                        <div className="">
+                        <div>
                             <UserAllAddresses/>
                         </div>
                         {AllAddressesData.length>=3?null:(

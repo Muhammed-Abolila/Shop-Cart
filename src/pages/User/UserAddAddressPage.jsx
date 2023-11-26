@@ -10,7 +10,6 @@ const UserAddAddressPage = () => {
                         <UesrSideBarComp/>
                     </Col>
                     <Col xs={{span:10,offset:1}} md={{span:9,offset:0}}>
-                        <h3 className="mb-4">Add New Address</h3>
                         <UserAddAddress/>
                     </Col>
                 </Row>

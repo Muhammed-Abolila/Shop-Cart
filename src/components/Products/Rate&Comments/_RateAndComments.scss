@@ -1,35 +1,57 @@
-.rate-comments{
-    background-color: $WhiteColor;
-    border-radius: 5px;
-    padding:10px;
-    .rate-container{
-        margin-bottom:15px;
-        h2{
-            font-size: 1.7rem;
-        }
+.rate-comments {
+  background-color: $WhiteColor;
+  border-radius: 5px;
+  padding: 10px;
+  .rate-container {
+    margin-bottom: 15px;
+    h2 {
+      font-size: 1.7rem;
     }
-    .comments{
-        margin-left:15px;
-        .add-comment{
-            text-align: right;
-            .user{
-                display: flex;
-                margin-bottom: 10px;
-                h3{
-                   margin-top: 6px;
-                   margin-right: 10px;
-                   font-size: 1.1rem;
-                }
-            }
-            textarea{
-                &:focus{
-                    border:1px solid $mainColor;
-                    box-shadow: none;
-                }  
-            }
-            button{
-                margin:15px 0px !important;
-             }
+  }
+  .comments {
+    margin-left: 15px;
+    .add-comment {
+      text-align: right;
+      .user {
+        display: flex;
+        margin-bottom: 10px;
+        h3 {
+          margin-top: 6px;
+          margin-right: 10px;
+          font-size: 1.1rem;
         }
+      }
+      textarea {
+        &:focus {
+          border: 1px solid $mainColor;
+          box-shadow: none;
+        }
+      }
+      button {
+        margin: 15px 0px !important;
+      }
+
     }
+  }
+}
+@media screen and (max-width: 576px) {
+  .rate-comments {
+    .comments {
+      .show-comments {
+        .row {
+          .comment-content {
+            order: 1;
+          }
+          .btns {
+            order: 0;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            padding:0px 40px;
+            margin-bottom: 20px
+          }
+        }
+      }
+    }
+  }
 }

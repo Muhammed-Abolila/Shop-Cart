@@ -10,16 +10,7 @@
             font-size: 1.5rem;
             font-weight: $FW-2;
         }
-        a{
-            span{
-                color:$DarkColor;
-                font-weight: $FW-3;
-                transition: color .3s;
-                &:hover{
-                    color: $mainColor;
-                }
-            }
-        }
+        
         .form{
             input{
                 &:focus{
@@ -40,18 +31,32 @@
                 }
             }
         }
+        a{
+            span{
+                color:$DarkColor;
+                font-weight: $FW-3;
+                transition: color .3s;
+                &:hover{
+                    color: $mainColor;
+                }
+            }
+        }
     }
 };
-@media screen and (max-width:460px){
+@media screen and (max-width:767px){
     .verify{
         .verify-content{
+            width:100%;
             padding: 0;
             h2{
-                font-size: 17px
+                font-size: 20px
+            }
+            h3{
+                font-size: 17px; 
             }
             .form{
                 button{
-                    width:80%;
+                    width:110px;
                 }
             }
         }

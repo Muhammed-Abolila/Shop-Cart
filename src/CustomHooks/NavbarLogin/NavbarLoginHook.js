@@ -23,8 +23,6 @@ const NavbarLoginHook = (getProduct) => {
         getProduct('');
         },1000)
     },[searchWord]);
-
-    
     useEffect(()=>{
       if(localStorage.getItem("user")!=null){
         setUser(JSON.parse(localStorage.getItem("user")));
@@ -34,6 +32,7 @@ const NavbarLoginHook = (getProduct) => {
       localStorage.removeItem("user");
       localStorage.removeItem("token");
       setUser("");
+      closeSideBar()
     }
     let sidebar=document.getElementById("sidebar");
     const openSideBar=()=>{

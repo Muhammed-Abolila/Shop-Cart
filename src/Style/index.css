@@ -1,6 +1,7 @@
 .header {
   padding: 15px 0px;
   background-color: #223040;
+  position: relative;
 }
 
 .header .container .brand .brand-name {
@@ -49,6 +50,7 @@
   font-size: 35px;
   -webkit-transition: color .4s ease-in;
   transition: color .4s ease-in;
+  cursor: pointer;
 }
 
 .header .container .search-icon:hover {
@@ -171,6 +173,7 @@
           align-items: center;
   color: #fff;
   text-decoration: none !important;
+  cursor: pointer;
 }
 
 .header .container .nav a .login-icon svg {
@@ -189,10 +192,74 @@
   margin-right: 15px;
   font-size: 30px;
   color: #fff;
+  cursor: pointer;
 }
 
 .header .container .nav .open-sideBar:hover {
   color: #ffda05;
+}
+
+.header .search-layer {
+  background-color: #223040;
+  position: absolute;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: searchAnimation 1s 1;
+          animation: searchAnimation 1s 1;
+}
+
+.header .search-layer .search-layer-input {
+  width: 450px !important;
+}
+
+.header .search-layer .search-layer-input:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 1px solid #ffda05;
+}
+
+.header .search-layer .close {
+  position: absolute;
+  top: 9px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.header .search-layer .close svg {
+  font-size: 30px;
+  color: red;
+}
+
+@-webkit-keyframes searchAnimation {
+  0% {
+    scale: 1.2;
+  }
+  60% {
+    scale: .9;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes searchAnimation {
+  0% {
+    scale: 1.2;
+  }
+  60% {
+    scale: .9;
+  }
+  100% {
+    scale: 1;
+  }
 }
 
 .header .sidebar {
@@ -202,8 +269,8 @@
   left: -100%;
   width: 220px;
   z-index: 99999;
-  -webkit-transition: left 1.5s ease-in;
-  transition: left 1.5s ease-in;
+  -webkit-transition: left 1s ease-in-out;
+  transition: left 1s ease-in-out;
   background-color: #fff;
 }
 
@@ -249,7 +316,7 @@
 
 .header .sidebar .sidebar-top span, .header .sidebar .sidebar-top .register .register-content .register-footer a span, .register .register-content .register-footer a .header .sidebar .sidebar-top span {
   font-size: 30px;
-  color: #fff;
+  color: red;
   cursor: pointer;
 }
 
@@ -315,7 +382,7 @@
   }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 767px) {
   .header .container .search-input {
     display: none;
   }
@@ -330,6 +397,25 @@
   }
   .header .container .login-icon div {
     display: none;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header .search-layer .search-layer-input {
+    width: 300px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .header .search-layer .search-layer-input {
+    width: 230px !important;
+  }
+  .header .search-layer .close {
+    top: 4px;
+    right: 5px;
+  }
+  .header .search-layer .close svg {
+    font-size: 30px;
   }
 }
 
@@ -1232,7 +1318,9 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .item-details .item-content .btns button {
   padding: 10px !important;
   margin-right: 10px !important;
-  width: 25% !important;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
 
 .rate-comments {
@@ -1278,6 +1366,30 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .rate-comments .comments .add-comment button {
   margin: 15px 0px !important;
+}
+
+@media screen and (max-width: 576px) {
+  .rate-comments .comments .show-comments .row .comment-content {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .rate-comments .comments .show-comments .row .btns {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0px 40px;
+    margin-bottom: 20px;
+  }
 }
 
 .cart-item {
@@ -2082,143 +2194,49 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .loader-container .loader {
+  display: inline-block;
+  font-size: 48px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
   color: #223040;
   position: relative;
-  display: inline-block;
-  margin-top: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 48px;
-  letter-spacing: 4px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
 }
 
-.loader-container .loader:before {
+.loader-container .loader::before {
   content: '';
   position: absolute;
-  right: 70px;
-  bottom: 20px;
-  height: 28px;
-  width: 4.8px;
-  background: currentColor;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-animation: animloader1 1s linear infinite alternate;
-          animation: animloader1 1s linear infinite alternate;
-}
-
-.loader-container .loader:after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  left: 125px;
-  top: 8px;
+  left: 34px;
+  bottom: 18px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: #ffda05;
+  border: 5px solid #223040;
+  border-bottom-color: #ffda05;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-animation: animloader 1s linear infinite alternate;
-          animation: animloader 1s linear infinite alternate;
+  -webkit-animation: rotation 0.6s linear infinite;
+          animation: rotation 0.6s linear infinite;
 }
 
-@-webkit-keyframes animloader {
+@-webkit-keyframes rotation {
   0% {
-    -webkit-transform: translate(0px, 0px) scaleX(1);
-            transform: translate(0px, 0px) scaleX(1);
-  }
-  14% {
-    -webkit-transform: translate(-12px, -16px) scaleX(1.05);
-            transform: translate(-12px, -16px) scaleX(1.05);
-  }
-  28% {
-    -webkit-transform: translate(-27px, -28px) scaleX(1.07);
-            transform: translate(-27px, -28px) scaleX(1.07);
-  }
-  42% {
-    -webkit-transform: translate(-46px, -35px) scaleX(1.1);
-            transform: translate(-46px, -35px) scaleX(1.1);
-  }
-  57% {
-    -webkit-transform: translate(-70px, -37px) scaleX(1.1);
-            transform: translate(-70px, -37px) scaleX(1.1);
-  }
-  71% {
-    -webkit-transform: translate(-94px, -32px) scaleX(1.07);
-            transform: translate(-94px, -32px) scaleX(1.07);
-  }
-  85% {
-    -webkit-transform: translate(-111px, -22px) scaleX(1.05);
-            transform: translate(-111px, -22px) scaleX(1.05);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: translate(-125px, -9px) scaleX(1);
-            transform: translate(-125px, -9px) scaleX(1);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
-@keyframes animloader {
+@keyframes rotation {
   0% {
-    -webkit-transform: translate(0px, 0px) scaleX(1);
-            transform: translate(0px, 0px) scaleX(1);
-  }
-  14% {
-    -webkit-transform: translate(-12px, -16px) scaleX(1.05);
-            transform: translate(-12px, -16px) scaleX(1.05);
-  }
-  28% {
-    -webkit-transform: translate(-27px, -28px) scaleX(1.07);
-            transform: translate(-27px, -28px) scaleX(1.07);
-  }
-  42% {
-    -webkit-transform: translate(-46px, -35px) scaleX(1.1);
-            transform: translate(-46px, -35px) scaleX(1.1);
-  }
-  57% {
-    -webkit-transform: translate(-70px, -37px) scaleX(1.1);
-            transform: translate(-70px, -37px) scaleX(1.1);
-  }
-  71% {
-    -webkit-transform: translate(-94px, -32px) scaleX(1.07);
-            transform: translate(-94px, -32px) scaleX(1.07);
-  }
-  85% {
-    -webkit-transform: translate(-111px, -22px) scaleX(1.05);
-            transform: translate(-111px, -22px) scaleX(1.05);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: translate(-125px, -9px) scaleX(1);
-            transform: translate(-125px, -9px) scaleX(1);
-  }
-}
-
-@-webkit-keyframes animloader1 {
-  0% {
-    -webkit-box-shadow: 0 -6px, -122.9px -8px;
-            box-shadow: 0 -6px, -122.9px -8px;
-  }
-  25%, 75% {
-    -webkit-box-shadow: 0 0px, -122.9px -8px;
-            box-shadow: 0 0px, -122.9px -8px;
-  }
-  100% {
-    -webkit-box-shadow: 0 0px, -122.9px -16px;
-            box-shadow: 0 0px, -122.9px -16px;
-  }
-}
-
-@keyframes animloader1 {
-  0% {
-    -webkit-box-shadow: 0 -6px, -122.9px -8px;
-            box-shadow: 0 -6px, -122.9px -8px;
-  }
-  25%, 75% {
-    -webkit-box-shadow: 0 0px, -122.9px -8px;
-            box-shadow: 0 0px, -122.9px -8px;
-  }
-  100% {
-    -webkit-box-shadow: 0 0px, -122.9px -16px;
-            box-shadow: 0 0px, -122.9px -16px;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -2340,7 +2358,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   border-color: #223040;
   -webkit-transition: all .4s;
   transition: all .4s;
-  width: 50%;
+  width: 135px !important;
 }
 
 .login .login-content .form button:hover, .register .login-content .form button:hover, .register .register-content .form button:hover {
@@ -2374,21 +2392,23 @@ footer .container ul a, footer .container ul .register .register-content .regist
   color: #ffda05;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 767px) {
   .login .login-content, .register .login-content, .register .register-content {
+    width: 95%;
     padding: 0;
   }
-  .login .login-content h3, .register .login-content h3, .register .register-content h3 {
-    font-size: 17px;
+  .login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
+    width: 135px !important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .login .login-content, .register .login-content, .register .register-content {
+    width: 100%;
+    padding: 0;
   }
   .login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
-    width: 80%;
-  }
-  .login .login-content .login-footer, .register .login-content .login-footer, .register .register-content .login-footer, .register .register-content .register-footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    width: 110px !important;
   }
 }
 
@@ -2401,12 +2421,6 @@ footer .container ul a, footer .container ul .register .register-content .regist
   }
   .login .login-content .form button, .register .login-content .form button, .register .register-content .form button {
     width: 80%;
-  }
-  .login .login-content .login-footer, .register .login-content .login-footer, .register .register-content .login-footer, .register .register-content .register-footer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
 }
 
@@ -2440,7 +2454,9 @@ footer .container ul a, footer .container ul .register .register-content .regist
   border-color: #223040;
   -webkit-transition: all .4s;
   transition: all .4s;
-  width: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .forgot-password .forgot-password-content .form button:hover {
@@ -2460,15 +2476,16 @@ footer .container ul a, footer .container ul .register .register-content .regist
   color: #ffda05;
 }
 
-@media screen and (max-width: 460px) {
-  .forgot-password .login-content, .forgot-password .register .register-content, .register .forgot-password .register-content {
+@media screen and (max-width: 767px) {
+  .forgot-password .forgot-password-content {
+    width: 95%;
     padding: 0;
   }
-  .forgot-password .login-content h3, .forgot-password .register .register-content h3, .register .forgot-password .register-content h3 {
-    font-size: 17px;
-  }
-  .forgot-password .login-content .form button, .forgot-password .register .register-content .form button, .register .forgot-password .register-content .form button {
-    width: 80%;
+}
+
+@media screen and (max-width: 460px) {
+  .forgot-password .forgot-password-content {
+    width: 100%;
   }
 }
 
@@ -2495,17 +2512,6 @@ footer .container ul a, footer .container ul .register .register-content .regist
   font-weight: 400;
 }
 
-.verify .verify-content a span, .verify .verify-content .register .register-content .register-footer a span, .register .register-content .register-footer .verify .verify-content a span {
-  color: #223040;
-  font-weight: 500;
-  -webkit-transition: color .3s;
-  transition: color .3s;
-}
-
-.verify .verify-content a span:hover {
-  color: #ffda05;
-}
-
 .verify .verify-content .form input:focus {
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2527,15 +2533,30 @@ footer .container ul a, footer .container ul .register .register-content .regist
   border-color: #ffda05;
 }
 
-@media screen and (max-width: 460px) {
+.verify .verify-content a span, .verify .verify-content .register .register-content .register-footer a span, .register .register-content .register-footer .verify .verify-content a span {
+  color: #223040;
+  font-weight: 500;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
+.verify .verify-content a span:hover {
+  color: #ffda05;
+}
+
+@media screen and (max-width: 767px) {
   .verify .verify-content {
+    width: 100%;
     padding: 0;
   }
   .verify .verify-content h2 {
+    font-size: 20px;
+  }
+  .verify .verify-content h3 {
     font-size: 17px;
   }
   .verify .verify-content .form button {
-    width: 80%;
+    width: 110px;
   }
 }
 
@@ -2643,7 +2664,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .no-product {
-  height: 50vh;
+  height: 30vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2653,7 +2674,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 2rem;
+  font-size: 1.95rem;
 }
 
 .admin-orders-comp {
@@ -2750,6 +2771,27 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .admin-orders-comp .admin-change-inputs .dropdown .dropdown-menu .dropdown-item hr {
   margin: 0;
   color: #ffda05;
+}
+
+.user-eddit-address {
+  width: 75% !important;
+}
+
+@media screen and (max-width: 767px) {
+  .user-eddit-address {
+    width: 90% !important;
+    margin: auto;
+  }
+}
+
+.change-password {
+  width: 75% !important;
+}
+
+@media screen and (max-width: 767px) {
+  .change-password {
+    width: 90% !important;
+  }
 }
 
 body {

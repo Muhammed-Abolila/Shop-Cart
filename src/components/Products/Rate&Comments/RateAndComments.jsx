@@ -5,9 +5,10 @@ import { BsFillStarFill } from 'react-icons/bs';
 import {RiDeleteBin5Line} from 'react-icons/ri';
 import {FaRegEdit} from 'react-icons/fa';
 import { useParams } from 'react-router';
-import GrowExample from '../../Utilities/Spinner/Spinner';
 import RateAndCommentHook from '../../../CustomHooks/RateAndCommentHook/RateAndCommentHook';
 import DeleteBtn from '../../Utilities/DeleteBtn/DeleteBtn';
+import Spinner from '../../Utilities/Spinner/Spinner';
+import { Row, Col } from 'react-bootstrap';
 const RateAndComments = ({oneProductData}) => {
   let {id}=useParams();
 let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
@@ -28,7 +29,6 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
         <div className="add-comment">
           <div className="user">
             {user?(<h3>{user.name}</h3>):(<h3>Gest</h3>)}
-          
             <ReactStars
               count={5}
               value={rate}
@@ -52,10 +52,10 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
         <div className="show-comments">
           {ReviewsData?(
             ReviewsData.map((review,index)=>
-            <div key={index} >
+            <div key={index}>
                 <hr />
-                <div className="d-flex justify-content-between">
-                <div>
+                <Row>
+                <Col sm={{span:9}} className="comment-content">
                 <div className="d-flex">
                   <h6>
                     {review.user.name}
@@ -66,17 +66,17 @@ let [rate,ratingChanged,comment,onCommentChange,onSubmit,btnRef,ReviewsData,
                   </div>
                 </div>
                 <p>{review.review}</p>
-                </div>
+                </Col>
                 {review.user._id===user._id?(
-                  <div>
-                    <DeleteBtn data={review} onDelete={onDeleteComment}/>
+                  <Col sm={{span:3}} className="btns">
+                    <DeleteBtn text="Comment" data={review} onDelete={onDeleteComment}/>
                     <span onClick={()=>onUpdateComment(review)} className="eddit-icon"><FaRegEdit/></span>
-                  </div>
+                  </Col>
                 ):null} 
-                </div>
+                </Row>
             </div>
             )
-          ):<GrowExample/>}
+          ):<Spinner/>}
         </div>
       </div>
       {/* <PaginationComp/> */}
