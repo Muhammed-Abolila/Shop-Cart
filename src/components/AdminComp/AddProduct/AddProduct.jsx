@@ -9,7 +9,6 @@ const [AllCategoryData,AllBrandsData,images,productName,onProductNameChange,prod
        priceBeforeDescount,onPriceBeforeDescountChange,priceAfterDescount,onPriceAfterDescountChange,qty,
        onQtyChange,onSelectMainCategory,options,onSelect,onRemove,onSelectBrands,showPicker,handleChangeComplete,
        removeColor,handleProductData,setImages,selectedColors,setShowPicker]=AdminAddProductHook()
-  
   return (
     <div className="inputs my-3">
         <div className="img">

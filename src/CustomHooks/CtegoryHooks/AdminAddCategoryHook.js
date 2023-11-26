@@ -5,6 +5,8 @@ import { postCategoryDataWithImage, getCategoryApi } from '../../Redux/Actions/C
 import Notifications from '../../CustomHooks/Notifications';
 const AdminAddCategoryHook = () => {
   let res=useSelector((state)=>state.CategoryReducer.PostCategoryApi);
+  console.log(res);
+  
     let [notify]=Notifications(res)
     let [CategoryImg,setCategoryImg]=useState(imgLogo);
     let [CategoryName,setCategoryName] = useState("");

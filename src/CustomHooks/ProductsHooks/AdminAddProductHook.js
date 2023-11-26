@@ -134,7 +134,7 @@ const AdminAddProductHook = () => {
     if(product){
       productData=product
     }
-  }catch(e){}
+  }catch(e){};
   let [notify]=Notifications(productData)
     // Admin Send Data To Api
     const handleProductData=()=>{

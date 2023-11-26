@@ -48,7 +48,6 @@ const AdminAddSubCategoryHook = () => {
       }else{
         dispatch(postSubCategoryData({name:name,category:id}));
         setName("");
-        setId("0");
       }
      }
    };

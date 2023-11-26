@@ -8,6 +8,8 @@ import { ToastContainer } from 'react-toastify';
 import { BaseUrl } from '../../../Redux/Type/Type';
 import { Link } from 'react-router-dom';
 const CartItem =({data,reload,setReload}) => {
+    console.log(data);
+    
     let dispatch=useDispatch();
     let [qntValue,setQntValue]=useState(data.count);
     const onQntChange=(e)=>{

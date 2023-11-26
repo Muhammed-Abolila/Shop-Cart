@@ -11,9 +11,13 @@ const Notifications = (res) => {
          
       useEffect(()=>{
         if(res.status==201||res.status==200){
-          notify(res.statusText);
+          if(res.statusText==''){
+            notify("Success");
+          }else{
+            notify(res.statusText);
+          }
         }
       },[res])
       return [notify]
 }
-export default Notifications
+export default Notifications;

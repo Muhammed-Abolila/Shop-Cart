@@ -17,7 +17,7 @@ const Brand_Category_Card = ({item}) => {
                     <div className="card-content">
                       <div className="right"></div>
                       <div className="left"></div>
-                      <h2>{item.name}</h2>
+                      <h2>{item.name.toUpperCase()}</h2>
                     </div>
                 </div>
               </Link>
