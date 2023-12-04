@@ -584,7 +584,8 @@
 }
 
 .subtitle-comp .subtitle-head {
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .category-card {
@@ -594,8 +595,18 @@
   text-align: center;
   -webkit-box-shadow: rgba(65, 73, 79, 0.64) 0px 0px 21px;
           box-shadow: rgba(65, 73, 79, 0.64) 0px 0px 21px;
+  border: 1px solid #ffda05;
   overflow: hidden;
   position: relative;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.category-card:hover {
+  -webkit-box-shadow: rgba(255, 218, 5, 0.64) 0px 0px 21px;
+          box-shadow: rgba(255, 218, 5, 0.64) 0px 0px 21px;
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
 
 .category-card .img-container {
@@ -696,20 +707,22 @@
   overflow: hidden;
   border: none;
   position: relative;
+  border: 1px solid transparent;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.product-card:hover {
+  border: 1px solid #ffda05;
+  -webkit-transform: scale(1.02) rotate(1deg);
+          transform: scale(1.02) rotate(1deg);
+  -webkit-box-shadow: rgba(255, 218, 5, 0.39) 0px 5px 18px;
+          box-shadow: rgba(255, 218, 5, 0.39) 0px 5px 18px;
 }
 
 .product-card .image-container img {
   height: 270px;
   padding: 20px 10px;
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
-  transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
-}
-
-.product-card .image-container img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
 }
 
 .product-card .card-body {
@@ -1731,20 +1744,24 @@ footer .container ul a, footer .container ul .register .register-content .regist
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 3px;
 }
 
 .admin-product-card .card-body .price p {
   margin: 0px !important;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .admin-product-card .card-body .price .price-before-discount {
   position: relative;
   color: gray;
-  margin-left: 10px !important;
-  font-size: 15px;
-  margin-top: 2px !important;
+  font-size: 13px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .admin-product-card .card-body .price .price-before-discount span {

@@ -7,7 +7,7 @@ import ReactStars from 'react-rating-stars-component';
 import { AiFillEye } from 'react-icons/ai';
 const AdminAllProducts = ({productData,onDeleteProduct}) => {
   return ( 
-    <Col xs={{ span: 9}} sm={{span:6}} md={{span:6}} lg={{span:4}} xl={{span:3}}>
+    <Col xs={{ span: 9}} sm={{span:6}} md={{span:6}} xl={{span:4}}>
       <Card className='admin-product-card mb-4'>
         <div className='card-head d-flex justify-content-start align-items-center px-2 mt-1'>
             <DeleteBtn text={productData.title} data={productData} onDelete={onDeleteProduct}/>

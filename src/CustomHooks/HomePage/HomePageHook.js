@@ -23,7 +23,7 @@ const HomePageHook = () => {
             HomeProductData=HomeProductResponse.data.slice(0,4)
         }
         if(BrandResponse.data){
-            BrandData=BrandResponse.data.slice(0,6)
+            BrandData=BrandResponse.data.slice(0,6);
         }
     }catch(e){}
     return [CategoryData,HomeProductData,BrandData,backgroundColor]

@@ -19,7 +19,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/01014391039"  target="_blank">
+                <a href="https://wa.me/00201014391039"  target="_blank">
                   <BsWhatsapp/>
                 </a>
               </li>

@@ -21,9 +21,9 @@ const LoginPageHook = () => {
     let [notify]=Notifications(response);
     const onSubmit = async() =>{
         if(loginEmail==''){
-        notify("ادخل البريد الإلكتروني"); 
+        notify("Insert E-mail"); 
         }else if(loginPassword==""){
-        notify("أدخل الرقم السري")
+        notify("Insert Password")
         }else{
         setLoading(true)
         await dispatch(Userlogin({

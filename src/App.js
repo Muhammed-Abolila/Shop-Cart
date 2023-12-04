@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, HashRouter } from "react-router-dom";
 import Footer from "./components/Utilities/Footer/Footer";
 import NavbarLogin from "./components/Utilities/NavBarLogin/NavbarLogin";
 import HomePage from "./pages/Home/HomePage";
@@ -37,7 +37,7 @@ function App() {
   let [isUser,isAdmin]=ProtectedRoute()
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
       <NavbarLogin/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
@@ -78,7 +78,7 @@ function App() {
           </Route>
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>
-      </BrowserRouter>
+        </HashRouter>
         <Footer/>
     </>
   );

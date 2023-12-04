@@ -11,7 +11,7 @@ const ProductDetails = () => {
   return (
     <section className='product-details pb-5 pageStyle'>
         <Container>
-            <ItemDetail oneProduct={oneProduct} oneCategory={oneCategory} oneBrand={oneBrand}/>
+          {oneProduct&&oneCategory&&oneBrand?(<ItemDetail oneProduct={oneProduct} oneCategory={oneCategory} oneBrand={oneBrand}/>):null}
             <RateAndComments oneProductData={oneProduct}/>
             <div className="mt-3">
                 {SameProductData?(<ProductContainer ProductData={SameProductData} title="Products You May Like :-"/>):null}

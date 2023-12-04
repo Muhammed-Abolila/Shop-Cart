@@ -7,7 +7,7 @@ export const PostProductApi=(data)=>{
     return async(dispatch)=>{
         try{
             let config={headers:{"Content-Type":"multipart/form-data",Authorization:` Bearer ${localStorage.getItem("token")}`}};
-            let response=await axios.post(`${BaseUrl}/api/v1/products`,data,config);            
+            let response=await axios.post(`${BaseUrl}/api/v1/products`,data,config);
             dispatch({
                 type:CREATE_PRODUCT,
                 payload:response
@@ -80,6 +80,8 @@ export const GetProductsByBrand=(pageNumber,BrandId)=>{
         try{
             let config={headers:{Authorization:`Bearer ${localStorage.getItem("token")}`}};
             let response=await axios.get(`${BaseUrl}/api/v1/products?limit=8&page=${pageNumber}&brand=${BrandId}`,config);            
+            console.log(response);
+            
             dispatch({
                 type:GET_PRODUCTS_BY_BRAND,
                 payload:response.data

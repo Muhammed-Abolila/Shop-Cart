@@ -4,14 +4,17 @@
     overflow: hidden;
     border:none;
     position: relative;
+    border:1px solid transparent;
+    transition: .4s;
+    &:hover{
+        border :1px solid $mainColor;
+        transform: scale(1.02) rotate(1deg);        
+        box-shadow: rgba($mainColor, .39) 0px 5px 18px
+    }
     .image-container{
         img{
             height:270px;
             padding:20px 10px;
-            transition:transform .3s ease-in-out;
-            &:hover{
-                transform: scale(1.1)
-            }
         }
     }
     .card-body{

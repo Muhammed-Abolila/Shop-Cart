@@ -4,8 +4,14 @@
         border-radius: 10px;
         text-align: center;
         box-shadow: rgba(65, 73, 79, 0.64)0px 0px 21px;
+        border :1px solid $mainColor;
         overflow: hidden;
         position: relative;
+        transition:.4s;
+        &:hover{
+            box-shadow: rgba($mainColor, 0.64)0px 0px 21px;
+            transform:scale(1.03);
+        }
         .img-container{
             height:200px;
             display: flex;

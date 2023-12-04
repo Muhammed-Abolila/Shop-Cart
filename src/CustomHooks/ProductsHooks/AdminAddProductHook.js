@@ -146,7 +146,7 @@ const AdminAddProductHook = () => {
           notify("Insert Product Name")
         }else if(productDesc==""){
           notify("Insert Product Description")
-        }else if(priceAfterDescount=="Price"){
+        }else if(priceBeforeDescount=="Price Before Discount"){
           notify("Insert Product Price")
         }else if(qty=="Quantity"){
           notify("Insert Product Quantity")
@@ -162,7 +162,9 @@ const AdminAddProductHook = () => {
           formData.append("description",productDesc);
           formData.append("quantity",qty);
           formData.append("price",priceBeforeDescount);
-          formData.append("priceAfterDiscount",priceAfterDescount);
+          if(priceAfterDescount>0){
+            formData.append("priceAfterDiscount",priceAfterDescount);
+          }
           formData.append("imageCover",imgsAfterConvert[0]);
           formData.append("category",mainCategoryId);
           formData.append("brand",brandId);
