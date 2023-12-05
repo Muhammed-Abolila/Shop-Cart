@@ -100,7 +100,8 @@ const PaymentMethod = () => {
   
   useEffect(()=>{
     if(productsCartlength<1||cashOrderResponse.status===201){
-      Navigate("/user/allorders")
+      Navigate("/user/allorders");
+      window.location.reload()
     }
   },[cashOrderResponse]);
   return (

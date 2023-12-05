@@ -8,21 +8,21 @@ import Spinner from '../../components/Utilities/Spinner/Spinner';
 const Cart = () => {
   let [productsCartData,reload,setReload,lengthOfArray,productCartDataToCoupone]=CartPageHook()
   return (
-    <section className="pageStyle pt-3">
+    <>
+    {productsCartData?(
+      <section className="pageStyle pt-3">
       <Container>
         <Row>
           <SubTitle title="Your Cart"/>
         </Row>
         <Row className='justify-content-center'>
-          {productsCartData?(
             <Col className='col-12 col-lg-10'>
-              {productsCartData?(
+              {productsCartData.length>=1?(
                 productsCartData.map((data,index)=><CartItem key={index} data={data} reload={reload} setReload={setReload}/>)
               ):(
-              <Spinner/>
+                <NoProductYet msg="Your Cart Empty"/>
               )}
             </Col>
-          ):(<NoProductYet msg="Your Cart Empty"/>)}
           <Col className='col-7 col-lg-2'>
             {lengthOfArray>=1?(
               <Coupon data={productCartDataToCoupone} reload={reload} setReload={setReload}/>
@@ -31,6 +31,8 @@ const Cart = () => {
         </Row>
       </Container>
     </section>
+    ):(<Spinner/>)}
+    </>
   )
 }
 

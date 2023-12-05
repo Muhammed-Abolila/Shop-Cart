@@ -10,8 +10,7 @@ const ProductsByBrandHook = (id) => {
         getProductsByBrand()
     }, []);
     let productBrand=useSelector((state)=>state.ProductReducer.ProductsByBrand);
-    let productBrandData=[];
-    let pagination=0;
+    let productBrandData,pagination;
     try{
         if(productBrand.data){
             productBrandData=productBrand.data;

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Notifications from '../Notifications';
 import { PostUserData } from '../../Redux/Actions/AuthActions';
 const RegisterPageHook = () => {
-  
+    let [display,setDisplay]=useState("none");
     let dispatch=useDispatch();
     let Navigate=useNavigate();
     let [userName,setUserName]=useState("");
@@ -28,23 +28,24 @@ const RegisterPageHook = () => {
     const onUserConfirmPasswordChange=(e)=>{
       setUserConfirmPassword(e.target.value);
     }
-    let response=useSelector((state)=>state.AuthReducers.CreateUser);      
+    let response=useSelector((state)=>state.AuthReducers.CreateUser);
     let [notify]=Notifications(response);
     const onSubmit=async()=>{
       if(userName==""){
-        notify("أدخل إسم المستخدم")
+        notify("Insert User Name")
       }else if(userEmail==""){
-        notify("أدخل بريد إلكتروني")
+        notify("Insert E-mail")
       }else if(userPhone==""){
-        notify("أدخل رقم هاتف صالح")
+        notify("Insert Phone Number")
       }else if(userPassword==""){
-        notify("أدخل كلمه السر")
+        notify("Insert Password")
       }else if(userConfirmPassword==""){
-        notify("اعد إدخال كلمه السر")
+        notify("Re-password")
       }else if(userPassword !=userConfirmPassword){
-        notify("كلمه السر غير متطابقه")
+        notify("Password Dosn't Match")
       }else{
-        setLoading(true)
+        setLoading(true);
+        setDisplay("flex");
         await dispatch(PostUserData({
           "name": userName,
           "email":userEmail,
@@ -71,10 +72,11 @@ const RegisterPageHook = () => {
             notify(response.data.errors[0].msg)
           }
         }
+        setDisplay("none");
       }
     },[loading])
     
-  return  [userName,userEmail,userPhone,userPassword,userConfirmPassword,onUserNameChange,
+  return  [display,userName,userEmail,userPhone,userPassword,userConfirmPassword,onUserNameChange,
     onUserEmailChange,onUserPhoneChange,onUserPasswordChange,onUserConfirmPasswordChange,
     onSubmit]
 }

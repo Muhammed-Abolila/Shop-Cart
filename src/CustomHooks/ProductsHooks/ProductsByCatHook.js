@@ -7,8 +7,7 @@ const ProductsByCatHook = (id) => {
         dispatch(GetProductsByCat(1,id))
     },[]);
     let item=useSelector((state)=>state.ProductReducer.ProductsByCategory);
-    let itemData=[]
-    let pagination=0;
+    let itemData,pagination;
     try{
         if(item.data){
             itemData=item.data;

@@ -37,22 +37,15 @@ const ProductsSearchPageHook = () => {
   useEffect(()=>{
     getProduct()
   },[]);
-  let ProductData=useSelector((state)=>state.ProductReducer.SearchProductApi);
-  let items=[], pagination=[];
+  let ProductResponse=useSelector((state)=>state.ProductReducer.SearchProductApi);
+  let items,pagination;
   try{
-    if(ProductData){
-      items=ProductData;
-    }else{
-      items=[];
-    };
-  }catch(e){}
-  
-  try{
-    if(ProductData.paginationResult){
-      pagination=ProductData.paginationResult.numberOfPages;
-    }else{
-      pagination=0;
-    };
+    if(ProductResponse){
+      items=ProductResponse;
+    }
+    if(ProductResponse.paginationResult){
+      pagination=ProductResponse.paginationResult.numberOfPages;
+    }
   }catch(e){}
   // to Link Between Search and Pagination
   async function getPageCount(pageNumber){
@@ -95,13 +88,13 @@ let sortFromLocalStorage='',sort;
     }
     if(sortFromLocalStorage==="Recommended"){
       sort=''
-    }else if(sortFromLocalStorage==="Top Ratedََ"){
+    }else if(sortFromLocalStorage==="Top Rated"){
       sort="-ratingsQuantity"
     }else if(sortFromLocalStorage==="Best Seller"){
       sort="-sold"
-    }else if(sortFromLocalStorage==="High To Low"){
+    }else if(sortFromLocalStorage==="Highest price"){
       sort="-price"
-    }else if(sortFromLocalStorage==="Low To High"){
+    }else if(sortFromLocalStorage==="Lowest price"){
       sort="+price"
     }
   };

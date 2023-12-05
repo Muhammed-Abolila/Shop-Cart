@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import Notifications from '../../CustomHooks/Notifications';
 import { SendEmialToGetVerifyCode } from '../../Redux/Actions/AuthActions';
-
 const ForgotPasswordPageHook = () => {
+    let [display,setDisplay]=useState("none");
     let navigate=useNavigate();
     let dispatch=useDispatch()
     let [email,setEmail]=useState('');
@@ -14,12 +14,11 @@ const ForgotPasswordPageHook = () => {
     const onEmailChange=(e)=>{
       setEmail(e.target.value);
     }
-    console.log(email);
-    
     const onSubmit=()=>{
       if(email==''){
         notify("Insert E-mail")
       }else{
+        setDisplay("flex");
         dispatch(SendEmialToGetVerifyCode({
           "email":email
         }));
@@ -39,8 +38,9 @@ const ForgotPasswordPageHook = () => {
           notify(response.data.message);
         }
       } 
+      setDisplay("none");
     },[response]);
-    return [email,onEmailChange,onSubmit]
+    return [display,email,onEmailChange,onSubmit]
 }
 
 export default ForgotPasswordPageHook

@@ -3,8 +3,9 @@ import { Container } from 'react-bootstrap'
 import { Link} from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import RegisterPageHook from '../../../CustomHooks/Auth/RegisterPageHook';
+import FormSpinner from '../../../components/Utilities/FormSpinner/FormSpinner';
 const Register = () => {
-  let [userName,userEmail,userPhone,userPassword,userConfirmPassword,onUserNameChange,
+  let [display,userName,userEmail,userPhone,userPassword,userConfirmPassword,onUserNameChange,
       onUserEmailChange,onUserPhoneChange,onUserPasswordChange,onUserConfirmPasswordChange,
       onSubmit]=RegisterPageHook()
   return (
@@ -30,7 +31,7 @@ const Register = () => {
                 value={userPhone} 
                 onChange={onUserPhoneChange}
                 className='form-control mt-3' 
-                type="number" 
+                type="tel" 
                 placeholder='Phone Number' />          
               <input 
                 value={userPassword} 
@@ -55,6 +56,7 @@ const Register = () => {
         </div>
       </Container>
       <ToastContainer autoClose={2000}/>
+      <FormSpinner displayStyle={display}/>
     </section>
   )
 }

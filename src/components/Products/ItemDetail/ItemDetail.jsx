@@ -40,15 +40,19 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
                         </Col>
                         <Col md={6}>
                         {oneProduct.availableColors?(
-                            <div className="color-container">
-                                <h2>Colors :-</h2>
-                                <ul className="color">
-                                    {oneProduct.availableColors.map((color,index)=>
-                                        <li key={index} className=" mt-2" style={{backgroundColor:`${color}`,border:indexOfselectedColor===index?"2px solid #000":"2px solid transparent"}} onClick={()=>onColorChange(color,index)}></li>
-                                        )}
-                                </ul>
-                            </div>
-                            ):null}
+                            <>
+                            {oneProduct.availableColors.length>=1?(
+                                <div className="color-container">
+                                    <h2>Colors :-</h2>
+                                    <ul className="color">
+                                        {oneProduct.availableColors.map((color,index)=>
+                                            <li key={index} className=" mt-2" style={{backgroundColor:`${color}`,border:indexOfselectedColor===index?"2px solid #000":"2px solid transparent"}} onClick={()=>onColorChange(color,index)}></li>
+                                            )}
+                                    </ul>
+                                </div>
+                                ):null}
+                                </>
+                        ):null}
                             <div className="details">
                                 <h2>Details:-</h2>
                                 <p className=" mt-2">{oneProduct.description}</p>

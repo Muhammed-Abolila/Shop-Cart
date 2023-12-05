@@ -3,8 +3,10 @@ import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import LoginPageHook from "../../../CustomHooks/Auth/LoginPageHook";
+import FormSpinner from "../../../components/Utilities/FormSpinner/FormSpinner";
 const Login = () => {
   let [
+    display,
     loginEmail,
     loginPassword,
     onLoginEmailChange,
@@ -51,6 +53,7 @@ const Login = () => {
         </div>
       </Container>
       <ToastContainer autoClose={2000} />
+      <FormSpinner displayStyle={display}/>
     </section>
   );
 };

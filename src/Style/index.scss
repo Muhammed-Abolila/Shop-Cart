@@ -40,9 +40,12 @@
 @import "../components/Utilities/DeleteBtn/DeleteBtn";
 @import "../components/Coupon/UpdateCouponModal/UpdateCouponeModal";
 @import "../components/Utilities/NoProductYet/NoProductYet";
+@import "../components/Utilities/FormSpinner/FormSpinner";
 @import "../components/AdminComp/AdminAllOrders/AdminALLOrders";
 @import "../components/UserComp/UserEdditAddress/UserEdditAddress";
 @import "../components/UserComp/ChangePassword/ChangePassword";
+@import "../pages/Privacy/Privacy";
+@import "../pages/Terms/terms";
 
 body{
     position:relative !important;

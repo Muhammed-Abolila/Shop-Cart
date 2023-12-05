@@ -4,8 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import Notifications from '../../CustomHooks/Notifications';
 import { SendVerifyCodeToRepassword } from '../../Redux/Actions/AuthActions';
 const VerifyCodePageHook = () => {
+    let [display,setDisplay]=useState("none");
     let navigate=useNavigate();
-    let dispatch=useDispatch()
+    let dispatch=useDispatch();
     let Email=localStorage.getItem("Email");
     let [resetCode,setResetCode]=useState('');
     const onVerifyCodeChange=(e)=>{
@@ -17,6 +18,7 @@ const VerifyCodePageHook = () => {
       if(resetCode==''){
         notify("Insert Verify Code");
       }else{
+        setDisplay("flex");
         dispatch(SendVerifyCodeToRepassword({
           "resetCode":resetCode
         }))
@@ -33,9 +35,10 @@ const VerifyCodePageHook = () => {
         }else{
           notify(response.data.message);
         }
+        setDisplay("none");
       }
     },[response]);
-    return [Email,resetCode,onVerifyCodeChange,onSubmit]
+    return [display,Email,resetCode,onVerifyCodeChange,onSubmit]
 }
 
 export default VerifyCodePageHook

@@ -1,0 +1,33 @@
+.terms{
+    padding: 20px;
+    article{
+        padding:10px 0px;
+        h6{
+            margin-bottom:10px;
+            color:$DarkColor;
+            font-size:25px;
+        }
+        p{
+            color:gray;
+            font-size:17px;
+            margin:0px 10px;
+        }
+        ul{
+            list-style: decimal;
+            li{
+                font-size:15px;
+                color:gray;
+                margin:0px 10px;
+                margin-top:10px;
+                ul{
+                    list-style: lower-alpha;
+                }
+                span{
+                    font-weight: bold;
+                    color:$DarkColor
+                }
+            }
+            
+        }
+    }
+}

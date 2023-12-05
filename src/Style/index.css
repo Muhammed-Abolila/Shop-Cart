@@ -850,6 +850,7 @@ footer .container {
 footer .container ul {
   font-size: 12px;
   padding: 15px;
+  gap: 18px;
 }
 
 footer .container ul a, footer .container ul .register .register-content .register-footer a, .register .register-content .register-footer footer .container ul a {
@@ -1381,6 +1382,10 @@ footer .container ul a, footer .container ul .register .register-content .regist
   margin: 15px 0px !important;
 }
 
+.rate-comments .comments .show-comments .btns {
+  text-align: end;
+}
+
 @media screen and (max-width: 576px) {
   .rate-comments .comments .show-comments .row .comment-content {
     -webkit-box-ordinal-group: 2;
@@ -1619,9 +1624,6 @@ footer .container ul a, footer .container ul .register .register-content .regist
 }
 
 .payment .payment-methods div .dropdown .dropdown-toggle {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   padding: 4px 10px !important;
 }
 
@@ -1660,8 +1662,8 @@ footer .container ul a, footer .container ul .register .register-content .regist
 
 .payment .payment-methods div .dropdown .dropdown-menu .dropdown-item {
   padding: 0px !important;
-  -webkit-transition: all .4s;
-  transition: all .4s;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
   background-color: #223040;
   color: #fff;
   border-color: #223040;
@@ -2694,6 +2696,54 @@ footer .container ul a, footer .container ul .register .register-content .regist
   font-size: 1.95rem;
 }
 
+.form-loader-container {
+  position: absolute;
+  inset: 0;
+  background-color: #eff1e7d4;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-loader-container .loader {
+  display: inline-block;
+  font-size: 48px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #223040;
+  position: relative;
+}
+
+.form-loader-container .loader::before {
+  content: '';
+  position: absolute;
+  left: 34px;
+  bottom: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 5px solid #223040;
+  border-bottom-color: #ffda05;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: rotation 0.6s linear infinite;
+          animation: rotation 0.6s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .admin-orders-comp {
   background-color: #fff;
   padding: 15px 10px;
@@ -2809,6 +2859,77 @@ footer .container ul a, footer .container ul .register .register-content .regist
   .change-password {
     width: 90% !important;
   }
+}
+
+.privacy {
+  padding: 20px;
+}
+
+.privacy article {
+  padding: 10px 0px;
+}
+
+.privacy article h6 {
+  margin-bottom: 10px;
+  color: #223040;
+  font-size: 25px;
+}
+
+.privacy article p {
+  color: gray;
+  font-size: 17px;
+  margin: 0px 10px;
+}
+
+.privacy article ul {
+  list-style: decimal;
+}
+
+.privacy article ul li {
+  font-size: 15px;
+  color: gray;
+  margin: 0px 10px;
+  margin-top: 10px;
+}
+
+.terms {
+  padding: 20px;
+}
+
+.terms article {
+  padding: 10px 0px;
+}
+
+.terms article h6 {
+  margin-bottom: 10px;
+  color: #223040;
+  font-size: 25px;
+}
+
+.terms article p {
+  color: gray;
+  font-size: 17px;
+  margin: 0px 10px;
+}
+
+.terms article ul {
+  list-style: decimal;
+}
+
+.terms article ul li {
+  font-size: 15px;
+  color: gray;
+  margin: 0px 10px;
+  margin-top: 10px;
+}
+
+.terms article ul li ul {
+  list-style: lower-alpha;
+}
+
+.terms article ul li span, .terms article ul li .register .register-content .register-footer a span, .register .register-content .register-footer a .terms article ul li span {
+  font-weight: bold;
+  color: #223040;
 }
 
 body {

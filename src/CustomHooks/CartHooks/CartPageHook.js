@@ -11,9 +11,7 @@ const CartPageHook = () => {
       get();
     },[reload]);
     let productsCart=useSelector((state)=>state.CartReducer.ProductsCart);    
-    let productCartDataToCoupone=[]
-    let productsCartData;
-    let lengthOfArray;
+    let productCartDataToCoupone, productsCartData,lengthOfArray;
    try{
     if(productsCart.data){
       productCartDataToCoupone=productsCart.data;

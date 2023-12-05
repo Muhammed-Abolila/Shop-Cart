@@ -8,7 +8,6 @@ import ProductsSearchPageHook from '../../CustomHooks/ProductsHooks/ProductsSear
 import ProductContainer from '../../components/Home/ProductContainer/ProductContainer';
 const ProductsSearchPage = () => {
   let [items,pagination,getPageCount,getProduct]=ProductsSearchPageHook();
-    
   return (
     <section className='pageStyle py-3 mb-5'>
       <Container>

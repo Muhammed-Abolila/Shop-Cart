@@ -1,8 +1,9 @@
 import { Container } from 'react-bootstrap';
 import { ToastContainer } from 'react-toastify';
 import RePasswordPageHook from '../../../CustomHooks/Auth/RePasswordPageHook';
+import FormSpinner from '../../../components/Utilities/FormSpinner/FormSpinner';
 const RePasswordPage = () => {
-    let [password,onPasswordChange,rePassword,onRePasswordChange,onSubmit]=RePasswordPageHook()
+  let [display,password,onPasswordChange,rePassword,onRePasswordChange,onSubmit]=RePasswordPageHook()
   return (
     <section>
       <Container>
@@ -28,6 +29,7 @@ const RePasswordPage = () => {
         </div>
       </Container>
       <ToastContainer autoClose={2000}/>
+      <FormSpinner displayStyle={display}/>
     </section>
   )
 }

@@ -9,60 +9,40 @@ const ProductDetailsHook = (id) => {
     useEffect(()=>{
          dispatch(GetProductDataWithId(id));
     },[id]);
-    let singleProductData=useSelector((state)=>state.ProductReducer.SingleProductApi);
+     // Get Single Product and Brand and Category Data
+     let singleProductData=useSelector((state)=>state.ProductReducer.SingleProductApi);
+     let SingleBrandData=useSelector((state)=>state.BrandReducer.SingleBrandApi); 
+     let SingleCategoryData=useSelector((state)=>state.CategoryReducer.SingleCategoryApi);
+     // To Show Products You May Like Section
+     let SameProduct=useSelector((state)=>state.ProductReducer.SameProducts);
     // to be sure data is return without Undefined
-    let oneProduct=[];
+    let oneProduct,oneCategory,oneBrand,SameProductData;
    try{
     if(singleProductData.data){
         oneProduct=singleProductData.data
-    }else{
-        oneProduct=[]
+    }
+    if(SingleCategoryData.data){
+        oneCategory=SingleCategoryData.data
+    }
+    if(SingleBrandData.data){
+        oneBrand=SingleBrandData.data
+    }
+    if(SameProduct.data){
+        SameProductData=SameProduct.data.slice(0,4)
     }
    }catch(e){}
     // Get Single Category Data 
     useEffect(()=>{
+        if(oneProduct){
         if(oneProduct.category){
             dispatch(GetCategoryWithId(oneProduct.category));
+            dispatch(GetTheSameProducts(oneProduct.category))
         }
         if(oneProduct.brand){
             dispatch(GetBrandDataWithId(oneProduct.brand))
         }
-        if(oneProduct.category){
-            dispatch(GetTheSameProducts(oneProduct.category))
-          } 
+    }
     },[oneProduct]);
-    let SingleCategoryData=useSelector((state)=>state.CategoryReducer.SingleCategoryApi);
-    // to be sure data is return with Out Undefined
-    let oneCategory=[];
-    
-    try{
-        if(SingleCategoryData.data){
-            oneCategory=SingleCategoryData.data
-        }else{
-            oneCategory=[]
-        }
-    }catch(e){}
-    // Get Single Brand Data
-    let SingleBrandData=useSelector((state)=>state.BrandReducer.SingleBrandApi); 
-    // to be sure data is return with Out Undefined
-    let oneBrand=[];
-    try{
-        if(SingleBrandData.data){
-            oneBrand=SingleBrandData.data
-        }else{
-            oneBrand=[]
-        };
-    }catch(e){}
-  // To Show Products You May Like Section
-    let SameProduct=useSelector((state)=>state.ProductReducer.SameProducts);
-    let SameProductData=[]
-    try{
-        if(SameProduct.data){
-            SameProductData=SameProduct.data
-        }else{
-            SameProductData=[]
-        };
-    }catch(e){}
     return [oneProduct,oneCategory,oneBrand,SameProductData]
 }
 

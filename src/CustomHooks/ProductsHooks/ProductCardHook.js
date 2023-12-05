@@ -17,21 +17,19 @@ import { useState, useEffect} from 'react';
           if(favItem){
             await dispatch(RemoveProductFromWishlist(CardProductData._id));
             setFavItem(false);
-            // window.location.reload();
             setReload(!reload)
           }else{
             await dispatch(AddProductToWishlist({
               "productId": CardProductData._id
             }));
             setFavItem(true);
-            // window.location.reload()
             setReload(!reload)
           }
         }else{
-          window.alert("لا يمكن للادمن")
+          window.alert("Admin Can't add to wish list")
         }
       }else{
-        window.alert("قم بتسجيل الدخول")
+          window.alert("Login as user!")
       } 
     };
     useEffect(()=>{

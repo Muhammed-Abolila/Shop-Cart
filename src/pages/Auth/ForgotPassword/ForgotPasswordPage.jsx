@@ -3,9 +3,9 @@ import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import ForgotPasswordPageHook from '../../../CustomHooks/Auth/ForgotPasswordPageHook';
-
+import FormSpinner from '../../../components/Utilities/FormSpinner/FormSpinner';
 const ForgotPasswordPage = () => {
-    let [email,onEmailChange,onSubmit]=ForgotPasswordPageHook()
+    let [display,email,onEmailChange,onSubmit]=ForgotPasswordPageHook()
   return (
     <section>
       <Container>
@@ -30,6 +30,7 @@ const ForgotPasswordPage = () => {
         </div>
       </Container>
       <ToastContainer autoClose={2000}/>
+      <FormSpinner displayStyle={display}/>
     </section>
   )
 }

@@ -33,11 +33,13 @@ import ProtectedRouteComp from "./components/Utilities/ProtectedRouteComp/Protec
 import ProtectedRoute from "./CustomHooks/Auth/ProtectedRoute";
 import ProductsByCategory from "./pages/ProductsByCategory/ProductsByCategory";
 import ProductsByBrand from "./pages/ProductsByBrand/ProductsByBrand";
+import Privacy from "./pages/Privacy/Privacy";
+import Terms from "./pages/Terms/Terms";
 function App() {
   let [isUser,isAdmin]=ProtectedRoute()
   return (
     <>
-      <HashRouter>
+      <BrowserRouter>
       <NavbarLogin/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
@@ -53,6 +55,8 @@ function App() {
           <Route path="/details/:id" element={<ProductDetails/>} />
           <Route path="/products/category/:id" element={<ProductsByCategory/>} />
           <Route path="/products/brand/:id" element={<ProductsByBrand/>} />
+          <Route path="/privacy" element={<Privacy/>} />
+          <Route path="/terms" element={<Terms/>} />
 
           <Route element={<ProtectedRouteComp auth={isAdmin}/>}>
             <Route path="/admin/orders" element={<AdminAllOrdersPage/>} />
@@ -78,10 +82,10 @@ function App() {
           </Route>
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>
-        </HashRouter>
         <Footer/>
+        </BrowserRouter>
+        
     </>
   );
 }
-
 export default App;

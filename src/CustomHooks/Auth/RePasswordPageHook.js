@@ -4,6 +4,7 @@ import { SendDataToRePassword } from '../../Redux/Actions/AuthActions';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 const RePasswordPageHook = () => {
+    let [display,setDisplay]=useState("none");
     let dispatch=useDispatch();
     let Navigate=useNavigate();
     let [password,setPassword]=useState('');
@@ -24,6 +25,7 @@ const RePasswordPageHook = () => {
         }else if(rePassword!=password){
             notify("Password Doesn't Match"); 
         }else{
+            setDisplay("flex")
             dispatch(SendDataToRePassword({
                 "email":localStorage.getItem("Email"),
                 "newPassword":password
@@ -40,9 +42,10 @@ const RePasswordPageHook = () => {
                 },2000)
             }else{
                 notify(response.data.message);
-            } 
+            }
+            setDisplay("none")
         }
     },[response]);
-    return [password,onPasswordChange,rePassword,onRePasswordChange,onSubmit];
+    return [display,password,onPasswordChange,rePassword,onRePasswordChange,onSubmit];
 };
 export default RePasswordPageHook;

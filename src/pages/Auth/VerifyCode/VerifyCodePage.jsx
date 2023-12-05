@@ -3,8 +3,9 @@ import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import VerifyCodePageHook from '../../../CustomHooks/Auth/VerifyCodePageHook';
+import FormSpinner from '../../../components/Utilities/FormSpinner/FormSpinner';
 const VerifyCodePage = () => {
-  let [Email,resetCode,onVerifyCodeChange,onSubmit]=VerifyCodePageHook();
+  let [display,Email,resetCode,onVerifyCodeChange,onSubmit]=VerifyCodePageHook();
   return (
     <section>
       <Container>
@@ -32,6 +33,7 @@ const VerifyCodePage = () => {
         </div>
       </Container>
       <ToastContainer autoClose={2000}/>
+      <FormSpinner displayStyle={display}/>
     </section>
   )
 }
