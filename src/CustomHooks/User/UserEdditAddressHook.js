@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { GetSpacificAddresse, UpdateAddress } from "../../Redux/Actions/AddressActions";
 import Notifications from "../../CustomHooks/Notifications";
 const UserEdditAddressHook = () => {
+    let [display,setDisplay]=useState("none");
     let {id}=useParams();
     let Navigate=useNavigate()
     let dispatch=useDispatch();
@@ -53,7 +54,8 @@ const UserEdditAddressHook = () => {
         notify("Insert Phone Number");
         return;
       }else{
-        setLoading(true)
+        setLoading(true);
+        setDisplay("flex")
         await dispatch(UpdateAddress(id,{
           alias: alias,
           details: addressDetails,
@@ -73,9 +75,10 @@ const UserEdditAddressHook = () => {
                 Navigate("/user/address")
               },2000)
           }
+          setDisplay("none")
       }
     },[loading,AddressAfterUpdate]);
-    return [alias,onAliasChange,addressDetails,onAddressDetailsChange,phone,onPhoneChange,handleClick]
+    return [alias,onAliasChange,addressDetails,onAddressDetailsChange,phone,onPhoneChange,handleClick,display]
 }
 
 export default UserEdditAddressHook;

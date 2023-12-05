@@ -9,7 +9,7 @@ const UserFavProductPageHook = () => {
     },[reload]);
     let wishListProduct=useSelector((state)=>state.WishListReducers.WishListProduct);
     let lengthOfWishlistArray;
-    let wishListProductData=[];
+    let wishListProductData;
     try{
         if(wishListProduct.data){
             wishListProductData=wishListProduct.data;

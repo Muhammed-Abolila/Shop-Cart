@@ -124,6 +124,8 @@ const PaymentMethod = () => {
               </div>
             </Dropdown.Toggle>
             <Dropdown.Menu className='text-center'>
+              {AllAddressesData&&
+              <>
              {AllAddressesData.length>0?(AllAddressesData.map((data,index)=>
                 <Dropdown.Item>
                   <p key={index} value={data._id} 
@@ -135,6 +137,8 @@ const PaymentMethod = () => {
                 <Dropdown.Item>
                   <p value={0}>No Addresses</p>
                 </Dropdown.Item>
+                }
+                </>
                 }
             </Dropdown.Menu>
         </Dropdown>

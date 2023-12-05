@@ -4,7 +4,8 @@ import { UpdateUserProfileData } from "../../Redux/Actions/UserProfileActions";
 import Notifications from "../../CustomHooks/Notifications";
 const UserEdditProfileHook = (setShowUpdateModal) => {
     let user =JSON.parse(localStorage.getItem("user"));
-    let dispatch=useDispatch()
+    let dispatch=useDispatch();
+    let [display,setDisplay]=useState("none")
     let [userName,setUserName]=useState(user.name);
     let [userPhone,setUserPhone]=useState(user.phone);
     let [userEmail,setUserEmail]=useState(user.email);
@@ -33,7 +34,6 @@ const UserEdditProfileHook = (setShowUpdateModal) => {
       }else{
         setLoading(true)
         let body=[];
-  
         if(user.email==userEmail){
           body={
             "name":userName,
@@ -46,6 +46,7 @@ const UserEdditProfileHook = (setShowUpdateModal) => {
             "email":userEmail
           }
         }
+        setDisplay("flex")
         await dispatch(UpdateUserProfileData(body));
         setLoading(false)
       }
@@ -63,9 +64,10 @@ const UserEdditProfileHook = (setShowUpdateModal) => {
           },1500);
         }else{
         }
+        setDisplay("none")
       }
     },[loading]);
     return [userName,onUserNameChange,userPhone,onUserPhoneChange,userEmail,onUserEmailChange,
-        handleClick,backClick]
+        handleClick,backClick,display]
 }
 export default UserEdditProfileHook

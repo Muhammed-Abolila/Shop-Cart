@@ -27,10 +27,7 @@ const UserSingleOrder = ({singleOrder}) => {
                           <div className="color" style={{backgroundColor:`${singleOrder.color}`}}></div>
                       </div>
                       ):
-                      <div>
-                        <h5>Color :-</h5>
-                        <p className="mt-2">No Colors</p>
-                      </div>
+                      null
                       }
                     </Col>
                     <Col xs={6}>

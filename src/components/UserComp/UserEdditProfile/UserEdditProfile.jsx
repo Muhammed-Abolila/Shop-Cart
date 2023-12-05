@@ -1,9 +1,9 @@
-import SubTitle from "../../Utilities/SubTitle/SubTitle";
 import { ToastContainer } from "react-toastify";
 import UserEdditProfileHook from "../../../CustomHooks/User/UserEdditProfileHook";
+import FormSpinner from "../../Utilities/FormSpinner/FormSpinner";
 const UserEdditProfile = ({setShowUpdateModal}) => {
  let [userName,onUserNameChange,userPhone,onUserPhoneChange,userEmail,onUserEmailChange,
-  handleClick,backClick]=UserEdditProfileHook(setShowUpdateModal)
+  handleClick,backClick,display]=UserEdditProfileHook(setShowUpdateModal)
  return (
     <div className='user-eddit-profile'>
       <div className="user-eddit-content">
@@ -32,6 +32,7 @@ const UserEdditProfile = ({setShowUpdateModal}) => {
         </div>
       </div>
       <ToastContainer/>
+      <FormSpinner displayStyle={display}/>
     </div>
   )
 };

@@ -13,10 +13,7 @@ const AdminManageProductHook=()=>{
     if(product.data){
         productData=product.data;
         PaginationData=product.paginationResult.numberOfPages;
-    }else{
-        productData=[];
-        PaginationData={}
-    };
+    }
     }catch(e){}
     const getPageCount=(param)=>{
          dispatch(GetLimitProductApi(param))

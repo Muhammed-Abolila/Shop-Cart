@@ -4,8 +4,6 @@ import { ToastContainer } from 'react-toastify';
 import AdminAllOrdersHook from '../../../CustomHooks/Orders/AdminAllOrdersHook';
 const AdminAllOrders = ({ordersData,reloadAfterChange,setReloadAfterChange}) => {
  let [isPaidChange,onSendPaid,isDeliverChange,onSendDeliver]=AdminAllOrdersHook(ordersData,reloadAfterChange,setReloadAfterChange);
- console.log(ordersData);
- 
  return (
   <div className="admin-orders-comp">
   <div className="admin-order-head">

@@ -17,8 +17,8 @@ const Cart = () => {
         </Row>
         <Row className='justify-content-center'>
             <Col className='col-12 col-lg-10'>
-              {productsCartData.length>=1?(
-                productsCartData.map((data,index)=><CartItem key={index} data={data} reload={reload} setReload={setReload}/>)
+              {productsCartData.products?(
+                productsCartData.products.map((data,index)=><CartItem key={index} data={data} reload={reload} setReload={setReload}/>)
               ):(
                 <NoProductYet msg="Your Cart Empty"/>
               )}
@@ -32,6 +32,7 @@ const Cart = () => {
       </Container>
     </section>
     ):(<Spinner/>)}
+    
     </>
   )
 }

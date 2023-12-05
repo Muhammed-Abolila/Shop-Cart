@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 const UserProfileDetailsHook = () => {
-    let user =JSON.parse(localStorage.getItem("user"));
+    let userProfile =JSON.parse(localStorage.getItem("user"));
     let [showUpdateModal,setShowUpdateModal]=useState(false);
     const ShowUpdateModalFun=()=>{
       setShowUpdateModal(true)
     }
-    return [user,ShowUpdateModalFun,showUpdateModal,setShowUpdateModal]
+    
+    return [userProfile,ShowUpdateModalFun,showUpdateModal,setShowUpdateModal]
 }
 
 export default UserProfileDetailsHook

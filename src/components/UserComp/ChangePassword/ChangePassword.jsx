@@ -1,7 +1,8 @@
 import { ToastContainer } from "react-toastify";
 import UserEdditPasswordHook from "../../../CustomHooks/User/UserEdditPasswordHook";
+import FormSpinner from "../../Utilities/FormSpinner/FormSpinner";
 const ChangePassword = () => {
-  let [oldPass,onOldPassChange,newPass,onNewPassChange,newRePass,onNewRePassChange,handleClick]=UserEdditPasswordHook()
+  let [oldPass,onOldPassChange,newPass,onNewPassChange,newRePass,onNewRePassChange,handleClick,display]=UserEdditPasswordHook()
   return (
     <div className='change-password'>
       <input
@@ -27,6 +28,7 @@ const ChangePassword = () => {
         />
       <button className='btn btn-style' onClick={handleClick}>Change Password</button>
       <ToastContainer/>
+      <FormSpinner displayStyle={display}/>
     </div>
   )
 }

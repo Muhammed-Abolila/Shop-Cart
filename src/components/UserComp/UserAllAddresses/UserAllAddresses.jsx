@@ -1,11 +1,11 @@
 import UserAddressCard from "../UserAddressCard/UserAddressCard";
 import UserAllAddressesHook from "../../../CustomHooks/User/UserAllAddressesHook";
-import Spinner from "../../Utilities/Spinner/Spinner";
+import NoProductYet from "../../Utilities/NoProductYet/NoProductYet";
 const UserAllAddresses = () => {
   let [AllAddressesData, onDeleteAddress] = UserAllAddressesHook();
   return (
     <>
-      {AllAddressesData ? (
+      {AllAddressesData.length >= 1 ? (
         AllAddressesData.map((AddressesData, index) => (
           <UserAddressCard
             key={index}
@@ -14,10 +14,9 @@ const UserAllAddresses = () => {
           />
         ))
       ) : (
-        <Spinner />
+        <NoProductYet msg="No Addresses" />
       )}
     </>
   );
 };
-
 export default UserAllAddresses;

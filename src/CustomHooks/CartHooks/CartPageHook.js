@@ -15,7 +15,7 @@ const CartPageHook = () => {
    try{
     if(productsCart.data){
       productCartDataToCoupone=productsCart.data;
-      productsCartData=productsCart.data.products;
+      productsCartData=productsCart.data;
       lengthOfArray=productsCart.numOfCartItems;
     }
    }catch(e){};

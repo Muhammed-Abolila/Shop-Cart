@@ -39,7 +39,7 @@ function App() {
   let [isUser,isAdmin]=ProtectedRoute()
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
       <NavbarLogin/>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
@@ -83,7 +83,7 @@ function App() {
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>
         <Footer/>
-        </BrowserRouter>
+        </HashRouter>
         
     </>
   );

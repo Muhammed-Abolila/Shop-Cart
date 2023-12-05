@@ -1,80 +1,84 @@
-.product-card{
-    box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
-    height:400px !important;
-    overflow: hidden;
-    border:none;
-    position: relative;
-    border:1px solid transparent;
-    transition: .4s;
-    &:hover{
-        border :1px solid $mainColor;
-        transform: scale(1.02) rotate(1deg);        
-        box-shadow: rgba($mainColor, .39) 0px 5px 18px
+.product-card {
+  box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
+  height: 450px !important;
+  overflow: hidden;
+  border: none;
+  position: relative;
+  border: 1px solid transparent;
+  transition: 0.4s;
+  &:hover {
+    border: 1px solid $mainColor;
+    transform: scale(1.02) rotate(1deg);
+    box-shadow: rgba($mainColor, 0.39) 0px 5px 18px;
+  }
+  .image-container {
+    img {
+      height: 270px;
+      padding: 20px 10px;
     }
-    .image-container{
-        img{
-            height:270px;
-            padding:20px 10px;
-        }
+  }
+  .card-body {
+    padding-bottom: 0px;
+    h2 {
+      font-size: 1.2rem;
+      text-align: start;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      margin:0px !important;
     }
-    .card-body{
-        padding-bottom:0px;
-        h2{
-            font-size:1.2rem;
-            text-align: start
+    .price {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap:7px;
+      p {
+        margin: 0px !important;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      
+      .price-before-discount {
+        position: relative;
+        color: gray;
+        font-size: 15px;
+        margin-top: 2px !important;
+        span {
+          background-color: red;
+          width: 120%;
+          height: 2px;
+          position: absolute;
+          top: 37%;
+          right: -7px;
+          display: block;
+          transform: skew(210deg, 351deg);
         }
-        .price{
-            display: flex;
-            flex-wrap: wrap;
-            p{
-                margin:0px !important;
-                font-size: 18px;
-                font-weight: bold;
-            }
-            .price-before-discount{
-                position: relative;
-                color: gray;
-                margin-left:10px !important;
-                font-size: 15px;
-                margin-top:2px !important;
-                span{
-                    background-color: red;
-                    width: 120%;
-                    height: 2px;
-                    position: absolute;
-                    top: 37%;
-                    right: -7px;
-                    display: block;
-                    transform: skew(210deg, 351deg);
-                }
-            }
-                
-        }
+      }
     }
-    .layer{
-        position: absolute;
-        background-color: $mainColor;
-        top:0;
-        bottom:0;
-        right:0;
-        width:0px;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-        font-size: 1.2rem;
-        transition: width .4s ease-in-out;
-        border-radius: 5px 0px 0px 5px;
-        z-index: 99;
-        svg{
-            margin: 20px 20px;
-            color:$DarkColor;
-            cursor: pointer;
-        }
+  }
+  .layer {
+    position: absolute;
+    background-color: $mainColor;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: width 0.4s ease-in-out;
+    border-radius: 5px 0px 0px 5px;
+    z-index: 99;
+    svg {
+      margin: 20px 20px;
+      color: $DarkColor;
+      cursor: pointer;
     }
-    &:hover{
-        .layer{
-            width:55px
-        }
+  }
+  &:hover {
+    .layer {
+      width: 55px;
     }
-};
+  }
+}

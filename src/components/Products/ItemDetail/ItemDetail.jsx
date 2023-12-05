@@ -2,9 +2,10 @@ import { Carousel, Col, Row } from 'react-bootstrap';
 import { ToastContainer } from 'react-toastify';
 import CartPageHook from '../../../CustomHooks/CartHooks/CartPageHook';
 import ItemDetailsHook from '../../../CustomHooks/ProductsHooks/ItemDetailsHook';
+import FormSpinner from '../../Utilities/FormSpinner/FormSpinner';
 const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
     let [productsCartData,reload,setReload,lengthOfArray,productCartDataToCoupone]=CartPageHook()
-    let [indexOfselectedColor,onColorChange,onAddToCart]=ItemDetailsHook(oneProduct,reload,setReload)
+    let [indexOfselectedColor,onColorChange,onAddToCart,display]=ItemDetailsHook(oneProduct,reload,setReload)
   return ( 
     <section className='item-details my-3 py-4'>
                 <Row> 
@@ -85,6 +86,7 @@ const ItemDetail = ({oneProduct,oneCategory,oneBrand}) => {
             </Col>
         </Row>
         <ToastContainer/>
+        <FormSpinner displayStyle={display} />
     </section>
 
   )

@@ -15,7 +15,7 @@ const UserAllOrdersPageHook = () => {
         GetOrders();
     },[reloadAfterChange]);
     let ordersResponse=useSelector((state)=>state.OrderReducer.GetAllOrders);
-    let ordersResponseData=[];
+    let ordersResponseData;
 
     let pagination=0;
     try{

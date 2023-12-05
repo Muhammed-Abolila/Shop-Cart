@@ -703,13 +703,13 @@
 .product-card {
   -webkit-box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
           box-shadow: rgba(0, 114, 188, 0.24) 0px 3px 8px;
-  height: 400px !important;
+  height: 450px !important;
   overflow: hidden;
   border: none;
   position: relative;
   border: 1px solid transparent;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .product-card:hover {
@@ -732,6 +732,14 @@
 .product-card .card-body h2 {
   font-size: 1.2rem;
   text-align: start;
+  height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px !important;
 }
 
 .product-card .card-body .price {
@@ -740,6 +748,8 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-column-gap: 7px;
+          column-gap: 7px;
 }
 
 .product-card .card-body .price p {
@@ -751,7 +761,6 @@
 .product-card .card-body .price .price-before-discount {
   position: relative;
   color: gray;
-  margin-left: 10px !important;
   font-size: 15px;
   margin-top: 2px !important;
 }
@@ -789,8 +798,8 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 1.2rem;
-  -webkit-transition: width .4s ease-in-out;
-  transition: width .4s ease-in-out;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
   border-radius: 5px 0px 0px 5px;
   z-index: 99;
 }
@@ -1206,6 +1215,10 @@ footer .container ul a, footer .container ul .register .register-content .regist
   }
 }
 
+.item-details {
+  position: relative;
+}
+
 .item-details .carousel {
   border: 1px solid #ffda05;
   border-radius: 5px;
@@ -1341,6 +1354,7 @@ footer .container ul a, footer .container ul .register .register-content .regist
   background-color: #fff;
   border-radius: 5px;
   padding: 10px;
+  position: relative;
 }
 
 .rate-comments .rate-container {
@@ -2699,13 +2713,14 @@ footer .container ul a, footer .container ul .register .register-content .regist
 .form-loader-container {
   position: absolute;
   inset: 0;
-  background-color: #eff1e7d4;
+  background-color: #71726db0;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 999999;
 }
 
 .form-loader-container .loader {
