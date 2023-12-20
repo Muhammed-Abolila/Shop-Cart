@@ -1,4 +1,4 @@
-# Smart-Store
+# Shop Cart
 Hey there! I've been working on an E-commerce app using React, Redux, axios, and Sass.
 It's been a challenging project, but I'm excited about the results so far.
 The app allows users to browse a variety of products and make purchases online.
